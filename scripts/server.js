@@ -9,8 +9,9 @@ const path = require('path');
 //tyrone
 //cash4killz
 //windpress
+//user7165753005592
 //valorantesports
-const tiktokUsername = 'syminofr1';
+const tiktokUsername = 'user7165753005592';
 const wsServer = new WebSocket.Server({ port: 8080 });
 
 // Configuration du jeu
@@ -18,6 +19,7 @@ const QUESTION_TIMER = 5000; // 5 secondes par défaut
 const ANSWER_DISPLAY_TIME = 3000; // 3 secondes pour voir la réponse
 const READY_PAUSE_TIME = 4000; // 4 secondes de pause "Ready"
 const GRACE_PERIOD = 2000; // 2 secondes de grâce pour les réponses tardives
+const QUESTION_ACTIVATION_DELAY = 3000; // 7 secondes de délai avant d'accepter les réponses (pour compenser la latence TikTok)
 
 // Définition des seuils pour chaque niveau
 const LEVEL_THRESHOLDS = [
@@ -38,6 +40,7 @@ let winner = null;
 
 // État de la question
 let questionActive = false;
+let questionWaitingForActivation = false; // Nouveau: état d'attente avant activation
 let currentQuestion = null;
 let questionTimer = null;
 let playersAnsweredCurrentQuestion = new Set(); // Nouveau: tracker les joueurs qui ont répondu à la question actuelle
@@ -89,6 +92,7 @@ function resetGameState() {
     matchEnded = false;
     winner = null;
     questionActive = false;
+    questionWaitingForActivation = false; // Réinitialiser le nouvel état
     currentQuestion = null;
     currentQuestionIndex = 0;
     
@@ -125,12 +129,13 @@ function stopQuestionCycle() {
         questionTimer = null;
     }
     questionActive = false;
+    questionWaitingForActivation = false; // Arrêter aussi l'état d'attente
 }
 
 // Fonction pour poser une nouvelle question
 function askNewQuestion() {
-    if (matchEnded || questionActive) {
-        log.question(`Question non posée: matchEnded=${matchEnded}, questionActive=${questionActive}`);
+    if (matchEnded || questionActive || questionWaitingForActivation) {
+        log.question(`Question non posée: matchEnded=${matchEnded}, questionActive=${questionActive}, questionWaitingForActivation=${questionWaitingForActivation}`);
         return;
     }
     
@@ -138,7 +143,7 @@ function askNewQuestion() {
     currentQuestion = QUESTIONS[currentQuestionIndex % QUESTIONS.length];
     currentQuestionIndex++;
     
-    questionActive = true;
+    questionWaitingForActivation = true; // Commencer la période d'attente
     playersAnsweredCurrentQuestion.clear(); // Réinitialiser la liste des joueurs qui ont répondu
     
     log.question(`Nouvelle question: ${currentQuestion.question}`);
@@ -151,25 +156,41 @@ function askNewQuestion() {
         question: currentQuestion.question,
         options: currentQuestion.options,
         image: currentQuestion.image,
-        timer: QUESTION_TIMER / 1000 // Convertir en secondes
+        timer: (QUESTION_ACTIVATION_DELAY + QUESTION_TIMER) / 1000 // Convertir en secondes (délai + timer)
     };
     
     log.question(`Envoi de la question à Godot: ${JSON.stringify(questionMessage)}`);
     broadcastToGodot(questionMessage);
     
-    // Démarrer le timer
-    questionTimer = setTimeout(() => {
-        log.question(`Timer expiré pour la question: ${currentQuestion.question}. Début de la période de grâce de ${GRACE_PERIOD / 1000}s.`);
+    // Attendre 7 secondes avant d'activer la question pour compenser la latence TikTok
+    setTimeout(() => {
+        if (matchEnded || !questionWaitingForActivation) {
+            log.question("Question annulée pendant la période d'attente");
+            return;
+        }
         
-        // Attendre la fin de la période de grâce avant de terminer la question
-        setTimeout(() => {
-            log.question("Période de grâce terminée. Finalisation de la question.");
-            endQuestion();
-        }, GRACE_PERIOD);
+        questionWaitingForActivation = false;
+        questionActive = true; // Maintenant la question est active et accepte les réponses
+        
+        log.question(`Question activée après ${QUESTION_ACTIVATION_DELAY / 1000}s de délai. Début de la période de réponses de ${QUESTION_TIMER / 1000}s.`);
+        
+        // Démarrer le timer pour la période de réponses
+        questionTimer = setTimeout(() => {
+            log.question(`Timer expiré pour la question: ${currentQuestion.question}. Début de la période de grâce de ${GRACE_PERIOD / 1000}s.`);
+            
+            // Attendre la fin de la période de grâce avant de terminer la question
+            setTimeout(() => {
+                log.question("Période de grâce terminée. Finalisation de la question.");
+                endQuestion();
+            }, GRACE_PERIOD);
 
-    }, QUESTION_TIMER);
+        }, QUESTION_TIMER);
+        
+        log.question(`Timer de réponses démarré pour ${QUESTION_TIMER}ms`);
+        
+    }, QUESTION_ACTIVATION_DELAY);
     
-    log.question(`Timer démarré pour ${QUESTION_TIMER}ms`);
+    log.question(`Question envoyée. Délai d'activation de ${QUESTION_ACTIVATION_DELAY}ms avant d'accepter les réponses.`);
 }
 
 // Fonction pour terminer la question
@@ -296,8 +317,8 @@ tiktokLiveConnection.on('chat', data => {
     const username = data.uniqueId;
     const comment = data.comment.trim();
     
-    // Si une question est active, traiter la réponse
-    if (questionActive && currentQuestion) {
+    // Si une question est active ET pas en attente d'activation, traiter la réponse
+    if (questionActive && !questionWaitingForActivation && currentQuestion) {
         // Créer le joueur s'il n'existe pas (peu importe la réponse)
         if (!players.has(username)) {
             log.player(`Nouveau joueur: ${username}`);
@@ -396,6 +417,41 @@ tiktokLiveConnection.on('chat', data => {
             log.info(`${username}: ${comment} (mauvaise réponse - pas de point)`);
         }
         return; // Ne pas traiter les réponses comme des commentaires normaux
+    }
+    
+    // Si une question est en attente d'activation, ignorer les réponses mais créer les joueurs
+    if (questionWaitingForActivation && currentQuestion) {
+        // Créer le joueur s'il n'existe pas
+        if (!players.has(username)) {
+            log.player(`Nouveau joueur (question en attente): ${username}`);
+            players.set(username, {
+                profilePic: data.profilePictureUrl,
+                points: 0,
+                currentLevel: 1,
+                lastComment: Date.now()
+            });
+            
+            broadcastToGodot({
+                type: "new_player",
+                user: username,
+                profilePic: data.profilePictureUrl,
+                points: 0,
+                currentLevel: 1
+            });
+        } else {
+            // Joueur existe déjà, juste mettre à jour le lastComment
+            const playerData = players.get(username);
+            playerData.lastComment = Date.now();
+        }
+        
+        // Vérifier si c'est une réponse valide (A, B, C, D) et l'ignorer pendant l'attente
+        const normalizedComment = comment.toUpperCase().trim();
+        if (['A', 'B', 'C', 'D'].includes(normalizedComment)) {
+            log.info(`${username}: ${comment} (réponse ignorée - question en attente d'activation)`);
+        } else {
+            log.info(`${username}: ${comment} (commentaire ignoré - question en attente d'activation)`);
+        }
+        return; // Ne pas traiter comme des commentaires normaux
     }
     
     // Si pas de question active, créer le joueur avec 0 points
