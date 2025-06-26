@@ -1,0 +1,153 @@
+[gd_scene load_steps=4 format=3 uid="uid://mvyqy2qh3hxe"]
+
+[ext_resource type="Script" uid="uid://ydcc6qvinxjp" path="res://scripts/winner_popup.gd" id="1_winner"]
+[ext_resource type="Texture2D" uid="uid://c578ej7qnfgvm" path="res://assets/crown.png" id="2_1nknc"]
+[ext_resource type="Texture2D" uid="uid://cf4bsxy1xh4ec" path="res://assets/winner_im.png" id="2_f4xkb"]
+
+[node name="WinnerPopup" type="Control"]
+z_index = 1000
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 4.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_winner")
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -317.0
+offset_right = 210.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = -12.0
+offset_top = -70.0
+offset_right = 408.0
+offset_bottom = 470.0
+scale = Vector2(1.065, 1.065)
+texture = ExtResource("2_f4xkb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -24.0
+offset_right = -8.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="WinnerLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.470076, 0.470076, 0.470076, 1)
+theme_override_font_sizes/font_size = 32
+text = "TOP 3 PLAYERS"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="SecondPlace" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="ProfilePic2" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer/SecondPlace"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="UsernameLabel2" type="Label" parent="Panel/VBoxContainer/HBoxContainer/SecondPlace"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "2nd Place"
+horizontal_alignment = 1
+
+[node name="PointsLabel2" type="Label" parent="Panel/VBoxContainer/HBoxContainer/SecondPlace"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Points: 0"
+horizontal_alignment = 1
+
+[node name="FirstPlace" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="ProfilePic1" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer/FirstPlace"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer/FirstPlace/ProfilePic1"]
+layout_mode = 0
+offset_left = -18.0
+offset_top = 20.0
+offset_right = 753.0
+offset_bottom = 486.0
+rotation = -0.593412
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("2_1nknc")
+
+[node name="UsernameLabel1" type="Label" parent="Panel/VBoxContainer/HBoxContainer/FirstPlace"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "1st Place"
+horizontal_alignment = 1
+
+[node name="PointsLabel1" type="Label" parent="Panel/VBoxContainer/HBoxContainer/FirstPlace"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Points: 0"
+horizontal_alignment = 1
+
+[node name="ThirdPlace" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="ProfilePic3" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer/ThirdPlace"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="UsernameLabel3" type="Label" parent="Panel/VBoxContainer/HBoxContainer/ThirdPlace"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "3rd Place"
+horizontal_alignment = 1
+
+[node name="PointsLabel3" type="Label" parent="Panel/VBoxContainer/HBoxContainer/ThirdPlace"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Points: 0"
+horizontal_alignment = 1

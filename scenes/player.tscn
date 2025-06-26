@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://dawcxst5kmvnp"]
+
+[ext_resource type="Script" uid="uid://bmtevo3wnsort" path="res://scripts/player.gd" id="1_h1t8o"]
+[ext_resource type="Texture2D" uid="uid://cl43vfk3346q4" path="res://assets/profile pic.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://c35xlc2of0wor" path="res://assets/Black-Square-Frame-Transparent-Free-PNG.png" id="3_qhqgy"]
+
+[node name="player" type="Node2D"]
+z_index = 1
+scale = Vector2(0.72, 0.72)
+script = ExtResource("1_h1t8o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.875, 0.875)
+texture = ExtResource("2_qhqgy")
+
+[node name="TextureRect" type="TextureRect" parent="Sprite2D"]
+offset_left = -55.5556
+offset_top = -55.5556
+offset_right = 584.444
+offset_bottom = 583.444
+scale = Vector2(0.178, 0.178)
+texture = ExtResource("3_qhqgy")
+
+[node name="PointsLabel" type="Label" parent="Sprite2D"]
+offset_left = -54.2937
+offset_top = -10.8341
+offset_right = 7.70631
+offset_bottom = 59.1659
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 51
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

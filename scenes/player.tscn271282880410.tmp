@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dawcxst5kmvnp"]
+
+[ext_resource type="Script" uid="uid://bmtevo3wnsort" path="res://scripts/player.gd" id="1_h1t8o"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_3vyb7"]
+
+[node name="player" type="Node2D"]
+script = ExtResource("1_h1t8o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(55, 45)
+texture = SubResource("ImageTexture_3vyb7")
+
+[node name="PointsLabel" type="Label" parent="."]
+offset_right = 43.0
+offset_bottom = 32.0
+text = "0"

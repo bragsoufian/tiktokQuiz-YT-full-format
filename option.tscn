@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://bml0585yoyx6m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ndaot"]
+
+[node name="OptionA" type="Button"]
+offset_left = 47.0
+offset_top = 210.0
+offset_right = 607.0
+offset_bottom = 241.0
+scale = Vector2(0.432651, 1.49839)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.24533
+offset_top = 5.33905
+offset_right = 102.245
+offset_bottom = 28.3391
+scale = Vector2(2.71669, 0.925359)
+text = "A - Option A"
+label_settings = SubResource("LabelSettings_ndaot")
+horizontal_alignment = 1
+vertical_alignment = 1
