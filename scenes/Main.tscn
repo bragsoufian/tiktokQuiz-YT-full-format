@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cqnqw3mij2si3"]
 
-[ext_resource type="Texture2D" uid="uid://cg3kcmas202yf" path="res://assets/france.png" id="1_c01mt"]
+[ext_resource type="Texture2D" uid="uid://ck22sukwgu5pu" path="res://assets/1 - 4.png" id="1_c01mt"]
 [ext_resource type="Script" uid="uid://dj3d341tsfmsx" path="res://scripts/game_manager.gd" id="1_rtedj"]
 [ext_resource type="PackedScene" uid="uid://bw64pycb751fj" path="res://scenes/level.tscn" id="2_rtedj"]
 [ext_resource type="PackedScene" uid="uid://dawcxst5kmvnp" path="res://scenes/player.tscn" id="3_0bbpv"]
@@ -34,31 +34,31 @@ offset_bottom = 2389.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Level1" parent="GameManager/Grid" instance=ExtResource("2_rtedj")]
-position = Vector2(609, 1167)
+position = Vector2(643.001, 1560)
 
 [node name="player" parent="GameManager/Grid/Level1" instance=ExtResource("3_0bbpv")]
-position = Vector2(176.001, -216)
+position = Vector2(298, -503)
 
 [node name="Level2" parent="GameManager/Grid" instance=ExtResource("2_rtedj")]
-position = Vector2(611, 1263)
+position = Vector2(643.001, 1644)
 
 [node name="Level3" parent="GameManager/Grid" instance=ExtResource("2_rtedj")]
-position = Vector2(613, 1360)
+position = Vector2(644.001, 1729)
 
 [node name="Level4" parent="GameManager/Grid" instance=ExtResource("2_rtedj")]
-position = Vector2(612, 1781)
+position = Vector2(643, 1815)
 
 [node name="Level5" parent="GameManager/Grid" instance=ExtResource("2_rtedj")]
-position = Vector2(612, 1878)
+position = Vector2(645, 1899)
 
 [node name="Level6" parent="GameManager/Grid" instance=ExtResource("2_rtedj")]
-position = Vector2(609, 1974)
+position = Vector2(643, 1982)
 
 [node name="QuestionUI" parent="." instance=ExtResource("3_vcsgt")]
-offset_left = 356.0
-offset_top = 522.0
-offset_right = 356.0
-offset_bottom = 522.0
+offset_left = 359.0
+offset_top = 295.0
+offset_right = 359.0
+offset_bottom = 295.0
 
 [node name="ReadyScreen" type="Control" parent="."]
 visible = false
@@ -66,8 +66,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -9.0
-offset_bottom = -9.0
+offset_top = -52.0
+offset_bottom = -52.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -77,10 +77,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -160.0
-offset_top = -32.0
-offset_right = 919.0
-offset_bottom = 1047.0
+offset_left = -157.0
+offset_top = -504.0
+offset_right = 922.0
+offset_bottom = 1169.0
 grow_horizontal = 2
 grow_vertical = 2
 

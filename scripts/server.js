@@ -10,7 +10,7 @@ const path = require('path');
 //cash4killz
 //windpress
 //valorantesports
-const tiktokUsername = 'windpress';
+const tiktokUsername = 'syminofr1';
 const wsServer = new WebSocket.Server({ port: 8080 });
 
 // Configuration du jeu
@@ -21,7 +21,7 @@ const GRACE_PERIOD = 2000; // 2 secondes de grâce pour les réponses tardives
 
 // Définition des seuils pour chaque niveau
 const LEVEL_THRESHOLDS = [
-    2,    // Niveau 1 → 2
+    1,    // Niveau 1 → 2
     4,    // Niveau 2 → 3
     6,    // Niveau 3 → 4
     7,    // Niveau 4 → 5
