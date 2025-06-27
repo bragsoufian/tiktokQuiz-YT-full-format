@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bw64pycb751fj" path="res://scenes/level.tscn" id="2_rtedj"]
 [ext_resource type="PackedScene" uid="uid://dawcxst5kmvnp" path="res://scenes/player.tscn" id="3_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://cr2bv346s7nh6" path="res://scenes/question_ui.tscn" id="3_vcsgt"]
-[ext_resource type="Texture2D" uid="uid://bo8palbtmjgbn" path="res://assets/pngtree-are-you-ready-banner-png-image_6315625.png" id="6_c01mt"]
+[ext_resource type="Texture2D" uid="uid://bfs7ytnewnekx" path="res://assets/ready_goo-removebg-preview.png" id="6_c01mt"]
 
 [node name="Main" type="Node2D"]
 
@@ -34,31 +34,31 @@ offset_bottom = 2389.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Level1" parent="GameManager/Grid" instance=ExtResource("2_rtedj")]
-position = Vector2(643.001, 1560)
+position = Vector2(643.001, 1559)
 
 [node name="player" parent="GameManager/Grid/Level1" instance=ExtResource("3_0bbpv")]
 position = Vector2(298, -503)
 
 [node name="Level2" parent="GameManager/Grid" instance=ExtResource("2_rtedj")]
-position = Vector2(643.001, 1644)
+position = Vector2(643.001, 1643)
 
 [node name="Level3" parent="GameManager/Grid" instance=ExtResource("2_rtedj")]
-position = Vector2(644.001, 1729)
+position = Vector2(644.001, 1728)
 
 [node name="Level4" parent="GameManager/Grid" instance=ExtResource("2_rtedj")]
-position = Vector2(643, 1815)
+position = Vector2(643, 1816)
 
 [node name="Level5" parent="GameManager/Grid" instance=ExtResource("2_rtedj")]
-position = Vector2(645, 1899)
+position = Vector2(645, 1898)
 
 [node name="Level6" parent="GameManager/Grid" instance=ExtResource("2_rtedj")]
-position = Vector2(643, 1982)
+position = Vector2(643, 1981)
 
 [node name="QuestionUI" parent="." instance=ExtResource("3_vcsgt")]
-offset_left = 359.0
-offset_top = 295.0
-offset_right = 359.0
-offset_bottom = 295.0
+offset_left = 362.0
+offset_top = 260.0
+offset_right = 362.0
+offset_bottom = 260.0
 
 [node name="ReadyScreen" type="Control" parent="."]
 visible = false

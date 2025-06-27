@@ -1,61 +1,61 @@
 [
     {
         "question": "Quelle est la capitale de la France?",
-        "options": ["Paris", "Lyon", "Marseille", "Bordeaux"],
+        "options": ["Paris", "Lyon", "Marseille"],
         "correctAnswer": "A",
         "image": null
     },
     {
         "question": "Quel est le plus grand océan du monde?",
-        "options": ["Atlantique", "Pacifique", "Indien", "Arctique"],
+        "options": ["Atlantique", "Pacifique", "Indien"],
         "correctAnswer": "B",
         "image": null
     },
     {
         "question": "Combien de planètes dans notre système solaire?",
-        "options": ["7", "8", "9", "10"],
+        "options": ["7", "8", "9"],
         "correctAnswer": "B",
         "image": null
     },
     {
         "question": "Quel est l'animal le plus rapide du monde?",
-        "options": ["Guépard", "Faucon pèlerin", "Antilope", "Lion"],
+        "options": ["Guépard", "Faucon pèlerin", "Antilope"],
         "correctAnswer": "B",
         "image": null
     },
     {
         "question": "Quel est le plus grand pays du monde?",
-        "options": ["Chine", "États-Unis", "Canada", "Russie"],
-        "correctAnswer": "D",
+        "options": ["Chine", "États-Unis", "Russie"],
+        "correctAnswer": "C",
         "image": null
     },
     {
         "question": "Quel est le nom du président français actuel?",
-        "options": ["Emmanuel Macron", "François Hollande", "Nicolas Sarkozy", "Jacques Chirac"],
+        "options": ["Emmanuel Macron", "François Hollande", "Nicolas Sarkozy"],
         "correctAnswer": "A",
         "image": null
     },
     {
         "question": "Quel est le sport le plus populaire au monde?",
-        "options": ["Basketball", "Football", "Tennis", "Baseball"],
+        "options": ["Basketball", "Football", "Tennis"],
         "correctAnswer": "B",
         "image": null
     },
     {
         "question": "Quel est le plus grand désert du monde?",
-        "options": ["Sahara", "Gobi", "Antarctique", "Kalahari"],
+        "options": ["Sahara", "Gobi", "Antarctique"],
         "correctAnswer": "A",
         "image": null
     },
     {
         "question": "Combien de couleurs y a-t-il dans un arc-en-ciel?",
-        "options": ["5", "6", "7", "8"],
+        "options": ["5", "6", "7"],
         "correctAnswer": "C",
         "image": null
     },
     {
         "question": "Quel est le plus grand mammifère terrestre?",
-        "options": ["Éléphant d'Afrique", "Girafe", "Rhinocéros", "Hippopotame"],
+        "options": ["Éléphant d'Afrique", "Girafe", "Rhinocéros"],
         "correctAnswer": "A",
         "image": null
     }

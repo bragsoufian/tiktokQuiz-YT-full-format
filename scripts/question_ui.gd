@@ -148,12 +148,11 @@ func show_question(question_data: Dictionary):
 	var option_a = panel_node.get_node_or_null("OptionA")
 	var option_b = panel_node.get_node_or_null("OptionB")
 	var option_c = panel_node.get_node_or_null("OptionC")
-	var option_d = panel_node.get_node_or_null("OptionD")
 	
-	if option_a and option_b and option_c and option_d:
+	if option_a and option_b and option_c:
 		print("✅ Utilisation des nœuds d'options existants")
 	else:
-		print("⚠️ Nœuds d'options manquants - veuillez créer OptionA, OptionB, OptionC, OptionD dans Panel")
+		print("⚠️ Nœuds d'options manquants - veuillez créer OptionA, OptionB, OptionC dans Panel")
 		return
 	
 	# Mettre à jour le texte des options
@@ -165,9 +164,6 @@ func show_question(question_data: Dictionary):
 	
 	if options.size() > 2:
 		_update_option_text(option_c, "" + options[2])
-	
-	if options.size() > 3:
-		_update_option_text(option_d, "" + options[3])
 	
 	print("✅ Options affichées: ", options)
 	
@@ -328,9 +324,6 @@ func show_correct_answer():
 		"C":
 			correct_button = panel.get_node_or_null("OptionC")
 			button_name = "OptionC"
-		"D":
-			correct_button = panel.get_node_or_null("OptionD")
-			button_name = "OptionD"
 	
 	if correct_button:
 		# Find the Label inside the button and make it green
@@ -382,13 +375,7 @@ func _reset_button_colors():
 		if label:
 			label.modulate = Color.WHITE
 	
-	var option_d = panel.get_node_or_null("OptionD")
-	if option_d:
-		var label = option_d.get_node_or_null("Label")
-		if label:
-			label.modulate = Color.WHITE
-	
-	print("✅ Couleurs des labels des boutons réinitialisées") 
+	print("✅ Couleurs des labels des boutons réinitialisées")
 
 func load_correct_answer_sound(sound_path: String):
 	"""Charge le son de bonne réponse depuis le chemin fourni"""

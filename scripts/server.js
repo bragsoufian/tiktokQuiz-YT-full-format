@@ -11,7 +11,7 @@ const path = require('path');
 //windpress
 //user7165753005592
 //valorantesports
-const tiktokUsername = 'user7165753005592';
+const tiktokUsername = 'cash4killz';
 const wsServer = new WebSocket.Server({ port: 8080 });
 
 // Configuration du jeu
@@ -147,7 +147,7 @@ function askNewQuestion() {
     playersAnsweredCurrentQuestion.clear(); // Réinitialiser la liste des joueurs qui ont répondu
     
     log.question(`Nouvelle question: ${currentQuestion.question}`);
-    log.question(`Options: A) ${currentQuestion.options[0]}, B) ${currentQuestion.options[1]}, C) ${currentQuestion.options[2]}, D) ${currentQuestion.options[3]}`);
+    log.question(`Options: A) ${currentQuestion.options[0]}, B) ${currentQuestion.options[1]}, C) ${currentQuestion.options[2]}`);
     log.question(`Réponse correcte: ${currentQuestion.correctAnswer} - ${currentQuestion.options[parseInt(currentQuestion.correctAnswer.charCodeAt(0) - 65)]}`);
     
     // Envoyer la question à Godot
@@ -244,8 +244,8 @@ function validateAnswer(username, answer) {
     // Normaliser la réponse (A, a, etc.)
     const normalizedAnswer = answer.toUpperCase().trim();
     
-    // Accepter seulement A, B, C, D comme réponses valides
-    if (!['A', 'B', 'C', 'D'].includes(normalizedAnswer)) {
+    // Accepter seulement A, B, C comme réponses valides
+    if (!['A', 'B', 'C'].includes(normalizedAnswer)) {
         return false;
     }
     
@@ -341,11 +341,11 @@ tiktokLiveConnection.on('chat', data => {
             return; // Ne pas donner de point au premier commentaire
         }
         
-        // Vérifier si c'est une réponse valide (A, B, C, D)
+        // Vérifier si c'est une réponse valide (A, B, C)
         const normalizedComment = comment.toUpperCase().trim();
-        if (!['A', 'B', 'C', 'D'].includes(normalizedComment)) {
+        if (!['A', 'B', 'C'].includes(normalizedComment)) {
             // Commentaire ignoré - pas une réponse valide
-            log.info(`${username}: ${comment} (commentaire ignoré - pas A, B, C, D)`);
+            log.info(`${username}: ${comment} (commentaire ignoré - pas A, B, C)`);
             return;
         }
         
@@ -444,9 +444,9 @@ tiktokLiveConnection.on('chat', data => {
             playerData.lastComment = Date.now();
         }
         
-        // Vérifier si c'est une réponse valide (A, B, C, D) et l'ignorer pendant l'attente
+        // Vérifier si c'est une réponse valide (A, B, C) et l'ignorer pendant l'attente
         const normalizedComment = comment.toUpperCase().trim();
-        if (['A', 'B', 'C', 'D'].includes(normalizedComment)) {
+        if (['A', 'B', 'C'].includes(normalizedComment)) {
             log.info(`${username}: ${comment} (réponse ignorée - question en attente d'activation)`);
         } else {
             log.info(`${username}: ${comment} (commentaire ignoré - question en attente d'activation)`);

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cr2bv346s7nh6"]
 
 [ext_resource type="Script" uid="uid://bkq3gq3gfn071" path="res://scripts/question_ui.gd" id="1_question"]
-[ext_resource type="Texture2D" uid="uid://ckdiy44e0jxte" path="res://assets/output-onlinepngtools (2).png" id="2_a3tft"]
+[ext_resource type="Texture2D" uid="uid://dwnshrgba2agn" path="res://assets/Q&A3.png" id="2_a3tft"]
 [ext_resource type="PackedScene" uid="uid://cm806a21b6gen" path="res://scenes/option.tscn" id="3_a3tft"]
 
 [sub_resource type="FontFile" id="FontFile_a3tft"]
@@ -690,7 +690,8 @@ offset_top = 27.0
 offset_right = 643.0
 offset_bottom = 181.0
 scale = Vector2(0.826087, 0.826087)
-theme_override_colors/font_shadow_color = Color(0.31802, 0.31802, 0.31802, 1)
+theme_override_colors/font_color = Color(0.942823, 0.942823, 0.942823, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontFile_a3tft")
 theme_override_font_sizes/font_size = 30
@@ -703,10 +704,11 @@ uppercase = true
 [node name="TimerBar" type="ProgressBar" parent="Panel"]
 modulate = Color(1, 0, 0, 1)
 layout_mode = 2
-offset_left = 114.0
-offset_top = 180.435
-offset_right = 492.0
-offset_bottom = 197.435
+offset_left = 136.739
+offset_top = 358.608
+offset_right = 308.739
+offset_bottom = 375.608
+rotation = -1.5708
 scale = Vector2(1, 0.782609)
 value = 100.0
 show_percentage = false
@@ -722,28 +724,21 @@ horizontal_alignment = 1
 
 [node name="OptionA" parent="Panel" instance=ExtResource("3_a3tft")]
 layout_mode = 0
-offset_left = 83.0
-offset_top = 227.174
-offset_right = 206.0
-offset_bottom = 258.174
+offset_left = 238.0
+offset_top = 195.652
+offset_right = 361.0
+offset_bottom = 226.652
 
 [node name="OptionB" parent="Panel" instance=ExtResource("3_a3tft")]
 layout_mode = 0
-offset_left = 354.0
-offset_top = 227.174
-offset_right = 525.115
-offset_bottom = 258.174
+offset_left = 239.0
+offset_top = 258.695
+offset_right = 410.115
+offset_bottom = 289.695
 
 [node name="OptionC" parent="Panel" instance=ExtResource("3_a3tft")]
 layout_mode = 0
-offset_left = 83.0
-offset_top = 291.304
-offset_right = 254.115
-offset_bottom = 322.304
-
-[node name="OptionD" parent="Panel" instance=ExtResource("3_a3tft")]
-layout_mode = 0
-offset_left = 355.0
-offset_top = 290.217
-offset_right = 526.115
-offset_bottom = 321.217
+offset_left = 240.0
+offset_top = 322.826
+offset_right = 411.115
+offset_bottom = 353.826
