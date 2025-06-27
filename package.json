@@ -8,10 +8,16 @@
     "dev": "node scripts/server.js"
   },
   "dependencies": {
+    "say": "^0.16.0",
     "tiktok-live-connector": "^1.0.0",
     "ws": "^8.0.0"
   },
-  "keywords": ["tiktok", "quiz", "live", "websocket"],
+  "keywords": [
+    "tiktok",
+    "quiz",
+    "live",
+    "websocket"
+  ],
   "author": "bragsoufian",
   "license": "MIT"
-} 
+}

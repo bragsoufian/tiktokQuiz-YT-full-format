@@ -2,6 +2,7 @@ const { WebcastPushConnection } = require('tiktok-live-connector');
 const WebSocket = require('ws');
 const fs = require('fs');
 const path = require('path');
+const say = require('say'); // Added for TTS
 
 //loochytv
 //camyslive
@@ -161,6 +162,15 @@ function askNewQuestion() {
     
     log.question(`Envoi de la question à Godot: ${JSON.stringify(questionMessage)}`);
     broadcastToGodot(questionMessage);
+
+    // Use Windows TTS to read the question aloud
+    say.speak(currentQuestion.question, 'Microsoft David Desktop', 1.0, (err) => {
+        if (err) {
+            log.error('TTS error: ' + err);
+        } else {
+            log.info('Question spoken aloud.');
+        }
+    });
     
     // Attendre 7 secondes avant d'activer la question pour compenser la latence TikTok
     setTimeout(() => {
