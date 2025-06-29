@@ -51,3 +51,17 @@ jspm_packages/
 
 # dotenv environment variables file
 .env
+
+# Ignore Azure TTS audio and cache
+tts_audio/
+
+# Builds et exécutables
+*.exe
+*.pck
+*.zip
+
+# Fichiers de test Node (optionnel)
+test_*.js
+
+# Fichiers temporaires
+*.import

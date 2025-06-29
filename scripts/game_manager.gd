@@ -113,6 +113,8 @@ func _handle_websocket_message(message: Dictionary):
 			_handle_player_remove(message)
 		"new_question":
 			_handle_new_question(message)
+		"start_timer":
+			_handle_start_timer(message)
 		"question_ended":
 			_handle_question_ended(message)
 		"correct_answer":
@@ -458,3 +460,11 @@ func _setup_ready_audio():
 	ready_sound_player.volume_db = -10
 	ready_sound_player.bus = "Master"
 	add_child(ready_sound_player)
+
+func _handle_start_timer(message: Dictionary):
+	if question_ui:
+		var timer_duration = message.get("timer", 5.0)  # Default to 5 seconds if not specified
+		question_ui.start_timer(timer_duration)
+		print("⏱️ Timer démarré avec ", timer_duration, " secondes")
+	else:
+		print("❌ QuestionUI non trouvé!")

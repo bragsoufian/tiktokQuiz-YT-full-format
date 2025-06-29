@@ -2,7 +2,7 @@ const { WebcastPushConnection } = require('tiktok-live-connector');
 const WebSocket = require('ws');
 const fs = require('fs');
 const path = require('path');
-const say = require('say'); // Added for TTS
+const AzureTTS = require('./azure_tts'); // Import Azure TTS
 
 //loochytv
 //camyslive
@@ -12,7 +12,7 @@ const say = require('say'); // Added for TTS
 //windpress
 //user7165753005592
 //valorantesports
-const tiktokUsername = 'cash4killz';
+const tiktokUsername = 'windpress';
 const wsServer = new WebSocket.Server({ port: 8080 });
 
 // Configuration du jeu
@@ -54,6 +54,9 @@ let testPlayerInterval = null;
 let commentCount = 0;
 let restartTimeout = null;
 let currentQuestionIndex = 0;
+
+// Azure TTS instance
+let azureTTS = null;
 
 // Fonction pour les logs colorés avec timestamps
 const log = {
@@ -134,7 +137,7 @@ function stopQuestionCycle() {
 }
 
 // Fonction pour poser une nouvelle question
-function askNewQuestion() {
+async function askNewQuestion() {
     if (matchEnded || questionActive || questionWaitingForActivation) {
         log.question(`Question non posée: matchEnded=${matchEnded}, questionActive=${questionActive}, questionWaitingForActivation=${questionWaitingForActivation}`);
         return;
@@ -151,56 +154,64 @@ function askNewQuestion() {
     log.question(`Options: A) ${currentQuestion.options[0]}, B) ${currentQuestion.options[1]}, C) ${currentQuestion.options[2]}`);
     log.question(`Réponse correcte: ${currentQuestion.correctAnswer} - ${currentQuestion.options[parseInt(currentQuestion.correctAnswer.charCodeAt(0) - 65)]}`);
     
-    // Envoyer la question à Godot
+    // Envoyer la question à Godot SANS timer (on l'enverra après la lecture TTS)
     const questionMessage = {
         type: "new_question",
         question: currentQuestion.question,
         options: currentQuestion.options,
-        image: currentQuestion.image,
-        timer: (QUESTION_ACTIVATION_DELAY + QUESTION_TIMER) / 1000 // Convertir en secondes (délai + timer)
+        image: currentQuestion.image
+        // Pas de timer ici - il sera envoyé séparément après la lecture TTS
     };
     
-    log.question(`Envoi de la question à Godot: ${JSON.stringify(questionMessage)}`);
+    log.question(`Envoi de la question à Godot (sans timer): ${JSON.stringify(questionMessage)}`);
     broadcastToGodot(questionMessage);
 
-    // Use Windows TTS to read the question aloud
-    say.speak(currentQuestion.question, 'Microsoft David Desktop', 1.0, (err) => {
-        if (err) {
-            log.error('TTS error: ' + err);
-        } else {
-            log.info('Question spoken aloud.');
+    // Use Azure TTS to read the question aloud and wait for it to finish
+    if (azureTTS) {
+        try {
+            log.question('🎤 Début de la lecture TTS de la question...');
+            await azureTTS.speakQuestion(currentQuestion.question, currentQuestionIndex);
+            log.info('✅ Question spoken aloud (Azure TTS).');
+        } catch (err) {
+            log.error('❌ Azure TTS error: ' + err);
         }
-    });
+    }
     
-    // Attendre 7 secondes avant d'activer la question pour compenser la latence TikTok
-    setTimeout(() => {
-        if (matchEnded || !questionWaitingForActivation) {
-            log.question("Question annulée pendant la période d'attente");
-            return;
-        }
+    // Maintenant que la lecture TTS est terminée, activer la question et démarrer le timer
+    log.question('🎯 Lecture TTS terminée. Activation de la question et démarrage du timer...');
+    
+    if (matchEnded || !questionWaitingForActivation) {
+        log.question("Question annulée - match terminé ou question déjà annulée");
+        return;
+    }
+    
+    questionWaitingForActivation = false;
+    questionActive = true; // Maintenant la question est active et accepte les réponses
+    
+    // Envoyer le message pour démarrer le timer dans Godot
+    const startTimerMessage = {
+        type: "start_timer",
+        timer: QUESTION_TIMER / 1000 // Convertir en secondes
+    };
+    
+    log.question(`Envoi du message de démarrage du timer à Godot: ${JSON.stringify(startTimerMessage)}`);
+    broadcastToGodot(startTimerMessage);
+    
+    log.question(`✅ Question activée. Début de la période de réponses de ${QUESTION_TIMER / 1000}s.`);
+    
+    // Démarrer le timer pour la période de réponses
+    questionTimer = setTimeout(() => {
+        log.question(`⏰ Timer expiré pour la question: ${currentQuestion.question}. Début de la période de grâce de ${GRACE_PERIOD / 1000}s.`);
         
-        questionWaitingForActivation = false;
-        questionActive = true; // Maintenant la question est active et accepte les réponses
-        
-        log.question(`Question activée après ${QUESTION_ACTIVATION_DELAY / 1000}s de délai. Début de la période de réponses de ${QUESTION_TIMER / 1000}s.`);
-        
-        // Démarrer le timer pour la période de réponses
-        questionTimer = setTimeout(() => {
-            log.question(`Timer expiré pour la question: ${currentQuestion.question}. Début de la période de grâce de ${GRACE_PERIOD / 1000}s.`);
-            
-            // Attendre la fin de la période de grâce avant de terminer la question
-            setTimeout(() => {
-                log.question("Période de grâce terminée. Finalisation de la question.");
-                endQuestion();
-            }, GRACE_PERIOD);
+        // Attendre la fin de la période de grâce avant de terminer la question
+        setTimeout(() => {
+            log.question("🏁 Période de grâce terminée. Finalisation de la question.");
+            endQuestion();
+        }, GRACE_PERIOD);
 
-        }, QUESTION_TIMER);
-        
-        log.question(`Timer de réponses démarré pour ${QUESTION_TIMER}ms`);
-        
-    }, QUESTION_ACTIVATION_DELAY);
+    }, QUESTION_TIMER);
     
-    log.question(`Question envoyée. Délai d'activation de ${QUESTION_ACTIVATION_DELAY}ms avant d'accepter les réponses.`);
+    log.question(`⏱️ Timer de réponses démarré pour ${QUESTION_TIMER}ms`);
 }
 
 // Fonction pour terminer la question
@@ -645,3 +656,22 @@ function stopTestPlayer() {
         testPlayerInterval = null;
     }
 }
+
+// Initialize Azure TTS
+(async () => {
+    try {
+        azureTTS = new AzureTTS();
+        log.success('Azure TTS initialized and ready to speak!');
+    } catch (error) {
+        log.error('Failed to initialize Azure TTS:', error);
+    }
+})();
+
+// Cleanup on process exit
+process.on('SIGINT', () => {
+    log.system('Shutting down server...');
+    if (azureTTS) {
+        azureTTS.cleanup();
+    }
+    process.exit(0);
+});

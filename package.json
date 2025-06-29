@@ -8,7 +8,9 @@
     "dev": "node scripts/server.js"
   },
   "dependencies": {
-    "say": "^0.16.0",
+    "microsoft-cognitiveservices-speech-sdk": "^1.44.1",
+    "music-metadata": "^11.4.0",
+    "play-sound": "^1.1.6",
     "tiktok-live-connector": "^1.0.0",
     "ws": "^8.0.0"
   },

@@ -167,24 +167,17 @@ func show_question(question_data: Dictionary):
 	
 	print("✅ Options affichées: ", options)
 	
-	# Démarrer le timer
-	var timer_duration = question_data.timer
-	print("⏰ Configuration du timer: ", timer_duration, " secondes")
-	timer_bar.max_value = timer_duration
-	timer_bar.value = timer_duration
-	timer_bar.visible = true  # S'assurer que la barre est visible
+	# NE PAS démarrer le timer ici - il sera démarré séparément après la lecture TTS
+	print("⏰ Timer NON démarré - en attente de la fin de la lecture TTS")
 	
-
+	# Configurer la barre de progression mais ne pas la démarrer
+	timer_bar.visible = true
+	timer_bar.value = 0  # Commencer à 0
+	timer_bar.max_value = 5  # Valeur par défaut, sera mise à jour dans start_timer
 	
-	question_timer.wait_time = timer_duration
-	question_timer.start()
-	
-	# Démarrer le son du timer
-	_start_timer_sound()
-	
-	# S'assurer que le label du timer est visible
+	# S'assurer que le label du timer est visible mais vide
 	timer_label.visible = true
-	timer_label.text = str(int(timer_duration)) + "s"
+	timer_label.text = "En attente..."
 	
 	# Afficher l'interface
 	show()
@@ -215,7 +208,33 @@ func show_question(question_data: Dictionary):
 	print("📊 Z-index actuel: ", z_index)
 	
 	print("❓ Question affichée: ", question_data.question)
-	print("⏰ Timer démarré avec ", timer_duration, " secondes")
+	print("⏰ Timer en attente de démarrage...")
+	print("📊 Barre de progression: max=", timer_bar.max_value, " value=", timer_bar.value)
+
+func start_timer(timer_duration: float):
+	"""Démarre le timer après la fin de la lecture TTS"""
+	if not is_question_active:
+		print("❌ ERREUR: Aucune question active pour démarrer le timer")
+		return
+	
+	print("⏱️ Démarrage du timer avec ", timer_duration, " secondes")
+	
+	# Configurer et démarrer le timer
+	timer_bar.max_value = timer_duration
+	timer_bar.value = timer_duration
+	timer_bar.visible = true
+	
+	question_timer.wait_time = timer_duration
+	question_timer.start()
+	
+	# Démarrer le son du timer
+	_start_timer_sound()
+	
+	# Mettre à jour le label du timer
+	timer_label.visible = true
+	timer_label.text = str(int(timer_duration)) + "s"
+	
+	print("✅ Timer démarré avec ", timer_duration, " secondes")
 	print("📊 Barre de progression: max=", timer_bar.max_value, " value=", timer_bar.value)
 
 func _start_timer_sound():
