@@ -12,7 +12,7 @@ const AzureTTS = require('./azure_tts'); // Import Azure TTS
 //windpress
 //user7165753005592
 //valorantesports
-const tiktokUsername = 'user7165753005592';
+const tiktokUsername = 'mpx_player';
 const wsServer = new WebSocket.Server({ port: 8080 });
 
 // Configuration du jeu
@@ -25,10 +25,8 @@ const QUESTION_ACTIVATION_DELAY = 3000; // 7 secondes de délai avant d'accepter
 // Définition des seuils pour chaque niveau
 const LEVEL_THRESHOLDS = [
     1,    // Niveau 1 → 2
-    4,    // Niveau 2 → 3
-    10,    // Niveau 3 → 4
-    15,    // Niveau 4 → 5
-    20     // Niveau 5 → 6
+    2,    // Niveau 2 → 3
+
 ];
 
 // Configuration
@@ -88,6 +86,19 @@ try {
         }
     ];
 }
+
+// Afficher la configuration des niveaux au démarrage
+const maxLevel = LEVEL_THRESHOLDS.length + 1;
+log.system(`🏆 Configuration des niveaux:`);
+for (let i = 1; i <= maxLevel; i++) {
+    const minPoints = getMinPointsForLevel(i);
+    if (i === maxLevel) {
+        log.system(`   Niveau ${i}: ${minPoints} points minimum (NIVEAU GAGNANT)`);
+    } else {
+        log.system(`   Niveau ${i}: ${minPoints} points minimum`);
+    }
+}
+log.system(`🎯 Pour gagner: Atteindre le niveau ${maxLevel}`);
 
 // Fonction pour réinitialiser l'état du jeu
 function resetGameState() {
@@ -242,6 +253,14 @@ function endQuestion() {
     log.question(`Envoi de la fin de question à Godot: ${JSON.stringify(endQuestionMessage)}`);
     broadcastToGodot(endQuestionMessage);
     
+    // Envoyer le message pour mettre tous les flags en "wait"
+    const waitMessage = {
+        type: "timer_ended"
+    };
+    
+    log.question(`Envoi du message de fin de timer à Godot: ${JSON.stringify(waitMessage)}`);
+    broadcastToGodot(waitMessage);
+    
     currentQuestion = null;
     
     // Programmer la prochaine question après 4 secondes de pause
@@ -320,6 +339,72 @@ tiktokLiveConnection.connect().then(state => {
     log.error(`Erreur de connexion TikTok: ${err}`);
 });
 
+// Gestion des nouveaux membres qui rejoignent le live
+tiktokLiveConnection.on('member', data => {
+    if (matchEnded) return;
+    
+    const username = data.uniqueId;
+    const profilePic = data.profilePictureUrl;
+    
+    // Créer automatiquement le joueur quand il rejoint
+    if (!players.has(username)) {
+        log.player(`Nouveau membre rejoint: ${username}`);
+        players.set(username, {
+            profilePic: profilePic,
+            points: 0,
+            currentLevel: 1,
+            lastComment: Date.now()
+        });
+        
+        // Déterminer le flag initial basé sur l'état du jeu
+        const initialFlag = (questionActive && !questionWaitingForActivation) ? "go" : "wait";
+        
+        broadcastToGodot({
+            type: "new_player",
+            user: username,
+            profilePic: profilePic,
+            points: 0,
+            currentLevel: 1,
+            initialFlag: initialFlag
+        });
+        
+        log.info(`${username} a rejoint le jeu automatiquement (0 points) - Flag initial: ${initialFlag}`);
+    }
+});
+
+// Gestion des autres types de joins (pour s'assurer de ne manquer personne)
+tiktokLiveConnection.on('join', data => {
+    if (matchEnded) return;
+    
+    const username = data.uniqueId;
+    const profilePic = data.profilePictureUrl;
+    
+    // Créer automatiquement le joueur s'il n'existe pas déjà
+    if (!players.has(username)) {
+        log.player(`Nouveau join: ${username}`);
+        players.set(username, {
+            profilePic: profilePic,
+            points: 0,
+            currentLevel: 1,
+            lastComment: Date.now()
+        });
+        
+        // Déterminer le flag initial basé sur l'état du jeu
+        const initialFlag = (questionActive && !questionWaitingForActivation) ? "go" : "wait";
+        
+        broadcastToGodot({
+            type: "new_player",
+            user: username,
+            profilePic: profilePic,
+            points: 0,
+            currentLevel: 1,
+            initialFlag: initialFlag
+        });
+        
+        log.info(`${username} a rejoint le jeu via join event (0 points) - Flag initial: ${initialFlag}`);
+    }
+});
+
 // Fonction pour envoyer des messages à Godot
 function broadcastToGodot(message) {
     wsServer.clients.forEach(client => {
@@ -367,15 +452,19 @@ tiktokLiveConnection.on('chat', data => {
                 lastComment: Date.now()
             });
             
+            // Déterminer le flag initial basé sur l'état du jeu
+            const initialFlag = (questionActive && !questionWaitingForActivation) ? "go" : "wait";
+            
             broadcastToGodot({
                 type: "new_player",
                 user: username,
                 profilePic: data.profilePictureUrl,
                 points: 0,
-                currentLevel: 1
+                currentLevel: 1,
+                initialFlag: initialFlag
             });
             
-            log.info(`${username}: ${comment} (nouveau joueur créé - 0 points)`);
+            log.info(`${username}: ${comment} (nouveau joueur créé - 0 points) - Flag initial: ${initialFlag}`);
             return; // Ne pas donner de point au premier commentaire
         }
         
@@ -416,17 +505,45 @@ tiktokLiveConnection.on('chat', data => {
                 playerData.currentLevel = newLevel;
                 log.success(`${username} monte au niveau ${newLevel}! (${playerData.points} points)`);
                 
-                // Vérifier si le joueur a gagné (niveau 6)
-                if (newLevel === 6) {
+                // Vérifier si le joueur a gagné (niveau maximum basé sur LEVEL_THRESHOLDS)
+                const maxLevel = LEVEL_THRESHOLDS.length + 1; // +1 car le niveau 1 est le niveau de départ
+                if (newLevel === maxLevel) {
                     matchEnded = true;
                     winner = username;
-                    log.success(`🏆 ${username} a gagné le match!`);
+                    log.success(`🏆 ${username} a gagné le match! (Niveau ${maxLevel} atteint)`);
                     stopQuestionCycle();
+                    
+                    // Récupérer les données du gagnant
+                    const winnerData = players.get(username);
+                    
+                    // Trier les joueurs par points pour obtenir le top 3
+                    const sortedPlayers = Array.from(players.entries())
+                        .map(([username, data]) => ({
+                            user: username,
+                            points: data.points,
+                            profilePic: data.profilePic
+                        }))
+                        .sort((a, b) => b.points - a.points);
+                    
+                    // Trouver le deuxième et troisième joueur en ignorant le gagnant
+                    const secondPlace = sortedPlayers.find(p => p.user !== username);
+                    const thirdPlace = sortedPlayers.find(p => p.user !== username && p.user !== secondPlace?.user);
+                    
+                    log.info("📊 Top 3 joueurs:", {
+                        winner: username,
+                        second: secondPlace?.user,
+                        third: thirdPlace?.user
+                    });
+                    
+                    // Envoyer les données du gagnant et du top 3
                     broadcastToGodot({
                         type: "match_ended",
                         winner: username,
                         points: playerData.points,
-                        profilePic: playerData.profilePic
+                        profilePic: winnerData ? winnerData.profilePic : "",
+                        user: username,
+                        second_place: secondPlace || null,
+                        third_place: thirdPlace || null
                     });
                     return;
                 }

@@ -117,6 +117,8 @@ func _handle_websocket_message(message: Dictionary):
 			_handle_question_active()
 		"start_timer":
 			_handle_start_timer(message)
+		"timer_ended":
+			_handle_timer_ended()
 		"question_ended":
 			_handle_question_ended(message)
 		"correct_answer":
@@ -187,18 +189,38 @@ func _create_player(data: Dictionary):
 		print("❌ Niveau non trouvé: Level", level_number)
 
 func _show_winner_popup(player_data: Dictionary):
+	print("🏆 Création de la popup de victoire avec les données: ", player_data)
+	
 	if not player_data.has("winner"):
 		print("❌ Données de gagnant invalides")
 		return
+	
+	# Cacher tous les joueurs pour éviter qu'ils apparaissent au-dessus de la popup
+	for player in players.values():
+		if is_instance_valid(player):
+			player.visible = false
+			print("👤 Joueur caché: ", player.username)
+	
+	# Cacher l'interface des questions si elle existe
+	if question_ui:
+		question_ui.hide_question()
+		print("❓ QuestionUI caché")
 		
 	var popup = winner_popup_scene.instantiate()
+	print("✅ Instance de la popup créée")
 	add_child(popup)
+	print("✅ Popup ajoutée à la scène")
 	
 	# Créer un dictionnaire avec les données nécessaires pour la popup
 	var winner_data = {
 		"winner": player_data.winner,
-		"points": player_data.points if player_data.has("points") else 0
+		"points": player_data.points if player_data.has("points") else 0,
+		"profilePic": player_data.profilePic if player_data.has("profilePic") else "",
+		"second_place": player_data.second_place if player_data.has("second_place") else null,
+		"third_place": player_data.third_place if player_data.has("third_place") else null
 	}
+	
+	print("🏆 Données préparées pour la popup: ", winner_data)
 	
 	# Récupérer l'URL de la photo de profil du joueur gagnant
 	if players.has(player_data.winner):
@@ -228,7 +250,9 @@ func _show_winner_popup(player_data: Dictionary):
 	if sorted_players.size() > 2:
 		winner_data["third_place"] = sorted_players[2]
 	
+	print("🏆 Appel de show_winner sur la popup...")
 	popup.show_winner(winner_data)
+	print("✅ show_winner appelé avec succès")
 	
 	# Marquer le match comme terminé
 	match_ended = true
@@ -416,10 +440,13 @@ func _handle_wrong_answer(message: Dictionary):
 		print("❌ Instance de joueur invalide pour l'animation: ", message.user)
 
 func _handle_match_ended(message: Dictionary):
+	print("🏆 Message match_ended reçu: ", message)
+	
 	if not message.has("winner"):
-		print("❌ Données de fin de match invalides")
+		print("❌ Données de fin de match invalides - pas de winner")
 		return
 		
+	print("✅ Données de fin de match valides, affichage de la popup...")
 	_show_winner_popup(message)
 
 func _handle_show_ready(message: Dictionary):
@@ -470,6 +497,12 @@ func _setup_ready_audio():
 	add_child(ready_sound_player)
 
 func _handle_start_timer(message: Dictionary):
+	# Mettre tous les flags des joueurs en "go" (réponse autorisée) quand le timer démarre
+	for player in players.values():
+		if is_instance_valid(player) and player.has_method("set_flag_to_go"):
+			player.set_flag_to_go()
+			print("🏁 Flag mis en go pour: ", player.username)
+	
 	if question_ui:
 		var timer_duration = message.get("timer", 5.0)  # Default to 5 seconds if not specified
 		question_ui.start_timer(timer_duration)
@@ -478,8 +511,12 @@ func _handle_start_timer(message: Dictionary):
 		print("❌ QuestionUI non trouvé!")
 
 func _handle_question_active():
-	# Mettre tous les flags des joueurs en "go" (réponse autorisée)
+	# Ne pas mettre les flags en go ici - cela sera fait quand le timer démarre
+	print("🎯 Question active - les flags restent en wait jusqu'au démarrage du timer")
+
+func _handle_timer_ended():
+	# Mettre tous les flags des joueurs en "wait" (réponse non autorisée) quand le timer se termine
 	for player in players.values():
-		if is_instance_valid(player) and player.has_method("set_flag_to_go"):
-			player.set_flag_to_go()
-			print("🏁 Flag mis en go pour: ", player.username)
+		if is_instance_valid(player) and player.has_method("set_flag_to_wait"):
+			player.set_flag_to_wait()
+			print("🏁 Flag mis en wait pour: ", player.username)

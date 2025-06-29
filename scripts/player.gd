@@ -95,6 +95,19 @@ func initialize(data: Dictionary):
 	# Mettre à jour le label
 	_update_label()
 	
+	# Définir le flag initial basé sur les données reçues
+	if data.has("initialFlag"):
+		if data.initialFlag == "go":
+			set_flag_to_go()
+			print("🏁 Flag initial mis en go pour: ", username)
+		else:
+			set_flag_to_wait()
+			print("🏁 Flag initial mis en wait pour: ", username)
+	else:
+		# Par défaut, mettre en wait
+		set_flag_to_wait()
+		print("🏁 Flag initial par défaut (wait) pour: ", username)
+	
 	# Jouer l'animation de création
 	play_player_creation_animation()
 
