@@ -1,62 +1,63 @@
 [
     {
-        "question": "What is the capital of France?",
-        "options": ["Paris", "Lyon", "Marseille"],
-        "correctAnswer": "A",
-        "image": null
+      "question": "Which animal can survive in space?",
+      "options": ["Tardigrade", "Cockroach", "Snake"],
+      "correctAnswer": "A",
+      "image": null
     },
     {
-        "question": "What is the largest ocean in the world?",
-        "options": ["Atlantic", "Pacific", "Indian"],
-        "correctAnswer": "B",
-        "image": null
+      "question": "Which country eats the most chocolate?",
+      "options": ["USA", "Switzerland", "Belgium"],
+      "correctAnswer": "B",
+      "image": null
     },
     {
-        "question": "How many planets are in our solar system?",
-        "options": ["7", "8", "9"],
-        "correctAnswer": "B",
-        "image": null
+      "question": "Which animal never sleeps?",
+      "options": ["Bullfrog", "Shark", "Ant"],
+      "correctAnswer": "A",
+      "image": null
     },
     {
-        "question": "What is the fastest animal in the world?",
-        "options": ["Cheetah", "Peregrine Falcon", "Antelope"],
-        "correctAnswer": "B",
-        "image": null
+      "question": "What’s the most expensive fruit in the world?",
+      "options": ["Yubari Melon", "Golden Apple", "Square Watermelon"],
+      "correctAnswer": "A",
+      "image": null
     },
     {
-        "question": "What is the largest country in the world?",
-        "options": ["China", "United States", "Russia"],
-        "correctAnswer": "C",
-        "image": null
+      "question": "Which country was the first to use paper money?",
+      "options": ["China", "Egypt", "Greece"],
+      "correctAnswer": "A",
+      "image": null
     },
     {
-        "question": "Who is the current president of France?",
-        "options": ["Emmanuel Macron", "François Hollande", "Nicolas Sarkozy"],
-        "correctAnswer": "A",
-        "image": null
+      "question": "What’s the fastest creature on Earth?",
+      "options": ["Cheetah", "Peregrine Falcon", "Swordfish"],
+      "correctAnswer": "B",
+      "image": null
     },
     {
-        "question": "What is the most popular sport in the world?",
-        "options": ["Basketball", "Football (Soccer)", "Tennis"],
-        "correctAnswer": "B",
-        "image": null
+      "question": "Which human organ can grow back?",
+      "options": ["Liver", "Heart", "Kidney"],
+      "correctAnswer": "A",
+      "image": null
     },
     {
-        "question": "What is the largest desert in the world?",
-        "options": ["Sahara", "Gobi", "Antarctica"],
-        "correctAnswer": "A",
-        "image": null
+      "question": "Which animal has been to space and came back?",
+      "options": ["Dog", "Monkey", "Both"],
+      "correctAnswer": "C",
+      "image": null
     },
     {
-        "question": "How many colors are there in a rainbow?",
-        "options": ["5", "6", "7"],
-        "correctAnswer": "C",
-        "image": null
+      "question": "Which country has no rivers?",
+      "options": ["Saudi Arabia", "UAE", "Libya"],
+      "correctAnswer": "A",
+      "image": null
     },
     {
-        "question": "What is the largest land mammal?",
-        "options": ["African Elephant", "Giraffe", "Rhinoceros"],
-        "correctAnswer": "A",
-        "image": null
+      "question": "Which bird can sleep while flying?",
+      "options": ["Albatross", "Eagle", "Pigeon"],
+      "correctAnswer": "A",
+      "image": null
     }
-] 
+  ]
+  

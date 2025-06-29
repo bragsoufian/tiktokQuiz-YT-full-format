@@ -12,11 +12,11 @@ const AzureTTS = require('./azure_tts'); // Import Azure TTS
 //windpress
 //user7165753005592
 //valorantesports
-const tiktokUsername = 'windpress';
+const tiktokUsername = 'user7165753005592';
 const wsServer = new WebSocket.Server({ port: 8080 });
 
 // Configuration du jeu
-const QUESTION_TIMER = 5000; // 5 secondes par défaut
+const QUESTION_TIMER = 10000; // 5 secondes par défaut
 const ANSWER_DISPLAY_TIME = 3000; // 3 secondes pour voir la réponse
 const READY_PAUSE_TIME = 4000; // 4 secondes de pause "Ready"
 const GRACE_PERIOD = 2000; // 2 secondes de grâce pour les réponses tardives
@@ -26,9 +26,9 @@ const QUESTION_ACTIVATION_DELAY = 3000; // 7 secondes de délai avant d'accepter
 const LEVEL_THRESHOLDS = [
     1,    // Niveau 1 → 2
     4,    // Niveau 2 → 3
-    6,    // Niveau 3 → 4
-    7,    // Niveau 4 → 5
-    8     // Niveau 5 → 6
+    10,    // Niveau 3 → 4
+    15,    // Niveau 4 → 5
+    20     // Niveau 5 → 6
 ];
 
 // Configuration
@@ -165,6 +165,14 @@ async function askNewQuestion() {
     
     log.question(`Envoi de la question à Godot (sans timer): ${JSON.stringify(questionMessage)}`);
     broadcastToGodot(questionMessage);
+
+    // Envoyer le message pour mettre tous les flags en "go" dès le début du TTS
+    const goMessage = {
+        type: "question_active"
+    };
+    
+    log.question(`Envoi du message d'activation de la question à Godot: ${JSON.stringify(goMessage)}`);
+    broadcastToGodot(goMessage);
 
     // Use Azure TTS to read the question aloud and wait for it to finish
     if (azureTTS) {
@@ -331,6 +339,15 @@ function checkLevel(points) {
     return 1; // Niveau de départ
 }
 
+// Fonction pour obtenir le minimum de points pour un niveau
+function getMinPointsForLevel(level) {
+    if (level <= 1) return 0;
+    if (level <= LEVEL_THRESHOLDS.length + 1) {
+        return LEVEL_THRESHOLDS[level - 2]; // -2 car le niveau 1 commence à 0 points
+    }
+    return LEVEL_THRESHOLDS[LEVEL_THRESHOLDS.length - 1]; // Niveau maximum
+}
+
 // Gestion des messages du chat
 tiktokLiveConnection.on('chat', data => {
     if (matchEnded) return;
@@ -424,7 +441,7 @@ tiktokLiveConnection.on('chat', data => {
                 currentLevel: playerData.currentLevel
             });
         } else {
-            // Mauvaise réponse - marquer comme ayant répondu mais pas de point
+            // Mauvaise réponse - marquer comme ayant répondu et retirer 1 point
             playersAnsweredCurrentQuestion.add(username);
             
             // Envoyer l'animation de mauvaise réponse
@@ -435,7 +452,25 @@ tiktokLiveConnection.on('chat', data => {
             
             const playerData = players.get(username);
             playerData.lastComment = Date.now();
-            log.info(`${username}: ${comment} (mauvaise réponse - pas de point)`);
+            
+            // Retirer 1 point mais jamais en dessous du minimum du niveau
+            const currentLevel = playerData.currentLevel;
+            const minPointsForLevel = getMinPointsForLevel(currentLevel);
+            
+            if (playerData.points > minPointsForLevel) {
+                playerData.points -= 1;
+                log.info(`${username}: ${comment} (mauvaise réponse - 1 point retiré, Points: ${playerData.points})`);
+            } else {
+                log.info(`${username}: ${comment} (mauvaise réponse - points déjà au minimum du niveau ${currentLevel}, Points: ${playerData.points})`);
+            }
+            
+            // Mettre à jour le joueur dans Godot
+            broadcastToGodot({
+                type: "player_update",
+                user: username,
+                points: playerData.points,
+                currentLevel: playerData.currentLevel
+            });
         }
         return; // Ne pas traiter les réponses comme des commentaires normaux
     }

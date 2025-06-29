@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var sprite = $Sprite2D
 @onready var points_label = $Sprite2D/PointsLabel
+@onready var flag_texture_rect = $Sprite2D/TextureRect
 var profile_pic_url: String
 var username: String
 var points: int = 0
@@ -13,6 +14,15 @@ var current_texture: Texture2D = null
 var is_image_loaded: bool = false
 var image_load_attempts: int = 0
 const MAX_LOAD_ATTEMPTS = 3
+
+# Variables pour la gestion des flags
+var is_waiting_for_next_question: bool = false
+var can_answer: bool = false
+var go_flag_texture: Texture2D
+var wait_flag_texture: Texture2D
+var plus1_flag_texture: Texture2D
+var minus1_flag_texture: Texture2D
+var flag_timer: Timer
 
 # Variable statique pour gérer le z-index global
 static var next_z_index: int = 1000
@@ -38,6 +48,9 @@ func _ready():
 	
 	# Setup audio players
 	_setup_audio()
+	
+	# Charger les textures de flag
+	_load_flag_textures()
 	
 	# S'assurer que le sprite est visible
 	if sprite:
@@ -402,6 +415,9 @@ func play_correct_answer_animation():
 	return_tween.tween_property(sprite, "modulate", Color(1, 1, 1, 1), 0.5)
 	return_tween.tween_property(sprite, "scale", Vector2(1, 1), 0.5)
 	
+	# Mettre le flag en plus1 après l'animation
+	set_flag_to_plus1()
+	
 	print("✅ Animation de bonne réponse terminée pour: ", username)
 
 func play_wrong_answer_animation():
@@ -444,6 +460,9 @@ func play_wrong_answer_animation():
 	return_tween.tween_property(sprite, "modulate", Color(1, 1, 1, 1), 0.3)
 	return_tween.tween_property(sprite, "scale", Vector2(1, 1), 0.3)
 	
+	# Mettre le flag en minus1 après l'animation
+	set_flag_to_minus1()
+	
 	print("❌ Animation de mauvaise réponse terminée pour: ", username)
 
 func is_player_in_foreground() -> bool:
@@ -482,3 +501,87 @@ func play_player_creation_animation():
 	return_tween.tween_property(sprite, "scale", Vector2(1, 1), 0.6)
 	
 	print("✅ Animation de création terminée pour: ", username)
+
+func _load_flag_textures():
+	"""Charge les textures de flag depuis les assets"""
+	go_flag_texture = load("res://assets/flags/go.png")
+	wait_flag_texture = load("res://assets/flags/wait.png")
+	plus1_flag_texture = load("res://assets/flags/plus1.png")
+	minus1_flag_texture = load("res://assets/flags/minus1.png")
+	
+	if go_flag_texture:
+		print("✅ Texture de flag go chargée")
+	else:
+		print("❌ Erreur: Impossible de charger go.png")
+	
+	if wait_flag_texture:
+		print("✅ Texture de flag wait chargée")
+	else:
+		print("❌ Erreur: Impossible de charger wait.png")
+	
+	if plus1_flag_texture:
+		print("✅ Texture de flag plus1 chargée")
+	else:
+		print("❌ Erreur: Impossible de charger plus1.png")
+	
+	if minus1_flag_texture:
+		print("✅ Texture de flag minus1 chargée")
+	else:
+		print("❌ Erreur: Impossible de charger minus1.png")
+	
+	# Créer le timer pour les flags plus1/minus1
+	flag_timer = Timer.new()
+	flag_timer.wait_time = 3.0  # 3 secondes
+	flag_timer.one_shot = true
+	flag_timer.timeout.connect(_on_flag_timer_timeout)
+	add_child(flag_timer)
+	
+	# Appliquer la texture wait par défaut
+	set_flag_to_wait()
+
+func set_flag_to_wait():
+	"""Met le flag en état wait (pas de réponse autorisée)"""
+	if flag_texture_rect and wait_flag_texture:
+		flag_texture_rect.texture = wait_flag_texture
+		can_answer = false
+		print("🏁 Flag mis en wait pour: ", username)
+
+func set_flag_to_go():
+	"""Met le flag en état go (réponse autorisée)"""
+	if flag_texture_rect and go_flag_texture:
+		flag_texture_rect.texture = go_flag_texture
+		can_answer = true
+		print("🏁 Flag mis en go pour: ", username)
+
+func set_flag_to_plus1():
+	"""Met le flag en état plus1 (bonne réponse)"""
+	if flag_texture_rect and plus1_flag_texture:
+		flag_texture_rect.texture = plus1_flag_texture
+		can_answer = false
+		print("🏁 Flag mis en plus1 pour: ", username)
+		
+		# Démarrer le timer pour revenir à wait après 3 secondes
+		if flag_timer:
+			flag_timer.start()
+
+func set_flag_to_minus1():
+	"""Met le flag en état minus1 (mauvaise réponse)"""
+	if flag_texture_rect and minus1_flag_texture:
+		flag_texture_rect.texture = minus1_flag_texture
+		can_answer = false
+		print("🏁 Flag mis en minus1 pour: ", username)
+		
+		# Démarrer le timer pour revenir à wait après 3 secondes
+		if flag_timer:
+			flag_timer.start()
+
+func reset_for_new_question():
+	"""Remet le flag à wait pour une nouvelle question"""
+	set_flag_to_wait()
+
+func _on_flag_timer_timeout():
+	"""Gère le timeout du timer pour les flags plus1/minus1"""
+	print("🕒 Timeout du timer pour les flags plus1/minus1 pour: ", username)
+	
+	# Remettre le flag à wait
+	set_flag_to_wait()

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bmtevo3wnsort" path="res://scripts/player.gd" id="1_h1t8o"]
 [ext_resource type="Texture2D" uid="uid://cl43vfk3346q4" path="res://assets/profile pic.png" id="2_qhqgy"]
-[ext_resource type="Texture2D" uid="uid://c35xlc2of0wor" path="res://assets/Black-Square-Frame-Transparent-Free-PNG.png" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://bpgckwsqdxkqn" path="res://assets/flags/go.png" id="3_qhqgy"]
 
 [node name="player" type="Node2D"]
 z_index = 1
@@ -15,11 +15,11 @@ scale = Vector2(0.756944, 0.756944)
 texture = ExtResource("2_qhqgy")
 
 [node name="TextureRect" type="TextureRect" parent="Sprite2D"]
-offset_left = -55.5556
-offset_top = -55.5556
-offset_right = 584.444
-offset_bottom = 583.444
-scale = Vector2(0.178, 0.178)
+offset_left = -58.0
+offset_top = -56.0
+offset_right = 706.0
+offset_bottom = 708.0
+scale = Vector2(0.149, 0.149)
 texture = ExtResource("3_qhqgy")
 
 [node name="PointsLabel" type="Label" parent="Sprite2D"]

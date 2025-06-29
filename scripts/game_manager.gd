@@ -113,6 +113,8 @@ func _handle_websocket_message(message: Dictionary):
 			_handle_player_remove(message)
 		"new_question":
 			_handle_new_question(message)
+		"question_active":
+			_handle_question_active()
 		"start_timer":
 			_handle_start_timer(message)
 		"question_ended":
@@ -364,6 +366,12 @@ func _move_player_to_level(username: String, new_level: int):
 	player.position = Vector2.ZERO 
 
 func _handle_new_question(message: Dictionary):
+	# Remettre tous les flags des joueurs à l'état standard
+	for player in players.values():
+		if is_instance_valid(player) and player.has_method("reset_for_new_question"):
+			player.reset_for_new_question()
+			print("🏁 Flag remis à standard pour: ", player.username)
+	
 	if question_ui:
 		question_ui.show_question(message)
 	else:
@@ -468,3 +476,10 @@ func _handle_start_timer(message: Dictionary):
 		print("⏱️ Timer démarré avec ", timer_duration, " secondes")
 	else:
 		print("❌ QuestionUI non trouvé!")
+
+func _handle_question_active():
+	# Mettre tous les flags des joueurs en "go" (réponse autorisée)
+	for player in players.values():
+		if is_instance_valid(player) and player.has_method("set_flag_to_go"):
+			player.set_flag_to_go()
+			print("🏁 Flag mis en go pour: ", player.username)
