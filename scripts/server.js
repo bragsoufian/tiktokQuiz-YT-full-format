@@ -3,6 +3,8 @@ const WebSocket = require('ws');
 const fs = require('fs');
 const path = require('path');
 const AzureTTS = require('./azure_tts'); // Import Azure TTS
+const https = require('https');
+const config = require('./config'); // Import configuration
 
 //loochytv
 //camyslive
@@ -14,6 +16,10 @@ const AzureTTS = require('./azure_tts'); // Import Azure TTS
 //valorantesports
 const tiktokUsername = 'mpx_player';
 const wsServer = new WebSocket.Server({ port: 8080 });
+
+// Unsplash API Configuration
+const UNSPLASH_ACCESS_KEY = config.UNSPLASH_ACCESS_KEY;
+const UNSPLASH_API_URL = 'https://api.unsplash.com/photos/random';
 
 // Configuration du jeu
 const QUESTION_TIMER = 10000; // 5 secondes par défaut
@@ -64,7 +70,8 @@ const log = {
     error: (msg) => console.log('\x1b[31m%s\x1b[0m', `[${new Date().toLocaleTimeString()}] ❌ ${msg}`),    // Rouge
     player: (msg) => console.log('\x1b[35m%s\x1b[0m', `[${new Date().toLocaleTimeString()}] 👤 ${msg}`),   // Magenta
     system: (msg) => console.log('\x1b[34m%s\x1b[0m', `[${new Date().toLocaleTimeString()}] 🖥️ ${msg}`),   // Bleu
-    question: (msg) => console.log('\x1b[33m%s\x1b[0m', `[${new Date().toLocaleTimeString()}] ❓ ${msg}`)   // Jaune pour les questions
+    question: (msg) => console.log('\x1b[33m%s\x1b[0m', `[${new Date().toLocaleTimeString()}] ❓ ${msg}`),   // Jaune pour les questions
+    unsplash: (msg) => console.log('\x1b[36m%s\x1b[0m', `[${new Date().toLocaleTimeString()}] 🖼️ ${msg}`)   // Cyan pour Unsplash
 };
 
 // Charger les questions depuis le fichier JSON
@@ -165,13 +172,22 @@ async function askNewQuestion() {
     log.question(`Options: A) ${currentQuestion.options[0]}, B) ${currentQuestion.options[1]}, C) ${currentQuestion.options[2]}`);
     log.question(`Réponse correcte: ${currentQuestion.correctAnswer} - ${currentQuestion.options[parseInt(currentQuestion.correctAnswer.charCodeAt(0) - 65)]}`);
     
+    // Generate dynamic background image based on question content
+    let backgroundImageUrl = currentQuestion.backgroundImage || null;
+    
+    // If no background image is set, generate one based on backgroundKeyWords
+    if (!backgroundImageUrl && currentQuestion.backgroundKeyWords) {
+        backgroundImageUrl = await getUnsplashImage(currentQuestion.backgroundKeyWords);
+        log.unsplash(`Generated background image for keywords: "${currentQuestion.backgroundKeyWords}"`);
+    }
+    
     // Envoyer la question à Godot SANS timer (on l'enverra après la lecture TTS)
     const questionMessage = {
         type: "new_question",
         question: currentQuestion.question,
         options: currentQuestion.options,
         image: currentQuestion.image,
-        backgroundImage: currentQuestion.backgroundImage || null
+        backgroundImage: backgroundImageUrl
         // Pas de timer ici - il sera envoyé séparément après la lecture TTS
     };
     
@@ -828,3 +844,101 @@ process.on('SIGINT', () => {
     }
     process.exit(0);
 });
+
+// Function to get random image from Unsplash
+function getUnsplashImage(query) {
+    return new Promise((resolve, reject) => {
+        if (!UNSPLASH_ACCESS_KEY || UNSPLASH_ACCESS_KEY === 'YOUR_UNSPLASH_API_KEY_HERE') {
+            log.warning('Unsplash API key not configured, using fallback image');
+            resolve('https://httpbin.org/image/png?width=800&height=600');
+            return;
+        }
+
+        const url = `${UNSPLASH_API_URL}?query=${encodeURIComponent(query)}&orientation=landscape&w=800&h=600&client_id=${UNSPLASH_ACCESS_KEY}`;
+        
+        log.unsplash(`Fetching image for query: "${query}"`);
+        
+        https.get(url, (res) => {
+            let data = '';
+            
+            res.on('data', (chunk) => {
+                data += chunk;
+            });
+            
+            res.on('end', () => {
+                try {
+                    const imageData = JSON.parse(data);
+                    if (imageData.urls && imageData.urls.regular) {
+                        log.unsplash(`✅ Image found: ${imageData.urls.regular}`);
+                        resolve(imageData.urls.regular);
+                    } else {
+                        log.warning('No image found, using fallback');
+                        resolve('https://httpbin.org/image/png?width=800&height=600');
+                    }
+                } catch (error) {
+                    log.error(`Error parsing Unsplash response: ${error.message}`);
+                    resolve('https://httpbin.org/image/png?width=800&height=600');
+                }
+            });
+        }).on('error', (error) => {
+            log.error(`Error fetching from Unsplash: ${error.message}`);
+            resolve('https://httpbin.org/image/png?width=800&height=600');
+        });
+    });
+}
+
+// Function to extract keywords from question for image search
+function extractKeywordsFromQuestion(question) {
+    const questionLower = question.toLowerCase();
+    
+    // Define keyword mappings for different question types
+    const keywordMappings = {
+        // Space related
+        'space': 'space galaxy',
+        'survive in space': 'space astronaut',
+        'animal can survive': 'space animal',
+        
+        // Food related
+        'chocolate': 'chocolate food',
+        'fruit': 'fruit food',
+        'expensive fruit': 'luxury fruit',
+        'paper money': 'money currency',
+        
+        // Animal related
+        'animal': 'wildlife nature',
+        'never sleeps': 'nocturnal animal',
+        'fastest creature': 'fast animal',
+        'bird': 'bird flying',
+        'sleep while flying': 'bird in flight',
+        
+        // Medical related
+        'human organ': 'medical anatomy',
+        'grow back': 'regeneration medical',
+        
+        // Geography related
+        'country': 'landscape',
+        'no rivers': 'desert landscape',
+        'first to use': 'ancient history'
+    };
+    
+    // Check for specific keywords
+    for (const [key, value] of Object.entries(keywordMappings)) {
+        if (questionLower.includes(key)) {
+            return value;
+        }
+    }
+    
+    // Fallback: extract main nouns from the question
+    const words = questionLower.split(' ');
+    const importantWords = words.filter(word => 
+        word.length > 3 && 
+        !['which', 'what', 'where', 'when', 'that', 'this', 'with', 'from', 'have', 'been', 'will', 'can', 'the', 'and', 'for', 'are', 'was', 'has', 'had', 'not', 'but', 'they', 'have', 'this', 'with', 'his', 'her', 'its', 'out', 'you', 'all', 'any', 'can', 'had', 'her', 'was', 'one', 'our', 'out', 'day', 'get', 'has', 'him', 'his', 'how', 'man', 'new', 'now', 'old', 'see', 'two', 'way', 'who', 'boy', 'did', 'its', 'let', 'put', 'say', 'she', 'too', 'use'].includes(word)
+    );
+    
+    if (importantWords.length > 0) {
+        return importantWords.slice(0, 2).join(' ');
+    }
+    
+    // Ultimate fallback
+    return 'abstract';
+}

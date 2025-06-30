@@ -542,6 +542,8 @@ func _handle_timer_ended():
 			print("🏁 Flag mis en wait pour: ", player.username)
 
 func _on_background_image_request_completed(result, response_code, headers, body):
+	print("🖼️ Background image request completed - Result: ", result, " Response code: ", response_code)
+	
 	if result != HTTPRequest.RESULT_SUCCESS:
 		print("❌ Erreur lors de la récupération de l'image de fond")
 		return
@@ -550,30 +552,76 @@ func _on_background_image_request_completed(result, response_code, headers, body
 		print("❌ Erreur lors de la récupération de l'image de fond. Code de réponse: ", response_code)
 		return
 	
+	print("🖼️ Image data received, size: ", body.size(), " bytes")
+	
 	var image = Image.new()
 	var error = image.load_png_from_buffer(body)
 	if error != OK:
+		print("🖼️ PNG loading failed, trying JPEG...")
 		# Essayer avec JPEG si PNG échoue
 		error = image.load_jpg_from_buffer(body)
 		if error != OK:
 			print("❌ Impossible de charger l'image de fond (PNG et JPEG)")
 			return
 	
-	var texture = ImageTexture.new()
-	texture.create_from_image(image)
-	background_texture_rect.texture = texture
-	print("✅ Image de fond chargée avec succès")
+	print("🖼️ Image loaded successfully, size: ", image.get_width(), "x", image.get_height())
+	
+	var texture = ImageTexture.create_from_image(image)
+	
+	if background_texture_rect:
+		print("🖼️ BackgroundTextureRect found, applying texture...")
+		print("🖼️ BackgroundTextureRect visible: ", background_texture_rect.visible)
+		print("🖼️ BackgroundTextureRect modulate: ", background_texture_rect.modulate)
+		print("🖼️ BackgroundTextureRect z_index: ", background_texture_rect.z_index)
+		
+		# Store the old texture for comparison
+		var old_texture = background_texture_rect.texture
+		print("🖼️ Old texture: ", old_texture != null)
+		
+		# Apply the new texture
+		background_texture_rect.texture = texture
+		
+		# Verify the texture was applied
+		print("🖼️ New texture applied: ", background_texture_rect.texture != null)
+		print("🖼️ New texture size: ", background_texture_rect.texture.get_width() if background_texture_rect.texture else "null", "x", background_texture_rect.texture.get_height() if background_texture_rect.texture else "null")
+		
+		# Force a redraw
+		background_texture_rect.queue_redraw()
+		
+		print("✅ Image de fond appliquée au BackgroundTextureRect")
+		print("🖼️ BackgroundTextureRect texture set: ", background_texture_rect.texture != null)
+	else:
+		print("❌ BackgroundTextureRect non trouvé!")
 
 func load_background_image(image_url: String):
-	if not background_texture_rect or not background_http_request:
-		print("❌ Composants de fond d'image non disponibles")
+	print("🖼️ load_background_image called with URL: ", image_url)
+	
+	if not background_texture_rect:
+		print("❌ BackgroundTextureRect non trouvé!")
+		return
+		
+	if not background_http_request:
+		print("❌ Background HTTPRequest non trouvé!")
 		return
 	
 	if image_url.is_empty():
 		print("⚠️ URL d'image de fond vide")
 		return
 	
+	print("🖼️ BackgroundTextureRect trouvé: ", background_texture_rect.name)
+	print("🖼️ Background HTTPRequest trouvé: ", background_http_request.name)
 	print("🖼️ Chargement de l'image de fond: ", image_url)
+	
+	# Test: Create a simple colored texture first to verify the BackgroundTextureRect works
+	var test_image = Image.create(800, 600, false, Image.FORMAT_RGBA8)
+	test_image.fill(Color.RED)
+	var test_texture = ImageTexture.new()
+	test_texture.create_from_image(test_image)
+	background_texture_rect.texture = test_texture
+	print("🖼️ TEST: Applied red test texture to BackgroundTextureRect")
+	
 	var error = background_http_request.request(image_url)
 	if error != OK:
 		print("❌ Erreur lors de la requête d'image de fond: ", error)
+	else:
+		print("🖼️ Requête HTTP envoyée avec succès")
