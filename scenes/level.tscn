@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://coeur2uxgo317" path="res://scripts/level.gd" id="1_4hgif"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2wq5"]
-size = Vector2(348.375, 55.625)
+size = Vector2(298.375, 55.625)
 
 [node name="Level" type="StaticBody2D"]
 script = ExtResource("1_4hgif")
 
 [node name="rectangle" type="CollisionShape2D" parent="."]
-position = Vector2(174.813, 29.1875)
+position = Vector2(149.813, 29.1875)
 shape = SubResource("RectangleShape2D_w2wq5")

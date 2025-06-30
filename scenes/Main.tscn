@@ -47,25 +47,31 @@ offset_bottom = 2389.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Level1" parent="GameManager/Grid" instance=ExtResource("2_rtedj")]
-position = Vector2(600.001, 1561)
+position = Vector2(638, 1569)
+scale = Vector2(0.811097, 0.811097)
 
 [node name="player" parent="GameManager/Grid/Level1" instance=ExtResource("3_0bbpv")]
-position = Vector2(298, -503)
+position = Vector2(560.967, -775.493)
 
 [node name="Level2" parent="GameManager/Grid" instance=ExtResource("2_rtedj")]
-position = Vector2(600.001, 1645)
+position = Vector2(646, 1652)
+scale = Vector2(0.805696, 0.805696)
 
 [node name="Level3" parent="GameManager/Grid" instance=ExtResource("2_rtedj")]
-position = Vector2(601.001, 1728)
+position = Vector2(640, 1736)
+scale = Vector2(0.839087, 0.839087)
 
 [node name="Level4" parent="GameManager/Grid" instance=ExtResource("2_rtedj")]
-position = Vector2(600, 1816)
+position = Vector2(640, 1819)
+scale = Vector2(0.839998, 0.839998)
 
 [node name="Level5" parent="GameManager/Grid" instance=ExtResource("2_rtedj")]
-position = Vector2(619, 1898)
+position = Vector2(638, 1901)
+scale = Vector2(0.84, 0.84)
 
 [node name="Level6" parent="GameManager/Grid" instance=ExtResource("2_rtedj")]
-position = Vector2(608, 1980)
+position = Vector2(652, 1984)
+scale = Vector2(0.836443, 0.836443)
 
 [node name="QuestionUI" parent="." instance=ExtResource("3_vcsgt")]
 offset_left = 358.001

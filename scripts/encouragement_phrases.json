@@ -1,0 +1,59 @@
+{
+  "phrases": [
+    {
+      "id": 1,
+      "text": "Thank you so much for sharing our live stream! You're amazing!",
+      "category": "gratitude"
+    },
+    {
+      "id": 2,
+      "text": "Wow! Those gifts are incredible! You're making this quiz so much fun!",
+      "category": "gifts"
+    },
+    {
+      "id": 3,
+      "text": "Keep those gifts coming! Every gift helps us create more awesome content!",
+      "category": "gifts"
+    },
+    {
+      "id": 4,
+      "text": "You're the best community ever! Thanks for being here with us!",
+      "category": "community"
+    },
+    {
+      "id": 5,
+      "text": "Amazing gifts! You're really making this live stream special!",
+      "category": "gifts"
+    },
+    {
+      "id": 6,
+      "text": "Don't forget to share this live stream with your friends!",
+      "category": "sharing"
+    },
+    {
+      "id": 7,
+      "text": "Your support means everything to us! Thank you for the gifts!",
+      "category": "gratitude"
+    },
+    {
+      "id": 8,
+      "text": "This is going to be an epic quiz! Thanks for joining us!",
+      "category": "excitement"
+    },
+    {
+      "id": 9,
+      "text": "You're making this the best live stream ever! Keep it up!",
+      "category": "encouragement"
+    },
+    {
+      "id": 10,
+      "text": "Ready for some quiz action? Let's make this amazing together!",
+      "category": "excitement"
+    }
+  ],
+  "settings": {
+    "playBeforeReady": true,
+    "randomSelection": true,
+    "maxPhrasesPerSession": 2
+  }
+} 

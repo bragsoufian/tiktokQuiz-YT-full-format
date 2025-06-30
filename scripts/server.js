@@ -3,6 +3,7 @@ const WebSocket = require('ws');
 const fs = require('fs');
 const path = require('path');
 const AzureTTS = require('./azure_tts'); // Import Azure TTS
+const EncouragementManager = require('./encouragement_manager'); // Import Encouragement Manager
 const https = require('https');
 const config = require('./config'); // Import configuration
 
@@ -64,6 +65,9 @@ let currentQuestionIndex = 0;
 // Azure TTS instance
 let azureTTS = null;
 
+// Encouragement Manager instance
+let encouragementManager = null;
+
 // Fonction pour les logs colorés avec timestamps
 const log = {
     info: (msg) => console.log('\x1b[36m%s\x1b[0m', `[${new Date().toLocaleTimeString()}] ℹ️ ${msg}`),    // Cyan
@@ -119,6 +123,12 @@ function resetGameState() {
     questionWaitingForActivation = false; // Réinitialiser le nouvel état
     currentQuestion = null;
     currentQuestionIndex = 0;
+    
+    // Reset encouragement session for new match
+    if (encouragementManager) {
+        encouragementManager.resetSession();
+        log.system('🔄 Encouragement session reset for new match');
+    }
     
     // Arrêter les timers existants
     if (questionTimer) {
@@ -284,8 +294,25 @@ function endQuestion() {
     
     // Programmer la prochaine question après 4 secondes de pause
     if (!matchEnded) {
-        // Envoyer le message "ready" avec image
-        setTimeout(() => {
+        // Play encouragement phrases before showing Ready screen
+        setTimeout(async () => {
+            if (!matchEnded && encouragementManager && azureTTS) {
+                try {
+                    // Get a random encouragement phrase
+                    const phrase = encouragementManager.getRandomPhrase();
+                    if (phrase) {
+                        log.system(`🎤 Playing encouragement phrase: "${phrase.text}"`);
+                        
+                        // Play the encouragement phrase
+                        await azureTTS.speakText(phrase.text);
+                        log.success('✅ Encouragement phrase spoken');
+                    }
+                } catch (err) {
+                    log.error('❌ Error playing encouragement phrase: ' + err);
+                }
+            }
+            
+            // Show Ready screen after encouragement phrase (or immediately if no phrase)
             if (!matchEnded) {
                 log.question("Affichage de l'écran 'Ready'");
                 broadcastToGodot({
@@ -833,6 +860,10 @@ function stopTestPlayer() {
     try {
         azureTTS = new AzureTTS();
         log.success('Azure TTS initialized and ready to speak!');
+        
+        // Initialize Encouragement Manager
+        encouragementManager = new EncouragementManager();
+        log.success('Encouragement Manager initialized and ready!');
     } catch (error) {
         log.error('Failed to initialize Azure TTS:', error);
     }
