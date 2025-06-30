@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqnqw3mij2si3"]
+[gd_scene load_steps=9 format=3 uid="uid://cqnqw3mij2si3"]
 
 [ext_resource type="Texture2D" uid="uid://bo5grxhnodg76" path="res://assets/0.png" id="1_c01mt"]
-[ext_resource type="Texture2D" uid="uid://c4ylwjja85pb" path="res://assets/#eae4e4-Picsart-BackgroundRemover.png" id="1_nxtc6"]
+[ext_resource type="Texture2D" uid="uid://d07w6w38d02kk" path="res://assets/jainam-sheth-zo_1eY-9dQU-unsplash.jpg" id="1_jlsqs"]
 [ext_resource type="Script" uid="uid://dj3d341tsfmsx" path="res://scripts/game_manager.gd" id="1_rtedj"]
 [ext_resource type="PackedScene" uid="uid://bw64pycb751fj" path="res://scenes/level.tscn" id="2_rtedj"]
 [ext_resource type="PackedScene" uid="uid://dawcxst5kmvnp" path="res://scenes/player.tscn" id="3_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://cr2bv346s7nh6" path="res://scenes/question_ui.tscn" id="3_vcsgt"]
 [ext_resource type="Texture2D" uid="uid://bfs7ytnewnekx" path="res://assets/ready_goo-removebg-preview.png" id="6_c01mt"]
+[ext_resource type="Script" uid="uid://cduijmrnngd87" path="res://scripts/background_animation.gd" id="7_animation"]
 
 [node name="Main" type="Node2D"]
 
@@ -16,9 +17,10 @@ offset_left = -360.0
 offset_top = 3.0
 offset_right = 1110.0
 offset_bottom = 1003.0
-texture = ExtResource("1_nxtc6")
+texture = ExtResource("1_jlsqs")
 expand_mode = 1
 stretch_mode = 6
+script = ExtResource("7_animation")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 6.00104
