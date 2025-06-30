@@ -56,7 +56,7 @@ alignment = 1
 
 [node name="WinnerLabel" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.470076, 0.470076, 0.470076, 1)
+theme_override_colors/font_color = Color(0.197937, 0.197937, 0.197937, 1)
 theme_override_font_sizes/font_size = 32
 text = "TOP 3 PLAYERS"
 horizontal_alignment = 1

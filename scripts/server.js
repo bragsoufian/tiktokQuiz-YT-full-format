@@ -32,7 +32,9 @@ const QUESTION_ACTIVATION_DELAY = 3000; // 7 secondes de délai avant d'accepter
 const LEVEL_THRESHOLDS = [
     1,    // Niveau 1 → 2
     2,    // Niveau 2 → 3
-
+    3,
+    4,
+    5
 ];
 
 // Configuration

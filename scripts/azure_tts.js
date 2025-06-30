@@ -21,7 +21,7 @@ class AzureTTS {
     initialize() {
         try {
             this.speechConfig = sdk.SpeechConfig.fromSubscription(this.subscriptionKey, this.region);
-            this.speechConfig.speechSynthesisVoiceName = "en-US-JennyNeural"; // English female voice
+            this.speechConfig.speechSynthesisVoiceName = "en-US-GuyNeural"; // English male voice
             this.speechConfig.speechSynthesisOutputFormat = sdk.SpeechSynthesisOutputFormat.Riff24Khz16BitMonoPcm;
             
             // Create both directories if they don't exist
@@ -79,76 +79,62 @@ class AzureTTS {
         }
 
         const cachedPath = this.getCachedFilePath(text);
-        let audioPath;
         let isFromCache = false;
 
         // Check if we have a cached version and it's valid
         if (this.isCached(text)) {
             console.log('💾 Using cached audio file for:', text.substring(0, 50) + '...');
-            audioPath = cachedPath;
             isFromCache = true;
         } else {
             console.log('🆕 Generating new audio file for:', text.substring(0, 50) + '...');
-            audioPath = this.generateUniqueFilename();
-            this.tempFiles.push(audioPath);
         }
 
         return new Promise((resolve, reject) => {
             try {
                 if (isFromCache) {
                     // Use cached file directly, but check size again before playing
-                    const stats = fs.statSync(audioPath);
+                    const stats = fs.statSync(cachedPath);
                     if (stats.size < 2048) {
                         console.warn('⚠️ Cached file is too small/corrupt, regenerating...');
-                        fs.unlinkSync(audioPath);
-                        // Regenerate
+                        fs.unlinkSync(cachedPath);
+                        // Regenerate by calling this method again
                         this.speakText(text).then(resolve).catch(reject);
                         return;
                     }
-                    this.playAudio(audioPath)
+                    this.playAudio(cachedPath)
                         .then(() => resolve(true))
                         .catch(err => {
                             console.error('❌ Error playing cached audio:', err);
                             resolve(false);
                         });
                 } else {
-                    // Generate new audio file
-                    const audioConfig = sdk.AudioConfig.fromAudioFileOutput(audioPath);
+                    // Generate new audio file directly to cache location
+                    const audioConfig = sdk.AudioConfig.fromAudioFileOutput(cachedPath);
                     const synthesizer = new sdk.SpeechSynthesizer(this.speechConfig, audioConfig);
 
                     synthesizer.speakTextAsync(text, result => {
                         if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
-                            console.log('✅ TTS audio generated successfully');
-                            // Play the generated audio first
-                            this.playAudio(audioPath)
-                                .then(() => {
-                                    // Only cache after successful playback
-                                    try {
-                                        fs.copyFileSync(audioPath, cachedPath);
-                                        console.log('💾 Audio cached for future use');
-                                    } catch (error) {
-                                        console.warn('⚠️ Could not cache audio file:', error.message);
-                                    }
-                                    // Clean up this specific file after a delay
-                                    setTimeout(() => {
-                                        this.cleanupFile(audioPath);
-                                    }, 2000); // Wait 2 seconds before cleanup
-                                    resolve(true);
-                                })
+                            console.log('✅ TTS audio generated and cached successfully');
+                            // Play the cached audio
+                            this.playAudio(cachedPath)
+                                .then(() => resolve(true))
                                 .catch(err => {
                                     console.error('❌ Error playing audio:', err);
-                                    this.cleanupFile(audioPath);
+                                    // Clean up the failed cache file
+                                    this.cleanupFile(cachedPath);
                                     resolve(false);
                                 });
                         } else {
                             console.error('❌ TTS failed:', result.errorDetails);
-                            this.cleanupFile(audioPath);
+                            // Clean up the failed cache file
+                            this.cleanupFile(cachedPath);
                             reject(new Error(result.errorDetails));
                         }
                         synthesizer.close();
                     }, error => {
                         console.error('❌ TTS error:', error);
-                        this.cleanupFile(audioPath);
+                        // Clean up the failed cache file
+                        this.cleanupFile(cachedPath);
                         reject(error);
                     });
                 }
@@ -156,7 +142,7 @@ class AzureTTS {
             } catch (error) {
                 console.error('❌ Error in speakText:', error);
                 if (!isFromCache) {
-                    this.cleanupFile(audioPath);
+                    this.cleanupFile(cachedPath);
                 }
                 reject(error);
             }
@@ -211,12 +197,7 @@ class AzureTTS {
         try {
             if (fs.existsSync(filePath)) {
                 fs.unlinkSync(filePath);
-                // Remove from temp files array
-                const index = this.tempFiles.indexOf(filePath);
-                if (index > -1) {
-                    this.tempFiles.splice(index, 1);
-                }
-                console.log('🗑️ TTS audio file cleaned up:', path.basename(filePath));
+                console.log('🗑️ Audio file cleaned up:', path.basename(filePath));
             }
         } catch (error) {
             // File might still be in use, that's okay
@@ -226,11 +207,8 @@ class AzureTTS {
 
     // Clean up all temporary files (but keep cache)
     cleanup() {
-        console.log('🧹 Cleaning up all TTS files...');
-        this.tempFiles.forEach(filePath => {
-            this.cleanupFile(filePath);
-        });
-        this.tempFiles = [];
+        console.log('🧹 No temporary files to clean up (using direct cache generation)');
+        // Since we generate directly to cache, there are no temp files to clean
     }
 
     // Get cache statistics
