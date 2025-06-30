@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cqnqw3mij2si3"]
 
-[ext_resource type="Texture2D" uid="uid://ck22sukwgu5pu" path="res://assets/1 - 4.png" id="1_c01mt"]
 [ext_resource type="Script" uid="uid://dj3d341tsfmsx" path="res://scripts/game_manager.gd" id="1_rtedj"]
+[ext_resource type="Texture2D" uid="uid://ccjm8q3buicqq" path="res://assets/0 (1).png" id="2_nxtc6"]
 [ext_resource type="PackedScene" uid="uid://bw64pycb751fj" path="res://scenes/level.tscn" id="2_rtedj"]
 [ext_resource type="PackedScene" uid="uid://dawcxst5kmvnp" path="res://scenes/player.tscn" id="3_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://cr2bv346s7nh6" path="res://scenes/question_ui.tscn" id="3_vcsgt"]
@@ -9,11 +9,17 @@
 
 [node name="Main" type="Node2D"]
 
+[node name="BackgroundTextureRect" type="TextureRect" parent="."]
+z_index = -1
+offset_left = 3.0
+offset_right = 703.0
+offset_bottom = 1000.0
+
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 3.0
 offset_right = 703.0
 offset_bottom = 1000.0
-texture = ExtResource("1_c01mt")
+texture = ExtResource("2_nxtc6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(348, 501)

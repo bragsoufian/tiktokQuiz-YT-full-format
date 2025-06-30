@@ -19,6 +19,10 @@ var winner_popup_scene = preload("res://scenes/winner_popup.tscn")
 # Interface des questions
 var question_ui: Control
 
+# Background image handling
+var background_texture_rect: TextureRect
+var background_http_request: HTTPRequest
+
 # Audio pour l'écran Ready
 var ready_sound_player: AudioStreamPlayer
 var ready_sound: AudioStream
@@ -63,6 +67,17 @@ func _ready():
 		question_ui.load_timer_sound("res://assets/sounds/timer_sound.ogg")
 	else:
 		print("⚠️ QuestionUI non trouvé - les questions ne s'afficheront pas")
+	
+	# Récupérer la référence au TextureRect de fond
+	background_texture_rect = get_parent().get_node_or_null("BackgroundTextureRect")
+	if background_texture_rect:
+		print("✅ Background TextureRect trouvé")
+		# Créer le HTTPRequest pour charger les images de fond
+		background_http_request = HTTPRequest.new()
+		add_child(background_http_request)
+		background_http_request.request_completed.connect(_on_background_image_request_completed)
+	else:
+		print("❌ Background TextureRect non trouvé!")
 	
 	# Connexion WebSocket
 	print("🌐 Tentative de connexion au serveur WebSocket...")
@@ -396,6 +411,11 @@ func _handle_new_question(message: Dictionary):
 			player.reset_for_new_question()
 			print("🏁 Flag remis à standard pour: ", player.username)
 	
+	# Charger l'image de fond si disponible
+	if message.has("backgroundImage") and not message.backgroundImage.is_empty():
+		load_background_image(message.backgroundImage)
+		print("🖼️ Image de fond demandée pour la question")
+	
 	if question_ui:
 		question_ui.show_question(message)
 	else:
@@ -520,3 +540,40 @@ func _handle_timer_ended():
 		if is_instance_valid(player) and player.has_method("set_flag_to_wait"):
 			player.set_flag_to_wait()
 			print("🏁 Flag mis en wait pour: ", player.username)
+
+func _on_background_image_request_completed(result, response_code, headers, body):
+	if result != HTTPRequest.RESULT_SUCCESS:
+		print("❌ Erreur lors de la récupération de l'image de fond")
+		return
+	
+	if response_code != 200:
+		print("❌ Erreur lors de la récupération de l'image de fond. Code de réponse: ", response_code)
+		return
+	
+	var image = Image.new()
+	var error = image.load_png_from_buffer(body)
+	if error != OK:
+		# Essayer avec JPEG si PNG échoue
+		error = image.load_jpg_from_buffer(body)
+		if error != OK:
+			print("❌ Impossible de charger l'image de fond (PNG et JPEG)")
+			return
+	
+	var texture = ImageTexture.new()
+	texture.create_from_image(image)
+	background_texture_rect.texture = texture
+	print("✅ Image de fond chargée avec succès")
+
+func load_background_image(image_url: String):
+	if not background_texture_rect or not background_http_request:
+		print("❌ Composants de fond d'image non disponibles")
+		return
+	
+	if image_url.is_empty():
+		print("⚠️ URL d'image de fond vide")
+		return
+	
+	print("🖼️ Chargement de l'image de fond: ", image_url)
+	var error = background_http_request.request(image_url)
+	if error != OK:
+		print("❌ Erreur lors de la requête d'image de fond: ", error)

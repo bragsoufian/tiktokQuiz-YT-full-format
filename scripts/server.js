@@ -170,7 +170,8 @@ async function askNewQuestion() {
         type: "new_question",
         question: currentQuestion.question,
         options: currentQuestion.options,
-        image: currentQuestion.image
+        image: currentQuestion.image,
+        backgroundImage: currentQuestion.backgroundImage || null
         // Pas de timer ici - il sera envoyé séparément après la lecture TTS
     };
     

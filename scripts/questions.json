@@ -3,60 +3,70 @@
       "question": "Which animal can survive in space?",
       "options": ["Tardigrade", "Cockroach", "Snake"],
       "correctAnswer": "A",
+      "backgroundImage": "https://picsum.photos/200/300",
       "image": null
     },
     {
       "question": "Which country eats the most chocolate?",
       "options": ["USA", "Switzerland", "Belgium"],
       "correctAnswer": "B",
+      "backgroundImage": "https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=800&h=600&fit=crop",
       "image": null
     },
     {
       "question": "Which animal never sleeps?",
       "options": ["Bullfrog", "Shark", "Ant"],
       "correctAnswer": "A",
+      "backgroundImage": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop",
       "image": null
     },
     {
-      "question": "What’s the most expensive fruit in the world?",
+      "question": "What's the most expensive fruit in the world?",
       "options": ["Yubari Melon", "Golden Apple", "Square Watermelon"],
       "correctAnswer": "A",
+      "backgroundImage": "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=800&h=600&fit=crop",
       "image": null
     },
     {
       "question": "Which country was the first to use paper money?",
       "options": ["China", "Egypt", "Greece"],
       "correctAnswer": "A",
+      "backgroundImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop",
       "image": null
     },
     {
-      "question": "What’s the fastest creature on Earth?",
+      "question": "What's the fastest creature on Earth?",
       "options": ["Cheetah", "Peregrine Falcon", "Swordfish"],
       "correctAnswer": "B",
+      "backgroundImage": "https://images.unsplash.com/photo-1549366021-9f761d450615?w=800&h=600&fit=crop",
       "image": null
     },
     {
       "question": "Which human organ can grow back?",
       "options": ["Liver", "Heart", "Kidney"],
       "correctAnswer": "A",
+      "backgroundImage": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop",
       "image": null
     },
     {
       "question": "Which animal has been to space and came back?",
       "options": ["Dog", "Monkey", "Both"],
       "correctAnswer": "C",
+      "backgroundImage": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&h=600&fit=crop",
       "image": null
     },
     {
       "question": "Which country has no rivers?",
       "options": ["Saudi Arabia", "UAE", "Libya"],
       "correctAnswer": "A",
+      "backgroundImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
       "image": null
     },
     {
       "question": "Which bird can sleep while flying?",
       "options": ["Albatross", "Eagle", "Pigeon"],
       "correctAnswer": "A",
+      "backgroundImage": "https://images.unsplash.com/photo-1444464666168-49d633b86797?w=800&h=600&fit=crop",
       "image": null
     }
   ]

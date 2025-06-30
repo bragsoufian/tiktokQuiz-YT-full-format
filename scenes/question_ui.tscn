@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cr2bv346s7nh6"]
 
 [ext_resource type="Script" uid="uid://bkq3gq3gfn071" path="res://scripts/question_ui.gd" id="1_question"]
-[ext_resource type="Texture2D" uid="uid://dwnshrgba2agn" path="res://assets/Q&A3.png" id="2_a3tft"]
+[ext_resource type="Texture2D" uid="uid://bm33fpch0r0mj" path="res://assets/A (1).png" id="2_a3tft"]
 [ext_resource type="PackedScene" uid="uid://cm806a21b6gen" path="res://scenes/option.tscn" id="3_a3tft"]
 
 [sub_resource type="FontFile" id="FontFile_a3tft"]
@@ -648,6 +648,76 @@ cache/0/30/0/descent = 0.0
 cache/0/30/0/underline_position = 0.0
 cache/0/30/0/underline_thickness = 0.0
 cache/0/30/0/scale = 1.0
+cache/0/55/0/ascent = 0.0
+cache/0/55/0/descent = 0.0
+cache/0/55/0/underline_position = 0.0
+cache/0/55/0/underline_thickness = 0.0
+cache/0/55/0/scale = 1.0
+cache/0/75/0/ascent = 0.0
+cache/0/75/0/descent = 0.0
+cache/0/75/0/underline_position = 0.0
+cache/0/75/0/underline_thickness = 0.0
+cache/0/75/0/scale = 1.0
+cache/0/105/0/ascent = 0.0
+cache/0/105/0/descent = 0.0
+cache/0/105/0/underline_position = 0.0
+cache/0/105/0/underline_thickness = 0.0
+cache/0/105/0/scale = 1.0
+cache/0/115/0/ascent = 0.0
+cache/0/115/0/descent = 0.0
+cache/0/115/0/underline_position = 0.0
+cache/0/115/0/underline_thickness = 0.0
+cache/0/115/0/scale = 1.0
+cache/0/125/0/ascent = 0.0
+cache/0/125/0/descent = 0.0
+cache/0/125/0/underline_position = 0.0
+cache/0/125/0/underline_thickness = 0.0
+cache/0/125/0/scale = 1.0
+cache/0/140/0/ascent = 0.0
+cache/0/140/0/descent = 0.0
+cache/0/140/0/underline_position = 0.0
+cache/0/140/0/underline_thickness = 0.0
+cache/0/140/0/scale = 1.0
+cache/0/150/0/ascent = 0.0
+cache/0/150/0/descent = 0.0
+cache/0/150/0/underline_position = 0.0
+cache/0/150/0/underline_thickness = 0.0
+cache/0/150/0/scale = 1.0
+cache/0/160/0/ascent = 0.0
+cache/0/160/0/descent = 0.0
+cache/0/160/0/underline_position = 0.0
+cache/0/160/0/underline_thickness = 0.0
+cache/0/160/0/scale = 1.0
+cache/0/155/0/ascent = 0.0
+cache/0/155/0/descent = 0.0
+cache/0/155/0/underline_position = 0.0
+cache/0/155/0/underline_thickness = 0.0
+cache/0/155/0/scale = 1.0
+cache/0/135/0/ascent = 0.0
+cache/0/135/0/descent = 0.0
+cache/0/135/0/underline_position = 0.0
+cache/0/135/0/underline_thickness = 0.0
+cache/0/135/0/scale = 1.0
+cache/0/95/0/ascent = 0.0
+cache/0/95/0/descent = 0.0
+cache/0/95/0/underline_position = 0.0
+cache/0/95/0/underline_thickness = 0.0
+cache/0/95/0/scale = 1.0
+cache/0/85/0/ascent = 0.0
+cache/0/85/0/descent = 0.0
+cache/0/85/0/underline_position = 0.0
+cache/0/85/0/underline_thickness = 0.0
+cache/0/85/0/scale = 1.0
+cache/0/65/0/ascent = 0.0
+cache/0/65/0/descent = 0.0
+cache/0/65/0/underline_position = 0.0
+cache/0/65/0/underline_thickness = 0.0
+cache/0/65/0/scale = 1.0
+cache/0/53/0/ascent = 0.0
+cache/0/53/0/descent = 0.0
+cache/0/53/0/underline_position = 0.0
+cache/0/53/0/underline_thickness = 0.0
+cache/0/53/0/scale = 1.0
 
 [node name="QuestionUI" type="Control"]
 layout_mode = 3
@@ -694,7 +764,7 @@ theme_override_colors/font_color = Color(0.942823, 0.942823, 0.942823, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontFile_a3tft")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 35
 text = "Quel humoriste a popularisé le personnage 'Kévin' ?"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -724,10 +794,10 @@ horizontal_alignment = 1
 
 [node name="OptionA" parent="Panel" instance=ExtResource("3_a3tft")]
 layout_mode = 0
-offset_left = 238.0
-offset_top = 195.652
-offset_right = 361.0
-offset_bottom = 226.652
+offset_left = 239.0
+offset_top = 193.478
+offset_right = 362.0
+offset_bottom = 224.478
 
 [node name="OptionB" parent="Panel" instance=ExtResource("3_a3tft")]
 layout_mode = 0
@@ -738,7 +808,7 @@ offset_bottom = 289.695
 
 [node name="OptionC" parent="Panel" instance=ExtResource("3_a3tft")]
 layout_mode = 0
-offset_left = 240.0
-offset_top = 322.826
-offset_right = 411.115
-offset_bottom = 353.826
+offset_left = 239.0
+offset_top = 327.174
+offset_right = 410.115
+offset_bottom = 358.174
