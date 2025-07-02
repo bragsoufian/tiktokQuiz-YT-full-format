@@ -356,8 +356,8 @@ func load_answer_sounds():
 		print("❌ Fichier good-answer.ogg non trouvé")
 	
 	# Load wrong answer sound
-	if ResourceLoader.exists("res://assets/sounds/bad_answer.ogg"):
-		wrong_sound = load("res://assets/sounds/bad_answer.ogg")
+	if ResourceLoader.exists("res://assets/sounds/bad_answer.mp3"):
+		wrong_sound = load("res://assets/sounds/bad_answer.mp3")
 		if wrong_sound_player:
 			wrong_sound_player.stream = wrong_sound
 			print("✅ Son de mauvaise réponse chargé pour ", username)

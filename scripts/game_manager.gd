@@ -31,6 +31,9 @@ var ready_sound: AudioStream
 var background_music_player: AudioStreamPlayer
 var background_music: AudioStream
 
+# Audio pour les sons de nouveaux joueurs
+var new_player_sound_player: AudioStreamPlayer
+
 # État du match
 var match_ended = false
 var winner = null
@@ -96,6 +99,9 @@ func _ready():
 	# Configuration de la musique de fond
 	_setup_background_music()
 	
+	# Configuration des sons de nouveaux joueurs
+	_setup_new_player_sounds()
+	
 	# Test de la musique après un délai
 	await get_tree().create_timer(1.0).timeout
 	test_background_music()
@@ -155,6 +161,8 @@ func _handle_websocket_message(message: Dictionary):
 			_handle_match_ended(message)
 		"show_ready":
 			_handle_show_ready(message)
+		"play_new_player_sound":
+			_handle_play_new_player_sound(message)
 		_:
 			print("❓ Message inconnu reçu: ", message_type)
 
@@ -573,6 +581,31 @@ func test_background_music():
 		print("🧪 TEST - Volume: ", background_music_player.volume_db, " dB")
 	else:
 		print("❌ TEST - Lecteur de musique non trouvé")
+
+func _setup_new_player_sounds():
+	# Configuration des sons de nouveaux joueurs
+	new_player_sound_player = AudioStreamPlayer.new()
+	new_player_sound_player.volume_db = -5  # Volume modéré
+	new_player_sound_player.bus = "Master"
+	add_child(new_player_sound_player)
+	print("🔊 Lecteur de sons de nouveaux joueurs configuré")
+
+func _handle_play_new_player_sound(message: Dictionary):
+	# Jouer un son de nouveau joueur
+	if message.has("sound_file") and new_player_sound_player:
+		var sound_file = message.sound_file
+		print("🔊 Jouer son de nouveau joueur: ", sound_file)
+		
+		# Charger et jouer le son
+		var sound = load(sound_file)
+		if sound:
+			new_player_sound_player.stream = sound
+			new_player_sound_player.play()
+			print("✅ Son de nouveau joueur joué")
+		else:
+			print("❌ Impossible de charger le son: ", sound_file)
+	else:
+		print("❌ Données de son manquantes ou lecteur non configuré")
 
 func _handle_start_timer(message: Dictionary):
 	# Mettre tous les flags des joueurs en "go" (réponse autorisée) quand le timer démarre
