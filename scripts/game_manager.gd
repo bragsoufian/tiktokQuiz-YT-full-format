@@ -27,6 +27,10 @@ var background_http_request: HTTPRequest
 var ready_sound_player: AudioStreamPlayer
 var ready_sound: AudioStream
 
+# Audio pour la musique de fond
+var background_music_player: AudioStreamPlayer
+var background_music: AudioStream
+
 # État du match
 var match_ended = false
 var winner = null
@@ -88,6 +92,13 @@ func _ready():
 	
 	# Configuration de l'audio pour l'écran Ready
 	_setup_ready_audio()
+	
+	# Configuration de la musique de fond
+	_setup_background_music()
+	
+	# Test de la musique après un délai
+	await get_tree().create_timer(1.0).timeout
+	test_background_music()
 	
 	print("✅ GameManager prêt!")
 
@@ -431,6 +442,8 @@ func _handle_question_ended(message: Dictionary):
 		print("❌ QuestionUI non trouvé!")
 
 func _handle_match_started():
+	print("🎮 Début de match")
+	
 	# Cacher l'interface des questions
 	if question_ui:
 		question_ui.hide_question()
@@ -515,6 +528,51 @@ func _setup_ready_audio():
 	ready_sound_player.volume_db = -10
 	ready_sound_player.bus = "Master"
 	add_child(ready_sound_player)
+
+func _setup_background_music():
+	# Configuration de la musique de fond
+	background_music_player = AudioStreamPlayer.new()
+	background_music = preload("res://assets/sounds/Who Wants to Be a Mill.ogg")
+	background_music_player.stream = background_music
+	background_music_player.volume_db = -15  # Volume plus bas que les effets sonores
+	background_music_player.bus = "Master"
+	background_music_player.autoplay = true  # Démarrer automatiquement
+	add_child(background_music_player)
+	print("🎵 Musique de fond configurée et démarrée automatiquement")
+	print("🎵 Who Wants to Be a Mill.ogg - EN COURS DE LECTURE EN BOUCLE")
+	
+	# Debug: Vérifier l'état de la musique
+	print("🔍 DEBUG - Stream chargé: ", background_music != null)
+	print("🔍 DEBUG - Volume: ", background_music_player.volume_db, " dB")
+	print("🔍 DEBUG - Bus: ", background_music_player.bus)
+	print("🔍 DEBUG - Playing: ", background_music_player.playing)
+	print("🔍 DEBUG - Autoplay: ", background_music_player.autoplay)
+
+func start_background_music():
+	# Démarrer la musique de fond en boucle
+	if background_music_player and background_music_player.stream:
+		background_music_player.play()
+		print("🎵 Musique de fond démarrée")
+	else:
+		print("❌ Lecteur de musique de fond manquant ou stream non chargé")
+
+func stop_background_music():
+	# Arrêter la musique de fond
+	if background_music_player:
+		background_music_player.stop()
+		print("🎵 Musique de fond arrêtée")
+
+func test_background_music():
+	# Fonction de test pour forcer le démarrage de la musique
+	print("🧪 TEST - Tentative de démarrage forcé de la musique")
+	if background_music_player:
+		background_music_player.volume_db = 0  # Volume maximum pour test
+		background_music_player.play()
+		print("🧪 TEST - Musique forcée à jouer avec volume max")
+		print("🧪 TEST - Playing: ", background_music_player.playing)
+		print("🧪 TEST - Volume: ", background_music_player.volume_db, " dB")
+	else:
+		print("❌ TEST - Lecteur de musique non trouvé")
 
 func _handle_start_timer(message: Dictionary):
 	# Mettre tous les flags des joueurs en "go" (réponse autorisée) quand le timer démarre

@@ -2,12 +2,12 @@
   "phrases":  [
     {
       "id": 1,
-      "text": "Hey if you just joined, welcome! To play, just type A, B, or C in the chat.",
+      "text": "Hey if you just joined, welcome! To play, just type : A, B, or C in the chat.",
       "category": "rules"
     },
     {
       "id": 2,
-      "text": "New here? It’s super simple — just type A, B, or C to answer.",
+      "text": "New here? It’s super simple — just type : A, B, or C in the chat to answer.",
       "category": "rules"
     },
     {
@@ -22,7 +22,7 @@
     },
     {
       "id": 5,
-      "text": "No sign up, no download — just type A, B, or C. That’s how you play.",
+      "text": "No sign up, no download — just type : A, B, or C in the chat. That’s how you play.",
       "category": "rules"
     },
     {
@@ -32,7 +32,7 @@
     },
     {
       "id": 7,
-      "text": "Jump in anytime — type A, B, or C to play. Let’s see what you got.",
+      "text": "Jump in anytime — just type : A, B, or C in the chat to play. Let’s see what you got.",
       "category": "rules"
     },
    {
@@ -62,7 +62,7 @@
     },
     {
       "id": 13,
-      "text": "Here we go — question loading now.",
+      "text": "Here we go — next question comming now.",
       "category": "nextQuestion"
     },
     {
