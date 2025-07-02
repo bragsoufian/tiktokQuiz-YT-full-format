@@ -16,7 +16,7 @@ const config = require('./config'); // Import configuration
 //windpress
 //user7165753005592
 //valorantesports
-const tiktokUsername = 'camyslive';
+const tiktokUsername = 'mr.vadim_';
 const wsServer = new WebSocket.Server({ port: 8080 });
 
 // Unsplash API Configuration
@@ -37,10 +37,10 @@ const QUESTION_ACTIVATION_DELAY = 3000; // 7 secondes de délai avant d'accepter
 // Définition des seuils pour chaque niveau
 const LEVEL_THRESHOLDS = [
     1,    // Niveau 1 → 2
-    2,    // Niveau 2 → 3
-    3,
-    4,
-    5
+    4,    // Niveau 2 → 3
+    10,
+    15,
+    21
 ];
 
 // Configuration
@@ -57,6 +57,13 @@ let questionWaitingForActivation = false; // Nouveau: état d'attente avant acti
 let currentQuestion = null;
 let questionTimer = null;
 let playersAnsweredCurrentQuestion = new Set(); // Nouveau: tracker les joueurs qui ont répondu à la question actuelle
+
+// Données des gifts reçus pour la question actuelle
+let currentQuestionGifts = {
+    users: new Set(),
+    gifts: new Set(),
+    totalGifts: 0
+};
 
 // Stockage des joueurs
 const players = new Map();
@@ -138,6 +145,13 @@ function resetGameState() {
         log.system('🔄 Encouragement session reset for new match');
     }
     
+    // Reset gift data
+    currentQuestionGifts = {
+        users: new Set(),
+        gifts: new Set(),
+        totalGifts: 0
+    };
+    
     // Reset answer announcement session for new match
     if (answerAnnouncementManager) {
         answerAnnouncementManager.resetSession();
@@ -193,6 +207,13 @@ async function askNewQuestion() {
     
     questionWaitingForActivation = true; // Commencer la période d'attente
     playersAnsweredCurrentQuestion.clear(); // Réinitialiser la liste des joueurs qui ont répondu
+    
+    // Réinitialiser les gifts pour la nouvelle question
+    currentQuestionGifts = {
+        users: new Set(),
+        gifts: new Set(),
+        totalGifts: 0
+    };
     
     log.question(`Nouvelle question: ${currentQuestion.question}`);
     log.question(`Options: A) ${currentQuestion.options[0]}, B) ${currentQuestion.options[1]}, C) ${currentQuestion.options[2]}`);
@@ -329,14 +350,21 @@ async function endQuestion() {
         setTimeout(async () => {
             if (!matchEnded && encouragementManager && azureTTS) {
                 try {
-                    // Get a random encouragement phrase
-                    const phrase = encouragementManager.getRandomPhrase();
+                    // Préparer les données des gifts pour la phrase dynamique
+                    const giftData = {
+                        users: Array.from(currentQuestionGifts.users),
+                        gifts: Array.from(currentQuestionGifts.gifts),
+                        totalGifts: currentQuestionGifts.totalGifts
+                    };
+                    
+                    // Get a smart encouragement phrase based on game conditions
+                    const phrase = encouragementManager.getSmartPhrase(players, giftData);
                     if (phrase) {
-                        log.system(`🎤 Playing encouragement phrase: "${phrase.text}"`);
+                        log.system(`🎤 Playing smart encouragement phrase: "${phrase.text}"`);
                         
                         // Play the encouragement phrase
                         await azureTTS.speakText(phrase.text);
-                        log.success('✅ Encouragement phrase spoken');
+                        log.success('✅ Smart encouragement phrase spoken');
                     }
                 } catch (err) {
                     log.error('❌ Error playing encouragement phrase: ' + err);
@@ -479,6 +507,57 @@ tiktokLiveConnection.on('join', data => {
         });
         
         log.info(`${username} a rejoint le jeu via join event (0 points) - Flag initial: ${initialFlag}`);
+    }
+});
+
+// Gestion des gifts TikTok
+tiktokLiveConnection.on('gift', data => {
+    if (matchEnded) return;
+    
+    const username = data.uniqueId;
+    const giftName = data.giftName;
+    const giftCount = data.repeatCount || 1;
+    
+    log.system(`🎁 Gift reçu: ${username} a envoyé ${giftCount}x ${giftName}`);
+    
+    // Ajouter les données du gift pour la question actuelle
+    currentQuestionGifts.users.add(username);
+    currentQuestionGifts.gifts.add(giftName);
+    currentQuestionGifts.totalGifts += giftCount;
+    
+    // Enregistrer le gift dans l'encouragement manager pour prioriser les phrases de gifts
+    if (encouragementManager) {
+        encouragementManager.recordGift();
+        log.system(`🎁 Gift enregistré - phrases de gifts prioritaires pour les 30 prochaines secondes`);
+    }
+    
+    // Créer le joueur s'il n'existe pas déjà
+    if (!players.has(username)) {
+        log.player(`Nouveau joueur via gift: ${username}`);
+        players.set(username, {
+            profilePic: data.profilePictureUrl,
+            points: 0,
+            currentLevel: 1,
+            lastComment: Date.now()
+        });
+        
+        // Déterminer le flag initial basé sur l'état du jeu
+        const initialFlag = (questionActive && !questionWaitingForActivation) ? "go" : "wait";
+        
+        broadcastToGodot({
+            type: "new_player",
+            user: username,
+            profilePic: data.profilePictureUrl,
+            points: 0,
+            currentLevel: 1,
+            initialFlag: initialFlag
+        });
+        
+        log.info(`${username} a rejoint le jeu via gift (0 points) - Flag initial: ${initialFlag}`);
+    } else {
+        // Mettre à jour le lastComment pour les joueurs existants
+        const playerData = players.get(username);
+        playerData.lastComment = Date.now();
     }
 });
 

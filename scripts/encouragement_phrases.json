@@ -1,54 +1,84 @@
 {
-  "phrases": [
+  "phrases":  [
     {
       "id": 1,
-      "text": "Thank you so much for sharing our live stream! You're amazing!",
-      "category": "gratitude"
+      "text": "Hey if you just joined, welcome! To play, just type A, B, or C in the chat.",
+      "category": "rules"
     },
     {
       "id": 2,
-      "text": "Wow! Those gifts are incredible! You're making this quiz so much fun!",
-      "category": "gifts"
+      "text": "New here? It’s super simple — just type A, B, or C to answer.",
+      "category": "rules"
     },
     {
       "id": 3,
-      "text": "Keep those gifts coming! Every gift helps us create more awesome content!",
-      "category": "gifts"
+      "text": "To win the game, all you need is 21 correct answers. That’s it!",
+      "category": "rules"
     },
     {
       "id": 4,
-      "text": "You're the best community ever! Thanks for being here with us!",
-      "category": "community"
+      "text": "First one to hit 21 points takes the win — let’s go!",
+      "category": "rules"
     },
     {
       "id": 5,
-      "text": "Amazing gifts! You're really making this live stream special!",
-      "category": "gifts"
+      "text": "No sign up, no download — just type A, B, or C. That’s how you play.",
+      "category": "rules"
     },
     {
       "id": 6,
-      "text": "Don't forget to share this live stream with your friends!",
-      "category": "sharing"
+      "text": "Quick reminder: 21 right answers and you win. Easy as that.",
+      "category": "rules"
     },
     {
       "id": 7,
-      "text": "Your support means everything to us! Thank you for the gifts!",
-      "category": "gratitude"
+      "text": "Jump in anytime — type A, B, or C to play. Let’s see what you got.",
+      "category": "rules"
     },
-    {
+   {
       "id": 8,
-      "text": "This is going to be an epic quiz! Thanks for joining us!",
-      "category": "excitement"
+      "text": "If you're enjoying the quiz, hit that share button — bring a friend in!",
+      "category": "sharing"
     },
     {
       "id": 9,
-      "text": "You're making this the best live stream ever! Keep it up!",
-      "category": "encouragement"
+      "text": "Know someone who’d love this? Go ahead and send them the stream.",
+      "category": "sharing"
     },
     {
       "id": 10,
-      "text": "Ready for some quiz action? Let's make this amazing together!",
-      "category": "excitement"
+      "text": "More players, more fun — feel free to share the live!",
+      "category": "sharing"
+    },
+    {
+      "id": 11,
+      "text": "Next question coming up — get ready to type!",
+      "category": "nextQuestion"
+    },
+    {
+      "id": 12,
+      "text": "Alright, next one’s on the way. Focus up!",
+      "category": "nextQuestion"
+    },
+    {
+      "id": 13,
+      "text": "Here we go — question loading now.",
+      "category": "nextQuestion"
+    },
+    {
+      "id": 14,
+      "text": "Don’t overthink it — just trust your gut and answer.",
+      "category": "encouragement"
+    },
+    {
+      "id": 15,
+      "text": "You got this — it’s easier than you think!",
+      "category": "encouragement"
+    },
+    {
+      "id": 16,
+      "text": "Even if you’re not sure — take a shot! One answer could change it all.",
+      "category": "encouragement"
     }
   ],
   "settings": {
