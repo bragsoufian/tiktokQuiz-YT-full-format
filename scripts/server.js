@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const AzureTTS = require('./azure_tts'); // Import Azure TTS
 const EncouragementManager = require('./encouragement_manager'); // Import Encouragement Manager
+const AnswerAnnouncementManager = require('./answer_announcement_manager'); // Import Answer Announcement Manager
 const https = require('https');
 const config = require('./config'); // Import configuration
 
@@ -15,12 +16,16 @@ const config = require('./config'); // Import configuration
 //windpress
 //user7165753005592
 //valorantesports
-const tiktokUsername = 'mpx_player';
+const tiktokUsername = 'camyslive';
 const wsServer = new WebSocket.Server({ port: 8080 });
 
 // Unsplash API Configuration
 const UNSPLASH_ACCESS_KEY = config.UNSPLASH_ACCESS_KEY;
 const UNSPLASH_API_URL = 'https://api.unsplash.com/photos/random';
+
+// Simple cache for Unsplash images to reduce API calls
+const unsplashCache = new Map();
+const CACHE_DURATION = 604800000; // 7 days in milliseconds
 
 // Configuration du jeu
 const QUESTION_TIMER = 10000; // 5 secondes par défaut
@@ -67,6 +72,9 @@ let azureTTS = null;
 
 // Encouragement Manager instance
 let encouragementManager = null;
+
+// Answer Announcement Manager instance
+let answerAnnouncementManager = null;
 
 // Fonction pour les logs colorés avec timestamps
 const log = {
@@ -128,6 +136,12 @@ function resetGameState() {
     if (encouragementManager) {
         encouragementManager.resetSession();
         log.system('🔄 Encouragement session reset for new match');
+    }
+    
+    // Reset answer announcement session for new match
+    if (answerAnnouncementManager) {
+        answerAnnouncementManager.resetSession();
+        log.system('🔄 Answer announcement session reset for new match');
     }
     
     // Arrêter les timers existants
@@ -263,7 +277,7 @@ async function askNewQuestion() {
 }
 
 // Fonction pour terminer la question
-function endQuestion() {
+async function endQuestion() {
     if (!questionActive) return;
     
     questionActive = false;
@@ -289,6 +303,23 @@ function endQuestion() {
     
     log.question(`Envoi du message de fin de timer à Godot: ${JSON.stringify(waitMessage)}`);
     broadcastToGodot(waitMessage);
+    
+    // Announce the correct answer using TTS
+    if (answerAnnouncementManager && azureTTS) {
+        try {
+            const announcementText = answerAnnouncementManager.generateAnnouncementText(
+                currentQuestion.correctAnswer, 
+                correctOptionText, 
+                currentQuestionIndex
+            );
+            
+            log.system(`🎤 Announcing correct answer: "${announcementText}"`);
+            await azureTTS.speakText(announcementText);
+            log.success('✅ Answer announcement spoken');
+        } catch (err) {
+            log.error('❌ Error announcing answer: ' + err);
+        }
+    }
     
     currentQuestion = null;
     
@@ -864,6 +895,10 @@ function stopTestPlayer() {
         // Initialize Encouragement Manager
         encouragementManager = new EncouragementManager();
         log.success('Encouragement Manager initialized and ready!');
+        
+        // Initialize Answer Announcement Manager
+        answerAnnouncementManager = new AnswerAnnouncementManager();
+        log.success('Answer Announcement Manager initialized and ready!');
     } catch (error) {
         log.error('Failed to initialize Azure TTS:', error);
     }
@@ -887,6 +922,15 @@ function getUnsplashImage(query) {
             return;
         }
 
+        // Check cache first
+        const cacheKey = query.toLowerCase().trim();
+        const cached = unsplashCache.get(cacheKey);
+        if (cached && (Date.now() - cached.timestamp) < CACHE_DURATION) {
+            log.unsplash(`💾 Using cached image for query: "${query}"`);
+            resolve(cached.url);
+            return;
+        }
+
         const url = `${UNSPLASH_API_URL}?query=${encodeURIComponent(query)}&orientation=landscape&w=800&h=600&client_id=${UNSPLASH_ACCESS_KEY}`;
         
         log.unsplash(`Fetching image for query: "${query}"`);
@@ -894,27 +938,61 @@ function getUnsplashImage(query) {
         https.get(url, (res) => {
             let data = '';
             
+            // Check for rate limit or other HTTP errors
+            if (res.statusCode === 403) {
+                log.error('❌ Unsplash API: Rate limit exceeded or unauthorized access');
+                log.warning('⚠️ Using fallback image due to rate limit');
+                resolve('https://httpbin.org/image/png?width=800&height=600');
+                return;
+            }
+            
+            if (res.statusCode !== 200) {
+                log.error(`❌ Unsplash API error: HTTP ${res.statusCode}`);
+                log.warning('⚠️ Using fallback image due to API error');
+                resolve('https://httpbin.org/image/png?width=800&height=600');
+                return;
+            }
+            
             res.on('data', (chunk) => {
                 data += chunk;
             });
             
             res.on('end', () => {
                 try {
+                    // Check if response is JSON or error text
+                    if (data.includes('Rate Limit Exceeded') || data.includes('error')) {
+                        log.error(`❌ Unsplash API error: ${data}`);
+                        log.warning('⚠️ Using fallback image due to API error');
+                        resolve('https://httpbin.org/image/png?width=800&height=600');
+                        return;
+                    }
+                    
                     const imageData = JSON.parse(data);
                     if (imageData.urls && imageData.urls.regular) {
-                        log.unsplash(`✅ Image found: ${imageData.urls.regular}`);
-                        resolve(imageData.urls.regular);
+                        const imageUrl = imageData.urls.regular;
+                        log.unsplash(`✅ Image found: ${imageUrl}`);
+                        
+                        // Cache the result
+                        unsplashCache.set(cacheKey, {
+                            url: imageUrl,
+                            timestamp: Date.now()
+                        });
+                        
+                        resolve(imageUrl);
                     } else {
-                        log.warning('No image found, using fallback');
+                        log.warning('No image found in response, using fallback');
                         resolve('https://httpbin.org/image/png?width=800&height=600');
                     }
                 } catch (error) {
-                    log.error(`Error parsing Unsplash response: ${error.message}`);
+                    log.error(`❌ Error parsing Unsplash response: ${error.message}`);
+                    log.error(`Raw response: ${data.substring(0, 200)}...`);
+                    log.warning('⚠️ Using fallback image due to parsing error');
                     resolve('https://httpbin.org/image/png?width=800&height=600');
                 }
             });
         }).on('error', (error) => {
-            log.error(`Error fetching from Unsplash: ${error.message}`);
+            log.error(`❌ Network error fetching from Unsplash: ${error.message}`);
+            log.warning('⚠️ Using fallback image due to network error');
             resolve('https://httpbin.org/image/png?width=800&height=600');
         });
     });

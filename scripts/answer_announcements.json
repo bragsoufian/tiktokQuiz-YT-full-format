@@ -1,0 +1,58 @@
+{
+  "announcements": [
+    {
+      "id": 1,
+      "text": "The correct answer is {letter}: {answer}",
+      "category": "direct"
+    },
+    {
+      "id": 2,
+      "text": "It's {letter}: {answer}",
+      "category": "casual"
+    },
+    {
+      "id": 3,
+      "text": "The right answer is {letter}: {answer}",
+      "category": "formal"
+    },
+    {
+      "id": 4,
+      "text": "And the answer is {letter}: {answer}",
+      "category": "dramatic"
+    },
+    {
+      "id": 5,
+      "text": "The correct answer was {letter}: {answer}",
+      "category": "past_tense"
+    },
+    {
+      "id": 6,
+      "text": "Drumroll please... {letter}: {answer}",
+      "category": "fun"
+    },
+    {
+      "id": 7,
+      "text": "The answer is {letter}: {answer}",
+      "category": "simple"
+    },
+    {
+      "id": 8,
+      "text": "Here's the answer: {letter}: {answer}",
+      "category": "introduction"
+    },
+    {
+      "id": 9,
+      "text": "The correct answer was {letter}: {answer}",
+      "category": "past_tense"
+    },
+    {
+      "id": 10,
+      "text": "And the winner is... {letter}: {answer}",
+      "category": "game_show"
+    }
+  ],
+  "settings": {
+    "randomSelection": true,
+    "includeQuestionNumber": false
+  }
+} 
