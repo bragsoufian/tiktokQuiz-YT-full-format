@@ -11,11 +11,17 @@ var rotation_duration = 12.0  # seconds for one complete rotation cycle
 var zoom_time = 0.0
 var rotation_time = 0.0
 var initial_scale = Vector2.ONE
+var initial_position = Vector2.ZERO
 
 func _ready():
-	# Store initial scale
+	# Store initial scale and position from editor
 	initial_scale = scale
-	# Set initial position to center
+	initial_position = Vector2(-1108.0, -412.0)  # Position fixe
+	
+	# FORCER la position au démarrage avec un petit décalage vers la droite
+	position = initial_position + Vector2(1, 0)  # +1 pixel vers la droite
+	
+	# Set pivot to center of the texture
 	pivot_offset = size / 2
 
 func _process(delta):
@@ -29,6 +35,10 @@ func _process(delta):
 	var rotation_progress = fmod(rotation_time, rotation_duration) / rotation_duration
 	var rotation_angle = deg_to_rad(rotation_range * sin(rotation_progress * TAU))
 	
-	# Apply transformations
+	# Apply transformations while keeping the position fixed
 	scale = initial_scale * zoom_factor
-	rotation = rotation_angle 
+	rotation = rotation_angle
+	
+	# Log toutes les 5 secondes pour surveillance
+	if int(zoom_time) % 5 == 0 and int(zoom_time) > 0:
+		print("🎬 Surveillance - Position: ", position, " Échelle: ", scale, " Rotation: ", rad_to_deg(rotation)) 

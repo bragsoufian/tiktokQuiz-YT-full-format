@@ -13,23 +13,26 @@
 
 [node name="BackgroundTextureRect" type="TextureRect" parent="."]
 z_index = -1
-offset_left = -360.0
-offset_top = 3.0
-offset_right = 1110.0
-offset_bottom = 1003.0
+offset_left = -1458.0
+offset_top = -992.0
+offset_right = 12.0
+offset_bottom = 8.0
+scale = Vector2(2, 2)
 texture = ExtResource("1_jlsqs")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("7_animation")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 6.00104
-offset_right = 706.001
-offset_bottom = 1000.0
+offset_left = -628.0
+offset_top = -438.0
+offset_right = 71.9999
+offset_bottom = 562.0
 texture = ExtResource("3_jlsqs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(348, 501)
+position = Vector2(-270, 160)
+zoom = Vector2(0.7, 0.7)
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_rtedj")
@@ -40,10 +43,10 @@ anchor_left = -1.91743
 anchor_top = -1.395
 anchor_right = -1.91743
 anchor_bottom = -1.395
-offset_left = 903.201
-offset_top = 277.0
-offset_right = 2041.2
-offset_bottom = 2389.0
+offset_left = 278.201
+offset_top = -161.0
+offset_right = 1416.2
+offset_bottom = 1951.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Level1" parent="GameManager/Grid" instance=ExtResource("2_rtedj")]
@@ -51,7 +54,7 @@ position = Vector2(638, 1569)
 scale = Vector2(0.811097, 0.811097)
 
 [node name="player" parent="GameManager/Grid/Level1" instance=ExtResource("3_0bbpv")]
-position = Vector2(560.967, -775.493)
+position = Vector2(452.474, -1123.17)
 
 [node name="Level2" parent="GameManager/Grid" instance=ExtResource("2_rtedj")]
 position = Vector2(646, 1652)
@@ -74,10 +77,15 @@ position = Vector2(652, 1984)
 scale = Vector2(0.836443, 0.836443)
 
 [node name="QuestionUI" parent="." instance=ExtResource("3_vcsgt")]
-offset_left = 358.001
-offset_top = 260.0
-offset_right = 358.001
-offset_bottom = 260.0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -288.0
+offset_top = -165.0
+offset_right = -288.0
+offset_bottom = -165.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="ReadyScreen" type="Control" parent="."]
 visible = false
@@ -96,10 +104,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -157.0
-offset_top = -504.0
-offset_right = 922.0
-offset_bottom = 1169.0
+offset_left = -851.0
+offset_top = -765.0
+offset_right = 319.0
+offset_bottom = 1049.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -110,10 +118,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -207.5
-offset_top = -191.5
-offset_right = 792.5
-offset_bottom = 808.5
+offset_left = -208.0
+offset_top = -399.0
+offset_right = 792.0
+offset_bottom = 601.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.36, 0.36)

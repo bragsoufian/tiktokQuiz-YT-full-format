@@ -785,10 +785,10 @@ show_percentage = false
 
 [node name="TimerLabel" type="Label" parent="Panel"]
 layout_mode = 2
-offset_left = -440.0
-offset_top = 166.304
-offset_right = 120.0
-offset_bottom = 189.304
+offset_left = -1274.0
+offset_top = -15.2174
+offset_right = -714.0
+offset_bottom = 7.78261
 text = "5"
 horizontal_alignment = 1
 
