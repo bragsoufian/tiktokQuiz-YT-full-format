@@ -156,8 +156,8 @@ func _setup_winner_audio():
 	winner_sound_player.bus = "Master"
 	
 	# Load winner sound
-	if ResourceLoader.exists("res://assets/sounds/winnerIs.ogg"):
-		winner_sound = load("res://assets/sounds/winnerIs.ogg")
+	if ResourceLoader.exists("res://assets/sounds/winnerIs.mp3"):
+		winner_sound = load("res://assets/sounds/winnerIs.mp3")
 		if winner_sound_player:
 			winner_sound_player.stream = winner_sound
 			print("✅ Son de victoire chargé")

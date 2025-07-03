@@ -5,6 +5,7 @@ const path = require('path');
 const AzureTTS = require('./azure_tts'); // Import Azure TTS
 const EncouragementManager = require('./encouragement_manager'); // Import Encouragement Manager
 const AnswerAnnouncementManager = require('./answer_announcement_manager'); // Import Answer Announcement Manager
+const WinnerAnnouncementManager = require('./winner_announcement_manager'); // Import Winner Announcement Manager
 const https = require('https');
 const config = require('./config'); // Import configuration
 
@@ -16,7 +17,7 @@ const config = require('./config'); // Import configuration
 //windpress
 //user7165753005592
 //valorantesports
-const tiktokUsername = 'windpress';
+const tiktokUsername = 'camyslive';
 const wsServer = new WebSocket.Server({ port: 8080 });
 
 // Unsplash API Configuration
@@ -104,6 +105,9 @@ let encouragementManager = null;
 // Answer Announcement Manager instance
 let answerAnnouncementManager = null;
 
+// Winner Announcement Manager instance
+let winnerAnnouncementManager = null;
+
 // Fonction pour les logs colorés avec timestamps
 const log = {
     info: (msg) => console.log('\x1b[36m%s\x1b[0m', `[${new Date().toLocaleTimeString()}] ℹ️ ${msg}`),    // Cyan
@@ -177,6 +181,12 @@ function resetGameState() {
     if (answerAnnouncementManager) {
         answerAnnouncementManager.resetSession();
         log.system('🔄 Answer announcement session reset for new match');
+    }
+    
+    // Reset winner announcement session for new match
+    if (winnerAnnouncementManager) {
+        winnerAnnouncementManager.resetSession();
+        log.system('🔄 Winner announcement session reset for new match');
     }
     
     // Arrêter les timers existants
@@ -817,7 +827,7 @@ wsServer.on('close', () => {
 });
 
 // Fonction pour gérer la fin du match
-function handleMatchEnd(winnerUsername, points) {
+async function handleMatchEnd(winnerUsername, points) {
     matchEnded = true;
     winner = winnerUsername;
     log.success(`🏆 ${winnerUsername} a gagné le match!`);
@@ -857,17 +867,37 @@ function handleMatchEnd(winnerUsername, points) {
         second_place: secondPlace || null,
         third_place: thirdPlace || null
     });
+
+    // Announce the winner with TTS
+    if (winnerAnnouncementManager) {
+        try {
+            const winnerData = {
+                username: winnerUsername,
+                points: points
+            };
+            
+            log.system(`🎤 Announcing winner: ${winnerUsername} with ${points} points`);
+            await winnerAnnouncementManager.announceWinner(winnerData, secondPlace, thirdPlace);
+            log.success('✅ Winner announcement completed');
+        } catch (err) {
+            log.error('❌ Error announcing winner: ' + err);
+        }
+    }
     
     // Arrêter le test player si actif
     if (USE_TEST_PLAYER) {
         stopTestPlayer();
     }
     
-    // Réinitialiser le match après 10 secondes
+    // Wait for winner announcement to finish, then restart after a short delay
+    log.system('⏳ Waiting for winner announcement to finish before restarting...');
+    
+    // Réinitialiser le match après un court délai (pour laisser le temps à l'audio de finir)
     if (restartTimeout) {
         clearTimeout(restartTimeout);
     }
     restartTimeout = setTimeout(() => {
+        log.system('🔄 Restarting game after winner announcement...');
         resetGameState();
         // Redémarrer le test player si actif
         if (USE_TEST_PLAYER) {
@@ -877,7 +907,7 @@ function handleMatchEnd(winnerUsername, points) {
         broadcastToGodot({
             type: "match_started"
         });
-    }, 10000); // 10 secondes
+    }, 3000); // 3 secondes après la fin de l'annonce
 }
 
 // Fonction pour démarrer le test player
@@ -908,7 +938,7 @@ function startTestPlayer() {
     }
     
     // Démarrer l'intervalle pour envoyer des commentaires
-    testPlayerInterval = setInterval(() => {
+    testPlayerInterval = setInterval(async () => {
         if (matchEnded) {
             stopTestPlayer();
             return;
@@ -927,7 +957,7 @@ function startTestPlayer() {
                 
                 // Vérifier si le joueur a gagné (niveau 6)
                 if (newLevel === 6) {
-                    handleMatchEnd(testPlayerUsername, playerData.points);
+                    await handleMatchEnd(testPlayerUsername, playerData.points);
                     return;
                 }
             }
@@ -966,6 +996,11 @@ function stopTestPlayer() {
         // Initialize Answer Announcement Manager
         answerAnnouncementManager = new AnswerAnnouncementManager();
         log.success('Answer Announcement Manager initialized and ready!');
+        
+        // Initialize Winner Announcement Manager
+        winnerAnnouncementManager = new WinnerAnnouncementManager();
+        await winnerAnnouncementManager.initialize(azureTTS);
+        log.success('Winner Announcement Manager initialized and ready!');
     } catch (error) {
         log.error('Failed to initialize Azure TTS:', error);
     }
