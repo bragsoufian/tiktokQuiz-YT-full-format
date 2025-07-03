@@ -39,6 +39,3 @@ func _process(delta):
 	scale = initial_scale * zoom_factor
 	rotation = rotation_angle
 	
-	# Log toutes les 5 secondes pour surveillance
-	if int(zoom_time) % 5 == 0 and int(zoom_time) > 0:
-		print("🎬 Surveillance - Position: ", position, " Échelle: ", scale, " Rotation: ", rad_to_deg(rotation)) 

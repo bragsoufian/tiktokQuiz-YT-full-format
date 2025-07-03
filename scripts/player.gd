@@ -140,16 +140,6 @@ func _load_profile_image():
 			current_texture = texture
 			sprite.texture = current_texture
 			sprite.visible = true
-			
-			# Respecter le z-index élevé si le joueur est en premier plan
-			if is_in_foreground:
-				sprite.z_index = foreground_z_index
-				z_index = foreground_z_index
-				print("📊 Maintien du z-index élevé avec image locale - Joueur: ", z_index, " Sprite: ", sprite.z_index)
-			else:
-				sprite.z_index = base_z_index + 100
-				z_index = base_z_index
-			
 			is_image_loaded = true
 			_update_display()
 			print("✅ Image locale chargée avec succès pour ", username)
@@ -170,9 +160,7 @@ func _load_profile_image():
 	var error = http_request.request(profile_pic_url, headers)
 	if error != OK:
 		print("❌ Erreur lors de la requête HTTP: ", error, " pour ", username)
-		# Réessayer après un court délai
-		await get_tree().create_timer(1.0).timeout
-		_load_profile_image()
+		_use_default_texture()
 		return
 	
 	print("✅ Requête HTTP envoyée avec succès pour ", username)
@@ -180,17 +168,9 @@ func _load_profile_image():
 func _use_default_texture():
 	if sprite:
 		sprite.texture = load("res://assets/profile pic.png")
-		
-		# Respecter le z-index élevé si le joueur est en premier plan
-		if is_in_foreground:
-			sprite.z_index = foreground_z_index
-			z_index = foreground_z_index
-			print("📊 Maintien du z-index élevé avec texture par défaut - Joueur: ", z_index, " Sprite: ", sprite.z_index)
-		else:
-			sprite.z_index = base_z_index + 100
-			z_index = base_z_index
-		
+		sprite.visible = true
 		is_image_loaded = true
+		_update_display()
 		print("Utilisation de la texture par défaut pour ", username)
 
 func _on_request_completed(result, response_code, headers, body):
@@ -198,14 +178,12 @@ func _on_request_completed(result, response_code, headers, body):
 	
 	if result != HTTPRequest.RESULT_SUCCESS:
 		print("❌ Erreur lors du téléchargement de l'image: ", result, " pour ", username)
-		await get_tree().create_timer(1.0).timeout
-		_load_profile_image()
+		_use_default_texture()
 		return
 		
 	if response_code != 200:
 		print("❌ Erreur HTTP: ", response_code, " pour ", username)
-		await get_tree().create_timer(1.0).timeout
-		_load_profile_image()
+		_use_default_texture()
 		return
 	
 	var image = Image.new()
@@ -229,8 +207,7 @@ func _on_request_completed(result, response_code, headers, body):
 	
 	if error != OK:
 		print("❌ Impossible de charger l'image dans aucun format supporté pour ", username)
-		await get_tree().create_timer(1.0).timeout
-		_load_profile_image()
+		_use_default_texture()
 		return
 	
 	var texture = ImageTexture.create_from_image(image)
@@ -238,23 +215,12 @@ func _on_request_completed(result, response_code, headers, body):
 		current_texture = texture
 		sprite.texture = current_texture
 		sprite.visible = true
-		
-		# Respecter le z-index élevé si le joueur est en premier plan
-		if is_in_foreground:
-			sprite.z_index = foreground_z_index
-			z_index = foreground_z_index
-			print("📊 Maintien du z-index élevé lors du chargement d'image - Joueur: ", z_index, " Sprite: ", sprite.z_index)
-		else:
-			sprite.z_index = base_z_index + 100
-			z_index = base_z_index
-		
 		is_image_loaded = true
 		_update_display()
 		print("✅ Texture appliquée avec succès pour ", username)
 	else:
 		print("❌ Erreur: Impossible d'appliquer la texture pour ", username)
-		await get_tree().create_timer(1.0).timeout
-		_load_profile_image()
+		_use_default_texture()
 
 func update_player_data(data: Dictionary):
 	print("🔄 Mise à jour des données du joueur: ", data.user)
@@ -283,21 +249,9 @@ func _update_display():
 		print("❌ ERREUR: Sprite non trouvé dans _update_display")
 		return
 	
-	# Si le joueur est en premier plan, ne pas changer son z-index
-	if is_in_foreground:
-		z_index = foreground_z_index
-		sprite.z_index = foreground_z_index
-		print("📊 Maintien du z-index élevé - Joueur: ", z_index, " Sprite: ", sprite.z_index)
-	else:
-		# S'assurer que le sprite est visible et au premier plan
-		sprite.visible = true
-		sprite.z_index = 1000  # Forcer le z-index élevé
-		sprite.modulate = Color(1, 1, 1, 1)  # S'assurer qu'il n'est pas transparent
-		
-		# S'assurer que le joueur lui-même est au premier plan
-		z_index = 1000
-		
-		print("📊 Display mis à jour - Z-index Joueur: ", z_index, " Sprite: ", sprite.z_index)
+	# S'assurer que le sprite est visible
+	sprite.visible = true
+	sprite.modulate = Color(1, 1, 1, 1)  # S'assurer qu'il n'est pas transparent
 	
 	# Mettre à jour le label des points
 	if points_label:
@@ -309,6 +263,7 @@ func _update_display():
 	# S'assurer que la texture est toujours appliquée
 	if current_texture and sprite.texture != current_texture:
 		sprite.texture = current_texture
+		print("✅ Texture appliquée dans _update_display pour ", username)
 
 func _exit_tree():
 	if http_request:

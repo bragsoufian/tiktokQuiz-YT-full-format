@@ -68,5 +68,572 @@
     "correctAnswer": "A",
     "backgroundKeyWords": "bird flying ocean sky",
     "image": null
+  },
+  {
+    "question": "Which animal never sleeps?",
+    "options": ["Bullfrog", "Shark", "Ant"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "mysterious ocean creature",
+    "image": null
+  },
+  {
+    "question": "What’s the only food that never spoils?",
+    "options": ["Honey", "Bread", "Cheese"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "ancient food rustic kitchen",
+    "image": null
+  },
+  {
+    "question": "Which planet rains diamonds?",
+    "options": ["Mars", "Saturn", "Venus"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "sparkling space scene",
+    "image": null
+  },
+  {
+    "question": "What is the only mammal that can’t jump?",
+    "options": ["Elephant", "Kangaroo", "Hippo"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "large safari landscape",
+    "image": null
+  },
+  {
+    "question": "Which fruit has its seeds on the outside?",
+    "options": ["Kiwi", "Blueberry", "Strawberry"],
+    "correctAnswer": "C",
+    "backgroundKeyWords": "fresh berry closeup",
+    "image": null
+  },
+  {
+    "question": "What color is the universe, according to scientists?",
+    "options": ["Jet Black", "Cosmic Latte", "Deep Purple"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "soft pastel space",
+    "image": null
+  },
+  {
+    "question": "Which animal can hold its breath the longest?",
+    "options": ["Cheetah", "Tortoise", "Sperm Whale"],
+    "correctAnswer": "C",
+    "backgroundKeyWords": "deep blue water scene",
+    "image": null
+  },
+  {
+    "question": "What was the first toy advertised on TV?",
+    "options": ["Lego", "Barbie", "Mr. Potato Head"],
+    "correctAnswer": "C",
+    "backgroundKeyWords": "vintage retro toy",
+    "image": null
+  },
+  {
+    "question": "Which metal floats on water?",
+    "options": ["Aluminum", "Lead", "Lithium"],
+    "correctAnswer": "C",
+    "backgroundKeyWords": "metal science concept",
+    "image": null
+  },
+  {
+    "question": "What’s the world’s longest word you can type with only your left hand?",
+    "options": ["Stewardesses", "Mississippi", "Alaska"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "keyboard hands closeup",
+    "image": null
+  },
+  {
+    "question": "Which spice was once worth its weight in gold?",
+    "options": ["Pepper", "Cinnamon", "Saffron"],
+    "correctAnswer": "C",
+    "backgroundKeyWords": "exotic spice vibe",
+    "image": null
+  },
+  {
+    "question": "What’s the strongest muscle in the human body (by weight)?",
+    "options": ["Heart", "Tongue", "Gluteus maximus"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "anatomy study closeup",
+    "image": null
+  },
+  {
+    "question": "Which animal’s poop is cube‑shaped?",
+    "options": ["Wombat", "Kangaroo", "Otter"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "quirky wildlife surprise",
+    "image": null
+  },
+  {
+    "question": "What part of your body never stops growing?",
+    "options": ["Nose", "Ears", "Fingernails"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "anatomy tiny detail",
+    "image": null
+  },
+  {
+    "question": "Which creature has three hearts?",
+    "options": ["Octopus", "Shark", "Frog"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "underwater oddity creature",
+    "image": null
+  },
+  {
+    "question": "Which country eats the most chocolate per person?",
+    "options": ["Belgium", "Switzerland", "France"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "sweet treat map hint",
+    "image": null
+  },
+  {
+    "question": "What’s the fastest muscle in your body?",
+    "options": ["Heart", "Eyelid", "Cheek"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "blink motion closeup",
+    "image": null
+  },
+  {
+    "question": "Which animal can regrow its limbs?",
+    "options": ["Starfish", "Dog", "Elephant"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "sea creature regrowth",
+    "image": null
+  },
+  {
+    "question": "Which dinosaur had feathers?",
+    "options": ["Tyrannosaurus rex", "Velociraptor", "Brontosaurus"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "prehistoric bird clue",
+    "image": null
+  },
+  {
+    "question": "Which planet spins backwards?",
+    "options": ["Venus", "Mars", "Jupiter"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "planet rotate unusual",
+    "image": null
+  },
+  {
+    "question": "What’s the world’s smallest reptile?",
+    "options": ["Chameleon", "Snake", "Gecko"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "tiny creature macro",
+    "image": null
+  },
+  {
+    "question": "Which ocean is the saltiest?",
+    "options": ["Atlantic", "Pacific", "Indian"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "sea horizon neutral",
+    "image": null
+  },
+  {
+    "question": "What’s the only bird that can fly backwards?",
+    "options": ["Sparrow", "Hummingbird", "Eagle"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "tiny wing motion",
+    "image": null
+  },
+  {
+    "question": "Which country invented ice cream?",
+    "options": ["China", "Italy", "USA"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "dessert history hint",
+    "image": null
+  },
+  {
+    "question": "What’s baby kangaroo called?",
+    "options": ["Calf", "Joey", "Cub"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "animal baby marsupial",
+    "image": null
+  },
+  {
+    "question": "Which element is liquid at room temperature?",
+    "options": ["Mercury", "Gold", "Copper"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "chemistry beaker scene",
+    "image": null
+  },
+  {
+    "question": "How many hearts does a snail have?",
+    "options": ["One", "Two", "Four"],
+    "correctAnswer": "C",
+    "backgroundKeyWords": "garden creature detail",
+    "image": null
+  },
+  {
+    "question": "What’s the only continent without reptiles?",
+    "options": ["Europe", "Antarctica", "Asia"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "icy landmass scene",
+    "image": null
+  },
+  {
+    "question": "Which mammal lays eggs?",
+    "options": ["Platypus", "Dolphin", "Kangaroo"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "odd animal nature",
+    "image": null
+  },
+  {
+    "question": "What’s the hardest natural substance on Earth?",
+    "options": ["Diamond", "Quartz", "Steel"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "shiny mineral macro",
+    "image": null
+  },
+  {
+    "question": "Which fruit floats in water?",
+    "options": ["Banana", "Cherry", "Apple"],
+    "correctAnswer": "C",
+    "backgroundKeyWords": "fruit water surface",
+    "image": null
+  },
+  {
+    "question": "What’s the fastest marine mammal?",
+    "options": ["Dolphin", "Orca", "Seal"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "ocean mammal speed",
+    "image": null
+  },
+  {
+    "question": "Which planet has the most moons?",
+    "options": ["Saturn", "Mars", "Neptune"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "ringed planet view",
+    "image": null
+  },
+  {
+    "question": "What’s Sherlock Holmes’ address (fictional)?",
+    "options": ["221B Baker Street", "10 Downing Street", "1600 Pennsylvania Ave"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "old london street",
+    "image": null
+  },
+  {
+    "question": "Which fruit is actually a berry?",
+    "options": ["Strawberry", "Banana", "Raspberry"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "yellow peel clue",
+    "image": null
+  },
+  {
+    "question": "What’s the only bird with nostrils at the end of its beak?",
+    "options": ["Pelican", "Flamingo", "Kiwi"],
+    "correctAnswer": "C",
+    "backgroundKeyWords": "forest bird silhouette",
+    "image": null
+  },
+  {
+    "question": "Which vegetable was once called a 'love apple'?",
+    "options": ["Tomato", "Potato", "Eggplant"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "garden harvest scene",
+    "image": null
+  },
+  {
+    "question": "What language has the most words?",
+    "options": ["English", "Mandarin", "Spanish"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "open book pages",
+    "image": null
+  },
+  {
+    "question": "Which planet is hottest in our solar system?",
+    "options": ["Venus", "Mercury", "Earth"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "fiery planet vibe",
+    "image": null
+  },
+  {
+    "question": "Which animal sleeps standing up?",
+    "options": ["Horse", "Cat", "Cow"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "stable nighttime scene",
+    "image": null
+  },
+  {
+    "question": "Which mammal can’t walk backwards?",
+    "options": ["Kangaroo", "Elephant", "Polar Bear"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "outback animal silhouette",
+    "image": null
+  },
+  {
+    "question": "What’s the tallest mountain in our solar system?",
+    "options": ["Olympus Mons", "Mount Everest", "K2"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "red planet horizon",
+    "image": null
+  },
+  {
+    "question": "Which bird is flightless and runs fastest?",
+    "options": ["Ostrich", "Penguin", "Emu"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "desert runner bird",
+    "image": null
+  },
+  {
+    "question": "Which sea creature is radar‑invisible?",
+    "options": ["Jellyfish", "Squid", "Octopus"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "deep sea glow",
+    "image": null
+  },
+  {
+    "question": "What’s the largest organ in your body?",
+    "options": ["Liver", "Skin", "Brain"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "human body outline",
+    "image": null
+  },
+  {
+    "question": "Which animal’s milk is pink?",
+    "options": ["Elephant", "Hippo", "Pig"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "riverbank wildlife scene",
+    "image": null
+  },
+  {
+    "question": "Which fruit has no seeds?",
+    "options": ["Banana", "Watermelon", "Peach"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "tropical snack vibe",
+    "image": null
+  },
+  {
+    "question": "What’s a group of crows called?",
+    "options": ["Flock", "Murder", "Pack"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "dark bird gathering",
+    "image": null
+  },
+  {
+    "question": "Which mammal can fly?",
+    "options": ["Bat", "Flying Squirrel", "Eagle"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "night winged animal",
+    "image": null
+  },
+  {
+    "question": "What’s the only food that’s also a flower?",
+    "options": ["Cauliflower", "Potato", "Rice"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "kitchen flower hint",
+    "image": null
+  },
+  {
+    "question": "Which planet shares a name with a fruit?",
+    "options": ["Plum", "Pear", "Mars"],
+    "correctAnswer": "C",
+    "backgroundKeyWords": "red planet hint",
+    "image": null
+  },
+  {
+    "question": "Which animal spends most of its life underwater?",
+    "options": ["Sea Turtle", "Dolphin", "Fish"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "ocean life closeup",
+    "image": null
+  },
+  {
+    "question": "What’s the most stolen food worldwide?",
+    "options": ["Cheese", "Chocolate", "Bread"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "kitchen mystery snack",
+    "image": null
+  },
+  {
+    "question": "Which planet has a day longer than its year?",
+    "options": ["Venus", "Mars", "Mercury"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "planet orbit hint",
+    "image": null
+  },
+  {
+    "question": "What’s the only rock that floats?",
+    "options": ["Pumice", "Granite", "Marble"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "floating stone curiosity",
+    "image": null
+  },
+  {
+    "question": "Which animal can survive without drinking water?",
+    "options": ["Camel", "Goat", "Elephant"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "desert landscape hint",
+    "image": null
+  },
+  {
+    "question": "Which human organ can regenerate itself?",
+    "options": ["Liver", "Kidney", "Lung"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "medical anatomy concept",
+    "image": null
+  },
+  {
+    "question": "Which animal has fingerprints like humans?",
+    "options": ["Koala", "Monkey", "Cat"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "wildlife detail reveal",
+    "image": null
+  },
+  {
+    "question": "What’s the only metal that’s also a gemstone?",
+    "options": ["Gold", "Quartz", "Silver"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "precious materials mix",
+    "image": null
+  },
+  {
+    "question": "Which bird migrates the farthest?",
+    "options": ["Arctic Tern", "Swallow", "Eagle"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "sky migration streak",
+    "image": null
+  },
+  {
+    "question": "What’s the oldest living tree species?",
+    "options": ["Bristlecone Pine", "Sequoia", "Oak"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "ancient forest trees",
+    "image": null
+  },
+  {
+    "question": "Which natural light makes the sky green?",
+    "options": ["Northern Lights", "Tornado", "Sunrise"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "sky glow phenomenon",
+    "image": null
+  },
+  {
+    "question": "Which animals are absent from Antarctica?",
+    "options": ["Insects", "Fish", "Birds"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "polar ice scene",
+    "image": null
+  },
+  {
+    "question": "Which animal’s tongue is blue?",
+    "options": ["Cow", "Blue Whale", "Chameleon"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "farm animal feature",
+    "image": null
+  },
+  {
+    "question": "What’s the most common element in the universe?",
+    "options": ["Hydrogen", "Oxygen", "Carbon"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "star light element",
+    "image": null
+  },
+  {
+    "question": "Which creature glows in the dark?",
+    "options": ["Firefly", "Shark", "Bat"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "night nature glow",
+    "image": null
+  },
+  {
+    "question": "What’s the only planet that spins sideways?",
+    "options": ["Uranus", "Neptune", "Pluto"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "tilted planet view",
+    "image": null
+  },
+  {
+    "question": "Which animal has the longest pregnancy?",
+    "options": ["Elephant", "Whale", "Giraffe"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "pregnant animal highlight",
+    "image": null
+  },
+  {
+    "question": "Which sense reacts slowest in humans?",
+    "options": ["Smell", "Hearing", "Touch"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "sensory reaction thought",
+    "image": null
+  },
+  {
+    "question": "Which food was used as currency long ago?",
+    "options": ["Salt", "Rice", "Chocolate"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "historical market scene",
+    "image": null
+  },
+  {
+    "question": "What’s the world’s deepest lake?",
+    "options": ["Lake Baikal", "Lake Tanganyika", "Great Slave Lake"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "deep water expanse",
+    "image": null
+  },
+  {
+    "question": "Which animal can’t taste sweetness?",
+    "options": ["Cats", "Dogs", "Birds"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "pet detail closeup",
+    "image": null
+  },
+  {
+    "question": "Which planet has rings made of ice and rock?",
+    "options": ["Saturn", "Mars", "Earth"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "stunning planetary rings",
+    "image": null
+  },
+  {
+    "question": "What’s the only fruit that’s long and starchy?",
+    "options": ["Banana", "Plantain", "Cucumber"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "tropical kitchen fruit",
+    "image": null
+  },
+  {
+    "question": "Which animal can change its blood color?",
+    "options": ["Octopus", "Crab", "Starfish"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "marine creature detail",
+    "image": null
+  },
+  {
+    "question": "What’s the lightest metal?",
+    "options": ["Aluminum", "Lithium", "Magnesium"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "elemental science graphic",
+    "image": null
+  },
+  {
+    "question": "Which planet is nicknamed the Blue Planet?",
+    "options": ["Earth", "Neptune", "Uranus"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "blue marble view",
+    "image": null
+  },
+  {
+    "question": "What’s the fastest land animal?",
+    "options": ["Cheetah", "Lion", "Antelope"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "savanna speed motion",
+    "image": null
+  },
+  {
+    "question": "Which animal has the densest fur?",
+    "options": ["River Otter", "Polar Bear", "Seal"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "wet animal texture",
+    "image": null
+  },
+  {
+    "question": "Which planet has the Great Red Spot?",
+    "options": ["Jupiter", "Mars", "Saturn"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "giant storm planet",
+    "image": null
+  },
+  {
+    "question": "What’s the most venomous animal?",
+    "options": ["Box Jellyfish", "King Cobra", "Cone Snail"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "dangerous sea creature",
+    "image": null
   }
 ]

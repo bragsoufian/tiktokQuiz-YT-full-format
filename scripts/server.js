@@ -16,7 +16,7 @@ const config = require('./config'); // Import configuration
 //windpress
 //user7165753005592
 //valorantesports
-const tiktokUsername = 'windpress';
+const tiktokUsername = 'cross2crown';
 const wsServer = new WebSocket.Server({ port: 8080 });
 
 // Unsplash API Configuration
@@ -49,10 +49,7 @@ const QUESTION_ACTIVATION_DELAY = 3000; // 7 secondes de délai avant d'accepter
 // Définition des seuils pour chaque niveau
 const LEVEL_THRESHOLDS = [
     1,    // Niveau 1 → 2
-    4,    // Niveau 2 → 3
-    10,
-    15,
-    21
+2
 ];
 
 // Configuration
@@ -158,7 +155,8 @@ function resetGameState() {
     questionActive = false;
     questionWaitingForActivation = false; // Réinitialiser le nouvel état
     currentQuestion = null;
-    currentQuestionIndex = 0;
+    // NE PAS remettre currentQuestionIndex à 0 pour continuer avec les questions suivantes
+    // currentQuestionIndex = 0; // COMMENTÉ - pour continuer les questions
     
     // Reset encouragement session for new match
     if (encouragementManager) {
@@ -640,10 +638,36 @@ tiktokLiveConnection.on('chat', data => {
     
     // Si une question est active ET pas en attente d'activation, traiter la réponse
     if (questionActive && !questionWaitingForActivation && currentQuestion) {
-        // Vérifier si le joueur existe (créé automatiquement lors du join)
+        // Créer le joueur s'il n'existe pas déjà
         if (!players.has(username)) {
-            log.warning(`${username}: Joueur non trouvé - doit rejoindre d'abord le stream`);
-            return;
+            log.player(`Nouveau joueur via commentaire: ${username}`);
+            
+            // Utiliser exactement la même logique que les événements join/gift
+            const profilePic = data.profilePictureUrl;
+            
+            players.set(username, {
+                profilePic: profilePic,
+                points: 0,
+                currentLevel: 1,
+                lastComment: Date.now()
+            });
+            
+            // Déterminer le flag initial basé sur l'état du jeu
+            const initialFlag = (questionActive && !questionWaitingForActivation) ? "go" : "wait";
+            
+            broadcastToGodot({
+                type: "new_player",
+                user: username,
+                profilePic: profilePic,
+                points: 0,
+                currentLevel: 1,
+                initialFlag: initialFlag
+            });
+            
+            // Jouer un son de nouveau joueur
+            playNewPlayerSound();
+            
+            log.info(`${username} a rejoint le jeu via commentaire (0 points) - Flag initial: ${initialFlag}`);
         }
         
         // Vérifier si c'est une réponse valide (A, B, C)
@@ -770,10 +794,39 @@ tiktokLiveConnection.on('chat', data => {
         return; // Ne pas traiter les réponses comme des commentaires normaux
     }
     
-    // Si une question est en attente d'activation, ignorer les réponses
+    // Si une question est en attente d'activation, créer le joueur s'il n'existe pas déjà
     if (questionWaitingForActivation && currentQuestion) {
-        // Mettre à jour le lastComment si le joueur existe
-        if (players.has(username)) {
+        // Créer le joueur s'il n'existe pas déjà
+        if (!players.has(username)) {
+            log.player(`Nouveau joueur via commentaire (question en attente): ${username}`);
+            
+            // Utiliser exactement la même logique que les événements join/gift
+            const profilePic = data.profilePictureUrl;
+            
+            players.set(username, {
+                profilePic: profilePic,
+                points: 0,
+                currentLevel: 1,
+                lastComment: Date.now()
+            });
+            
+            // Déterminer le flag initial (wait car question en attente)
+            const initialFlag = "wait";
+            
+            broadcastToGodot({
+                type: "new_player",
+                user: username,
+                profilePic: profilePic,
+                points: 0,
+                currentLevel: 1,
+                initialFlag: initialFlag
+            });
+            
+            // Jouer un son de nouveau joueur
+            playNewPlayerSound();
+            
+            log.info(`${username} a rejoint le jeu via commentaire (question en attente) - Flag initial: ${initialFlag}`);
+        } else {
             const playerData = players.get(username);
             playerData.lastComment = Date.now();
         }
@@ -788,13 +841,40 @@ tiktokLiveConnection.on('chat', data => {
         return; // Ne pas traiter comme des commentaires normaux
     }
     
-    // Si pas de question active, juste mettre à jour le lastComment
-    if (players.has(username)) {
+    // Si pas de question active, créer le joueur s'il n'existe pas déjà
+    if (!players.has(username)) {
+        log.player(`Nouveau joueur via commentaire (pas de question active): ${username}`);
+        
+        // Utiliser exactement la même logique que les événements join/gift
+        const profilePic = data.profilePictureUrl;
+        
+        players.set(username, {
+            profilePic: profilePic,
+            points: 0,
+            currentLevel: 1,
+            lastComment: Date.now()
+        });
+        
+        // Déterminer le flag initial (wait car pas de question active)
+        const initialFlag = "wait";
+        
+        broadcastToGodot({
+            type: "new_player",
+            user: username,
+            profilePic: profilePic,
+            points: 0,
+            currentLevel: 1,
+            initialFlag: initialFlag
+        });
+        
+        // Jouer un son de nouveau joueur
+        playNewPlayerSound();
+        
+        log.info(`${username} a rejoint le jeu via commentaire (pas de question active) - Flag initial: ${initialFlag}`);
+    } else {
         const playerData = players.get(username);
         playerData.lastComment = Date.now();
         log.info(`${username}: ${comment} (commentaire ignoré - pas de question active)`);
-    } else {
-        log.info(`${username}: ${comment} (joueur non trouvé - doit rejoindre d'abord le stream)`);
     }
 });
 
