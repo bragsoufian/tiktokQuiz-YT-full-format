@@ -542,7 +542,7 @@ func _setup_background_music():
 	background_music_player = AudioStreamPlayer.new()
 	background_music = preload("res://assets/sounds/Who Wants to Be a Mill.ogg")
 	background_music_player.stream = background_music
-	background_music_player.volume_db = -18  # Volume plus bas que les effets sonores
+	background_music_player.volume_db = -10  # Volume plus bas que les effets sonores
 	background_music_player.bus = "Master"
 	background_music_player.autoplay = true  # Démarrer automatiquement
 	add_child(background_music_player)
