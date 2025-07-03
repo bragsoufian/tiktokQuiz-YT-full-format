@@ -27,6 +27,18 @@ const UNSPLASH_API_URL = 'https://api.unsplash.com/photos/random';
 const unsplashCache = new Map();
 const CACHE_DURATION = 604800000; // 7 days in milliseconds
 
+// Helper function to generate a simple hash code for strings
+String.prototype.hashCode = function() {
+    let hash = 0;
+    if (this.length === 0) return hash;
+    for (let i = 0; i < this.length; i++) {
+        const char = this.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash; // Convert to 32-bit integer
+    }
+    return Math.abs(hash);
+};
+
 // Configuration du jeu
 const QUESTION_TIMER = 10000; // 5 secondes par défaut
 const ANSWER_DISPLAY_TIME = 3000; // 3 secondes pour voir la réponse
@@ -233,8 +245,10 @@ async function askNewQuestion() {
     
     // If no background image is set, generate one based on backgroundKeyWords
     if (!backgroundImageUrl && currentQuestion.backgroundKeyWords) {
-        backgroundImageUrl = await getUnsplashImage(currentQuestion.backgroundKeyWords);
-        log.unsplash(`Generated background image for keywords: "${currentQuestion.backgroundKeyWords}"`);
+        // Use question index as cache key to ensure same question gets same image
+        const cacheKey = `question_${currentQuestionIndex}_${currentQuestion.backgroundKeyWords}`;
+        backgroundImageUrl = await getUnsplashImage(currentQuestion.backgroundKeyWords, cacheKey);
+        log.unsplash(`Generated background image for keywords: "${currentQuestion.backgroundKeyWords}" (Question ${currentQuestionIndex})`);
     }
     
     // Envoyer la question à Godot SANS timer (on l'enverra après la lecture TTS)
@@ -967,7 +981,7 @@ process.on('SIGINT', () => {
 });
 
 // Function to get random image from Unsplash
-function getUnsplashImage(query) {
+function getUnsplashImage(query, customCacheKey = null) {
     return new Promise((resolve, reject) => {
         if (!UNSPLASH_ACCESS_KEY || UNSPLASH_ACCESS_KEY === 'YOUR_UNSPLASH_API_KEY_HERE') {
             log.warning('Unsplash API key not configured, using fallback image');
@@ -975,16 +989,18 @@ function getUnsplashImage(query) {
             return;
         }
 
-        // Check cache first
-        const cacheKey = query.toLowerCase().trim();
+        // Use custom cache key if provided, otherwise use query
+        const cacheKey = customCacheKey || query.toLowerCase().trim();
         const cached = unsplashCache.get(cacheKey);
         if (cached && (Date.now() - cached.timestamp) < CACHE_DURATION) {
-            log.unsplash(`💾 Using cached image for query: "${query}"`);
+            log.unsplash(`💾 Using cached image for cache key: "${cacheKey}"`);
             resolve(cached.url);
             return;
         }
 
-        const url = `${UNSPLASH_API_URL}?query=${encodeURIComponent(query)}&orientation=landscape&w=800&h=600&client_id=${UNSPLASH_ACCESS_KEY}`;
+        // Add a seed based on cache key to get consistent results for the same query
+        const seed = customCacheKey ? customCacheKey.hashCode() : query.toLowerCase().trim().hashCode();
+        const url = `${UNSPLASH_API_URL}?query=${encodeURIComponent(query)}&orientation=landscape&w=800&h=600&seed=${seed}&client_id=${UNSPLASH_ACCESS_KEY}`;
         
         log.unsplash(`Fetching image for query: "${query}"`);
         
@@ -1025,7 +1041,7 @@ function getUnsplashImage(query) {
                         const imageUrl = imageData.urls.regular;
                         log.unsplash(`✅ Image found: ${imageUrl}`);
                         
-                        // Cache the result
+                        // Cache the result using the same cache key
                         unsplashCache.set(cacheKey, {
                             url: imageUrl,
                             timestamp: Date.now()
