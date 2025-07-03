@@ -16,7 +16,7 @@ const config = require('./config'); // Import configuration
 //windpress
 //user7165753005592
 //valorantesports
-const tiktokUsername = 'cross2crown';
+const tiktokUsername = 'daniel.z8169';
 const wsServer = new WebSocket.Server({ port: 8080 });
 
 // Unsplash API Configuration

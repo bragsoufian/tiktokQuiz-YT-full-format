@@ -44,6 +44,7 @@ func _ready():
 	http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.request_completed.connect(_on_request_completed)
+	print("🔗 Signal request_completed connecté pour le HTTPRequest")
 	is_initialized = true
 	
 	# Setup audio players
@@ -147,6 +148,15 @@ func _load_profile_image():
 			print("❌ Erreur: Impossible de charger l'image locale")
 			_use_default_texture()
 		return
+	
+	# S'assurer que le HTTPRequest est bien dans l'arbre avant de l'utiliser
+	if not http_request.is_inside_tree():
+		print("⚠️ HTTPRequest pas encore dans l'arbre, attente...")
+		await get_tree().process_frame
+		if not http_request.is_inside_tree():
+			print("❌ HTTPRequest toujours pas dans l'arbre pour ", username)
+			_use_default_texture()
+			return
 	
 	# If it's a remote image, use HTTP request
 	var headers = [
