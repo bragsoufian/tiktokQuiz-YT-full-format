@@ -5,6 +5,7 @@ const path = require('path');
 const AzureTTS = require('./azure_tts'); // Import Azure TTS
 const EncouragementManager = require('./encouragement_manager'); // Import Encouragement Manager
 const AnswerAnnouncementManager = require('./answer_announcement_manager'); // Import Answer Announcement Manager
+const WinnerAnnouncementManager = require('./winner_announcement_manager'); // Import Winner Announcement Manager
 const https = require('https');
 const config = require('./config'); // Import configuration
 
@@ -17,7 +18,7 @@ const config = require('./config'); // Import configuration
 //user7165753005592
 //valorantesports
 
-const tiktokUsername = 'camyslive';
+const tiktokUsername = 'moistyrl';
 const wsServer = new WebSocket.Server({ port: 8080 });
 
 // Unsplash API Configuration
