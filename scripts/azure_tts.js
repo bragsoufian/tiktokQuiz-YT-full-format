@@ -188,8 +188,8 @@ class AzureTTS {
 
     // Method specifically for quiz questions
     async speakQuestion(questionText, questionNumber = 1) {
-        const formattedText = `Question ${questionNumber}: ${questionText}`;
-        return this.speakText(formattedText);
+        // Ne plus ajouter le numéro de question - le texte arrive déjà avec l'introduction
+        return this.speakText(questionText);
     }
 
     // Clean up a specific file
