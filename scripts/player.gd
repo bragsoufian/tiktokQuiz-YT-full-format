@@ -158,6 +158,11 @@ func _load_profile_image():
 			_use_default_texture()
 			return
 	
+	# Vérifier que le signal est connecté
+	if not http_request.request_completed.is_connected(_on_request_completed):
+		print("⚠️ Signal request_completed non connecté, reconnexion...")
+		http_request.request_completed.connect(_on_request_completed)
+	
 	# If it's a remote image, use HTTP request
 	var headers = [
 		"User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
@@ -167,6 +172,9 @@ func _load_profile_image():
 	]
 	
 	print("🌐 Envoi de la requête HTTP pour ", username)
+	print("🔗 HTTPRequest dans l'arbre: ", http_request.is_inside_tree())
+	print("🔗 Signal connecté: ", http_request.request_completed.is_connected(_on_request_completed))
+	
 	var error = http_request.request(profile_pic_url, headers)
 	if error != OK:
 		print("❌ Erreur lors de la requête HTTP: ", error, " pour ", username)
@@ -174,6 +182,19 @@ func _load_profile_image():
 		return
 	
 	print("✅ Requête HTTP envoyée avec succès pour ", username)
+	
+	# Créer un timer de timeout pour détecter si la requête ne répond jamais
+	var timeout_timer = Timer.new()
+	timeout_timer.wait_time = 10.0  # 10 secondes de timeout
+	timeout_timer.one_shot = true
+	timeout_timer.timeout.connect(func(): 
+		if not is_image_loaded:
+			print("⏰ TIMEOUT: La requête HTTP n'a pas répondu dans les 10 secondes pour ", username)
+			_use_default_texture()
+		timeout_timer.queue_free()
+	)
+	add_child(timeout_timer)
+	timeout_timer.start()
 
 func _use_default_texture():
 	if sprite:

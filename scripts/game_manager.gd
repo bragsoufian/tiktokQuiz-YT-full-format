@@ -138,7 +138,7 @@ func _handle_websocket_message(message: Dictionary):
 		"match_started":
 			_handle_match_started()
 		"new_player":
-			_handle_player_update(message)
+			_handle_new_player(message)
 		"player_update":
 			_handle_player_update(message)
 		"player_removed":
@@ -166,6 +166,18 @@ func _handle_websocket_message(message: Dictionary):
 		_:
 			print("❓ Message inconnu reçu: ", message_type)
 
+func _handle_new_player(data: Dictionary):
+	if match_ended:
+		return
+		
+	# Vérifier que toutes les données nécessaires sont présentes
+	if not data.has_all(["user", "profilePic", "points", "currentLevel"]):
+		print("❌ Données invalides pour la création du joueur")
+		return
+		
+	print("👤 Nouveau joueur détecté: ", data.user)
+	_create_player(data)
+
 func _handle_player_update(data: Dictionary):
 	if match_ended:
 		return
@@ -177,11 +189,11 @@ func _handle_player_update(data: Dictionary):
 		
 	print("👤 Mise à jour du joueur: ", data.user)
 	if not players.has(data.user):
-		print("➕ Création d'un nouveau joueur...")
-		_create_player(data)
-	else:
-		print("🔄 Mise à jour des données du joueur existant")
-		_update_player(data)
+		print("❌ Joueur non trouvé pour la mise à jour: ", data.user)
+		return
+		
+	print("🔄 Mise à jour des données du joueur existant")
+	_update_player(data)
 
 func _create_player(data: Dictionary):
 	if match_ended:
