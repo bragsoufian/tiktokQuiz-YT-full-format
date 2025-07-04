@@ -18,7 +18,7 @@ const config = require('./config'); // Import configuration
 //user7165753005592
 //valorantesports
 
-const tiktokUsername = 'mpx_player';
+const tiktokUsername = 'anthonyjoka';
 const wsServer = new WebSocket.Server({ port: 8080 });
 
 // Unsplash API Configuration
@@ -135,6 +135,26 @@ try {
             correctAnswer: "A",
             image: null
         }
+    ];
+}
+
+// Charger les phrases d'introduction depuis le fichier JSON
+let QUESTION_INTROS = [];
+try {
+    const introsPath = path.join(__dirname, 'question_intros.json');
+    const introsData = fs.readFileSync(introsPath, 'utf8');
+    const introsJson = JSON.parse(introsData);
+    QUESTION_INTROS = introsJson.intros || [];
+    log.success(`Chargement de ${QUESTION_INTROS.length} phrases d'introduction depuis question_intros.json`);
+} catch (error) {
+    log.error(`Erreur lors du chargement des phrases d'introduction: ${error.message}`);
+    // Phrases par défaut en cas d'erreur
+    QUESTION_INTROS = [
+        "Next one:",
+        "How about this one:",
+        "Here's another:",
+        "Let's try this:",
+        "What about this:"
     ];
 }
 
@@ -285,7 +305,13 @@ async function askNewQuestion() {
     if (azureTTS) {
         try {
             log.question('🎤 Début de la lecture TTS de la question...');
-            await azureTTS.speakQuestion(currentQuestion.question, currentQuestionIndex);
+            
+            // Sélectionner une phrase d'introduction aléatoire
+            const randomIntro = QUESTION_INTROS[Math.floor(Math.random() * QUESTION_INTROS.length)];
+            const fullQuestionText = `${randomIntro} ${currentQuestion.question}`;
+            
+            log.question(`🎤 Phrase d'introduction sélectionnée: "${randomIntro}"`);
+            await azureTTS.speakQuestion(fullQuestionText, currentQuestionIndex);
             log.info('✅ Question spoken aloud (Azure TTS).');
         } catch (err) {
             log.error('❌ Azure TTS error: ' + err);
@@ -496,19 +522,22 @@ tiktokLiveConnection.on('member', data => {
         // Déterminer le flag initial basé sur l'état du jeu
         const initialFlag = (questionActive && !questionWaitingForActivation) ? "go" : "wait";
         
-        broadcastToGodot({
-            type: "new_player",
-            user: username,
-            profilePic: profilePic,
-            points: 0,
-            currentLevel: 1,
-            initialFlag: initialFlag
-        });
-        
-        // Jouer un son de nouveau joueur
-        playNewPlayerSound();
-        
-        log.info(`${username} a rejoint le jeu automatiquement (0 points) - Flag initial: ${initialFlag}`);
+        // Envoyer le message new_player avec un délai pour laisser le temps au client de charger l'image
+        setTimeout(() => {
+            broadcastToGodot({
+                type: "new_player",
+                user: username,
+                profilePic: profilePic,
+                points: 0,
+                currentLevel: 1,
+                initialFlag: initialFlag
+            });
+            
+            // Jouer un son de nouveau joueur
+            playNewPlayerSound();
+            
+            log.info(`${username} a rejoint le jeu automatiquement (0 points) - Flag initial: ${initialFlag}`);
+        }, 2000); // 2 secondes de délai
     }
 });
 
@@ -532,19 +561,22 @@ tiktokLiveConnection.on('join', data => {
         // Déterminer le flag initial basé sur l'état du jeu
         const initialFlag = (questionActive && !questionWaitingForActivation) ? "go" : "wait";
         
-        broadcastToGodot({
-            type: "new_player",
-            user: username,
-            profilePic: profilePic,
-            points: 0,
-            currentLevel: 1,
-            initialFlag: initialFlag
-        });
-        
-        // Jouer un son de nouveau joueur
-        playNewPlayerSound();
-        
-        log.info(`${username} a rejoint le jeu via join event (0 points) - Flag initial: ${initialFlag}`);
+        // Envoyer le message new_player avec un délai pour laisser le temps au client de charger l'image
+        setTimeout(() => {
+            broadcastToGodot({
+                type: "new_player",
+                user: username,
+                profilePic: profilePic,
+                points: 0,
+                currentLevel: 1,
+                initialFlag: initialFlag
+            });
+            
+            // Jouer un son de nouveau joueur
+            playNewPlayerSound();
+            
+            log.info(`${username} a rejoint le jeu via join event (0 points) - Flag initial: ${initialFlag}`);
+        }, 2000); // 2 secondes de délai
     }
 });
 
@@ -582,19 +614,22 @@ tiktokLiveConnection.on('gift', data => {
         // Déterminer le flag initial basé sur l'état du jeu
         const initialFlag = (questionActive && !questionWaitingForActivation) ? "go" : "wait";
         
-        broadcastToGodot({
-            type: "new_player",
-            user: username,
-            profilePic: data.profilePictureUrl,
-            points: 0,
-            currentLevel: 1,
-            initialFlag: initialFlag
-        });
-        
-        // Jouer un son de nouveau joueur
-        playNewPlayerSound();
-        
-        log.info(`${username} a rejoint le jeu via gift (0 points) - Flag initial: ${initialFlag}`);
+        // Envoyer le message new_player avec un délai pour laisser le temps au client de charger l'image
+        setTimeout(() => {
+            broadcastToGodot({
+                type: "new_player",
+                user: username,
+                profilePic: data.profilePictureUrl,
+                points: 0,
+                currentLevel: 1,
+                initialFlag: initialFlag
+            });
+            
+            // Jouer un son de nouveau joueur
+            playNewPlayerSound();
+            
+            log.info(`${username} a rejoint le jeu via gift (0 points) - Flag initial: ${initialFlag}`);
+        }, 2000); // 2 secondes de délai
     } else {
         // Mettre à jour le lastComment pour les joueurs existants
         const playerData = players.get(username);
@@ -666,19 +701,22 @@ tiktokLiveConnection.on('chat', data => {
             // Déterminer le flag initial basé sur l'état du jeu
             const initialFlag = (questionActive && !questionWaitingForActivation) ? "go" : "wait";
             
-            broadcastToGodot({
-                type: "new_player",
-                user: username,
-                profilePic: profilePic,
-                points: 0,
-                currentLevel: 1,
-                initialFlag: initialFlag
-            });
-            
-            // Jouer un son de nouveau joueur
-            playNewPlayerSound();
-            
-            log.info(`${username} a rejoint le jeu via commentaire (0 points) - Flag initial: ${initialFlag}`);
+            // Envoyer le message new_player avec un délai pour laisser le temps au client de charger l'image
+            setTimeout(() => {
+                broadcastToGodot({
+                    type: "new_player",
+                    user: username,
+                    profilePic: profilePic,
+                    points: 0,
+                    currentLevel: 1,
+                    initialFlag: initialFlag
+                });
+                
+                // Jouer un son de nouveau joueur
+                playNewPlayerSound();
+                
+                log.info(`${username} a rejoint le jeu via commentaire (0 points) - Flag initial: ${initialFlag}`);
+            }, 2000); // 2 secondes de délai
         }
         
         // Vérifier si c'est une réponse valide (A, B, C)
@@ -824,19 +862,22 @@ tiktokLiveConnection.on('chat', data => {
             // Déterminer le flag initial (wait car question en attente)
             const initialFlag = "wait";
             
-            broadcastToGodot({
-                type: "new_player",
-                user: username,
-                profilePic: profilePic,
-                points: 0,
-                currentLevel: 1,
-                initialFlag: initialFlag
-            });
-            
-            // Jouer un son de nouveau joueur
-            playNewPlayerSound();
-            
-            log.info(`${username} a rejoint le jeu via commentaire (question en attente) - Flag initial: ${initialFlag}`);
+            // Envoyer le message new_player avec un délai pour laisser le temps au client de charger l'image
+            setTimeout(() => {
+                broadcastToGodot({
+                    type: "new_player",
+                    user: username,
+                    profilePic: profilePic,
+                    points: 0,
+                    currentLevel: 1,
+                    initialFlag: initialFlag
+                });
+                
+                // Jouer un son de nouveau joueur
+                playNewPlayerSound();
+                
+                log.info(`${username} a rejoint le jeu via commentaire (question en attente) - Flag initial: ${initialFlag}`);
+            }, 2000); // 2 secondes de délai
         } else {
             const playerData = players.get(username);
             playerData.lastComment = Date.now();
@@ -869,19 +910,22 @@ tiktokLiveConnection.on('chat', data => {
         // Déterminer le flag initial (wait car pas de question active)
         const initialFlag = "wait";
         
-        broadcastToGodot({
-            type: "new_player",
-            user: username,
-            profilePic: profilePic,
-            points: 0,
-            currentLevel: 1,
-            initialFlag: initialFlag
-        });
-        
-        // Jouer un son de nouveau joueur
-        playNewPlayerSound();
-        
-        log.info(`${username} a rejoint le jeu via commentaire (pas de question active) - Flag initial: ${initialFlag}`);
+        // Envoyer le message new_player avec un délai pour laisser le temps au client de charger l'image
+        setTimeout(() => {
+            broadcastToGodot({
+                type: "new_player",
+                user: username,
+                profilePic: profilePic,
+                points: 0,
+                currentLevel: 1,
+                initialFlag: initialFlag
+            });
+            
+            // Jouer un son de nouveau joueur
+            playNewPlayerSound();
+            
+            log.info(`${username} a rejoint le jeu via commentaire (pas de question active) - Flag initial: ${initialFlag}`);
+        }, 2000); // 2 secondes de délai
     } else {
         const playerData = players.get(username);
         playerData.lastComment = Date.now();
@@ -1009,13 +1053,16 @@ function startTestPlayer() {
             lastComment: Date.now()
         });
         
-        broadcastToGodot({
-            type: "new_player",
-            user: testPlayerUsername,
-            profilePic: testPlayerProfilePic,
-            points: 0,
-            currentLevel: 1
-        });
+        // Envoyer le message new_player avec un délai pour laisser le temps au client de charger l'image
+        setTimeout(() => {
+            broadcastToGodot({
+                type: "new_player",
+                user: testPlayerUsername,
+                profilePic: testPlayerProfilePic,
+                points: 0,
+                currentLevel: 1
+            });
+        }, 2000); // 2 secondes de délai
     }
     
     // Démarrer l'intervalle pour envoyer des commentaires
