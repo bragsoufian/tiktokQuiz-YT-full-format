@@ -38,6 +38,9 @@ var new_player_sound_player: AudioStreamPlayer
 var match_ended = false
 var winner = null
 
+# Message queue for players that don't exist yet
+var pending_messages = {}
+
 const LEVEL_SIZE = Vector2(250, 250)  # Taille fixe pour les niveaux
 
 func _ready():
@@ -192,7 +195,11 @@ func _handle_player_update(data: Dictionary):
 		
 	print("👤 Mise à jour du joueur: ", data.user)
 	if not players.has(data.user):
-		print("❌ Joueur non trouvé pour la mise à jour: ", data.user)
+		print("⚠️ Joueur non trouvé pour la mise à jour: ", data.user, " - Message mis en file d'attente")
+		# Queue the message for when player is created
+		if not pending_messages.has(data.user):
+			pending_messages[data.user] = []
+		pending_messages[data.user].append({"type": "player_update", "data": data})
 		return
 		
 	print("🔄 Mise à jour des données du joueur existant")
@@ -234,6 +241,11 @@ func _create_player(data: Dictionary):
 		
 		# Charger les sons de réponse
 		player.load_answer_sounds()
+		
+		# Process any pending messages for this player after a small delay
+		# This gives time for the profile image to load
+		await get_tree().create_timer(0.5).timeout
+		_process_pending_messages(data.user)
 	else:
 		print("❌ Niveau non trouvé: Level", level_number)
 
@@ -334,6 +346,9 @@ func _restart_game():
 	# Réinitialiser l'état du jeu
 	match_ended = false
 	winner = null
+	
+	# Clear pending messages
+	pending_messages.clear()
 	
 	# Cacher la popup de victoire existante
 	var winner_popup = get_parent().get_node_or_null("WinnerPopup")
@@ -478,7 +493,11 @@ func _handle_match_started():
 
 func _handle_correct_answer(message: Dictionary):
 	if not players.has(message.user):
-		print("❌ Joueur non trouvé pour l'animation de bonne réponse: ", message.user)
+		print("⚠️ Joueur non trouvé pour l'animation de bonne réponse: ", message.user, " - Message mis en file d'attente")
+		# Queue the message for when player is created
+		if not pending_messages.has(message.user):
+			pending_messages[message.user] = []
+		pending_messages[message.user].append({"type": "correct_answer", "data": message})
 		return
 	
 	var player = players[message.user]
@@ -490,7 +509,11 @@ func _handle_correct_answer(message: Dictionary):
 
 func _handle_wrong_answer(message: Dictionary):
 	if not players.has(message.user):
-		print("❌ Joueur non trouvé pour l'animation de mauvaise réponse: ", message.user)
+		print("⚠️ Joueur non trouvé pour l'animation de mauvaise réponse: ", message.user, " - Message mis en file d'attente")
+		# Queue the message for when player is created
+		if not pending_messages.has(message.user):
+			pending_messages[message.user] = []
+		pending_messages[message.user].append({"type": "wrong_answer", "data": message})
 		return
 	
 	var player = players[message.user]
@@ -860,3 +883,19 @@ func show_winner_announcement(winner_data: Dictionary):
 	animate_winner_popup_appearance()
 	
 	print("🏆 Annonce du gagnant terminée!")
+
+func _process_pending_messages(username: String):
+	"""Process any pending messages for a newly created player"""
+	if pending_messages.has(username):
+		print("📨 Traitement des messages en attente pour: ", username)
+		var messages = pending_messages[username]
+		for message in messages:
+			match message.type:
+				"correct_answer":
+					_handle_correct_answer(message.data)
+				"player_update":
+					_handle_player_update(message.data)
+				"wrong_answer":
+					_handle_wrong_answer(message.data)
+		pending_messages.erase(username)
+		print("✅ Messages en attente traités pour: ", username)

@@ -150,11 +150,8 @@ try {
     log.error(`Erreur lors du chargement des phrases d'introduction: ${error.message}`);
     // Phrases par défaut en cas d'erreur
     QUESTION_INTROS = [
-        "Next one:",
-        "How about this one:",
-        "Here's another:",
-        "Let's try this:",
-        "What about this:"
+        "Next question : ",
+        ""
     ];
 }
 
