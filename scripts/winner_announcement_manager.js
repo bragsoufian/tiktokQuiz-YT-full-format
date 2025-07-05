@@ -1,6 +1,8 @@
 // Winner Announcement Manager
 // Handles TTS announcements for winners, second, and third place
 
+const { GAME_MESSAGES, formatMessage } = require('./messages_config');
+
 class WinnerAnnouncementManager {
     constructor() {
         this.azureTTS = null;
@@ -37,13 +39,13 @@ class WinnerAnnouncementManager {
 
     // Generate follow encouragement (cachable - same format, just different winner name)
     generateFollowEncouragement(winner) {
-        const followText = `Don't forget to follow ${winner.username} for more amazing content! They're absolutely crushing it!`;
+        const followText = formatMessage(GAME_MESSAGES.winner.followExtended, { winner: winner.username });
         return [followText];
     }
 
     // Generate general thanks (cachable - always the same)
     generateGeneralThanks() {
-        const thanksText = `Thanks to everyone who played! You're all winners for participating! Stay tuned for the next quiz!`;
+        const thanksText = GAME_MESSAGES.winner.thanks;
         return [thanksText];
     }
 

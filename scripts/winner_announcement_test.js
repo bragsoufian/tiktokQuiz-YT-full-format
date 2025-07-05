@@ -3,6 +3,7 @@
 
 const AzureTTS = require('./azure_tts');
 const { EdgeTTS } = require('../edge_tts');
+const { GAME_MESSAGES, formatMessage } = require('./messages_config');
 
 class WinnerAnnouncementTester {
     constructor() {
@@ -73,10 +74,10 @@ class WinnerAnnouncementTester {
         }
 
         // Follow encouragement
-        fullAnnouncement += `Don't forget to follow ${winner.username} for more amazing content! They're absolutely crushing it! `;
+        fullAnnouncement += formatMessage(GAME_MESSAGES.winner.followExtended, { winner: winner.username }) + " ";
 
         // General encouragement
-        fullAnnouncement += `Thanks to everyone who played! You're all winners for participating! Stay tuned for the next quiz!`;
+        fullAnnouncement += GAME_MESSAGES.winner.thanks;
 
         return [fullAnnouncement];
     }
@@ -189,7 +190,7 @@ class WinnerAnnouncementTester {
 
         // Test follow encouragement
         console.log('👥 Testing Follow Encouragement');
-        const followOnly = `Don't forget to follow TikTokQueen for more amazing content! They're absolutely crushing it! 🔥`;
+        const followOnly = formatMessage(GAME_MESSAGES.winner.followExtended, { winner: "TikTokQueen" }) + " 🔥";
         await this.azureTTS.speakText(followOnly);
         await new Promise(resolve => setTimeout(resolve, 2000));
 

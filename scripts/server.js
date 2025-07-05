@@ -45,7 +45,7 @@ String.prototype.hashCode = function() {
 const QUESTION_TIMER = 10000; // 5 secondes par défaut
 const ANSWER_DISPLAY_TIME = 3000; // 3 secondes pour voir la réponse
 const READY_PAUSE_TIME = 4000; // 4 secondes de pause "Ready"
-const GRACE_PERIOD = 2000; // 2 secondes de grâce pour les réponses tardives
+const GRACE_PERIOD = 3000; // 2 secondes de grâce pour les réponses tardives
 const QUESTION_ACTIVATION_DELAY = 3000; // 7 secondes de délai avant d'accepter les réponses (pour compenser la latence TikTok)
 
 // Définition des seuils pour chaque niveau
@@ -108,6 +108,9 @@ let answerAnnouncementManager = null;
 
 // Winner Announcement Manager instance
 let winnerAnnouncementManager = null;
+
+// Messages configuration
+const { GAME_MESSAGES, formatMessage } = require('./messages_config');
 
 // Fonction pour les logs colorés avec timestamps
 const log = {
@@ -1067,21 +1070,21 @@ async function handleMatchEnd(winnerUsername, points) {
             log.system('🎤 Début de la lecture TTS du gagnant...');
             
             // Simple winner announcement (like questions do)
-            const winnerAnnouncement = `Congratulations! ${winnerUsername} is our champion with ${points} points!`;
+            const winnerAnnouncement = formatMessage(GAME_MESSAGES.winner.congratulations, { winner: winnerUsername, points: points });
             log.system(`🎤 Winner announcement text: "${winnerAnnouncement}"`);
             await azureTTS.speakText(winnerAnnouncement);
             log.success('✅ Winner announcement spoken aloud (Azure TTS).');
             
             // Wait a bit, then follow message
             await new Promise(resolve => setTimeout(resolve, 1000));
-            const followMessage = `Don't forget to follow ${winnerUsername} for more amazing content!`;
+            const followMessage = formatMessage(GAME_MESSAGES.winner.follow, { winner: winnerUsername });
             log.system(`🎤 Follow message text: "${followMessage}"`);
             await azureTTS.speakText(followMessage);
             log.success('✅ Follow message spoken aloud (Azure TTS).');
             
             // Wait a bit, then thanks message
             await new Promise(resolve => setTimeout(resolve, 1000));
-            const thanksMessage = `Thanks to everyone who played! You're all winners for participating! Stay tuned for the next quiz!`;
+            const thanksMessage = GAME_MESSAGES.winner.thanks;
             log.system(`🎤 Thanks message text: "${thanksMessage}"`);
             await azureTTS.speakText(thanksMessage);
             log.success('✅ Thanks message spoken aloud (Azure TTS).');
@@ -1098,10 +1101,10 @@ async function handleMatchEnd(winnerUsername, points) {
         stopTestPlayer();
     }
     
-    // Wait for winner announcement to finish, then restart after a short delay
+    // Wait for winner announcement to finish, then restart after a delay
     log.system('⏳ Waiting for winner announcement to finish before restarting...');
     
-    // Réinitialiser le match après un court délai (pour laisser le temps à l'audio de finir)
+    // Réinitialiser le match après un délai (pour laisser le temps à l'audio de finir)
     if (restartTimeout) {
         clearTimeout(restartTimeout);
     }
@@ -1116,7 +1119,7 @@ async function handleMatchEnd(winnerUsername, points) {
         broadcastToGodot({
             type: "match_started"
         });
-    }, 3000); // 3 secondes après la fin de l'annonce
+    }, 15000); // 15 secondes après la fin de l'annonce
 }
 
 // Fonction pour démarrer le test player
