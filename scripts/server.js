@@ -1106,6 +1106,8 @@ async function handleMatchEnd(winnerUsername, points) {
             await azureTTS.speakText(thanksMessage);
             log.success('✅ Thanks message spoken aloud (Azure TTS).');
             
+            log.success('🎤 Tous les messages TTS du gagnant terminés');
+            
         } catch (err) {
             log.error('❌ Azure TTS error: ' + err);
         }
@@ -1136,7 +1138,7 @@ async function handleMatchEnd(winnerUsername, points) {
         broadcastToGodot({
             type: "match_started"
         });
-    }, 15000); // 15 secondes après la fin de l'annonce
+    }, 20000); // 20 secondes après la fin de l'annonce (augmenté pour s'assurer que l'audio est terminé)
 }
 
 // Fonction pour démarrer le test player
