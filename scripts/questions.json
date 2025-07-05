@@ -1,639 +1,593 @@
 [
   {
-    "question": "Which animal can survive in space?",
-    "options": ["Tardigrade", "Cockroach", "Snake"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "space galaxy 4k",
-    "image": null
-  },
-  {
-    "question": "Which country eats the most chocolate?",
-    "options": ["USA", "Switzerland", "Belgium"],
+    "question": "Which book made everyone cry on BookTok?",
+    "options": ["The Fault in Our Stars", "It Ends With Us", "The Hunger Games"],
     "correctAnswer": "B",
-    "backgroundKeyWords": "chocolate sweets dessert",
+    "backgroundKeyWords": "sad book crying pink",
     "image": null
   },
   {
-    "question": "Which animal never sleeps?",
-    "options": ["Bullfrog", "Shark", "Ant"],
+    "question": "What fantasy series blew up with fae & drama?",
+    "options": ["ACOTAR", "Harry Potter", "Shadow and Bone"],
     "correctAnswer": "A",
-    "backgroundKeyWords": "dark jungle animal night",
+    "backgroundKeyWords": "fantasy wings magic",
     "image": null
   },
   {
-    "question": "What's the most expensive fruit in the world?",
-    "options": ["Yubari Melon", "Golden Apple", "Square Watermelon"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "luxury fruit closeup",
-    "image": null
-  },
-  {
-    "question": "Which country was the first to use paper money?",
-    "options": ["China", "Egypt", "Greece"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "ancient chinese scroll",
-    "image": null
-  },
-  {
-    "question": "What's the fastest creature on Earth?",
-    "options": ["Cheetah", "Peregrine Falcon", "Swordfish"],
+    "question": "What genre does 'spice' mean?",
+    "options": ["Mystery", "Romance", "Self-help"],
     "correctAnswer": "B",
-    "backgroundKeyWords": "bird flying fast sky",
+    "backgroundKeyWords": "heart blush romance",
     "image": null
   },
   {
-    "question": "Which human organ can grow back?",
-    "options": ["Liver", "Heart", "Kidney"],
+    "question": "What’s 'ACOTAR' short for?",
+    "options": ["A Court of Thorns & Roses", "All Creatures of the Ancient Realm", "Another Cozy Autumn Read"],
     "correctAnswer": "A",
-    "backgroundKeyWords": "human body organ medical",
+    "backgroundKeyWords": "abbreviation fantasy romance",
     "image": null
   },
   {
-    "question": "Which animal has been to space and came back?",
-    "options": ["Dog", "Monkey", "Both"],
+    "question": "Which classic got a TikTok glow‑up recently?",
+    "options": ["Pride and Prejudice", "Great Expectations", "The Secret History"],
     "correctAnswer": "C",
-    "backgroundKeyWords": "space rocket vintage",
+    "backgroundKeyWords": "dark academia classic",
     "image": null
   },
   {
-    "question": "Which country has no rivers?",
-    "options": ["Saudi Arabia", "UAE", "Libya"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "desert aerial dry land",
-    "image": null
-  },
-  {
-    "question": "Which bird can sleep while flying?",
-    "options": ["Albatross", "Eagle", "Pigeon"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "bird flying ocean sky",
-    "image": null
-  },
-  {
-    "question": "Which animal never sleeps?",
-    "options": ["Bullfrog", "Shark", "Ant"],
+    "question": "Which book sparked the phrase 'book hangover'?",
+    "options": ["Twilight", "A Court of Thorns and Roses", "The Night Circus"],
     "correctAnswer": "B",
-    "backgroundKeyWords": "mysterious ocean creature",
+    "backgroundKeyWords": "book hangover dreamy",
     "image": null
   },
   {
-    "question": "What’s the only food that never spoils?",
-    "options": ["Honey", "Bread", "Cheese"],
+    "question": "Which author trends with 'enemies-to-lovers' fans?",
+    "options": ["Colleen Hoover", "John Green", "Leigh Bardugo"],
     "correctAnswer": "A",
-    "backgroundKeyWords": "ancient food rustic kitchen",
+    "backgroundKeyWords": "enemies to lovers cover",
     "image": null
   },
   {
-    "question": "Which planet rains diamonds?",
-    "options": ["Mars", "Saturn", "Venus"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "sparkling space scene",
-    "image": null
-  },
-  {
-    "question": "What is the only mammal that can’t jump?",
-    "options": ["Elephant", "Kangaroo", "Hippo"],
+    "question": "Which book is known for making BookTokers cry happy tears?",
+    "options": ["The Alchemist", "It Ends With Us", "Twilight"],
     "correctAnswer": "A",
-    "backgroundKeyWords": "large safari landscape",
+    "backgroundKeyWords": "happy tears book",
     "image": null
   },
   {
-    "question": "Which fruit has its seeds on the outside?",
-    "options": ["Kiwi", "Blueberry", "Strawberry"],
+    "question": "Which memoir trend soared in 2024?",
+    "options": ["Educated", "Becoming", "Daisy Jones & The Six"],
     "correctAnswer": "C",
-    "backgroundKeyWords": "fresh berry closeup",
+    "backgroundKeyWords": "memoir viral read",
     "image": null
   },
   {
-    "question": "What color is the universe, according to scientists?",
-    "options": ["Jet Black", "Cosmic Latte", "Deep Purple"],
+    "question": "Which YA book became a closet read trend?",
+    "options": ["They Both Die at the End", "Serpent & Dove", "Caraval"],
     "correctAnswer": "B",
-    "backgroundKeyWords": "soft pastel space",
+    "backgroundKeyWords": "YA closet read",
     "image": null
   },
   {
-    "question": "Which animal can hold its breath the longest?",
-    "options": ["Cheetah", "Tortoise", "Sperm Whale"],
+    "question": "Which book sparked the 'book spine poetry' craze?",
+    "options": ["Any colorful series", "Shades of Magic", "Harry Potter"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "book spine art",
+    "image": null
+  },
+  {
+    "question": "Which BookTok tag is for self‑care reads?",
+    "options": ["#booksforselfcare", "#booktokselfcare", "#booktherapy"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "self care books",
+    "image": null
+  },
+  {
+    "question": "What’s a 'TBR' in BookTok?",
+    "options": ["To Be Returned", "To Be Read", "Read Twice Book"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "TBR stack books",
+    "image": null
+  },
+  {
+    "question": "Which book revived fairy‑tale retellings?",
+    "options": ["The Bear and the Nightingale", "Stardust", "A Court of Thorns and Roses"],
     "correctAnswer": "C",
-    "backgroundKeyWords": "deep blue water scene",
+    "backgroundKeyWords": "retelling fairy tale",
     "image": null
   },
   {
-    "question": "What was the first toy advertised on TV?",
-    "options": ["Lego", "Barbie", "Mr. Potato Head"],
+    "question": "What’s 'dark academia' style?",
+    "options": ["School campus mystery vibe", "Fantasy forest schools", "Beach romance stories"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "dark academia library",
+    "image": null
+  },
+  {
+    "question": "Which author dominates BookTok drama?",
+    "options": ["Taylor Jenkins Reid", "Sarah J. Maas", "Rainbow Rowell"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "author drama fandom",
+    "image": null
+  },
+  {
+    "question": "Which series is called 'the new Harry Potter'?",
+    "options": ["Percy Jackson", "Shades of Magic", "His Dark Materials"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "new HP series",
+    "image": null
+  },
+  {
+    "question": "What reading trend is 'cozycore'?",
+    "options": ["Thriller nights", "Cozy cottage reads", "Sci‑fi space adventure"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "cozy reads books",
+    "image": null
+  },
+  {
+    "question": "Which book is #BookTok's top romance pick?",
+    "options": ["The Kiss Quotient", "Red, White & Royal Blue", "Beach Read"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "royal romance book",
+    "image": null
+  },
+  {
+    "question": "Which book got the 'book hole' trend (you can’t finish one)?",
+    "options": ["It", "Infinite Jest", "The Stand"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "neverending book",
+    "image": null
+  },
+  {
+    "question": "Which genre is 'SFF' short for?",
+    "options": ["Science, Fantasy & Fiction", "Supernatural Fantasy Fiction", "Speculative & Fantasy Fiction"],
     "correctAnswer": "C",
-    "backgroundKeyWords": "vintage retro toy",
+    "backgroundKeyWords": "SFF books",
     "image": null
   },
   {
-    "question": "Which metal floats on water?",
-    "options": ["Aluminum", "Lead", "Lithium"],
+    "question": "Which book has a 'booknest' aesthetic trend?",
+    "options": ["Anne of Green Gables", "Bridgerton", "The Chronicles of Narnia"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "booknest cozy",
+    "image": null
+  },
+  {
+    "question": "Which book is used in 'Read with Me' videos?",
+    "options": ["War and Peace", "The Midnight Library", "Atomic Habits"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "read along book",
+    "image": null
+  },
+  {
+    "question": "Which author is famous for 'bookish aesthetics' like vintage spines?",
+    "options": ["V.E. Schwab", "Maggie Stiefvater", "Laini Taylor"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "vintage cover aesthetic",
+    "image": null
+  },
+  {
+    "question": "Which book caused 'readathon' challenges to skyrocket?",
+    "options": ["One Hundred Years of Solitude", "The Invisible Life of Addie LaRue", "Dune"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "readathon stack",
+    "image": null
+  },
+  {
+    "question": "What’s #bookhaul?",
+    "options": ["Trying to guess book endings", "Buying lots of books", "Swapping books with friends"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "bookhaul stack",
+    "image": null
+  },
+  {
+    "question": "Which book made #booktok art with illustrated covers?",
+    "options": ["The Song of Achilles", "Circe", "The Night Circus"],
     "correctAnswer": "C",
-    "backgroundKeyWords": "metal science concept",
+    "backgroundKeyWords": "illustrated cover art",
     "image": null
   },
   {
-    "question": "What’s the world’s longest word you can type with only your left hand?",
-    "options": ["Stewardesses", "Mississippi", "Alaska"],
+    "question": "Which series is Broadway-adapted on BookTok feeds?",
+    "options": ["A Court of Thorns and Roses", "To Kill a Mockingbird", "Hamilton (book)"],
     "correctAnswer": "A",
-    "backgroundKeyWords": "keyboard hands closeup",
+    "backgroundKeyWords": "broadway fantasy book",
     "image": null
   },
   {
-    "question": "Which spice was once worth its weight in gold?",
-    "options": ["Pepper", "Cinnamon", "Saffron"],
+    "question": "Which book spawned 'reading playlists' trend?",
+    "options": ["Normal People", "Red Rising", "Norwegian Wood"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "reading mood playlist",
+    "image": null
+  },
+  {
+    "question": "What’s #ARC on BookTok?",
+    "options": ["Advanced Reader Copy", "Author’s Reading Club", "Another Romance Cover"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "ARC book",
+    "image": null
+  },
+  {
+    "question": "Which book is the top 'under‑the‑radar' pick?",
+    "options": ["The Invisible Life of Addie LaRue", "The Midnight Library", "Project Hail Mary"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "little gem book",
+    "image": null
+  },
+  {
+    "question": "What’s 'BookTok Shelfie'?",
+    "options": ["Showing off your bookshelf", "Shelf with quotes", "Friend’s shelf video"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "shelfie bookshelf aesthetic",
+    "image": null
+  },
+  {
+    "question": "Which cookbook got a TikTok cooking craze?",
+    "options": ["Salt, Fat, Acid, Heat", "How to Cook Everything", "Mexican Everyday"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "cookbook viral",
+    "image": null
+  },
+  {
+    "question": "Which sci‑fi read went viral in 2025?",
+    "options": ["Project Hail Mary", "Leviathan Wakes", "The Ministry for the Future"],
     "correctAnswer": "C",
-    "backgroundKeyWords": "exotic spice vibe",
+    "backgroundKeyWords": "cli-fi sci fi",
     "image": null
   },
   {
-    "question": "What’s the strongest muscle in the human body (by weight)?",
-    "options": ["Heart", "Tongue", "Gluteus maximus"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "anatomy study closeup",
-    "image": null
-  },
-  {
-    "question": "Which animal’s poop is cube‑shaped?",
-    "options": ["Wombat", "Kangaroo", "Otter"],
+    "question": "Which romance trope is #booktok's fave?",
+    "options": ["Friends to Lovers", "Secret Baby", "Marriage of Convenience"],
     "correctAnswer": "A",
-    "backgroundKeyWords": "quirky wildlife surprise",
-    "image": null
-  },
-  {
-    "question": "What part of your body never stops growing?",
-    "options": ["Nose", "Ears", "Fingernails"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "anatomy tiny detail",
-    "image": null
-  },
-  {
-    "question": "Which creature has three hearts?",
-    "options": ["Octopus", "Shark", "Frog"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "underwater oddity creature",
-    "image": null
-  },
-  {
-    "question": "Which country eats the most chocolate per person?",
-    "options": ["Belgium", "Switzerland", "France"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "sweet treat map hint",
-    "image": null
-  },
-  {
-    "question": "What’s the fastest muscle in your body?",
-    "options": ["Heart", "Eyelid", "Cheek"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "blink motion closeup",
-    "image": null
-  },
-  {
-    "question": "Which animal can regrow its limbs?",
-    "options": ["Starfish", "Dog", "Elephant"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "sea creature regrowth",
-    "image": null
-  },
-  {
-    "question": "Which dinosaur had feathers?",
-    "options": ["Tyrannosaurus rex", "Velociraptor", "Brontosaurus"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "prehistoric bird clue",
-    "image": null
-  },
-  {
-    "question": "Which planet spins backwards?",
-    "options": ["Venus", "Mars", "Jupiter"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "planet rotate unusual",
-    "image": null
-  },
-  {
-    "question": "What’s the world’s smallest reptile?",
-    "options": ["Chameleon", "Snake", "Gecko"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "tiny creature macro",
-    "image": null
-  },
-  {
-    "question": "Which ocean is the saltiest?",
-    "options": ["Atlantic", "Pacific", "Indian"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "sea horizon neutral",
-    "image": null
-  },
-  {
-    "question": "What’s the only bird that can fly backwards?",
-    "options": ["Sparrow", "Hummingbird", "Eagle"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "tiny wing motion",
-    "image": null
-  },
-  {
-    "question": "Which country invented ice cream?",
-    "options": ["China", "Italy", "USA"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "dessert history hint",
-    "image": null
-  },
-  {
-    "question": "What’s baby kangaroo called?",
-    "options": ["Calf", "Joey", "Cub"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "animal baby marsupial",
-    "image": null
-  },
-  {
-    "question": "Which element is liquid at room temperature?",
-    "options": ["Mercury", "Gold", "Copper"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "chemistry beaker scene",
-    "image": null
-  },
-  {
-    "question": "How many hearts does a snail have?",
-    "options": ["One", "Two", "Four"],
-    "correctAnswer": "C",
-    "backgroundKeyWords": "garden creature detail",
-    "image": null
-  },
-  {
-    "question": "What’s the only continent without reptiles?",
-    "options": ["Europe", "Antarctica", "Asia"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "icy landmass scene",
-    "image": null
-  },
-  {
-    "question": "Which mammal lays eggs?",
-    "options": ["Platypus", "Dolphin", "Kangaroo"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "odd animal nature",
-    "image": null
-  },
-  {
-    "question": "What’s the hardest natural substance on Earth?",
-    "options": ["Diamond", "Quartz", "Steel"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "shiny mineral macro",
-    "image": null
-  },
-  {
-    "question": "Which fruit floats in water?",
-    "options": ["Banana", "Cherry", "Apple"],
-    "correctAnswer": "C",
-    "backgroundKeyWords": "fruit water surface",
-    "image": null
-  },
-  {
-    "question": "What’s the fastest marine mammal?",
-    "options": ["Dolphin", "Orca", "Seal"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "ocean mammal speed",
-    "image": null
-  },
-  {
-    "question": "Which planet has the most moons?",
-    "options": ["Saturn", "Mars", "Neptune"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "ringed planet view",
-    "image": null
-  },
-  {
-    "question": "What’s Sherlock Holmes’ address (fictional)?",
-    "options": ["221B Baker Street", "10 Downing Street", "1600 Pennsylvania Ave"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "old london street",
-    "image": null
-  },
-  {
-    "question": "Which fruit is actually a berry?",
-    "options": ["Strawberry", "Banana", "Raspberry"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "yellow peel clue",
-    "image": null
-  },
-  {
-    "question": "What’s the only bird with nostrils at the end of its beak?",
-    "options": ["Pelican", "Flamingo", "Kiwi"],
-    "correctAnswer": "C",
-    "backgroundKeyWords": "forest bird silhouette",
-    "image": null
-  },
-  {
-    "question": "Which vegetable was once called a 'love apple'?",
-    "options": ["Tomato", "Potato", "Eggplant"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "garden harvest scene",
-    "image": null
-  },
-  {
-    "question": "What language has the most words?",
-    "options": ["English", "Mandarin", "Spanish"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "open book pages",
-    "image": null
-  },
-  {
-    "question": "Which planet is hottest in our solar system?",
-    "options": ["Venus", "Mercury", "Earth"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "fiery planet vibe",
-    "image": null
-  },
-  {
-    "question": "Which animal sleeps standing up?",
-    "options": ["Horse", "Cat", "Cow"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "stable nighttime scene",
-    "image": null
-  },
-  {
-    "question": "Which mammal can’t walk backwards?",
-    "options": ["Kangaroo", "Elephant", "Polar Bear"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "outback animal silhouette",
-    "image": null
-  },
-  {
-    "question": "What’s the tallest mountain in our solar system?",
-    "options": ["Olympus Mons", "Mount Everest", "K2"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "red planet horizon",
-    "image": null
-  },
-  {
-    "question": "Which bird is flightless and runs fastest?",
-    "options": ["Ostrich", "Penguin", "Emu"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "desert runner bird",
-    "image": null
-  },
-  {
-    "question": "Which sea creature is radar‑invisible?",
-    "options": ["Jellyfish", "Squid", "Octopus"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "deep sea glow",
-    "image": null
-  },
-  {
-    "question": "What’s the largest organ in your body?",
-    "options": ["Liver", "Skin", "Brain"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "human body outline",
-    "image": null
-  },
-  {
-    "question": "Which animal’s milk is pink?",
-    "options": ["Elephant", "Hippo", "Pig"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "riverbank wildlife scene",
-    "image": null
-  },
-  {
-    "question": "Which fruit has no seeds?",
-    "options": ["Banana", "Watermelon", "Peach"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "tropical snack vibe",
-    "image": null
-  },
-  {
-    "question": "What’s a group of crows called?",
-    "options": ["Flock", "Murder", "Pack"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "dark bird gathering",
-    "image": null
-  },
-  {
-    "question": "Which mammal can fly?",
-    "options": ["Bat", "Flying Squirrel", "Eagle"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "night winged animal",
-    "image": null
-  },
-  {
-    "question": "What’s the only food that’s also a flower?",
-    "options": ["Cauliflower", "Potato", "Rice"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "kitchen flower hint",
-    "image": null
-  },
-  {
-    "question": "Which planet shares a name with a fruit?",
-    "options": ["Plum", "Pear", "Mars"],
-    "correctAnswer": "C",
-    "backgroundKeyWords": "red planet hint",
-    "image": null
-  },
-  {
-    "question": "Which animal spends most of its life underwater?",
-    "options": ["Sea Turtle", "Dolphin", "Fish"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "ocean life closeup",
-    "image": null
-  },
-  {
-    "question": "What’s the most stolen food worldwide?",
-    "options": ["Cheese", "Chocolate", "Bread"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "kitchen mystery snack",
-    "image": null
-  },
-  {
-    "question": "Which planet has a day longer than its year?",
-    "options": ["Venus", "Mars", "Mercury"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "planet orbit hint",
-    "image": null
-  },
-  {
-    "question": "What’s the only rock that floats?",
-    "options": ["Pumice", "Granite", "Marble"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "floating stone curiosity",
-    "image": null
-  },
-  {
-    "question": "Which animal can survive without drinking water?",
-    "options": ["Camel", "Goat", "Elephant"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "desert landscape hint",
-    "image": null
-  },
-  {
-    "question": "Which human organ can regenerate itself?",
-    "options": ["Liver", "Kidney", "Lung"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "medical anatomy concept",
-    "image": null
-  },
-  {
-    "question": "Which animal has fingerprints like humans?",
-    "options": ["Koala", "Monkey", "Cat"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "wildlife detail reveal",
-    "image": null
-  },
-  {
-    "question": "What’s the only metal that’s also a gemstone?",
-    "options": ["Gold", "Quartz", "Silver"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "precious materials mix",
-    "image": null
-  },
-  {
-    "question": "Which bird migrates the farthest?",
-    "options": ["Arctic Tern", "Swallow", "Eagle"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "sky migration streak",
-    "image": null
-  },
-  {
-    "question": "What’s the oldest living tree species?",
-    "options": ["Bristlecone Pine", "Sequoia", "Oak"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "ancient forest trees",
-    "image": null
-  },
-  {
-    "question": "Which natural light makes the sky green?",
-    "options": ["Northern Lights", "Tornado", "Sunrise"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "sky glow phenomenon",
-    "image": null
-  },
-  {
-    "question": "Which animals are absent from Antarctica?",
-    "options": ["Insects", "Fish", "Birds"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "polar ice scene",
-    "image": null
-  },
-  {
-    "question": "Which animal’s tongue is blue?",
-    "options": ["Cow", "Blue Whale", "Chameleon"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "farm animal feature",
-    "image": null
-  },
-  {
-    "question": "What’s the most common element in the universe?",
-    "options": ["Hydrogen", "Oxygen", "Carbon"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "star light element",
-    "image": null
-  },
-  {
-    "question": "Which creature glows in the dark?",
-    "options": ["Firefly", "Shark", "Bat"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "night nature glow",
-    "image": null
-  },
-  {
-    "question": "What’s the only planet that spins sideways?",
-    "options": ["Uranus", "Neptune", "Pluto"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "tilted planet view",
-    "image": null
-  },
-  {
-    "question": "Which animal has the longest pregnancy?",
-    "options": ["Elephant", "Whale", "Giraffe"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "pregnant animal highlight",
-    "image": null
-  },
-  {
-    "question": "Which sense reacts slowest in humans?",
-    "options": ["Smell", "Hearing", "Touch"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "sensory reaction thought",
-    "image": null
-  },
-  {
-    "question": "Which food was used as currency long ago?",
-    "options": ["Salt", "Rice", "Chocolate"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "historical market scene",
-    "image": null
-  },
-  {
-    "question": "What’s the world’s deepest lake?",
-    "options": ["Lake Baikal", "Lake Tanganyika", "Great Slave Lake"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "deep water expanse",
-    "image": null
-  },
-  {
-    "question": "Which animal can’t taste sweetness?",
-    "options": ["Cats", "Dogs", "Birds"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "pet detail closeup",
-    "image": null
-  },
-  {
-    "question": "Which planet has rings made of ice and rock?",
-    "options": ["Saturn", "Mars", "Earth"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "stunning planetary rings",
-    "image": null
-  },
-  {
-    "question": "What’s the only fruit that’s long and starchy?",
-    "options": ["Banana", "Plantain", "Cucumber"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "tropical kitchen fruit",
-    "image": null
-  },
-  {
-    "question": "Which animal can change its blood color?",
-    "options": ["Octopus", "Crab", "Starfish"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "marine creature detail",
-    "image": null
-  },
-  {
-    "question": "What’s the lightest metal?",
-    "options": ["Aluminum", "Lithium", "Magnesium"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "elemental science graphic",
-    "image": null
-  },
-  {
-    "question": "Which planet is nicknamed the Blue Planet?",
-    "options": ["Earth", "Neptune", "Uranus"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "blue marble view",
-    "image": null
-  },
-  {
-    "question": "What’s the fastest land animal?",
-    "options": ["Cheetah", "Lion", "Antelope"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "savanna speed motion",
-    "image": null
-  },
-  {
-    "question": "Which animal has the densest fur?",
-    "options": ["River Otter", "Polar Bear", "Seal"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "wet animal texture",
-    "image": null
-  },
-  {
-    "question": "Which planet has the Great Red Spot?",
-    "options": ["Jupiter", "Mars", "Saturn"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "giant storm planet",
-    "image": null
-  },
-  {
-    "question": "What’s the most venomous animal?",
-    "options": ["Box Jellyfish", "King Cobra", "Cone Snail"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "dangerous sea creature",
-    "image": null
-  }
+    "backgroundKeyWords": "friends to lovers book",
+    "image": null
+  },
+  [
+    {
+      "question": "Which book inspired the #readingpicnic trend?",
+      "options": ["Eleanor Oliphant Is Completely Fine", "Little Women", "The Great Alone"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "picnic book outdoors",
+      "image": null
+    },
+    {
+      "question": "What’s 'stacking your TBR'?",
+      "options": ["Knocking books off your list", "Adding more books to your pile", "Organizing a shelf"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "TBR pile stack",
+      "image": null
+    },
+    {
+      "question": "Which author’s books are #booktok haul favorites?",
+      "options": ["Stephen King", "Colleen Hoover", "Neil Gaiman"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "hoover books pile",
+      "image": null
+    },
+    {
+      "question": "Which read is styled as 'cottage-core'?",
+      "options": ["The Storybook Life of A.J. Fikry", "Ready Player One", "The Martian"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "cottage core book",
+      "image": null
+    },
+    {
+      "question": "Which book gets 'midnight reading' TikToks?",
+      "options": ["The Silent Patient", "Dracula", "The Invisible Life of Addie LaRue"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "night reading book",
+      "image": null
+    },
+    {
+      "question": "Which book was called 'the next Twilight' (but is fantasy)?",
+      "options": ["Wicked Saints", "The Folk of the Air", "House of Earth and Blood"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "twilight vibe book",
+      "image": null
+    },
+    {
+      "question": "What’s the '#booktokbookclub' pick of 2025?",
+      "options": ["The Candy House", "Tomorrow, and Tomorrow, and Tomorrow", "Sea of Tranquility"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "book club pick",
+      "image": null
+    },
+    {
+      "question": "Which book is famous for 'bookish glow'? (Yes, glow.)",
+      "options": ["Mexican Gothic", "The Night Circus", "When the Apricots Bloom"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "book glow aesthetic",
+      "image": null
+    },
+    {
+      "question": "Who’s known as BookTok’s mystery queen?",
+      "options": ["Riley Sager", "Agatha Christie", "Paula Hawkins"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "mystery queen book",
+      "image": null
+    },
+    {
+      "question": "What’s the 'unused ending' BookTok hack?",
+      "options": ["Skipping epilogue", "Using alternative ending", "Writing your own sequel"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "alternate ending book",
+      "image": null
+    },
+    {
+      "question": "Which book is tagged #shelfgoals?",
+      "options": ["Circe", "The House in the Cerulean Sea", "The Priory of the Orange Tree"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "shelf goals aesthetic",
+      "image": null
+    },
+    {
+      "question": "Which genre exploded with audiobooks on BookTok?",
+      "options": ["Thriller", "Romance", "Sci-Fi"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "audiobook headphones",
+      "image": null
+    },
+    {
+      "question": "What’s 'book journaling'?",
+      "options": ["Writing your own story", "Taking notes while reading", "Trading journal books"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "book journal notebook",
+      "image": null
+    },
+    {
+      "question": "Which YA author launched the 'one‑day readathon'?",
+      "options": ["Adam Silvera", "Victoria Aveyard", "Becky Albertalli"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "one day readathon",
+      "image": null
+    },
+    {
+      "question": "Which thriller is #booktok’s top 'can’t put down' read?",
+      "options": ["Verity", "The Silent Patient", "Gone Girl"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "verity thriller read",
+      "image": null
+    },
+    {
+      "question": "What’s 'bookish flatlay'?",
+      "options": ["Books on floor", "Books styled with props", "Books under pillow"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "flatlay books aesthetic",
+      "image": null
+    },
+    {
+      "question": "Which fantasy novel has 'angst'? 🔥",
+      "options": ["From Blood and Ash", "The Hobbit", "The Witcher"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "fantasy angst cover",
+      "image": null
+    },
+    {
+      "question": "Which author’s audiobook voice is soothing on BookTok?",
+      "options": ["Neil Gaiman", "Stephen King", "George R.R. Martin"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "audiobook soothing voice",
+      "image": null
+    },
+    {
+      "question": "What’s the 'mood read' trend?",
+      "options": ["Reading with candles", "Choosing book by feeling", "Matching your mood to book"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "mood reading candle",
+      "image": null
+    },
+    {
+      "question": "Which book inspired #booktoktherapy posts?",
+      "options": ["The Midnight Library", "Atomic Habits", "The Alchemist"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "therapy book read",
+      "image": null
+    },
+    {
+      "question": "Which sci-fi book is #booktok’s top 'future vibe' pick?",
+      "options": ["Project Hail Mary", "Neuromancer", "The Three-Body Problem"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "future vibe book",
+      "image": null
+    },
+    {
+      "question": "What’s the 'rainy-day read' trend?",
+      "options": ["Thrillers", "Romance", "Cozy classics"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "rainy day book",
+      "image": null
+    },
+    {
+      "question": "Which historical novel went viral in 2024?",
+      "options": ["The Nightingale", "The Alice Network", "The Rose Code"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "historical novel vibe",
+      "image": null
+    },
+    {
+      "question": "Which author’s quotes dominate text overlays?",
+      "options": ["Rupi Kaur", "Mark Manson", "Paulo Coelho"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "rupi kaur quote overlay",
+      "image": null
+    },
+    {
+      "question": "What does 'book detox' mean?",
+      "options": ["Not reading for a week", "Reading only non-fiction", "Unfollowing book accounts"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "book detox break",
+      "image": null
+    },
+    {
+      "question": "Which book became a TikTok challenge to finish fast?",
+      "options": ["The House in the Cerulean Sea", "It Ends With Us", "Beach Read"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "finish fast book challenge",
+      "image": null
+    },
+    {
+      "question": "What’s 'quote collecting' in book videos?",
+      "options": ["Making quote reels", "Collecting book covers", "Counting quotes you read"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "quote reel book",
+      "image": null
+    },
+    {
+      "question": "Which book trend is 'book picnic aesthetic'?",
+      "options": ["Poetry under trees", "Spooky books outdoors", "Books with food setups"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "book picnic food",
+      "image": null
+    },
+    {
+      "question": "Which author’s book is #booktok’s top cozy read?",
+      "options": ["Jenny Colgan", "Sarah Addison Allen", "Lucy Dillon"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "cozy author book",
+      "image": null
+    },
+    {
+      "question": "Which discussion tag is 'book vs. movie'?",
+      "options": ["#booktomovie", "#bookvsmovie", "#bookormovie"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "book vs movie debate",
+      "image": null
+    },
+    {
+      "question": "Which novel made readers search 'twist!'?",
+      "options": ["The Wife Between Us", "Gone Girl", "Shutter Island"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "plot twist book",
+      "image": null
+    },
+    {
+      "question": "What’s the '#bookcharter' trend?",
+      "options": ["Charting favorite characters", "Chartering boat reads", "Charter lessons from books"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "character chart book",
+      "image": null
+    },
+    {
+      "question": "Which YA series is #booktok’s biggest binge-read?",
+      "options": ["The Hunger Games", "Divergent", "The Folk of the Air"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "binge read series",
+      "image": null
+    },
+    {
+      "question": "Which author got trending 'meet the author' lives?",
+      "options": ["Colleen Hoover", "Brandon Sanderson", "Leigh Bardugo"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "author live read",
+      "image": null
+    },
+    {
+      "question": "What’s 'booking' on BookTok?",
+      "options": ["Booking author events", "Pairing books with genres", "Sharing books you want next"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "booking book want list",
+      "image": null
+    },
+    {
+      "question": "Which book made #booktok’s 'read it again' wave?",
+      "options": ["Beach Read", "The Midnight Library", "The Song of Achilles"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "read again book",
+      "image": null
+    },
+    {
+      "question": "Which horror novel is BookTok's shocking find?",
+      "options": ["House of Leaves", "Mexican Gothic", "The Haunting of Hill House"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "horror gothic book",
+      "image": null
+    },
+    {
+      "question": "What’s 'book mood board'? (Yes, boards!)",
+      "options": ["Cover collages", "Genre charts", "Reading vision boards"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "mood board books",
+      "image": null
+    },
+    {
+      "question": "Which sci‑fi author’s 'spaceship aesthetic' blew up?",
+      "options": ["Becky Chambers", "Andy Weir", "Ann Leckie"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "spaceship aesthetic book",
+      "image": null
+    },
+    {
+      "question": "Which debut author got viral unboxings?",
+      "options": ["Rebecca Yarros", "Colleen Hoover", "Brit Bennett"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "debut book unboxing",
+      "image": null
+    },
+    {
+      "question": "Which book inspired 'book pet names' trend?",
+      "options": ["Felix from Circe", "Snow from Red Rising", "Ruin from The Folk of the Air"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "book pet name trend",
+      "image": null
+    },
+    {
+      "question": "Which book got 'booktube to booktok' revival?",
+      "options": ["The Goldfinch", "The Song of Achilles", "The Night Circus"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "booktube revival",
+      "image": null
+    },
+    {
+      "question": "Which book writing prompt went viral?",
+      "options": ["Write your own epilogue", "Add a PoV chapter", "Rewrite first chapter"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "writing prompt booktok",
+      "image": null
+    },
+    {
+      "question": "Which read is labeled 'perfect with tea'?",
+      "options": ["Anne of Green Gables", "Rebecca", "Wicked"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "tea time book",
+      "image": null
+    },
+    {
+      "question": "What’s 'bookish merch haul'?",
+      "options": ["Collecting bookmarks", "Unboxing book merch", "Buying secondhand books"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "merch haul booktok",
+      "image": null
+    },
+    {
+      "question": "Which book had people baking while reading?",
+      "options": ["Salt to Taste", "Deliciously Ella", "The Midnight Library"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "cook and read book",
+      "image": null
+    },
+    {
+      "question": "What’s 'book trade'? (Swapping!)",
+      "options": ["Trading books with friends", "Trading bookmarks", "Trading fan art"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "book swap trade",
+      "image": null
+    },
+    {
+      "question": "Which book convinced readers to 'start journaling'?",
+      "options": ["The Artist’s Way", "Big Magic", "Steal Like an Artist"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "start journaling book",
+      "image": null
+    },
+    {
+      "question": "Which spooky anthology went viral in October?",
+      "options": ["The October Country", "Something in the Water", "Dark and Shallow Lies"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "October spooky anthology",
+      "image": null
+    }
+  ]
+  
 ]

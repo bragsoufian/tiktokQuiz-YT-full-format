@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cr2bv346s7nh6"]
 
 [ext_resource type="Script" uid="uid://bkq3gq3gfn071" path="res://scripts/question_ui.gd" id="1_question"]
-[ext_resource type="Texture2D" uid="uid://bm33fpch0r0mj" path="res://assets/A (1).png" id="2_a3tft"]
+[ext_resource type="Texture2D" uid="uid://cc5g6ae1jculx" path="res://assets/A (2).png" id="2_a3tft"]
 [ext_resource type="PackedScene" uid="uid://cm806a21b6gen" path="res://scenes/option.tscn" id="3_a3tft"]
 
 [sub_resource type="FontFile" id="FontFile_a3tft"]

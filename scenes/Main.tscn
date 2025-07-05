@@ -5,8 +5,8 @@
 [ext_resource type="Script" uid="uid://dj3d341tsfmsx" path="res://scripts/game_manager.gd" id="1_rtedj"]
 [ext_resource type="PackedScene" uid="uid://bw64pycb751fj" path="res://scenes/level.tscn" id="2_rtedj"]
 [ext_resource type="PackedScene" uid="uid://dawcxst5kmvnp" path="res://scenes/player.tscn" id="3_0bbpv"]
-[ext_resource type="Texture2D" uid="uid://ogq6xgibrs2o" path="res://assets/0 (3).png" id="3_jlsqs"]
 [ext_resource type="PackedScene" uid="uid://cr2bv346s7nh6" path="res://scenes/question_ui.tscn" id="3_vcsgt"]
+[ext_resource type="Texture2D" uid="uid://cg1mtkkpo16j3" path="res://assets/0 (5).png" id="4_q8u5g"]
 [ext_resource type="Texture2D" uid="uid://bfs7ytnewnekx" path="res://assets/ready_goo-removebg-preview.png" id="6_c01mt"]
 [ext_resource type="Script" uid="uid://cduijmrnngd87" path="res://scripts/background_animation.gd" id="7_animation"]
 
@@ -35,7 +35,7 @@ offset_left = -628.0
 offset_top = -438.0
 offset_right = 71.9999
 offset_bottom = 562.0
-texture = ExtResource("3_jlsqs")
+texture = ExtResource("4_q8u5g")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-270, 160)

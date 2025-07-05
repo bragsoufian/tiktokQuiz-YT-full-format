@@ -18,7 +18,7 @@ const config = require('./config'); // Import configuration
 //user7165753005592
 //valorantesports
 
-const tiktokUsername = 'coach.baki.1';
+const tiktokUsername = 'user7165753005592';
 const wsServer = new WebSocket.Server({ port: 8080 });
 
 // Unsplash API Configuration
@@ -42,16 +42,19 @@ String.prototype.hashCode = function() {
 };
 
 // Configuration du jeu
-const QUESTION_TIMER = 10000; // 5 secondes par défaut
+const QUESTION_TIMER = 7000; // 5 secondes par défaut
 const ANSWER_DISPLAY_TIME = 3000; // 3 secondes pour voir la réponse
 const READY_PAUSE_TIME = 4000; // 4 secondes de pause "Ready"
-const GRACE_PERIOD = 3000; // 2 secondes de grâce pour les réponses tardives
+const GRACE_PERIOD = 4000; // 4 secondes de grâce pour les réponses tardives
 const QUESTION_ACTIVATION_DELAY = 3000; // 7 secondes de délai avant d'accepter les réponses (pour compenser la latence TikTok)
 
 // Définition des seuils pour chaque niveau
 const LEVEL_THRESHOLDS = [
     1,    // Niveau 1 → 2
-2
+    4,
+    10,
+    15,
+    21
 ];
 
 // Configuration
@@ -68,6 +71,7 @@ let questionWaitingForActivation = false; // Nouveau: état d'attente avant acti
 let currentQuestion = null;
 let questionTimer = null;
 let playersAnsweredCurrentQuestion = new Set(); // Nouveau: tracker les joueurs qui ont répondu à la question actuelle
+let questionTransitionInProgress = false; // Protection contre les appels multiples pendant la transition
 
 // Données des gifts reçus pour la question actuelle
 let currentQuestionGifts = {
@@ -184,6 +188,7 @@ function resetGameState() {
     questionActive = false;
     questionWaitingForActivation = false; // Réinitialiser le nouvel état
     currentQuestion = null;
+    questionTransitionInProgress = false; // Réinitialiser la protection de transition
     // NE PAS remettre currentQuestionIndex à 0 pour continuer avec les questions suivantes
     // currentQuestionIndex = 0; // COMMENTÉ - pour continuer les questions
     
@@ -252,6 +257,12 @@ function stopQuestionCycle() {
 async function askNewQuestion() {
     if (matchEnded || questionActive || questionWaitingForActivation) {
         log.question(`Question non posée: matchEnded=${matchEnded}, questionActive=${questionActive}, questionWaitingForActivation=${questionWaitingForActivation}`);
+        return;
+    }
+    
+    // Protection contre les appels multiples pendant la transition
+    if (currentQuestion !== null) {
+        log.question(`Question non posée: currentQuestion existe encore (transition en cours)`);
         return;
     }
     
@@ -346,6 +357,12 @@ async function askNewQuestion() {
     
     // Démarrer le timer pour la période de réponses
     questionTimer = setTimeout(() => {
+        // Check if currentQuestion still exists (it might have been cleared by endQuestion)
+        if (!currentQuestion) {
+            log.question(`⏰ Timer expiré mais question déjà terminée - ignoré`);
+            return;
+        }
+        
         log.question(`⏰ Timer expiré pour la question: ${currentQuestion.question}. Début de la période de grâce de ${GRACE_PERIOD / 1000}s.`);
         
         // Attendre la fin de la période de grâce avant de terminer la question
@@ -957,7 +974,7 @@ tiktokLiveConnection.on('chat', async data => {
     
     // Si pas de question active, créer le joueur s'il n'existe pas déjà
     if (!players.has(username)) {
-        log.player(`Nouveau joueur via commentaire (pas de question active): ${username}`);
+        log.player(`Nouveau joueur via commentaire (entre deux quiz): ${username}`);
         
         // Utiliser exactement la même logique que les événements join/gift
         const profilePic = data.profilePictureUrl;
@@ -995,12 +1012,12 @@ tiktokLiveConnection.on('chat', async data => {
             // Jouer un son de nouveau joueur
             playNewPlayerSound();
             
-            log.info(`${username} a rejoint le jeu via commentaire (pas de question active) - Flag initial: ${initialFlag}`);
+            log.info(`${username} a rejoint le jeu via commentaire (entre deux quiz) - Flag initial: ${initialFlag}`);
         }, 2000); // 2 secondes de délai
     } else {
         const playerData = players.get(username);
         playerData.lastComment = Date.now();
-        log.info(`${username}: ${comment} (commentaire ignoré - pas de question active)`);
+        log.info(`${username}: ${comment} (commentaire ignoré - entre deux quiz)`);
     }
 });
 
