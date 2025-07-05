@@ -34,6 +34,8 @@ var background_music: AudioStream
 # Audio pour les sons de nouveaux joueurs
 var new_player_sound_player: AudioStreamPlayer
 
+
+
 # État du match
 var match_ended = false
 var winner = null
@@ -104,6 +106,8 @@ func _ready():
 	
 	# Configuration des sons de nouveaux joueurs
 	_setup_new_player_sounds()
+	
+
 	
 	# Test de la musique après un délai
 	await get_tree().create_timer(1.0).timeout
@@ -882,7 +886,11 @@ func show_winner_announcement(winner_data: Dictionary):
 	# Animer l'apparition
 	animate_winner_popup_appearance()
 	
+
+	
 	print("🏆 Annonce du gagnant terminée!")
+
+
 
 func _process_pending_messages(username: String):
 	"""Process any pending messages for a newly created player"""

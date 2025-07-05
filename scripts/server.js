@@ -18,7 +18,7 @@ const config = require('./config'); // Import configuration
 //user7165753005592
 //valorantesports
 
-const tiktokUsername = 'windpress';
+const tiktokUsername = 'coach.baki.1';
 const wsServer = new WebSocket.Server({ port: 8080 });
 
 // Unsplash API Configuration
@@ -87,6 +87,9 @@ const newPlayerSounds = [
 
 // Stockage des joueurs
 const players = new Map();
+
+// Pour éviter les doublons de joueurs envoyés à Godot
+let playersSentToGodot = new Set();
 
 // Variables pour le test player
 let testPlayerInterval = null;
@@ -172,6 +175,7 @@ log.system(`🎯 Pour gagner: Atteindre le niveau ${maxLevel}`);
 function resetGameState() {
     log.system('Réinitialisation de l\'état du jeu');
     players.clear();
+    playersSentToGodot.clear(); // Réinitialiser la liste des joueurs envoyés
     matchEnded = false;
     winner = null;
     questionActive = false;
@@ -521,6 +525,12 @@ tiktokLiveConnection.on('member', data => {
         
         // Envoyer le message new_player avec un délai pour laisser le temps au client de charger l'image
         setTimeout(() => {
+            // Vérifier si le joueur a déjà été envoyé à Godot
+            if (hasPlayerBeenSentToGodot(username)) {
+                log.warning(`${username} déjà envoyé à Godot - ignoré`);
+                return;
+            }
+            
             broadcastToGodot({
                 type: "new_player",
                 user: username,
@@ -529,6 +539,9 @@ tiktokLiveConnection.on('member', data => {
                 currentLevel: 1,
                 initialFlag: initialFlag
             });
+            
+            // Marquer le joueur comme envoyé
+            markPlayerAsSentToGodot(username);
             
             // Jouer un son de nouveau joueur
             playNewPlayerSound();
@@ -560,6 +573,12 @@ tiktokLiveConnection.on('join', data => {
         
         // Envoyer le message new_player avec un délai pour laisser le temps au client de charger l'image
         setTimeout(() => {
+            // Vérifier si le joueur a déjà été envoyé à Godot
+            if (hasPlayerBeenSentToGodot(username)) {
+                log.warning(`${username} déjà envoyé à Godot - ignoré`);
+                return;
+            }
+            
             broadcastToGodot({
                 type: "new_player",
                 user: username,
@@ -568,6 +587,9 @@ tiktokLiveConnection.on('join', data => {
                 currentLevel: 1,
                 initialFlag: initialFlag
             });
+            
+            // Marquer le joueur comme envoyé
+            markPlayerAsSentToGodot(username);
             
             // Jouer un son de nouveau joueur
             playNewPlayerSound();
@@ -613,6 +635,12 @@ tiktokLiveConnection.on('gift', data => {
         
         // Envoyer le message new_player avec un délai pour laisser le temps au client de charger l'image
         setTimeout(() => {
+            // Vérifier si le joueur a déjà été envoyé à Godot
+            if (hasPlayerBeenSentToGodot(username)) {
+                log.warning(`${username} déjà envoyé à Godot - ignoré`);
+                return;
+            }
+            
             broadcastToGodot({
                 type: "new_player",
                 user: username,
@@ -621,6 +649,9 @@ tiktokLiveConnection.on('gift', data => {
                 currentLevel: 1,
                 initialFlag: initialFlag
             });
+            
+            // Marquer le joueur comme envoyé
+            markPlayerAsSentToGodot(username);
             
             // Jouer un son de nouveau joueur
             playNewPlayerSound();
@@ -633,6 +664,16 @@ tiktokLiveConnection.on('gift', data => {
         playerData.lastComment = Date.now();
     }
 });
+
+// Fonction pour vérifier si un joueur a déjà été envoyé à Godot
+function hasPlayerBeenSentToGodot(username) {
+    return playersSentToGodot.has(username);
+}
+
+// Fonction pour marquer un joueur comme envoyé à Godot
+function markPlayerAsSentToGodot(username) {
+    playersSentToGodot.add(username);
+}
 
 // Fonction pour jouer un son de nouveau joueur
 function playNewPlayerSound() {
@@ -673,7 +714,7 @@ function getMinPointsForLevel(level) {
 }
 
 // Gestion des messages du chat
-tiktokLiveConnection.on('chat', data => {
+tiktokLiveConnection.on('chat', async data => {
     if (matchEnded) return;
     
     const username = data.uniqueId;
@@ -700,6 +741,12 @@ tiktokLiveConnection.on('chat', data => {
             
             // Envoyer le message new_player avec un délai pour laisser le temps au client de charger l'image
             setTimeout(() => {
+                // Vérifier si le joueur a déjà été envoyé à Godot
+                if (hasPlayerBeenSentToGodot(username)) {
+                    log.warning(`${username} déjà envoyé à Godot - ignoré`);
+                    return;
+                }
+                
                 broadcastToGodot({
                     type: "new_player",
                     user: username,
@@ -708,6 +755,9 @@ tiktokLiveConnection.on('chat', data => {
                     currentLevel: 1,
                     initialFlag: initialFlag
                 });
+                
+                // Marquer le joueur comme envoyé
+                markPlayerAsSentToGodot(username);
                 
                 // Jouer un son de nouveau joueur
                 playNewPlayerSound();
@@ -793,6 +843,9 @@ tiktokLiveConnection.on('chat', data => {
                         second_place: secondPlace || null,
                         third_place: thirdPlace || null
                     });
+                    
+                    // 🎤 LANCER L'ANNONCE TTS DU GAGNANT
+                    await handleMatchEnd(username, playerData.points);
                     return;
                 }
             }
@@ -861,6 +914,12 @@ tiktokLiveConnection.on('chat', data => {
             
             // Envoyer le message new_player avec un délai pour laisser le temps au client de charger l'image
             setTimeout(() => {
+                // Vérifier si le joueur a déjà été envoyé à Godot
+                if (hasPlayerBeenSentToGodot(username)) {
+                    log.warning(`${username} déjà envoyé à Godot - ignoré`);
+                    return;
+                }
+                
                 broadcastToGodot({
                     type: "new_player",
                     user: username,
@@ -869,6 +928,9 @@ tiktokLiveConnection.on('chat', data => {
                     currentLevel: 1,
                     initialFlag: initialFlag
                 });
+                
+                // Marquer le joueur comme envoyé
+                markPlayerAsSentToGodot(username);
                 
                 // Jouer un son de nouveau joueur
                 playNewPlayerSound();
@@ -909,6 +971,12 @@ tiktokLiveConnection.on('chat', data => {
         
         // Envoyer le message new_player avec un délai pour laisser le temps au client de charger l'image
         setTimeout(() => {
+            // Vérifier si le joueur a déjà été envoyé à Godot
+            if (hasPlayerBeenSentToGodot(username)) {
+                log.warning(`${username} déjà envoyé à Godot - ignoré`);
+                return;
+            }
+            
             broadcastToGodot({
                 type: "new_player",
                 user: username,
@@ -917,6 +985,9 @@ tiktokLiveConnection.on('chat', data => {
                 currentLevel: 1,
                 initialFlag: initialFlag
             });
+            
+            // Marquer le joueur comme envoyé
+            markPlayerAsSentToGodot(username);
             
             // Jouer un son de nouveau joueur
             playNewPlayerSound();
@@ -991,19 +1062,35 @@ async function handleMatchEnd(winnerUsername, points) {
     });
 
     // Announce the winner with TTS
-    if (winnerAnnouncementManager) {
+    if (azureTTS) {
         try {
-            const winnerData = {
-                username: winnerUsername,
-                points: points
-            };
+            log.system('🎤 Début de la lecture TTS du gagnant...');
             
-            log.system(`🎤 Announcing winner: ${winnerUsername} with ${points} points`);
-            await winnerAnnouncementManager.announceWinner(winnerData, secondPlace, thirdPlace);
-            log.success('✅ Winner announcement completed');
+            // Simple winner announcement (like questions do)
+            const winnerAnnouncement = `Congratulations! ${winnerUsername} is our champion with ${points} points!`;
+            log.system(`🎤 Winner announcement text: "${winnerAnnouncement}"`);
+            await azureTTS.speakText(winnerAnnouncement);
+            log.success('✅ Winner announcement spoken aloud (Azure TTS).');
+            
+            // Wait a bit, then follow message
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            const followMessage = `Don't forget to follow ${winnerUsername} for more amazing content!`;
+            log.system(`🎤 Follow message text: "${followMessage}"`);
+            await azureTTS.speakText(followMessage);
+            log.success('✅ Follow message spoken aloud (Azure TTS).');
+            
+            // Wait a bit, then thanks message
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            const thanksMessage = `Thanks to everyone who played! You're all winners for participating! Stay tuned for the next quiz!`;
+            log.system(`🎤 Thanks message text: "${thanksMessage}"`);
+            await azureTTS.speakText(thanksMessage);
+            log.success('✅ Thanks message spoken aloud (Azure TTS).');
+            
         } catch (err) {
-            log.error('❌ Error announcing winner: ' + err);
+            log.error('❌ Azure TTS error: ' + err);
         }
+    } else {
+        log.error('❌ Azure TTS not available for winner announcement');
     }
     
     // Arrêter le test player si actif
