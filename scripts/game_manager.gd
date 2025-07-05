@@ -106,6 +106,9 @@ func _ready():
 	await get_tree().create_timer(1.0).timeout
 	test_background_music()
 	
+	# Hide WinnerPopup at start (will be shown when announcing winner)
+	hide_winner_popup()
+	
 	print("✅ GameManager prêt!")
 
 func _process(_delta):
@@ -235,10 +238,16 @@ func _create_player(data: Dictionary):
 		print("❌ Niveau non trouvé: Level", level_number)
 
 func _show_winner_popup(player_data: Dictionary):
-	print("🏆 Création de la popup de victoire avec les données: ", player_data)
+	print("🏆 Affichage de la popup de victoire avec les données: ", player_data)
 	
 	if not player_data.has("winner"):
 		print("❌ Données de gagnant invalides")
+		return
+	
+	# Récupérer la référence au WinnerPopup existant dans la scène Main
+	var winner_popup = get_parent().get_node_or_null("WinnerPopup")
+	if not winner_popup:
+		print("❌ WinnerPopup non trouvé dans la scène Main!")
 		return
 	
 	# Cacher tous les joueurs pour éviter qu'ils apparaissent au-dessus de la popup
@@ -251,11 +260,6 @@ func _show_winner_popup(player_data: Dictionary):
 	if question_ui:
 		question_ui.hide_question()
 		print("❓ QuestionUI caché")
-		
-	var popup = winner_popup_scene.instantiate()
-	print("✅ Instance de la popup créée")
-	add_child(popup)
-	print("✅ Popup ajoutée à la scène")
 	
 	# Créer un dictionnaire avec les données nécessaires pour la popup
 	var winner_data = {
@@ -296,9 +300,12 @@ func _show_winner_popup(player_data: Dictionary):
 	if sorted_players.size() > 2:
 		winner_data["third_place"] = sorted_players[2]
 	
-	print("🏆 Appel de show_winner sur la popup...")
-	popup.show_winner(winner_data)
-	print("✅ show_winner appelé avec succès")
+	print("🏆 Appel de show_winner sur le WinnerPopup existant...")
+	winner_popup.show_winner(winner_data)
+	print("✅ show_winner appelé avec succès sur le WinnerPopup existant")
+	
+	# S'assurer que la popup est visible
+	winner_popup.show()
 	
 	# Marquer le match comme terminé
 	match_ended = true
@@ -328,10 +335,11 @@ func _restart_game():
 	match_ended = false
 	winner = null
 	
-	# Supprimer la popup de victoire si elle existe
-	for child in get_children():
-		if child is Control and child.name == "WinnerPopup":
-			child.queue_free()
+	# Cacher la popup de victoire existante
+	var winner_popup = get_parent().get_node_or_null("WinnerPopup")
+	if winner_popup:
+		winner_popup.hide()
+		print("🏆 WinnerPopup existant caché")
 	
 	print("✅ Jeu réinitialisé")
 	
@@ -728,3 +736,127 @@ func load_background_image(image_url: String):
 		print("❌ Erreur lors de la requête d'image de fond: ", error)
 	else:
 		print("🖼️ Requête HTTP envoyée avec succès")
+
+# ========================================
+# FONCTIONS DE CONTRÔLE DU WINNER POPUP
+# ========================================
+
+func get_winner_popup():
+	"""Récupérer la référence au WinnerPopup existant dans la scène Main"""
+	var winner_popup = get_parent().get_node_or_null("WinnerPopup")
+	if not winner_popup:
+		print("❌ WinnerPopup non trouvé dans la scène Main!")
+		return null
+	return winner_popup
+
+func show_winner_popup():
+	"""Afficher le WinnerPopup"""
+	var winner_popup = get_winner_popup()
+	if winner_popup:
+		winner_popup.show()
+		print("🏆 WinnerPopup affiché")
+	else:
+		print("❌ Impossible d'afficher le WinnerPopup")
+
+func hide_winner_popup():
+	"""Cacher le WinnerPopup"""
+	var winner_popup = get_winner_popup()
+	if winner_popup:
+		winner_popup.hide()
+		print("🏆 WinnerPopup caché")
+	else:
+		print("❌ Impossible de cacher le WinnerPopup")
+
+func set_winner_popup_position(x: float, y: float):
+	"""Définir la position du WinnerPopup en 2D (POSITION RESPECTÉE - NON UTILISÉE)"""
+	print("⚠️ Fonction set_winner_popup_position désactivée - position gérée manuellement")
+
+func get_winner_popup_position() -> Vector2:
+	"""Obtenir la position actuelle du WinnerPopup"""
+	var winner_popup = get_winner_popup()
+	if winner_popup:
+		return winner_popup.position
+	return Vector2.ZERO
+
+func move_winner_popup_to_center():
+	"""Centrer le WinnerPopup à l'écran (POSITION RESPECTÉE - NON UTILISÉE)"""
+	print("⚠️ Fonction move_winner_popup_to_center désactivée - position gérée manuellement")
+
+func move_winner_popup_to_top_center():
+	"""Placer le WinnerPopup en haut au centre (POSITION RESPECTÉE - NON UTILISÉE)"""
+	print("⚠️ Fonction move_winner_popup_to_top_center désactivée - position gérée manuellement")
+
+func move_winner_popup_to_bottom_center():
+	"""Placer le WinnerPopup en bas au centre (POSITION RESPECTÉE - NON UTILISÉE)"""
+	print("⚠️ Fonction move_winner_popup_to_bottom_center désactivée - position gérée manuellement")
+
+func set_winner_popup_scale(scale_x: float, scale_y: float):
+	"""Définir l'échelle du WinnerPopup"""
+	var winner_popup = get_winner_popup()
+	if winner_popup:
+		winner_popup.scale = Vector2(scale_x, scale_y)
+		print("🏆 WinnerPopup échelle définie à: ", Vector2(scale_x, scale_y))
+	else:
+		print("❌ Impossible de définir l'échelle du WinnerPopup")
+
+func set_winner_popup_z_index(z_index: int):
+	"""Définir le z-index du WinnerPopup"""
+	var winner_popup = get_winner_popup()
+	if winner_popup:
+		winner_popup.z_index = z_index
+		print("🏆 WinnerPopup z-index défini à: ", z_index)
+	else:
+		print("❌ Impossible de définir le z-index du WinnerPopup")
+
+func animate_winner_popup_appearance():
+	"""Animer l'apparition du WinnerPopup"""
+	var winner_popup = get_winner_popup()
+	if winner_popup:
+		# Commencer invisible
+		winner_popup.modulate.a = 0.0
+		winner_popup.show()
+		
+		# Animation d'apparition
+		var tween = create_tween()
+		tween.tween_property(winner_popup, "modulate:a", 1.0, 0.5)
+		print("🏆 Animation d'apparition du WinnerPopup")
+	else:
+		print("❌ Impossible d'animer le WinnerPopup")
+
+func animate_winner_popup_disappearance():
+	"""Animer la disparition du WinnerPopup"""
+	var winner_popup = get_winner_popup()
+	if winner_popup:
+		# Animation de disparition
+		var tween = create_tween()
+		tween.tween_property(winner_popup, "modulate:a", 0.0, 0.5)
+		await tween.finished
+		winner_popup.hide()
+		print("🏆 Animation de disparition du WinnerPopup")
+	else:
+		print("❌ Impossible d'animer la disparition du WinnerPopup")
+
+func display_winner_data(winner_data: Dictionary):
+	"""Afficher les données du gagnant dans le WinnerPopup"""
+	var winner_popup = get_winner_popup()
+	if winner_popup:
+		winner_popup.show_winner(winner_data)
+		print("🏆 Données du gagnant affichées dans le WinnerPopup")
+	else:
+		print("❌ Impossible d'afficher les données du gagnant")
+
+# Exemple d'utilisation combinée
+func show_winner_announcement(winner_data: Dictionary):
+	"""Afficher une annonce complète du gagnant avec animation"""
+	print("🏆 Annonce complète du gagnant...")
+	
+	# S'assurer qu'elle est au-dessus de tout
+	set_winner_popup_z_index(9999)
+	
+	# Afficher les données
+	display_winner_data(winner_data)
+	
+	# Animer l'apparition
+	animate_winner_popup_appearance()
+	
+	print("🏆 Annonce du gagnant terminée!")
