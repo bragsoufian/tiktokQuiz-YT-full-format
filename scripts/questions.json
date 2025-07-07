@@ -1,423 +1,2296 @@
 [
+  {
+    "question": "Which country has a unicorn as its national animal?",
+    "options": ["Scotland", "New Zealand", "Wales"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "mythical creature national symbol",
+    "image": null
+  },
+  {
+    "question": "Which fruit was once so rare it was rented as a party centerpiece?",
+    "options": ["Pineapple", "Fig", "Mango"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "luxury item vintage party",
+    "image": null
+  },
+  {
+    "question": "Which creature can survive in space?",
+    "options": ["Ant", "Jellyfish", "Tardigrade"],
+    "correctAnswer": "C",
+    "backgroundKeyWords": "tiny animal outer space",
+    "image": null
+  },
+  {
+    "question": "Which part of your body has no blood supply?",
+    "options": ["Skin", "Hair", "Cornea"],
+    "correctAnswer": "C",
+    "backgroundKeyWords": "human anatomy biology detail",
+    "image": null
+  },
+  {
+    "question": "Which animal can smell underwater?",
+    "options": ["Shark", "Elephant", "Crocodile"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "underwater nature wild animal",
+    "image": null
+  },
+  {
+    "question": "Which planet rains diamonds?",
+    "options": ["Saturn", "Venus", "Neptune"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "space weather rare phenomenon",
+    "image": null
+  },
+  {
+    "question": "Which fruit has more genes than a human?",
+    "options": ["Grapes", "Strawberries", "Bananas"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "fruit market natural variety",
+    "image": null
+  },
+  {
+    "question": "Which food can never go bad?",
+    "options": ["Rice", "Honey", "Beans"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "ancient food preserved jar",
+    "image": null
+  },
+  {
+    "question": "Which animal has cubes for poop?",
+    "options": ["Beaver", "Wombat", "Koala"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "unusual animal nature trivia",
+    "image": null
+  },
+  {
+    "question": "Which color is a flamingo when it's born?",
+    "options": ["Pink", "White", "Gray"],
+    "correctAnswer": "C",
+    "backgroundKeyWords": "baby bird wildlife coloring",
+    "image": null
+  },
+
+
+  {
+    "question": "Which part of your body keeps growing after death?",
+    "options": ["Nails", "Eyes", "Ears"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "body growth afterlife concept",
+    "image": null
+  },
+  {
+    "question": "Which U.S. state is closest to Africa?",
+    "options": ["Florida", "Maine", "Texas"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "map geography usa coastline",
+    "image": null
+  },
+  {
+    "question": "Which animal can't jump?",
+    "options": ["Rhino", "Elephant", "Hippo"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "wildlife standing animal large",
+    "image": null
+  },
+  {
+    "question": "Which country has a city named 'Batman'?",
+    "options": ["Turkey", "Brazil", "Poland"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "funny city sign location",
+    "image": null
+  },
+  {
+    "question": "Which animal can hold its breath the longest?",
+    "options": ["Dolphin", "Whale", "Sea turtle"],
+    "correctAnswer": "C",
+    "backgroundKeyWords": "marine animal underwater breath",
+    "image": null
+  },
+  {
+    "question": "Which everyday object was originally meant for cleaning wallpaper?",
+    "options": ["Toothpaste", "Shampoo", "Play-Doh"],
+    "correctAnswer": "C",
+    "backgroundKeyWords": "child toy household retro",
+    "image": null
+  },
+  {
+    "question": "Which animal can breathe through its butt?",
+    "options": ["Frog", "Turtle", "Fish"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "weird nature animal fact",
+    "image": null
+  },
+  {
+    "question": "Which country eats the most chocolate per person?",
+    "options": ["Switzerland", "USA", "France"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "chocolate sweets dessert nation",
+    "image": null
+  },
+  {
+    "question": "Which bird can sleep while flying?",
+    "options": ["Seagull", "Albatross", "Eagle"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "bird flight long distance",
+    "image": null
+  },
+  {
+    "question": "Which animal is born with teeth?",
+    "options": ["Dolphin", "Shark", "Cat"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "newborn animal predator",
+    "image": null
+  },
+  {
+    "question": "Which country has a calendar that's 7 years behind?",
+    "options": ["Nepal", "Ethiopia", "Thailand"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "calendar tradition time culture",
+    "image": null
+  },
+  {
+    "question": "Which animal has blue blood?",
+    "options": ["Octopus", "Whale", "Jellyfish"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "ocean life strange biology",
+    "image": null
+  },
+  {
+    "question": "Which direction do cows usually face while eating?",
+    "options": ["North/South", "East/West", "Random"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "farm animal grazing compass",
+    "image": null
+  },
+  {
+    "question": "Which body part can heal itself fastest?",
+    "options": ["Tongue", "Skin", "Liver"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "human recovery healing closeup",
+    "image": null
+  },
+  {
+    "question": "Which fruit contains the most water?",
+    "options": ["Cucumber", "Watermelon", "Orange"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "hydrating fruit splash",
+    "image": null
+  },
+  {
+    "question": "Which animal can live forever (sort of)?",
+    "options": ["Jellyfish", "Starfish", "Sea urchin"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "deep sea odd life",
+    "image": null
+  },
+  {
+    "question": "Which bird can mimic over 100 sounds?",
+    "options": ["Parrot", "Lyrebird", "Crow"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "forest bird sound mimicry",
+    "image": null
+  },
+  {
+    "question": "Which planet spins sideways?",
+    "options": ["Neptune", "Uranus", "Mars"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "solar system rotation mystery",
+    "image": null
+  },
+  {
+    "question": "Which bone is the hardest in the human body?",
+    "options": ["Skull", "Jawbone", "Thigh bone"],
+    "correctAnswer": "C",
+    "backgroundKeyWords": "human skeleton structure",
+    "image": null
+  },
+  {
+    "question": "Which mammal lays eggs?",
+    "options": ["Bat", "Platypus", "Dolphin"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "rare mammal nature",
+    "image": null
+  },
+  
+
+
+
+
+
+
+  {
+    "question": "Which part of your body keeps growing after death?",
+    "options": ["Nails", "Eyes", "Ears"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "body mystery biology",
+    "image": null
+  },
+  {
+    "question": "Which U.S. state is closest to Africa?",
+    "options": ["Florida", "Maine", "Texas"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "usa coast travel trivia",
+    "image": null
+  },
+  {
+    "question": "Which animal can't jump?",
+    "options": ["Rhino", "Elephant", "Hippo"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "land animal large body",
+    "image": null
+  },
+  {
+    "question": "Which country has a city named 'Batman'?",
+    "options": ["Turkey", "Brazil", "Poland"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "funny city name sign",
+    "image": null
+  },
+  {
+    "question": "Which animal can hold its breath the longest?",
+    "options": ["Dolphin", "Whale", "Sea turtle"],
+    "correctAnswer": "C",
+    "backgroundKeyWords": "underwater creature deep dive",
+    "image": null
+  },
+  {
+    "question": "Which everyday object was originally meant for cleaning wallpaper?",
+    "options": ["Toothpaste", "Shampoo", "Play-Doh"],
+    "correctAnswer": "C",
+    "backgroundKeyWords": "household product retro",
+    "image": null
+  },
+  {
+    "question": "Which animal can breathe through its butt?",
+    "options": ["Frog", "Turtle", "Fish"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "bizarre nature survival",
+    "image": null
+  },
+  {
+    "question": "Which country eats the most chocolate per person?",
+    "options": ["Switzerland", "USA", "France"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "chocolate dessert sweet culture",
+    "image": null
+  },
+  {
+    "question": "Which bird can sleep while flying?",
+    "options": ["Seagull", "Albatross", "Eagle"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "long flight sky bird",
+    "image": null
+  },
+  {
+    "question": "Which animal is born with teeth?",
+    "options": ["Dolphin", "Shark", "Cat"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "baby animal marine birth",
+    "image": null
+  },
+  {
+    "question": "Which country has a calendar that's 7 years behind?",
+    "options": ["Nepal", "Ethiopia", "Thailand"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "calendar tradition global",
+    "image": null
+  },
+  {
+    "question": "Which animal has blue blood?",
+    "options": ["Octopus", "Whale", "Jellyfish"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "marine biology strange",
+    "image": null
+  },
+  {
+    "question": "Which direction do cows usually face while eating?",
+    "options": ["North/South", "East/West", "Random"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "farm field animal feeding",
+    "image": null
+  },
+  {
+    "question": "Which body part can heal itself fastest?",
+    "options": ["Tongue", "Skin", "Liver"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "healing human body quick",
+    "image": null
+  },
+  {
+    "question": "Which fruit contains the most water?",
+    "options": ["Cucumber", "Watermelon", "Orange"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "hydrating fruit splash",
+    "image": null
+  },
+  {
+    "question": "Which animal can live forever (sort of)?",
+    "options": ["Jellyfish", "Starfish", "Sea urchin"],
+    "correctAnswer": "A",
+    "backgroundKeyWords": "ocean life deep biology",
+    "image": null
+  },
+  {
+    "question": "Which bird can mimic over 100 sounds?",
+    "options": ["Parrot", "Lyrebird", "Crow"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "forest bird mimicry sound",
+    "image": null
+  },
+  {
+    "question": "Which planet spins sideways?",
+    "options": ["Neptune", "Uranus", "Mars"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "planet tilt space orbit",
+    "image": null
+  },
+  {
+    "question": "Which bone is the hardest in the human body?",
+    "options": ["Skull", "Jawbone", "Thigh bone"],
+    "correctAnswer": "C",
+    "backgroundKeyWords": "bone anatomy human strength",
+    "image": null
+  },
+  {
+    "question": "Which mammal lays eggs?",
+    "options": ["Bat", "Platypus", "Dolphin"],
+    "correctAnswer": "B",
+    "backgroundKeyWords": "unusual mammal egg laying",
+    "image": null
+  },
+
+
+
+
+
     {
-      "question": "Which country has a unicorn as its national animal?",
-      "options": ["Scotland", "New Zealand", "Wales"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "unicorn mythical flag",
+      "question": "Which country drinks the most coffee per person?",
+      "options": ["USA", "Finland", "Italy"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "coffee mug cozy morning",
       "image": null
     },
     {
-      "question": "Which fruit was once so rare it was rented as a party centerpiece?",
-      "options": ["Pineapple", "Fig", "Mango"],
+      "question": "Which landmark was sold by a con artist—twice?",
+      "options": ["Eiffel Tower", "Statue of Liberty", "Big Ben"],
       "correctAnswer": "A",
-      "backgroundKeyWords": "pineapple party fruit luxury",
+      "backgroundKeyWords": "urban scam old postcard",
       "image": null
     },
     {
-      "question": "Which creature can survive in space?",
-      "options": ["Ant", "Jellyfish", "Tardigrade"],
+      "question": "Which animal can technically live forever (in theory)?",
+      "options": ["Starfish", "Hydra", "Octopus"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "microscopic deep sea",
+      "image": null
+    },
+    {
+      "question": "Which body organ can grow back multiple times?",
+      "options": ["Liver", "Skin", "Kidney"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "medical growth recovery",
+      "image": null
+    },
+    {
+      "question": "Which invention came before sliced bread?",
+      "options": ["Traffic lights", "Microwave", "Hair dryer"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "vintage invention timeline",
+      "image": null
+    },
+    {
+      "question": "Which animal can't walk backwards?",
+      "options": ["Penguin", "Kangaroo", "Horse"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "wildlife field animal stance",
+      "image": null
+    },
+    {
+      "question": "Which object was left on the moon in 1971?",
+      "options": ["Camera", "Mirror", "Shovel"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "space surface equipment",
+      "image": null
+    },
+    {
+      "question": "Which city has more pigeons than people in certain spots?",
+      "options": ["London", "New York", "Venice"],
       "correctAnswer": "C",
-      "backgroundKeyWords": "tardigrade microscopic space",
+      "backgroundKeyWords": "old city birds architecture",
       "image": null
     },
     {
-      "question": "Which part of your body has no blood supply?",
-      "options": ["Skin", "Hair", "Cornea"],
+      "question": "Which candy was once used in explosives?",
+      "options": ["Chocolate", "Bubblegum", "Licorice"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "vintage war supplies",
+      "image": null
+    },
+    {
+      "question": "Which social media platform came before Facebook?",
+      "options": ["MySpace", "Vine", "Twitter"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "old computer internet",
+      "image": null
+    },
+    {
+      "question": "Which planet has the biggest volcano in the solar system?",
+      "options": ["Jupiter", "Mars", "Neptune"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "space surface mountains",
+      "image": null
+    },
+    {
+      "question": "Which animal's milk is naturally pink?",
+      "options": ["Camel", "Hippo", "Llama"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "wild nature water mammal",
+      "image": null
+    },
+    {
+      "question": "Which part of your body produces the most heat?",
+      "options": ["Chest", "Brain", "Thigh"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "human silhouette thermal",
+      "image": null
+    },
+    {
+      "question": "Which country banned chewing gum for years?",
+      "options": ["Japan", "South Korea", "Singapore"],
       "correctAnswer": "C",
-      "backgroundKeyWords": "eye cornea closeup",
+      "backgroundKeyWords": "urban rules clean streets",
       "image": null
     },
     {
-      "question": "Which animal can smell underwater?",
-      "options": ["Shark", "Elephant", "Crocodile"],
+      "question": "Which slang word used to mean 'fool' before it meant 'cool'?",
+      "options": ["Dope", "Sick", "Bad"],
       "correctAnswer": "A",
-      "backgroundKeyWords": "shark ocean swim",
+      "backgroundKeyWords": "street slang retro culture",
       "image": null
     },
     {
-      "question": "Which planet rains diamonds?",
-      "options": ["Saturn", "Venus", "Neptune"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "saturn space diamond",
-      "image": null
-    },
-    {
-      "question": "Which fruit has more genes than a human?",
-      "options": ["Grapes", "Strawberries", "Bananas"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "strawberry dna fruit",
-      "image": null
-    },
-    {
-      "question": "Which food can never go bad?",
-      "options": ["Rice", "Honey", "Beans"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "honey jar old",
-      "image": null
-    },
-    {
-      "question": "Which animal has cubes for poop?",
-      "options": ["Beaver", "Wombat", "Koala"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "wombat cute poop",
-      "image": null
-    },
-    {
-      "question": "Which color is a flamingo when it's born?",
-      "options": ["Pink", "White", "Gray"],
+      "question": "Which invention came from space research?",
+      "options": ["Velcro", "Teflon", "Memory foam"],
       "correctAnswer": "C",
-      "backgroundKeyWords": "baby flamingo color",
+      "backgroundKeyWords": "nasa lab product",
       "image": null
     },
     {
-      "question": "Which part of your body keeps growing after death?",
-      "options": ["Nails", "Eyes", "Ears"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "nails closeup growth",
-      "image": null
-    },
-    {
-      "question": "Which U.S. state is closest to Africa?",
-      "options": ["Florida", "Maine", "Texas"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "map maine africa",
-      "image": null
-    },
-    {
-      "question": "Which animal can't jump?",
-      "options": ["Rhino", "Elephant", "Hippo"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "elephant standing still",
-      "image": null
-    },
-    {
-      "question": "Which country has a city named 'Batman'?",
-      "options": ["Turkey", "Brazil", "Poland"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "batman sign turkey",
-      "image": null
-    },
-    {
-      "question": "Which animal can hold its breath the longest?",
-      "options": ["Dolphin", "Whale", "Sea turtle"],
+      "question": "Which fast food mascot was once considered creepy?",
+      "options": ["Colonel Sanders", "Ronald McDonald", "The Burger King"],
       "correctAnswer": "C",
-      "backgroundKeyWords": "sea turtle underwater",
+      "backgroundKeyWords": "vintage ad mascot costume",
       "image": null
     },
     {
-      "question": "Which everyday object was originally meant for cleaning wallpaper?",
-      "options": ["Toothpaste", "Shampoo", "Play-Doh"],
+      "question": "Which letter doesn't appear in any U.S. state name?",
+      "options": ["Q", "X", "Z"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "alphabet letters map",
+      "image": null
+    },
+    {
+      "question": "Which holiday was invented by marketers?",
+      "options": ["Valentine's Day", "Mother's Day", "Sweetest Day"],
       "correctAnswer": "C",
-      "backgroundKeyWords": "play-doh toy clean",
+      "backgroundKeyWords": "greeting card aisle",
       "image": null
     },
     {
-      "question": "Which animal can breathe through its butt?",
-      "options": ["Frog", "Turtle", "Fish"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "turtle weird fact",
-      "image": null
-    },
-    {
-      "question": "Which country eats the most chocolate per person?",
-      "options": ["Switzerland", "USA", "France"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "swiss chocolate bar",
-      "image": null
-    },
-    {
-      "question": "Which bird can sleep while flying?",
-      "options": ["Seagull", "Albatross", "Eagle"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "albatross gliding sleep",
-      "image": null
-    },
-    {
-      "question": "Which animal is born with teeth?",
-      "options": ["Dolphin", "Shark", "Cat"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "shark baby teeth",
-      "image": null
-    },
-    {
-      "question": "Which country has a calendar that's 7 years behind?",
-      "options": ["Nepal", "Ethiopia", "Thailand"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "ethiopia calendar date",
-      "image": null
-    },
-    {
-      "question": "Which animal has blue blood?",
-      "options": ["Octopus", "Whale", "Jellyfish"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "octopus underwater blue",
-      "image": null
-    },
-    {
-      "question": "Which direction do cows usually face while eating?",
-      "options": ["North/South", "East/West", "Random"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "cow field compass",
-      "image": null
-    },
-    {
-      "question": "Which body part can heal itself fastest?",
-      "options": ["Tongue", "Skin", "Liver"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "tongue healing mouth",
-      "image": null
-    },
-    {
-      "question": "Which fruit contains the most water?",
-      "options": ["Cucumber", "Watermelon", "Orange"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "cucumber slices water",
-      "image": null
-    },
-    {
-      "question": "Which animal can live forever (sort of)?",
-      "options": ["Jellyfish", "Starfish", "Sea urchin"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "jellyfish immortal deepsea",
-      "image": null
-    },
-    {
-      "question": "Which bird can mimic over 100 sounds?",
-      "options": ["Parrot", "Lyrebird", "Crow"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "lyrebird mimic forest",
-      "image": null
-    },
-    {
-      "question": "Which planet spins sideways?",
-      "options": ["Neptune", "Uranus", "Mars"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "uranus tilt space",
-      "image": null
-    },
-    {
-      "question": "Which bone is the hardest in the human body?",
-      "options": ["Skull", "Jawbone", "Thigh bone"],
+      "question": "Which home device has been hacked to mine crypto?",
+      "options": ["Fridge", "Toaster", "Smart TV"],
       "correctAnswer": "C",
-      "backgroundKeyWords": "femur bone anatomy",
+      "backgroundKeyWords": "tech hack smart living room",
       "image": null
     },
     {
-      "question": "Which mammal lays eggs?",
-      "options": ["Bat", "Platypus", "Dolphin"],
+      "question": "Which animal laughs when tickled?",
+      "options": ["Monkey", "Rat", "Dog"],
       "correctAnswer": "B",
-      "backgroundKeyWords": "platypus egg mammal",
+      "backgroundKeyWords": "lab animal behavior cute",
       "image": null
     },
-      {
-        "question": "Which country banned ketchup in school cafeterias (except for fries)?",
-        "options": ["Germany", "USA", "France"],
-        "correctAnswer": "C",
-        "backgroundKeyWords": "french school cafeteria ketchup ban",
-        "image": null
-      },
-      {
-        "question": "Which body part has no pain receptors?",
-        "options": ["Tongue", "Lungs", "Brain"],
-        "correctAnswer": "C",
-        "backgroundKeyWords": "brain scan nerves",
-        "image": null
-      },
-      {
-        "question": "Which item was invented by accident while trying to make wallpaper cleaner?",
-        "options": ["Glue", "Silly Putty", "Play-Doh"],
-        "correctAnswer": "C",
-        "backgroundKeyWords": "play-doh toy invention",
-        "image": null
-      },
-      {
-        "question": "Which U.S. state has a law banning donkeys from sleeping in bathtubs?",
-        "options": ["Arizona", "Texas", "Nevada"],
-        "correctAnswer": "A",
-        "backgroundKeyWords": "weird law donkey bathtub",
-        "image": null
-      },
-      {
-        "question": "Which language has the most words?",
-        "options": ["English", "Chinese", "German"],
-        "correctAnswer": "A",
-        "backgroundKeyWords": "english dictionary pages",
-        "image": null
-      },
-      {
-        "question": "Which fruit was once used as currency in ancient times?",
-        "options": ["Coconut", "Cacao", "Olive"],
-        "correctAnswer": "B",
-        "backgroundKeyWords": "cacao beans ancient money",
-        "image": null
-      },
-      {
-        "question": "Which European country has no mosquitoes?",
-        "options": ["Portugal", "Iceland", "Austria"],
-        "correctAnswer": "B",
-        "backgroundKeyWords": "iceland nature no bugs",
-        "image": null
-      },
-      {
-        "question": "Which letter is silent in 'mnemonic'?",
-        "options": ["M", "N", "E"],
-        "correctAnswer": "A",
-        "backgroundKeyWords": "word mnemonic memory",
-        "image": null
-      },
-      {
-        "question": "Which company first used Santa Claus in advertising?",
-        "options": ["Pepsi", "Coca-Cola", "Nestlé"],
-        "correctAnswer": "B",
-        "backgroundKeyWords": "vintage coca cola santa",
-        "image": null
-      },
-      {
-        "question": "Which sport was played on the moon?",
-        "options": ["Tennis", "Golf", "Soccer"],
-        "correctAnswer": "B",
-        "backgroundKeyWords": "astronaut moon golf nasa",
-        "image": null
-      },
-      {
-        "question": "Which snack was originally called 'Frito-Lay's Cheese Crunches'?",
-        "options": ["Doritos", "Cheetos", "Pringles"],
-        "correctAnswer": "B",
-        "backgroundKeyWords": "cheetos vintage snack",
-        "image": null
-      },
-      {
-        "question": "Which animal did ancient Egyptians worship?",
-        "options": ["Dog", "Cat", "Falcon"],
-        "correctAnswer": "B",
-        "backgroundKeyWords": "egyptian cat statue",
-        "image": null
-      },
-      {
-        "question": "Which U.S. president had a pet alligator?",
-        "options": ["John Adams", "Herbert Hoover", "John Quincy Adams"],
-        "correctAnswer": "C",
-        "backgroundKeyWords": "alligator white house",
-        "image": null
-      },
-      {
-        "question": "Which kitchen tool was once illegal in China?",
-        "options": ["Chopsticks", "Fork", "Knife"],
-        "correctAnswer": "B",
-        "backgroundKeyWords": "fork ban china table",
-        "image": null
-      },
-      {
-        "question": "Which natural disaster can cause fire, water, and wind damage at once?",
-        "options": ["Volcano", "Hurricane", "Earthquake"],
-        "correctAnswer": "A",
-        "backgroundKeyWords": "volcano eruption destruction",
-        "image": null
-      },
-      {
-        "question": "Which fast food chain once made bubblegum-flavored broccoli?",
-        "options": ["Burger King", "McDonald's", "Wendy's"],
-        "correctAnswer": "B",
-        "backgroundKeyWords": "mcdonalds failed food",
-        "image": null
-      },
-      {
-        "question": "Which European city has a law against dying in parliament?",
-        "options": ["Oslo", "Paris", "London"],
-        "correctAnswer": "C",
-        "backgroundKeyWords": "uk parliament london rule",
-        "image": null
-      },
-      {
-        "question": "Which fashion item was invented by a tennis player?",
-        "options": ["Sneakers", "Polo shirt", "Zipper"],
-        "correctAnswer": "B",
-        "backgroundKeyWords": "polo shirt tennis history",
-        "image": null
-      },
-      {
-        "question": "Which company made the first smartphone?",
-        "options": ["Apple", "Nokia", "IBM"],
-        "correctAnswer": "C",
-        "backgroundKeyWords": "ibm simon first smartphone",
-        "image": null
-      },
-      {
-        "question": "Which item is the most stolen from hotels worldwide?",
-        "options": ["Towels", "Pillows", "Remote controls"],
-        "correctAnswer": "A",
-        "backgroundKeyWords": "hotel towel theft",
-        "image": null
-      },
-      {
-        "question": "Which planet has days longer than its years?",
-        "options": ["Venus", "Mercury", "Mars"],
-        "correctAnswer": "A",
-        "backgroundKeyWords": "venus space time",
-        "image": null
-      },
-      {
-        "question": "Which part of your face can recognize thousands of types of smells?",
-        "options": ["Mouth", "Nose", "Eyes"],
-        "correctAnswer": "B",
-        "backgroundKeyWords": "nose smell senses",
-        "image": null
-      },
-      {
-        "question": "Which company owns the most vending machines in the world?",
-        "options": ["Nestlé", "Coca-Cola", "PepsiCo"],
-        "correctAnswer": "B",
-        "backgroundKeyWords": "coca cola vending machine",
-        "image": null
-      },
-      {
-        "question": "Which U.S. state is officially a commonwealth?",
-        "options": ["Alabama", "Virginia", "Nevada"],
-        "correctAnswer": "B",
-        "backgroundKeyWords": "virginia usa commonwealth",
-        "image": null
-      },
-      {
-        "question": "Which ancient civilization used chocolate as money?",
-        "options": ["Romans", "Aztecs", "Egyptians"],
-        "correctAnswer": "B",
-        "backgroundKeyWords": "aztec cacao currency",
-        "image": null
-      },
-      {
-        "question": "Which color was once reserved for royalty only?",
-        "options": ["Purple", "Blue", "Gold"],
-        "correctAnswer": "A",
-        "backgroundKeyWords": "royal purple velvet",
-        "image": null
-      },
-      {
-        "question": "Which company accidentally used cyanide in its candy?",
-        "options": ["Mars", "Tylenol", "Jelly Belly"],
-        "correctAnswer": "B",
-        "backgroundKeyWords": "tylenol recall poison",
-        "image": null
-      },
-      {
-        "question": "Which website was originally called 'Jerry and David’s Guide to the Web'?",
-        "options": ["Yahoo", "Google", "MSN"],
-        "correctAnswer": "A",
-        "backgroundKeyWords": "early internet yahoo founders",
-        "image": null
-      },
-      {
-        "question": "Which animal has fingerprints almost identical to humans?",
-        "options": ["Chimpanzee", "Koala", "Bear"],
-        "correctAnswer": "B",
-        "backgroundKeyWords": "koala fingerprint closeup",
-        "image": null
-      },
-      {
-        "question": "Which liquid can be a solid, liquid, and gas at once?",
-        "options": ["Oil", "Water", "Carbon dioxide"],
-        "correctAnswer": "B",
-        "backgroundKeyWords": "triple point water science",
-        "image": null
-      }
+    {
+      "question": "Which shape has no straight sides?",
+      "options": ["Triangle", "Hexagon", "Circle"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "geometry simple smooth shape",
+      "image": null
+    },
+    {
+      "question": "Which item was originally a military invention?",
+      "options": ["Microwave", "Toaster", "Blender"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "kitchen tech origin surprise",
+      "image": null
+    },
+    {
+      "question": "Which creature has eyes on its arms?",
+      "options": ["Octopus", "Starfish", "Crab"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "ocean sea animal unusual",
+      "image": null
+    },
+    {
+      "question": "Which drink was once sold as medicine?",
+      "options": ["Cola", "Iced tea", "Lemonade"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "soda vintage bottle old-time",
+      "image": null
+    },
+    {
+      "question": "Which insect has ears on its belly?",
+      "options": ["Bee", "Cricket", "Moth"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "bug strange closeup creature",
+      "image": null
+    },
+    {
+      "question": "Which planet could float in water?",
+      "options": ["Saturn", "Mercury", "Mars"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "planets fun fact space",
+      "image": null
+    },
+    {
+      "question": "Which word is the longest in English (unofficially)?",
+      "options": ["Antidisestablishmentarianism", "Pneumonoultramicroscopicsilicovolcanoconiosis", "Supercalifragilisticexpialidocious"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "long word spelling game",
+      "image": null
+    },
+    {
+      "question": "Which metal is liquid at room temperature?",
+      "options": ["Silver", "Mercury", "Aluminum"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "chemistry science material",
+      "image": null
+    },
+    {
+      "question": "Which finger is the fastest to heal?",
+      "options": ["Thumb", "Ring finger", "Pinky"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "hand fingers body trivia",
+      "image": null
+    },
+    {
+      "question": "Which language is written without spaces?",
+      "options": ["Arabic", "Chinese", "Thai"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "scripts writing world language",
+      "image": null
+    },
+    {
+      "question": "Which city had a war over a bucket?",
+      "options": ["Rome", "Bologna", "Venice"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "historic city odd war",
+      "image": null
+    },
+    {
+      "question": "Which item was banned in Disney parks until 2019?",
+      "options": ["Selfie sticks", "Chewing gum", "Balloons"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "theme park rules surprise",
+      "image": null
+    },
+    {
+      "question": "Which smell is scientifically proven to boost memory?",
+      "options": ["Mint", "Rosemary", "Lavender"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "herb scent memory brain",
+      "image": null
+    },
+    {
+      "question": "Which body part has no muscles?",
+      "options": ["Tongue", "Eye lens", "Toe"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "biology anatomy vision",
+      "image": null
+    },
+    {
+      "question": "Which shape has the most sides?",
+      "options": ["Octagon", "Nonagon", "Decagon"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "geometry shapes schoolbook",
+      "image": null
+    },
+    {
+      "question": "Which year had no summer due to a volcano eruption?",
+      "options": ["1816", "1902", "1865"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "volcano historic cold weather",
+      "image": null
+    },
+    {
+      "question": "Which color makes you feel hungry?",
+      "options": ["Blue", "Green", "Red"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "color psychology appetite",
+      "image": null
+    },
+    {
+      "question": "Which part of the world uses clapping as a thank-you?",
+      "options": ["Germany", "Uganda", "Japan"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "culture custom gesture",
+      "image": null
+    },
+    {
+      "question": "Which toy was inspired by watching pasta boil?",
+      "options": ["Slinky", "Yo-yo", "Etch-a-Sketch"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "classic toy invention kitchen",
+      "image": null
+    },
+    {
+      "question": "Which fruit is a hybrid of a pomelo and orange?",
+      "options": ["Grapefruit", "Tangerine", "Lemon"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "citrus fruit botany",
+      "image": null
+    },
+    
+
+
+
+
+
+    {
+      "question": "Which country has a festival where tomatoes are thrown?",
+      "options": ["Spain", "Mexico", "Argentina"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "festival crowd messy fun",
+      "image": null
+    },
+    {
+      "question": "Which type of animal can sleep with one eye open?",
+      "options": ["Ducks", "Lions", "Horses"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "nature alert survival behavior",
+      "image": null
+    },
+    {
+      "question": "Which material was used in ancient toothpaste?",
+      "options": ["Crushed bones", "Clay", "Sand"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "ancient hygiene old dental care",
+      "image": null
+    },
+    {
+      "question": "Which fruit can clean rust off metal?",
+      "options": ["Lemon", "Apple", "Banana"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "kitchen trick natural cleaner",
+      "image": null
+    },
+    {
+      "question": "Which bird has been trained to detect cancer?",
+      "options": ["Pigeon", "Parrot", "Crow"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "bird science training health",
+      "image": null
+    },
+    {
+      "question": "Which sound do giraffes make?",
+      "options": ["Hum", "Roar", "Whistle"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "zoo mystery quiet animal",
+      "image": null
+    },
+    {
+      "question": "Which item did people used to think could ward off the plague?",
+      "options": ["Onion", "Garlic", "Rosemary"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "old medicine folk beliefs",
+      "image": null
+    },
+    {
+      "question": "Which animal sees in slow motion?",
+      "options": ["Snail", "Fly", "Turtle"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "tiny insect vision science",
+      "image": null
+    },
+    {
+      "question": "Which fruit has its seeds on the outside?",
+      "options": ["Blueberry", "Strawberry", "Raspberry"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "fruit detail nature pattern",
+      "image": null
+    },
+    {
+      "question": "Which planet has the shortest day?",
+      "options": ["Jupiter", "Earth", "Mars"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "space time speed solar system",
+      "image": null
+    },
+    {
+      "question": "Which everyday item contains tiny bits of gold?",
+      "options": ["TV remote", "Toothpaste", "Smartphone"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "electronics value rare metal",
+      "image": null
+    },
+    {
+      "question": "Which famous structure was originally intended to be temporary?",
+      "options": ["Eiffel Tower", "Statue of Liberty", "Big Ben"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "landmark history architecture",
+      "image": null
+    },
+    {
+      "question": "Which country invented paper money?",
+      "options": ["Italy", "China", "India"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "currency history old trade",
+      "image": null
+    },
+    {
+      "question": "Which object was once illegal to own in some countries?",
+      "options": ["Mirror", "Fork", "Book"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "history ban object dining",
+      "image": null
+    },
+    {
+      "question": "Which food product is used to make dynamite?",
+      "options": ["Peanut butter", "Butter", "Oil"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "food science explosion twist",
+      "image": null
+    },
+    {
+      "question": "Which mammal can’t jump?",
+      "options": ["Elephant", "Rhino", "Giraffe"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "wildlife big animal land",
+      "image": null
+    },
+    {
+      "question": "Which ancient wonder no longer exists?",
+      "options": ["Colosseum", "Hanging Gardens", "Great Wall"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "ancient structure lost mystery",
+      "image": null
+    },
+    {
+      "question": "Which sea creature has three hearts?",
+      "options": ["Octopus", "Squid", "Jellyfish"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "marine biology odd fact",
+      "image": null
+    },
+    {
+      "question": "Which invention was first used for spying?",
+      "options": ["Binoculars", "Camera", "Microphone"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "tech gadget old espionage",
+      "image": null
+    },
+    {
+      "question": "Which nut isn’t really a nut?",
+      "options": ["Almond", "Hazelnut", "Cashew"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "snack seed nature biology",
+      "image": null
+    },
+    {
+      "question": "Which country has a bridge that sings when it rains?",
+      "options": ["Denmark", "Australia", "Germany"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "bridge rain sound strange",
+      "image": null
+    },
+    {
+      "question": "Which animal has rectangular pupils?",
+      "options": ["Goat", "Cat", "Sheep"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "farm animal eyes closeup",
+      "image": null
+    },
+    {
+      "question": "Which food can bounce when fresh?",
+      "options": ["Cheese", "Egg", "Peach"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "kitchen test freshness bounce",
+      "image": null
+    },
+    {
+      "question": "Which country has a museum for failed products?",
+      "options": ["Sweden", "USA", "Japan"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "museum quirky weird objects",
+      "image": null
+    },
+    {
+      "question": "Which body part can detect taste even outside your mouth?",
+      "options": ["Lips", "Tongue", "Cheeks"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "taste test body weird",
+      "image": null
+    },
+    {
+      "question": "Which planet has a storm bigger than Earth?",
+      "options": ["Jupiter", "Neptune", "Saturn"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "storm planet massive space",
+      "image": null
+    },
+    {
+      "question": "Which color can make time feel slower?",
+      "options": ["Red", "Blue", "Yellow"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "psychology colors illusion",
+      "image": null
+    },
+    {
+      "question": "Which part of your body has the most bones?",
+      "options": ["Feet", "Hands", "Spine"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "skeleton parts human quiz",
+      "image": null
+    },
+    {
+      "question": "Which animal can survive being frozen?",
+      "options": ["Frog", "Lizard", "Mouse"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "cold survival animal wild",
+      "image": null
+    },
+    {
+      "question": "Which language is the oldest still spoken today?",
+      "options": ["Arabic", "Greek", "Tamil"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "language ancient culture spoken",
+      "image": null
+    },
+    {
+      "question": "Which fruit was the first to be eaten on the moon?",
+      "options": ["Peach", "Banana", "Apple"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "space food moon mission",
+      "image": null
+    },
+    {
+      "question": "Which continent has no rivers?",
+      "options": ["Africa", "Antarctica", "Australia"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "glacier snow cold dry",
+      "image": null
+    },
+    {
+      "question": "Which famous toy was inspired by a cat’s movement?",
+      "options": ["Slinky", "Yo-yo", "Rubik's Cube"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "toy idea motion spring",
+      "image": null
+    },
+    {
+      "question": "Which sound is the loudest in nature?",
+      "options": ["Volcano", "Whale", "Thunder"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "nature loud sound ocean",
+      "image": null
+    },
+    {
+      "question": "Which U.S. president had a pet raccoon?",
+      "options": ["Theodore Roosevelt", "Calvin Coolidge", "John F. Kennedy"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "white house pet history",
+      "image": null
+    },
+    {
+      "question": "Which snack was invented by accident in a lab?",
+      "options": ["Potato chips", "Popsicles", "Chewing gum"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "cold treat frozen experiment",
+      "image": null
+    },
+    {
+      "question": "Which planet has the most moons?",
+      "options": ["Saturn", "Jupiter", "Mars"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "planet moons sky orbit",
+      "image": null
+    },
+    {
+      "question": "Which animal produces cube-shaped poop?",
+      "options": ["Koala", "Wombat", "Panda"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "weird animal fact science",
+      "image": null
+    },
+    {
+      "question": "Which body part has its own unique print, like fingerprints?",
+      "options": ["Ear", "Tongue", "Toes"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "human body print ID",
+      "image": null
+    },
+    {
+      "question": "Which beverage used to contain actual gold flakes?",
+      "options": ["Wine", "Schnapps", "Champagne"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "drink party glitter luxury",
+      "image": null
+    },
+    {
+      "question": "Which instrument has 88 keys?",
+      "options": ["Piano", "Harp", "Accordion"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "music instrument classical stage",
+      "image": null
+    },
+    {
+      "question": "Which artist famously changed their name to a symbol?",
+      "options": ["Prince", "Bowie", "Kanye"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "music artist pop icon",
+      "image": null
+    },
+    {
+      "question": "Which song is the most-streamed on Spotify (as of 2025)?",
+      "options": ["Blinding Lights", "Shape of You", "Despacito"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "streaming app playlist global",
+      "image": null
+    },
+    {
+      "question": "Which genre uses the most bass?",
+      "options": ["Jazz", "Hip Hop", "Classical"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "music beats deep rhythm",
+      "image": null
+    },
+    {
+      "question": "Which country invented karaoke?",
+      "options": ["South Korea", "Japan", "Philippines"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "singing fun microphone night",
+      "image": null
+    },
+    {
+      "question": "Which country has won the most FIFA World Cups?",
+      "options": ["Germany", "Brazil", "Italy"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "soccer trophy stadium flags",
+      "image": null
+    },
+    {
+      "question": "Which position is allowed to use hands during play?",
+      "options": ["Midfielder", "Goalkeeper", "Defender"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "goal net gloves match",
+      "image": null
+    },
+    {
+      "question": "Which club has the most UEFA Champions League titles?",
+      "options": ["AC Milan", "Barcelona", "Real Madrid"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "europe football club competition",
+      "image": null
+    },
+    {
+      "question": "Which event marks the start of a soccer game?",
+      "options": ["Throw-in", "Kick-off", "Corner"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "soccer ball game start field",
+      "image": null
+    },
+    {
+      "question": "Which player is famous for the 'Hand of God' goal?",
+      "options": ["Pelé", "Maradona", "Zidane"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "soccer legend history controversy",
+      "image": null
+    },
+
+
+
+
+
+    {
+      "question": "Who wore number 7 at Man United?",
+      "options": ["Messi", "Ronaldo", "Mbappé"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "jersey iconic football red",
+      "image": null
+    },
+    {
+      "question": "Which country hosted the first World Cup?",
+      "options": ["Brazil", "Uruguay", "Italy"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "world cup vintage stadium",
+      "image": null
+    },
+    {
+      "question": "Who has the most Ballon d’Ors?",
+      "options": ["Messi", "Ronaldo", "Zidane"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "award football golden trophy",
+      "image": null
+    },
+    {
+      "question": "Which player has a move named after him?",
+      "options": ["Ronaldinho", "Zidane", "Neymar"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "trick spin skill move",
+      "image": null
+    },
+    {
+      "question": "Which country calls it ‘soccer’?",
+      "options": ["UK", "USA", "Spain"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "sports slang culture word",
+      "image": null
+    },
+
+
+
+
+
+    {
+      "question": "Which ninja dreams of becoming Hokage?",
+      "options": ["Sasuke", "Naruto", "Kakashi"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "anime ninja village ambition",
+      "image": null
+    },
+    {
+      "question": "Which anime has Titans attacking cities?",
+      "options": ["Attack on Titan", "One Piece", "Fairy Tail"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "giant walls anime battle",
+      "image": null
+    },
+    {
+      "question": "Which anime is about collecting Dragon Balls?",
+      "options": ["Bleach", "Naruto", "Dragon Ball"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "anime adventure power wish",
+      "image": null
+    },
+    {
+      "question": "Which anime character eats a lot of meat?",
+      "options": ["Saitama", "Goku", "Luffy"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "anime food hungry funny",
+      "image": null
+    },
+    {
+      "question": "Which anime has a soul society?",
+      "options": ["Bleach", "Tokyo Revengers", "Fullmetal Alchemist"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "spirit sword anime ghost",
+      "image": null
+    },
+    {
+      "question": "Which anime features a guy with a straw hat?",
+      "options": ["One Piece", "Hunter x Hunter", "Demon Slayer"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "pirate anime adventure sea",
+      "image": null
+    },
+    {
+      "question": "Which anime has demons and a sword-wielding sibling?",
+      "options": ["Naruto", "Demon Slayer", "Chainsaw Man"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "anime siblings battle blade",
+      "image": null
+    },
+    {
+      "question": "Which anime has psychic powers and a bowl haircut?",
+      "options": ["Mob Psycho 100", "One Punch Man", "Jujutsu Kaisen"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "anime psychic weird fun",
+      "image": null
+    },
+    {
+      "question": "Which anime has a cursed finger as a key plot?",
+      "options": ["Jujutsu Kaisen", "Bleach", "Hunter x Hunter"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "dark anime curse school",
+      "image": null
+    },
+
+
+    {
+      "question": "Which app popularized lip-syncing videos?",
+      "options": ["Dubsmash", "Vine", "TikTok"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "short video phone music",
+      "image": null
+    },
+    {
+      "question": "Which fashion trend made a big comeback in 2020s?",
+      "options": ["Low-rise jeans", "Skinny jeans", "Bell bottoms"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "clothing comeback style retro",
+      "image": null
+    },
+    {
+      "question": "Which social media trend involves revealing secrets to a beat?",
+      "options": ["Story time", "Get ready with me", "Put a finger down"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "trending challenge fingers fun",
+      "image": null
+    },
+    {
+      "question": "Which phrase went viral from a corn-loving kid?",
+      "options": ["It’s corn!", "Yummy!", "Let’s eat!"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "viral sound meme kid",
+      "image": null
+    },
+    {
+      "question": "Which dance trend blew up with Drake’s song?",
+      "options": ["In My Feelings", "Toosie Slide", "Hotline Bling"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "viral dance music phone",
+      "image": null
+    },
+    {
+      "question": "Which food got famous on TikTok for being whipped?",
+      "options": ["Coffee", "Ice cream", "Matcha"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "frothy drink trend mug",
+      "image": null
+    },
+    {
+      "question": "Which trend features a dramatic eye zoom while turning?",
+      "options": ["360 spin", "Slow-mo turn", "Silhouette challenge"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "camera motion dramatic light",
+      "image": null
+    },
+    {
+      "question": "Which word got trendy to say instead of 'crazy'?",
+      "options": ["Wild", "Slay", "Delulu"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "slang vibe internet speak",
+      "image": null
+    },
+    {
+      "question": "Which audio was used for dramatic slow-mo food drops?",
+      "options": ["Oh no...", "Run", "Lalala"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "meme audio food spill",
+      "image": null
+    },
+    {
+      "question": "Which style trend became known as 'clean girl'?",
+      "options": ["Smokey eye", "Glossy lip", "Slick bun"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "beauty minimal makeup slick",
+      "image": null
+    },
+
+
+
+    {
+      "question": "Which series starts with a game of Red Light, Green Light?",
+      "options": ["Money Heist", "Squid Game", "Dark"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "netflix thriller game show",
+      "image": null
+    },
+    {
+      "question": "Which show follows a chess prodigy named Beth?",
+      "options": ["The Crown", "The Queen's Gambit", "Bridgerton"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "chess netflix drama smart",
+      "image": null
+    },
+    {
+      "question": "Which Netflix show is set in Hawkins, Indiana?",
+      "options": ["Stranger Things", "Ozark", "The OA"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "supernatural kids 80s mystery",
+      "image": null
+    },
+    {
+      "question": "Which series features a professor planning a heist?",
+      "options": ["Money Heist", "Breaking Bad", "The Night Agent"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "heist netflix mask crime",
+      "image": null
+    },
+    {
+      "question": "Which show is all about gossip in high society?",
+      "options": ["Elite", "Bridgerton", "You"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "romance period drama ball",
+      "image": null
+    },
+    {
+      "question": "Which Netflix documentary features wild cats and crazier people?",
+      "options": ["Tiger King", "Night Stalker", "Our Planet"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "wild docu strange netflix",
+      "image": null
+    },
+    {
+      "question": "Which thriller has a creepy bookstore guy?",
+      "options": ["You", "1899", "Behind Her Eyes"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "drama stalker suspense netflix",
+      "image": null
+    },
+    {
+      "question": "Which reality show locks singles in pods?",
+      "options": ["Too Hot to Handle", "Love is Blind", "The Circle"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "netflix dating pods reality",
+      "image": null
+    },
+    {
+      "question": "Which horror show has a haunted house called Hill?",
+      "options": ["The Haunting of Hill House", "Midnight Mass", "Locke & Key"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "haunted netflix creepy mansion",
+      "image": null
+    },
+    {
+      "question": "Which animated show has a talking horse in Hollywood?",
+      "options": ["Bojack Horseman", "Big Mouth", "F Is for Family"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "animated dark comedy celebrity",
+      "image": null
+    },
+
+
+
+    {
+      "question": "Which YouTuber boxed Logan Paul in 2018?",
+      "options": ["MrBeast", "KSI", "Jake Paul"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "boxing event influencer viral",
+      "image": null
+    },
+    {
+      "question": "Who is known for giving away millions?",
+      "options": ["David Dobrik", "MrBeast", "Markiplier"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "giveaway challenge youtube cash",
+      "image": null
+    },
+    {
+      "question": "Which YouTuber is famous for Minecraft videos?",
+      "options": ["Dream", "PewDiePie", "Corpse"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "gaming mask minecraft viral",
+      "image": null
+    },
+    {
+      "question": "Who holds the record for most subscribers (solo)?",
+      "options": ["T-Series", "MrBeast", "PewDiePie"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "youtube top subscriber leaderboard",
+      "image": null
+    },
+    {
+      "question": "Which duo built the 'Sidemen'?",
+      "options": ["KSI & Miniminter", "MrBeast & Chris", "Logan & Jake"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "youtube group uk funny",
+      "image": null
+    },
+    {
+      "question": "Who’s known for deep voice and Among Us?",
+      "options": ["TommyInnit", "Corpse Husband", "Dream"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "voice amongus mystery gamer",
+      "image": null
+    },
+    {
+      "question": "Which YouTuber started on Vine and vlogs?",
+      "options": ["Liza Koshy", "Emma Chamberlain", "Lilly Singh"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "vlog comedy vine youtube",
+      "image": null
+    },
+    {
+      "question": "Who is known for loud intros and big pranks?",
+      "options": ["Danny Duncan", "David Dobrik", "Faze Rug"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "vlogger prank squad fun",
+      "image": null
+    },
+    {
+      "question": "Which creator has a cooking show on YouTube?",
+      "options": ["Binging with Babish", "Emma Chamberlain", "MrBeast"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "food cooking show kitchen",
+      "image": null
+    },
+    {
+      "question": "Who became famous from 'React' videos?",
+      "options": ["Fine Bros", "Jacksepticeye", "Ryan Higa"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "reaction video trend youtube",
+      "image": null
+    },
+
+
+
+
+    {
+      "question": "Which dress color sparked a huge internet debate?",
+      "options": ["Blue & Black", "Pink & White", "Green & Gold"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "viral dress optical illusion",
+      "image": null
+    },
+    {
+      "question": "Which baby shark video went insanely viral?",
+      "options": ["Doo Doo", "Boo Boo", "Goo Goo"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "kids song viral youtube",
+      "image": null
+    },
+    {
+      "question": "Which viral challenge involved a bucket of ice?",
+      "options": ["Cinnamon Challenge", "Ice Bucket Challenge", "Milk Crate Challenge"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "charity challenge freeze fun",
+      "image": null
+    },
+    {
+      "question": "Which animal danced to EDM in a meme?",
+      "options": ["Duck", "Frog", "Hamster"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "funny dancing animal remix",
+      "image": null
+    },
+    {
+      "question": "Which phrase went viral with a red flag emoji?",
+      "options": ["Big yikes", "Major L", "Red flag"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "emoji slang trend warning",
+      "image": null
+    },
+    {
+      "question": "Which viral sound says ‘emotional damage’?",
+      "options": ["Uncle Roger", "Steven He", "KevJumba"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "viral audio meme skit",
+      "image": null
+    },
+    {
+      "question": "Which dance blew up with the song 'Renegade'?",
+      "options": ["Savage", "Renegade", "Cuff It"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "tiktok dance trend viral",
+      "image": null
+    },
+    {
+      "question": "Which food trend used air fryers A LOT?",
+      "options": ["Cloud Bread", "Pasta Chips", "Dalgona Candy"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "food hack crunchy easy",
+      "image": null
+    },
+    {
+      "question": "Which frog said 'It’s Wednesday, my dudes'?",
+      "options": ["Kermit", "Wednesday Frog", "Pepe"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "frog meme weekday funny",
+      "image": null
+    },
+    {
+      "question": "Which viral audio starts with 'bing bong'?",
+      "options": ["New York", "Ohio", "Florida"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "slang street viral catchphrase",
+      "image": null
+    },
+
+
+
+
+
+    {
+      "question": "Who had a famous speech starting with 'I have a dream'?",
+      "options": ["Barack Obama", "Martin Luther King Jr.", "Malcolm X"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "speech civil rights historic",
+      "image": null
+    },
+    {
+      "question": "Which year did the Titanic sink?",
+      "options": ["1912", "1905", "1920"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "ship history iceberg ocean",
+      "image": null
+    },
+    {
+      "question": "Which empire built the Colosseum?",
+      "options": ["Greek", "Roman", "Ottoman"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "ancient arena history ruins",
+      "image": null
+    },
+    {
+      "question": "Who painted the Mona Lisa?",
+      "options": ["Van Gogh", "Da Vinci", "Picasso"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "art painting museum famous",
+      "image": null
+    },
+    {
+      "question": "Which country started World War II?",
+      "options": ["Germany", "Japan", "Italy"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "war world invasion start",
+      "image": null
+    },
+    {
+      "question": "Who was the first man on the moon?",
+      "options": ["Buzz Aldrin", "Neil Armstrong", "Yuri Gagarin"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "space moon astronaut step",
+      "image": null
+    },
+    {
+      "question": "Which wall came down in 1989?",
+      "options": ["Berlin Wall", "Great Wall", "Wall Street"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "wall history cold war berlin",
+      "image": null
+    },
+    {
+      "question": "Who was Cleopatra queen of?",
+      "options": ["Rome", "Egypt", "Greece"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "queen ancient royalty egypt",
+      "image": null
+    },
+    {
+      "question": "Which invention changed the world in the 1400s?",
+      "options": ["Steam Engine", "Printing Press", "Compass"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "history print books invention",
+      "image": null
+    },
+    {
+      "question": "Which U.S. president is on Mount Rushmore?",
+      "options": ["Lincoln", "Franklin", "Jackson"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "president monument sculpture",
+      "image": null
+    },
+
+
+
+
+    {
+      "question": "Which AI famously defeated a chess champion?",
+      "options": ["AlphaZero", "Deep Blue", "Watson"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "chess match ai vs human",
+      "image": null
+    },
+    {
+      "question": "Which AI tool can turn text into images?",
+      "options": ["DALL·E", "GPT", "Siri"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "ai art create picture",
+      "image": null
+    },
+    {
+      "question": "Which AI went viral for beating humans at Go?",
+      "options": ["ChatGPT", "Deep Blue", "AlphaGo"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "ai go board game smart",
+      "image": null
+    },
+
+
+
+
+
+    {
+      "question": "Which tech founder also owns SpaceX?",
+      "options": ["Jeff Bezos", "Mark Zuckerberg", "Elon Musk"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "space rocket startup innovator",
+      "image": null
+    },
+    {
+      "question": "Which platform is known for short videos?",
+      "options": ["YouTube", "TikTok", "Netflix"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "mobile app viral clips",
+      "image": null
+    },
+    {
+      "question": "Which gadget tracks your steps and sleep?",
+      "options": ["Smartwatch", "Tablet", "VR Headset"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "fitness wearable health tech",
+      "image": null
+    },
+    {
+      "question": "Which invention came before the internet?",
+      "options": ["Telegraph", "Google", "WiFi"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "old tech wires signal",
+      "image": null
+    },
+    {
+      "question": "Which company owns Instagram?",
+      "options": ["Apple", "Meta", "Twitter"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "social media app network",
+      "image": null
+    },
+    {
+      "question": "Which console is made by Sony?",
+      "options": ["Xbox", "PlayStation", "Switch"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "gaming console controller tech",
+      "image": null
+    },
+    {
+      "question": "Which robot vacuums your floor?",
+      "options": ["Roomba", "Siri", "Echo"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "robot home clean smart",
+      "image": null
+    },
+    {
+      "question": "Which tech is used for face filters?",
+      "options": ["Blockchain", "AR", "5G"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "filters selfie augmented reality",
+      "image": null
+    },
+    {
+      "question": "Which tech lets you talk to smart speakers?",
+      "options": ["Bluetooth", "AI", "Voice Recognition"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "smart home voice command",
+      "image": null
+    },
+
+
+
+
+    {
+      "question": "Which player has the most Roland-Garros titles?",
+      "options": ["Roger Federer", "Novak Djokovic", "Rafael Nadal"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "tennis clay grand slam",
+      "image": null
+    },
+    {
+      "question": "Which country has won the most FIFA World Cups?",
+      "options": ["Germany", "Argentina", "Brazil"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "world cup trophy football",
+      "image": null
+    },
+    {
+      "question": "Which NBA player is nicknamed 'King James'?",
+      "options": ["Kevin Durant", "Stephen Curry", "LeBron James"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "basketball nba superstar",
+      "image": null
+    },
+    {
+      "question": "Which athlete has the most Olympic gold medals?",
+      "options": ["Usain Bolt", "Michael Phelps", "Simone Biles"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "olympics swimming record",
+      "image": null
+    },
+    {
+      "question": "Which footballer is known for the 'Siuu' celebration?",
+      "options": ["Messi", "Mbappé", "Ronaldo"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "soccer celebration iconic",
+      "image": null
+    },
+    {
+      "question": "Which city hosted the 2020 Summer Olympics?",
+      "options": ["Tokyo", "Beijing", "Paris"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "olympics stadium japan",
+      "image": null
+    },
+    {
+      "question": "Which sport uses the term 'albatross'?",
+      "options": ["Golf", "Baseball", "Rugby"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "golf course green swing",
+      "image": null
+    },
+    {
+      "question": "Which country is home to the Tour de France?",
+      "options": ["Italy", "France", "Spain"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "cycling race mountain france",
+      "image": null
+    },
+    {
+      "question": "Which tennis player yells 'Come on!' a lot?",
+      "options": ["Roger Federer", "Andy Murray", "Serena Williams"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "tennis match energy",
+      "image": null
+    },
+    {
+      "question": "Which sport has a move called a slam dunk?",
+      "options": ["Basketball", "Football", "Volleyball"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "basketball hoop jump",
+      "image": null
+    },
+    {
+      "question": "Which country invented table tennis?",
+      "options": ["England", "China", "Japan"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "ping pong paddle fun",
+      "image": null
+    },
+    {
+      "question": "Which boxer is known as 'The Greatest'?",
+      "options": ["Mike Tyson", "Muhammad Ali", "Floyd Mayweather"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "boxing ring legend",
+      "image": null
+    },
+    {
+      "question": "Which country won the first ever World Cup?",
+      "options": ["Uruguay", "Brazil", "Italy"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "football soccer history cup",
+      "image": null
+    },
+    {
+      "question": "Which sport has touchdowns?",
+      "options": ["Rugby", "American Football", "Cricket"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "nfl sport touchdown",
+      "image": null
+    },
+    {
+      "question": "Which tennis tournament is played on grass?",
+      "options": ["Wimbledon", "US Open", "Australian Open"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "tennis green court uk",
+      "image": null
+    },
+    {
+      "question": "Which NBA team has the most championships?",
+      "options": ["Chicago Bulls", "Boston Celtics", "Miami Heat"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "basketball trophy record",
+      "image": null
+    },
+    {
+      "question": "Which athlete is famous for the 'Lightning Bolt' pose?",
+      "options": ["Mo Farah", "Usain Bolt", "Carl Lewis"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "track sprint gold",
+      "image": null
+    },
+    {
+      "question": "Which team is known as the All Blacks?",
+      "options": ["New Zealand Rugby", "South Africa Rugby", "England Rugby"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "rugby haka team",
+      "image": null
+    },
+    {
+      "question": "Which sport uses a puck?",
+      "options": ["Hockey", "Lacrosse", "Cricket"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "ice rink stick",
+      "image": null
+    },
+    {
+      "question": "Which famous race ends at the Champs-Élysées?",
+      "options": ["London Marathon", "Tour de France", "Boston Marathon"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "cycling france finish line",
+      "image": null
+    },
+
+
+
+
+
+    {
+      "question": "Which actor played Iron Man in the Marvel movies?",
+      "options": ["Chris Evans", "Robert Downey Jr.", "Tom Holland"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "marvel superhero red carpet",
+      "image": null
+    },
+    {
+      "question": "Which actor is known for yelling 'Here's Johnny!'?",
+      "options": ["Jack Nicholson", "Tom Hanks", "Brad Pitt"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "classic film horror door",
+      "image": null
+    },
+    {
+      "question": "Which actress starred in both 'Legally Blonde' and 'Big Little Lies'?",
+      "options": ["Reese Witherspoon", "Sandra Bullock", "Nicole Kidman"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "actress fashion award",
+      "image": null
+    },
+    {
+      "question": "Which actor has won the most Oscars?",
+      "options": ["Daniel Day-Lewis", "Tom Hanks", "Leonardo DiCaprio"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "oscar gold statue ceremony",
+      "image": null
+    },
+    {
+      "question": "Which actor is known for the line 'I am the one who knocks'?",
+      "options": ["Aaron Paul", "Bryan Cranston", "Giancarlo Esposito"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "tv drama iconic quote",
+      "image": null
+    },
+    {
+      "question": "Which actress played Katniss in 'The Hunger Games'?",
+      "options": ["Emma Stone", "Jennifer Lawrence", "Scarlett Johansson"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "bow arrow strong lead",
+      "image": null
+    },
+    {
+      "question": "Which actor voices Shrek?",
+      "options": ["Mike Myers", "Eddie Murphy", "Chris Rock"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "animation comedy green ogre",
+      "image": null
+    },
+    {
+      "question": "Which actor played the Joker in 'The Dark Knight'?",
+      "options": ["Joaquin Phoenix", "Heath Ledger", "Jared Leto"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "villain movie dc chaos",
+      "image": null
+    },
+    {
+      "question": "Which actor is famous for saying 'Life is like a box of chocolates'?",
+      "options": ["Tom Hanks", "Robin Williams", "Matthew McConaughey"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "movie quote forest bench",
+      "image": null
+    },
+    {
+      "question": "Which actress played Hermione in 'Harry Potter'?",
+      "options": ["Emma Stone", "Emma Watson", "Natalie Portman"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "wizard school magic role",
+      "image": null
+    },
+
+
+
+
+
+    {
+      "question": "Which movie features the quote 'I'll be back'?",
+      "options": ["RoboCop", "Terminator", "Predator"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "sci-fi classic robot",
+      "image": null
+    },
+    {
+      "question": "Which movie is set on a giant blue alien planet?",
+      "options": ["Interstellar", "Avatar", "Dune"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "sci-fi alien world",
+      "image": null
+    },
+    {
+      "question": "Which movie has a talking snowman named Olaf?",
+      "options": ["Tangled", "Frozen", "Moana"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "disney animation snow",
+      "image": null
+    },
+    {
+      "question": "Which movie involves dreams within dreams?",
+      "options": ["The Matrix", "Shutter Island", "Inception"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "dream mind twist",
+      "image": null
+    },
+    {
+      "question": "Which movie made 'Wakanda Forever' a famous phrase?",
+      "options": ["Avengers", "Black Panther", "Doctor Strange"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "marvel salute superhero",
+      "image": null
+    },
+    {
+      "question": "Which movie series features a magical ring?",
+      "options": ["Harry Potter", "Twilight", "The Lord of the Rings"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "fantasy epic ring",
+      "image": null
+    },
+    {
+      "question": "Which movie has the line 'You can't handle the truth!'?",
+      "options": ["A Few Good Men", "The Godfather", "The Departed"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "courtroom drama quote",
+      "image": null
+    },
+    {
+      "question": "Which movie is about a clown named Pennywise?",
+      "options": ["It", "Joker", "Saw"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "horror clown scary",
+      "image": null
+    },
+    {
+      "question": "Which movie has dinosaurs brought back to life?",
+      "options": ["King Kong", "Jurassic Park", "The Meg"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "dinosaur theme park",
+      "image": null
+    },
+    {
+      "question": "Which movie has a yellow robot named Bumblebee?",
+      "options": ["Transformers", "Wall-E", "Big Hero 6"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "robot action car",
+      "image": null
+    },
+
+
+
+
+
+    {
+      "question": "Which game features a plumber saving a princess?",
+      "options": ["Donkey Kong", "Super Mario", "Crash Bandicoot"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "video game retro pixel",
+      "image": null
+    },
+    {
+      "question": "Which game has players build with blocks and fight creepers?",
+      "options": ["Roblox", "Terraria", "Minecraft"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "sandbox pixel blocks",
+      "image": null
+    },
+    {
+      "question": "Which game has the character Link?",
+      "options": ["Final Fantasy", "The Legend of Zelda", "Elden Ring"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "adventure sword fantasy",
+      "image": null
+    },
+    {
+      "question": "Which racing game features red shells and bananas?",
+      "options": ["Need for Speed", "Mario Kart", "Forza"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "racing fun arcade",
+      "image": null
+    },
+    {
+      "question": "Which game starts with 'You are finally awake'?",
+      "options": ["Skyrim", "The Witcher", "Red Dead Redemption"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "fantasy dragon open world",
+      "image": null
+    },
+    {
+      "question": "Which game has the battle royale island and dances?",
+      "options": ["Apex Legends", "Call of Duty", "Fortnite"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "battle game colorful",
+      "image": null
+    },
+    {
+      "question": "Which horror game has animatronic jump scares?",
+      "options": ["Silent Hill", "Five Nights at Freddy's", "Resident Evil"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "scary animatronic dark",
+      "image": null
+    },
+    {
+      "question": "Which open-world game stars a guy named CJ?",
+      "options": ["GTA: San Andreas", "Watch Dogs", "Saints Row"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "city action car chase",
+      "image": null
+    },
+    {
+      "question": "Which game lets you catch and battle creatures?",
+      "options": ["Digimon", "Yu-Gi-Oh!", "Pokémon"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "creature trainer game",
+      "image": null
+    },
+    {
+      "question": "Which video game has a battle between blue and red teams with hats?",
+      "options": ["Overwatch", "Team Fortress 2", "Valorant"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "multiplayer cartoon fps",
+      "image": null
+    },
+
+
+
+
+
+
+    {
+      "question": "What is the capital of Kazakhstan?",
+      "options": ["Almaty", "Astana", "Bishkek"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "central asia modern city",
+      "image": null
+    },
+    {
+      "question": "What is the capital of Nigeria?",
+      "options": ["Lagos", "Kano", "Abuja"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "africa capital skyline",
+      "image": null
+    },
+    {
+      "question": "What is the capital of New Zealand?",
+      "options": ["Auckland", "Christchurch", "Wellington"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "new zealand city harbor",
+      "image": null
+    },
+    {
+      "question": "What is the capital of Turkey?",
+      "options": ["Istanbul", "Izmir", "Ankara"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "turkey city ancient modern",
+      "image": null
+    },
+    {
+      "question": "What is the capital of Myanmar?",
+      "options": ["Yangon", "Mandalay", "Naypyidaw"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "asia mystery official city",
+      "image": null
+    },
+    {
+      "question": "What is the capital of Morocco?",
+      "options": ["Casablanca", "Marrakech", "Rabat"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "morocco culture travel",
+      "image": null
+    },
+    {
+      "question": "What is the capital of Pakistan?",
+      "options": ["Karachi", "Lahore", "Islamabad"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "pakistan mountains city",
+      "image": null
+    },
+    {
+      "question": "What is the capital of Sri Lanka?",
+      "options": ["Colombo", "Kandy", "Sri Jayawardenepura Kotte"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "sri lanka island south asia",
+      "image": null
+    },
+    {
+      "question": "What is the capital of Bolivia?",
+      "options": ["La Paz", "Sucre", "Cochabamba"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "bolivia andes mountain",
+      "image": null
+    },
+    {
+      "question": "What is the capital of Switzerland?",
+      "options": ["Zurich", "Bern", "Geneva"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "switzerland swiss alp",
+      "image": null
+    },
+
+
+
+
+
+
+    {
+      "question": "Who invented the light bulb?",
+      "options": ["Nikola Tesla", "Thomas Edison", "Benjamin Franklin"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "light invention electric",
+      "image": null
+    },
+    {
+      "question": "Who invented the telephone?",
+      "options": ["Alexander Graham Bell", "Guglielmo Marconi", "Thomas Edison"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "communication vintage tech",
+      "image": null
+    },
+    {
+      "question": "Who invented the airplane?",
+      "options": ["Wright brothers", "Leonardo da Vinci", "Amelia Earhart"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "plane aviation sky history",
+      "image": null
+    },
+    {
+      "question": "Who invented the World Wide Web?",
+      "options": ["Bill Gates", "Tim Berners-Lee", "Steve Jobs"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "internet history browser",
+      "image": null
+    },
+    {
+      "question": "Who invented the printing press?",
+      "options": ["Johannes Gutenberg", "Isaac Newton", "Galileo Galilei"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "print history book old",
+      "image": null
+    },
+    {
+      "question": "Who invented the theory of relativity?",
+      "options": ["Albert Einstein", "Stephen Hawking", "Niels Bohr"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "space time physics genius",
+      "image": null
+    },
+    {
+      "question": "Who invented the first computer?",
+      "options": ["Alan Turing", "Charles Babbage", "Ada Lovelace"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "technology old machine",
+      "image": null
+    },
+    {
+      "question": "Who invented the polio vaccine?",
+      "options": ["Jonas Salk", "Edward Jenner", "Louis Pasteur"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "health vaccine science",
+      "image": null
+    },
+    {
+      "question": "Who invented the electric battery?",
+      "options": ["Michael Faraday", "Alessandro Volta", "James Watt"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "energy invention power",
+      "image": null
+    },
+    {
+      "question": "Who invented the first successful vaccine?",
+      "options": ["Edward Jenner", "Louis Pasteur", "Robert Koch"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "medicine science breakthrough",
+      "image": null
+    },
+
+
+
+
+
+
+    {
+      "question": "Who created Bitcoin?",
+      "options": ["Elon Musk", "Satoshi Nakamoto", "Vitalik Buterin"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "bitcoin mystery coin",
+      "image": null
+    },
+    {
+      "question": "Which crypto is known as 'digital silver'?",
+      "options": ["Bitcoin", "Ethereum", "Litecoin"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "crypto silver coin digital",
+      "image": null
+    },
+    {
+      "question": "Which crypto uses smart contracts the most?",
+      "options": ["Ethereum", "Dogecoin", "Bitcoin"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "blockchain contract tech",
+      "image": null
+    },
+    {
+      "question": "What was the first meme coin?",
+      "options": ["PepeCoin", "Dogecoin", "Shiba Inu"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "funny crypto dog",
+      "image": null
+    },
+    {
+      "question": "Which crypto was co-founded by Vitalik Buterin?",
+      "options": ["Cardano", "Ethereum", "Ripple"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "ethereum tech coder",
+      "image": null
+    },
+
+
+
+
+
+
+
+
+    {
+      "question": "Where did croissants originally come from?",
+      "options": ["France", "Austria", "Switzerland"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "pastry bakery morning",
+      "image": null
+    },
+    {
+      "question": "Where is hummus traditionally from?",
+      "options": ["Lebanon", "Greece", "Israel"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "dip chickpeas mediterranean",
+      "image": null
+    },
+    {
+      "question": "Where did ramen originate?",
+      "options": ["Japan", "China", "South Korea"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "noodles bowl soup",
+      "image": null
+    },
+    {
+      "question": "Where did churros come from?",
+      "options": ["Spain", "Mexico", "Portugal"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "fried sweet snack",
+      "image": null
+    },
+    {
+      "question": "Where was the first sandwich made?",
+      "options": ["England", "USA", "Germany"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "bread meal easy",
+      "image": null
+    },
+    {
+      "question": "Where is borscht originally from?",
+      "options": ["Russia", "Poland", "Ukraine"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "beetroot soup eastern europe",
+      "image": null
+    },
+    {
+      "question": "Where did falafel come from?",
+      "options": ["Egypt", "Syria", "Turkey"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "fried balls chickpeas",
+      "image": null
+    },
+    {
+      "question": "Where is pho from?",
+      "options": ["Thailand", "Vietnam", "China"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "noodle soup vietnam",
+      "image": null
+    },
+    {
+      "question": "Where is goulash traditionally from?",
+      "options": ["Hungary", "Austria", "Slovakia"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "stew hot paprika",
+      "image": null
+    },
+    {
+      "question": "Where was kimchi first made?",
+      "options": ["Japan", "South Korea", "China"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "fermented spicy cabbage",
+      "image": null
+    },
+
+
+
+
+
+
+
+    {
+      "question": "Who was the first female Prime Minister of the UK?",
+      "options": ["Theresa May", "Margaret Thatcher", "Angela Merkel"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "uk parliament politics woman",
+      "image": null
+    },
+    {
+      "question": "Who said 'I have a dream'?",
+      "options": ["Barack Obama", "Martin Luther King Jr.", "Malcolm X"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "civil rights usa speech",
+      "image": null
+    },
+    {
+      "question": "Who was known as the 'Iron Chancellor'?",
+      "options": ["Otto von Bismarck", "Winston Churchill", "Joseph Stalin"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "germany old politics",
+      "image": null
+    },
+    {
+      "question": "Which U.S. president resigned due to the Watergate scandal?",
+      "options": ["Ronald Reagan", "Richard Nixon", "George H.W. Bush"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "usa president scandal history",
+      "image": null
+    },
+    {
+      "question": "Who was the first president of independent India?",
+      "options": ["Mahatma Gandhi", "Jawaharlal Nehru", "Rajendra Prasad"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "india history leader",
+      "image": null
+    },
+    {
+      "question": "Which U.S. president had the nickname 'Honest Abe'?",
+      "options": ["George Washington", "Abraham Lincoln", "Theodore Roosevelt"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "usa civil war beard",
+      "image": null
+    },
+    {
+      "question": "Who was the longest-serving British Prime Minister of the 20th century?",
+      "options": ["Margaret Thatcher", "Tony Blair", "Winston Churchill"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "uk politics woman power",
+      "image": null
+    },
+    {
+      "question": "Which leader is associated with the 'Cultural Revolution'?",
+      "options": ["Kim Jong-il", "Mao Zedong", "Ho Chi Minh"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "china history revolution",
+      "image": null
+    },
+    {
+      "question": "Who was South Africa’s first Black president?",
+      "options": ["Jacob Zuma", "Nelson Mandela", "Cyril Ramaphosa"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "freedom africa leader",
+      "image": null
+    },
+    {
+      "question": "Which president is on the U.S. $100 bill?",
+      "options": ["George Washington", "Abraham Lincoln", "None of them"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "usa money face benjamin",
+      "image": null
+    }
   ]
+  
 
