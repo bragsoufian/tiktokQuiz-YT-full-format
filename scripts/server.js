@@ -20,7 +20,7 @@ const config = require('./config'); // Import configuration
 //user7165753005592
 //valorantesports
 
-const tiktokUsername = 'loochytv';
+const tiktokUsername = 'user7165753005592';
 const wsServer = new WebSocket.Server({ port: 8080 });
 
 // Unsplash API Configuration
@@ -31,6 +31,12 @@ const unsplashCache = new UnsplashCacheManager();
 
 // Initialize the multi-account manager
 const unsplashAccountManager = new UnsplashAccountManager();
+
+// Test API keys on startup
+setTimeout(async () => {
+    console.log('\n🔍 Testing API keys on startup...');
+    await unsplashAccountManager.testApiKeys();
+}, 2000);
 
 // Helper function to generate a simple hash code for strings
 String.prototype.hashCode = function() {
@@ -1317,6 +1323,11 @@ process.on('SIGUSR1', () => {
     
     // Also show account status
     unsplashAccountManager.checkStatus();
+});
+
+// Add a command to test API keys
+process.on('SIGUSR2', () => {
+    unsplashAccountManager.testApiKeys();
 });
 
 // Cleanup on process exit
