@@ -6,6 +6,8 @@ const AzureTTS = require('./azure_tts'); // Import Azure TTS
 const EncouragementManager = require('./encouragement_manager'); // Import Encouragement Manager
 const AnswerAnnouncementManager = require('./answer_announcement_manager'); // Import Answer Announcement Manager
 const WinnerAnnouncementManager = require('./winner_announcement_manager'); // Import Winner Announcement Manager
+const UnsplashCacheManager = require('./unsplash_cache_manager'); // Import Enhanced Cache Manager
+const UnsplashAccountManager = require('./unsplash_account_manager'); // Import Multi-Account Manager
 const https = require('https');
 const config = require('./config'); // Import configuration
 
@@ -22,12 +24,13 @@ const tiktokUsername = 'loochytv';
 const wsServer = new WebSocket.Server({ port: 8080 });
 
 // Unsplash API Configuration
-const UNSPLASH_ACCESS_KEY = config.UNSPLASH_ACCESS_KEY;
-const UNSPLASH_API_URL = 'https://api.unsplash.com/photos/random';
+const UNSPLASH_API_URL = config.UNSPLASH_API_URL || 'https://api.unsplash.com/photos/random';
 
-// Simple cache for Unsplash images to reduce API calls
-const unsplashCache = new Map();
-const CACHE_DURATION = 604800000; // 7 days in milliseconds
+// Initialize the enhanced persistent cache manager
+const unsplashCache = new UnsplashCacheManager();
+
+// Initialize the multi-account manager
+const unsplashAccountManager = new UnsplashAccountManager();
 
 // Helper function to generate a simple hash code for strings
 String.prototype.hashCode = function() {
@@ -1253,9 +1256,83 @@ function stopTestPlayer() {
     }
 })();
 
+// Display cache statistics every 10 minutes
+setInterval(() => {
+    const stats = unsplashCache.getStats();
+    const cacheSize = unsplashCache.getCacheSize();
+    
+    console.log('\n📊 Unsplash Cache Statistics:');
+    console.log('==============================');
+    console.log(`Cache Size: ${stats.cache.total}/${stats.cache.maxSize} entries (${cacheSize})`);
+    console.log(`Valid Entries: ${stats.cache.valid}`);
+    console.log(`Expired Entries: ${stats.cache.expired}`);
+    console.log(`Hit Rate: ${stats.performance.hitRate}`);
+    console.log(`Total Requests: ${stats.performance.totalRequests}`);
+    console.log(`Hits: ${stats.performance.hits}`);
+    console.log(`Misses: ${stats.performance.misses}`);
+    console.log(`Uptime: ${stats.performance.uptimeMinutes} minutes`);
+    console.log('==============================\n');
+}, 600000); // 10 minutes
+
+// Add a command to manually display stats
+process.on('SIGUSR1', () => {
+    const stats = unsplashCache.getStats();
+    const cacheSize = unsplashCache.getCacheSize();
+    
+    console.log('\n📊 Unsplash Cache Statistics:');
+    console.log('==============================');
+    console.log(`Cache Size: ${stats.cache.total}/${stats.cache.maxSize} entries (${cacheSize})`);
+    console.log(`Valid Entries: ${stats.cache.valid}`);
+    console.log(`Expired Entries: ${stats.cache.expired}`);
+    console.log(`Hit Rate: ${stats.performance.hitRate}`);
+    console.log(`Total Requests: ${stats.performance.totalRequests}`);
+    console.log(`Hits: ${stats.performance.hits}`);
+    console.log(`Misses: ${stats.performance.misses}`);
+    console.log(`Uptime: ${stats.performance.uptimeMinutes} minutes`);
+    console.log('==============================\n');
+});
+
+// Add a command to reset cache stats
+process.on('SIGUSR2', () => {
+    unsplashCache.resetStats();
+    console.log('📊 Cache statistics reset via signal');
+});
+
+// Add a command to check Unsplash account status
+process.on('SIGUSR1', () => {
+    const stats = unsplashCache.getStats();
+    const cacheSize = unsplashCache.getCacheSize();
+    
+    console.log('\n📊 Unsplash Cache Statistics:');
+    console.log('==============================');
+    console.log(`Cache Size: ${stats.cache.total}/${stats.cache.maxSize} entries (${cacheSize})`);
+    console.log(`Valid Entries: ${stats.cache.valid}`);
+    console.log(`Expired Entries: ${stats.cache.expired}`);
+    console.log(`Hit Rate: ${stats.performance.hitRate}`);
+    console.log(`Total Requests: ${stats.performance.totalRequests}`);
+    console.log(`Hits: ${stats.performance.hits}`);
+    console.log(`Misses: ${stats.performance.misses}`);
+    console.log(`Uptime: ${stats.performance.uptimeMinutes} minutes`);
+    console.log('==============================\n');
+    
+    // Also show account status
+    unsplashAccountManager.checkStatus();
+});
+
 // Cleanup on process exit
 process.on('SIGINT', () => {
     log.system('Shutting down server...');
+    
+    // Display final cache stats
+    const stats = unsplashCache.getStats();
+    const cacheSize = unsplashCache.getCacheSize();
+    console.log('\n📊 Final Cache Statistics:');
+    console.log(`Cache Size: ${stats.cache.total} entries (${cacheSize})`);
+    console.log(`Hit Rate: ${stats.performance.hitRate}`);
+    
+    // Ensure cache is saved
+    unsplashCache.saveCache();
+    
     if (azureTTS) {
         azureTTS.cleanup();
     }
@@ -1263,90 +1340,56 @@ process.on('SIGINT', () => {
 });
 
 // Function to get random image from Unsplash
-function getUnsplashImage(query, customCacheKey = null) {
-    return new Promise((resolve, reject) => {
-        if (!UNSPLASH_ACCESS_KEY || UNSPLASH_ACCESS_KEY === 'YOUR_UNSPLASH_API_KEY_HERE') {
-            log.warning('Unsplash API key not configured, using fallback image');
-            resolve('https://httpbin.org/image/png?width=800&height=600');
-            return;
-        }
+async function getUnsplashImage(query, customCacheKey = null) {
+    // Check if we have any available accounts
+    if (unsplashAccountManager.accounts.length === 0) {
+        log.warning('No Unsplash API keys configured, using fallback image');
+        return 'https://httpbin.org/image/png?width=800&height=600';
+    }
 
-        // Use custom cache key if provided, otherwise use query
-        const cacheKey = customCacheKey || query.toLowerCase().trim();
-        const cached = unsplashCache.get(cacheKey);
-        if (cached && (Date.now() - cached.timestamp) < CACHE_DURATION) {
-            log.unsplash(`💾 Using cached image for cache key: "${cacheKey}"`);
-            resolve(cached.url);
-            return;
-        }
+    // Use custom cache key if provided, otherwise use query
+    const cacheKey = customCacheKey || query.toLowerCase().trim();
+    
+    // Check cache first using the enhanced cache manager
+    const cachedUrl = unsplashCache.get(cacheKey);
+    if (cachedUrl) {
+        return cachedUrl;
+    }
 
-        // Add a seed based on cache key to get consistent results for the same query
-        const seed = customCacheKey ? customCacheKey.hashCode() : query.toLowerCase().trim().hashCode();
-        const url = `${UNSPLASH_API_URL}?query=${encodeURIComponent(query)}&orientation=landscape&w=800&h=600&seed=${seed}&client_id=${UNSPLASH_ACCESS_KEY}`;
+    // Add a seed based on cache key to get consistent results for the same query
+    const seed = customCacheKey ? customCacheKey.hashCode() : query.toLowerCase().trim().hashCode();
+    const baseUrl = `${UNSPLASH_API_URL}?query=${encodeURIComponent(query)}&orientation=landscape&w=800&h=600&seed=${seed}&client_id=PLACEHOLDER`;
+    
+    log.unsplash(`Fetching image for query: "${query}"`);
+    
+    try {
+        const response = await unsplashAccountManager.makeRequest(baseUrl);
         
-        log.unsplash(`Fetching image for query: "${query}"`);
+        // Check if response is JSON or error text
+        if (response.body.includes('Rate Limit Exceeded') || response.body.includes('error')) {
+            log.error(`❌ Unsplash API error: ${response.body}`);
+            log.warning('⚠️ Using fallback image due to API error');
+            return 'https://httpbin.org/image/png?width=800&height=600';
+        }
         
-        https.get(url, (res) => {
-            let data = '';
+        const imageData = JSON.parse(response.body);
+        if (imageData.urls && imageData.urls.regular) {
+            const imageUrl = imageData.urls.regular;
+            log.unsplash(`✅ Image found: ${imageUrl}`);
             
-            // Check for rate limit or other HTTP errors
-            if (res.statusCode === 403) {
-                log.error('❌ Unsplash API: Rate limit exceeded or unauthorized access');
-                log.warning('⚠️ Using fallback image due to rate limit');
-                resolve('https://httpbin.org/image/png?width=800&height=600');
-                return;
-            }
+            // Cache the result using the enhanced cache manager
+            unsplashCache.set(cacheKey, imageUrl);
             
-            if (res.statusCode !== 200) {
-                log.error(`❌ Unsplash API error: HTTP ${res.statusCode}`);
-                log.warning('⚠️ Using fallback image due to API error');
-                resolve('https://httpbin.org/image/png?width=800&height=600');
-                return;
-            }
-            
-            res.on('data', (chunk) => {
-                data += chunk;
-            });
-            
-            res.on('end', () => {
-                try {
-                    // Check if response is JSON or error text
-                    if (data.includes('Rate Limit Exceeded') || data.includes('error')) {
-                        log.error(`❌ Unsplash API error: ${data}`);
-                        log.warning('⚠️ Using fallback image due to API error');
-                        resolve('https://httpbin.org/image/png?width=800&height=600');
-                        return;
-                    }
-                    
-                    const imageData = JSON.parse(data);
-                    if (imageData.urls && imageData.urls.regular) {
-                        const imageUrl = imageData.urls.regular;
-                        log.unsplash(`✅ Image found: ${imageUrl}`);
-                        
-                        // Cache the result using the same cache key
-                        unsplashCache.set(cacheKey, {
-                            url: imageUrl,
-                            timestamp: Date.now()
-                        });
-                        
-                        resolve(imageUrl);
-                    } else {
-                        log.warning('No image found in response, using fallback');
-                        resolve('https://httpbin.org/image/png?width=800&height=600');
-                    }
-                } catch (error) {
-                    log.error(`❌ Error parsing Unsplash response: ${error.message}`);
-                    log.error(`Raw response: ${data.substring(0, 200)}...`);
-                    log.warning('⚠️ Using fallback image due to parsing error');
-                    resolve('https://httpbin.org/image/png?width=800&height=600');
-                }
-            });
-        }).on('error', (error) => {
-            log.error(`❌ Network error fetching from Unsplash: ${error.message}`);
-            log.warning('⚠️ Using fallback image due to network error');
-            resolve('https://httpbin.org/image/png?width=800&height=600');
-        });
-    });
+            return imageUrl;
+        } else {
+            log.warning('No image found in response, using fallback');
+            return 'https://httpbin.org/image/png?width=800&height=600';
+        }
+    } catch (error) {
+        log.error(`❌ Error fetching from Unsplash: ${error.message}`);
+        log.warning('⚠️ Using fallback image due to error');
+        return 'https://httpbin.org/image/png?width=800&height=600';
+    }
 }
 
 // Function to extract keywords from question for image search
