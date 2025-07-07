@@ -14,6 +14,7 @@ class AzureTTS {
         this.tempFiles = []; // Track temporary files for cleanup
         this.audioDir = path.join(__dirname, '../tts_audio');
         this.cacheDir = path.join(this.audioDir, 'cache');
+        this.currentAudioProcess = null; // Track current audio process
         
         this.initialize();
     }
@@ -177,6 +178,9 @@ class AzureTTS {
                     // Do not resolve here!
                 }
             });
+            
+            // Store the current audio process for potential stopping
+            this.currentAudioProcess = child;
 
             // Wait for the duration of the audio, then resolve
             setTimeout(() => {
@@ -202,6 +206,49 @@ class AzureTTS {
         } catch (error) {
             // File might still be in use, that's okay
             console.log('⚠️ Could not clean up file (still in use):', path.basename(filePath));
+        }
+    }
+
+    // Stop all currently playing audio
+    stopAllAudio() {
+        try {
+            // Kill the current audio process if it exists
+            if (this.currentAudioProcess) {
+                try {
+                    this.currentAudioProcess.kill();
+                    console.log('🔇 Killed current audio process');
+                } catch (e) {
+                    console.log('🔇 Current audio process already finished');
+                }
+                this.currentAudioProcess = null;
+            }
+            
+            // Kill all child processes that might be playing audio
+            const { exec } = require('child_process');
+            
+            // On Windows, kill any process using audio devices
+            if (process.platform === 'win32') {
+                exec('taskkill /f /im "ffplay.exe" 2>nul', (error) => {
+                    if (error) {
+                        console.log('🔇 No ffplay processes found to kill');
+                    } else {
+                        console.log('🔇 Killed ffplay processes');
+                    }
+                });
+            } else {
+                // On Unix-like systems, kill ffplay processes
+                exec('pkill -f ffplay', (error) => {
+                    if (error) {
+                        console.log('🔇 No ffplay processes found to kill');
+                    } else {
+                        console.log('🔇 Killed ffplay processes');
+                    }
+                });
+            }
+            
+            console.log('🔇 All audio playback stopped');
+        } catch (error) {
+            console.error('❌ Error stopping audio:', error);
         }
     }
 

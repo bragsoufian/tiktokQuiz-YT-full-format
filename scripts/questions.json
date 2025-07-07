@@ -1,769 +1,423 @@
 [
     {
-      "question": "Which fast food chain is known for the Big Mac?",
-      "options": ["Burger King", "McDonald’s", "Wendy’s"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "big mac fast food burger",
-      "image": null
-    },
-    {
-      "question": "Which app uses a ghost as its logo?",
-      "options": ["Snapchat", "Telegram", "Viber"],
+      "question": "Which country has a unicorn as its national animal?",
+      "options": ["Scotland", "New Zealand", "Wales"],
       "correctAnswer": "A",
-      "backgroundKeyWords": "snapchat ghost logo app",
+      "backgroundKeyWords": "unicorn mythical flag",
       "image": null
     },
     {
-      "question": "Which artist sang 'Blinding Lights'?",
-      "options": ["Drake", "The Weeknd", "Post Malone"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "blinding lights concert neon",
-      "image": null
-    },
-    {
-      "question": "What do you scan to open a menu at a restaurant?",
-      "options": ["QR code", "Barcode", "Wi-Fi"],
+      "question": "Which fruit was once so rare it was rented as a party centerpiece?",
+      "options": ["Pineapple", "Fig", "Mango"],
       "correctAnswer": "A",
-      "backgroundKeyWords": "qr code menu phone",
+      "backgroundKeyWords": "pineapple party fruit luxury",
       "image": null
     },
     {
-      "question": "Which soda is known for its red can?",
-      "options": ["Pepsi", "Coca-Cola", "Sprite"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "coca cola soda red",
-      "image": null
-    },
-    {
-      "question": "Which city is known as the Big Apple?",
-      "options": ["Chicago", "Los Angeles", "New York"],
+      "question": "Which creature can survive in space?",
+      "options": ["Ant", "Jellyfish", "Tardigrade"],
       "correctAnswer": "C",
-      "backgroundKeyWords": "new york big apple skyline",
+      "backgroundKeyWords": "tardigrade microscopic space",
       "image": null
     },
     {
-      "question": "Which platform has 'Stories' that disappear after 24 hours?",
-      "options": ["Netflix", "Instagram", "YouTube"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "instagram story social media",
+      "question": "Which part of your body has no blood supply?",
+      "options": ["Skin", "Hair", "Cornea"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "eye cornea closeup",
       "image": null
     },
     {
-      "question": "Which item is used to tap and pay?",
-      "options": ["Credit card", "Passport", "Driver’s license"],
+      "question": "Which animal can smell underwater?",
+      "options": ["Shark", "Elephant", "Crocodile"],
       "correctAnswer": "A",
-      "backgroundKeyWords": "tap pay card terminal",
+      "backgroundKeyWords": "shark ocean swim",
       "image": null
     },
     {
-      "question": "What’s the most used search engine?",
-      "options": ["Bing", "Yahoo", "Google"],
-      "correctAnswer": "C",
-      "backgroundKeyWords": "google search browser internet",
-      "image": null
-    },
-    {
-      "question": "Which brand makes the iPhone?",
-      "options": ["Samsung", "Apple", "Google"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "apple iphone logo phone",
-      "image": null
-    },
-    {
-      "question": "Which food is commonly eaten at movie theaters?",
-      "options": ["Nachos", "Popcorn", "Fries"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "popcorn cinema snack butter",
-      "image": null
-    },
-    {
-      "question": "Which app is famous for short dances and trends?",
-      "options": ["Instagram", "TikTok", "Reddit"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "tiktok dance trend phone",
-      "image": null
-    },
-    {
-      "question": "Which holiday is known for costumes and candy?",
-      "options": ["Thanksgiving", "Halloween", "Valentine’s Day"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "halloween candy costume spooky",
-      "image": null
-    },
-    {
-      "question": "Which game lets you build with blocks and survive?",
-      "options": ["Roblox", "Minecraft", "Fortnite"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "minecraft block game pixel",
-      "image": null
-    },
-    {
-      "question": "Which symbol means 'hashtag'?",
-      "options": ["@", "#", "&"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "hashtag social media symbol",
-      "image": null
-    },
-    {
-      "question": "Which sport is played at the Super Bowl?",
-      "options": ["Basketball", "Baseball", "Football"],
-      "correctAnswer": "C",
-      "backgroundKeyWords": "super bowl football america",
-      "image": null
-    },
-    {
-      "question": "What color is commonly used for Wi-Fi signal icons?",
-      "options": ["Red", "Blue", "Gray"],
-      "correctAnswer": "C",
-      "backgroundKeyWords": "wifi icon gray tech",
-      "image": null
-    },
-    {
-      "question": "What do people usually put syrup on?",
-      "options": ["Pasta", "Pancakes", "Tacos"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "pancake syrup breakfast",
-      "image": null
-    },
-    {
-      "question": "Which brand has a checkmark-style logo?",
-      "options": ["Nike", "Reebok", "Under Armour"],
+      "question": "Which planet rains diamonds?",
+      "options": ["Saturn", "Venus", "Neptune"],
       "correctAnswer": "A",
-      "backgroundKeyWords": "nike swoosh logo sneaker",
+      "backgroundKeyWords": "saturn space diamond",
       "image": null
     },
     {
-      "question": "Which website is known for videos that start with 'Hey guys!'?",
-      "options": ["LinkedIn", "YouTube", "Pinterest"],
+      "question": "Which fruit has more genes than a human?",
+      "options": ["Grapes", "Strawberries", "Bananas"],
       "correctAnswer": "B",
-      "backgroundKeyWords": "youtube video creator vlog",
+      "backgroundKeyWords": "strawberry dna fruit",
       "image": null
     },
+    {
+      "question": "Which food can never go bad?",
+      "options": ["Rice", "Honey", "Beans"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "honey jar old",
+      "image": null
+    },
+    {
+      "question": "Which animal has cubes for poop?",
+      "options": ["Beaver", "Wombat", "Koala"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "wombat cute poop",
+      "image": null
+    },
+    {
+      "question": "Which color is a flamingo when it's born?",
+      "options": ["Pink", "White", "Gray"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "baby flamingo color",
+      "image": null
+    },
+    {
+      "question": "Which part of your body keeps growing after death?",
+      "options": ["Nails", "Eyes", "Ears"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "nails closeup growth",
+      "image": null
+    },
+    {
+      "question": "Which U.S. state is closest to Africa?",
+      "options": ["Florida", "Maine", "Texas"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "map maine africa",
+      "image": null
+    },
+    {
+      "question": "Which animal can't jump?",
+      "options": ["Rhino", "Elephant", "Hippo"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "elephant standing still",
+      "image": null
+    },
+    {
+      "question": "Which country has a city named 'Batman'?",
+      "options": ["Turkey", "Brazil", "Poland"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "batman sign turkey",
+      "image": null
+    },
+    {
+      "question": "Which animal can hold its breath the longest?",
+      "options": ["Dolphin", "Whale", "Sea turtle"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "sea turtle underwater",
+      "image": null
+    },
+    {
+      "question": "Which everyday object was originally meant for cleaning wallpaper?",
+      "options": ["Toothpaste", "Shampoo", "Play-Doh"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "play-doh toy clean",
+      "image": null
+    },
+    {
+      "question": "Which animal can breathe through its butt?",
+      "options": ["Frog", "Turtle", "Fish"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "turtle weird fact",
+      "image": null
+    },
+    {
+      "question": "Which country eats the most chocolate per person?",
+      "options": ["Switzerland", "USA", "France"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "swiss chocolate bar",
+      "image": null
+    },
+    {
+      "question": "Which bird can sleep while flying?",
+      "options": ["Seagull", "Albatross", "Eagle"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "albatross gliding sleep",
+      "image": null
+    },
+    {
+      "question": "Which animal is born with teeth?",
+      "options": ["Dolphin", "Shark", "Cat"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "shark baby teeth",
+      "image": null
+    },
+    {
+      "question": "Which country has a calendar that's 7 years behind?",
+      "options": ["Nepal", "Ethiopia", "Thailand"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "ethiopia calendar date",
+      "image": null
+    },
+    {
+      "question": "Which animal has blue blood?",
+      "options": ["Octopus", "Whale", "Jellyfish"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "octopus underwater blue",
+      "image": null
+    },
+    {
+      "question": "Which direction do cows usually face while eating?",
+      "options": ["North/South", "East/West", "Random"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "cow field compass",
+      "image": null
+    },
+    {
+      "question": "Which body part can heal itself fastest?",
+      "options": ["Tongue", "Skin", "Liver"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "tongue healing mouth",
+      "image": null
+    },
+    {
+      "question": "Which fruit contains the most water?",
+      "options": ["Cucumber", "Watermelon", "Orange"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "cucumber slices water",
+      "image": null
+    },
+    {
+      "question": "Which animal can live forever (sort of)?",
+      "options": ["Jellyfish", "Starfish", "Sea urchin"],
+      "correctAnswer": "A",
+      "backgroundKeyWords": "jellyfish immortal deepsea",
+      "image": null
+    },
+    {
+      "question": "Which bird can mimic over 100 sounds?",
+      "options": ["Parrot", "Lyrebird", "Crow"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "lyrebird mimic forest",
+      "image": null
+    },
+    {
+      "question": "Which planet spins sideways?",
+      "options": ["Neptune", "Uranus", "Mars"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "uranus tilt space",
+      "image": null
+    },
+    {
+      "question": "Which bone is the hardest in the human body?",
+      "options": ["Skull", "Jawbone", "Thigh bone"],
+      "correctAnswer": "C",
+      "backgroundKeyWords": "femur bone anatomy",
+      "image": null
+    },
+    {
+      "question": "Which mammal lays eggs?",
+      "options": ["Bat", "Platypus", "Dolphin"],
+      "correctAnswer": "B",
+      "backgroundKeyWords": "platypus egg mammal",
+      "image": null
+    },
+      {
+        "question": "Which country banned ketchup in school cafeterias (except for fries)?",
+        "options": ["Germany", "USA", "France"],
+        "correctAnswer": "C",
+        "backgroundKeyWords": "french school cafeteria ketchup ban",
+        "image": null
+      },
+      {
+        "question": "Which body part has no pain receptors?",
+        "options": ["Tongue", "Lungs", "Brain"],
+        "correctAnswer": "C",
+        "backgroundKeyWords": "brain scan nerves",
+        "image": null
+      },
+      {
+        "question": "Which item was invented by accident while trying to make wallpaper cleaner?",
+        "options": ["Glue", "Silly Putty", "Play-Doh"],
+        "correctAnswer": "C",
+        "backgroundKeyWords": "play-doh toy invention",
+        "image": null
+      },
+      {
+        "question": "Which U.S. state has a law banning donkeys from sleeping in bathtubs?",
+        "options": ["Arizona", "Texas", "Nevada"],
+        "correctAnswer": "A",
+        "backgroundKeyWords": "weird law donkey bathtub",
+        "image": null
+      },
+      {
+        "question": "Which language has the most words?",
+        "options": ["English", "Chinese", "German"],
+        "correctAnswer": "A",
+        "backgroundKeyWords": "english dictionary pages",
+        "image": null
+      },
+      {
+        "question": "Which fruit was once used as currency in ancient times?",
+        "options": ["Coconut", "Cacao", "Olive"],
+        "correctAnswer": "B",
+        "backgroundKeyWords": "cacao beans ancient money",
+        "image": null
+      },
+      {
+        "question": "Which European country has no mosquitoes?",
+        "options": ["Portugal", "Iceland", "Austria"],
+        "correctAnswer": "B",
+        "backgroundKeyWords": "iceland nature no bugs",
+        "image": null
+      },
+      {
+        "question": "Which letter is silent in 'mnemonic'?",
+        "options": ["M", "N", "E"],
+        "correctAnswer": "A",
+        "backgroundKeyWords": "word mnemonic memory",
+        "image": null
+      },
+      {
+        "question": "Which company first used Santa Claus in advertising?",
+        "options": ["Pepsi", "Coca-Cola", "Nestlé"],
+        "correctAnswer": "B",
+        "backgroundKeyWords": "vintage coca cola santa",
+        "image": null
+      },
+      {
+        "question": "Which sport was played on the moon?",
+        "options": ["Tennis", "Golf", "Soccer"],
+        "correctAnswer": "B",
+        "backgroundKeyWords": "astronaut moon golf nasa",
+        "image": null
+      },
+      {
+        "question": "Which snack was originally called 'Frito-Lay's Cheese Crunches'?",
+        "options": ["Doritos", "Cheetos", "Pringles"],
+        "correctAnswer": "B",
+        "backgroundKeyWords": "cheetos vintage snack",
+        "image": null
+      },
+      {
+        "question": "Which animal did ancient Egyptians worship?",
+        "options": ["Dog", "Cat", "Falcon"],
+        "correctAnswer": "B",
+        "backgroundKeyWords": "egyptian cat statue",
+        "image": null
+      },
+      {
+        "question": "Which U.S. president had a pet alligator?",
+        "options": ["John Adams", "Herbert Hoover", "John Quincy Adams"],
+        "correctAnswer": "C",
+        "backgroundKeyWords": "alligator white house",
+        "image": null
+      },
+      {
+        "question": "Which kitchen tool was once illegal in China?",
+        "options": ["Chopsticks", "Fork", "Knife"],
+        "correctAnswer": "B",
+        "backgroundKeyWords": "fork ban china table",
+        "image": null
+      },
+      {
+        "question": "Which natural disaster can cause fire, water, and wind damage at once?",
+        "options": ["Volcano", "Hurricane", "Earthquake"],
+        "correctAnswer": "A",
+        "backgroundKeyWords": "volcano eruption destruction",
+        "image": null
+      },
+      {
+        "question": "Which fast food chain once made bubblegum-flavored broccoli?",
+        "options": ["Burger King", "McDonald's", "Wendy's"],
+        "correctAnswer": "B",
+        "backgroundKeyWords": "mcdonalds failed food",
+        "image": null
+      },
+      {
+        "question": "Which European city has a law against dying in parliament?",
+        "options": ["Oslo", "Paris", "London"],
+        "correctAnswer": "C",
+        "backgroundKeyWords": "uk parliament london rule",
+        "image": null
+      },
+      {
+        "question": "Which fashion item was invented by a tennis player?",
+        "options": ["Sneakers", "Polo shirt", "Zipper"],
+        "correctAnswer": "B",
+        "backgroundKeyWords": "polo shirt tennis history",
+        "image": null
+      },
+      {
+        "question": "Which company made the first smartphone?",
+        "options": ["Apple", "Nokia", "IBM"],
+        "correctAnswer": "C",
+        "backgroundKeyWords": "ibm simon first smartphone",
+        "image": null
+      },
+      {
+        "question": "Which item is the most stolen from hotels worldwide?",
+        "options": ["Towels", "Pillows", "Remote controls"],
+        "correctAnswer": "A",
+        "backgroundKeyWords": "hotel towel theft",
+        "image": null
+      },
+      {
+        "question": "Which planet has days longer than its years?",
+        "options": ["Venus", "Mercury", "Mars"],
+        "correctAnswer": "A",
+        "backgroundKeyWords": "venus space time",
+        "image": null
+      },
+      {
+        "question": "Which part of your face can recognize thousands of types of smells?",
+        "options": ["Mouth", "Nose", "Eyes"],
+        "correctAnswer": "B",
+        "backgroundKeyWords": "nose smell senses",
+        "image": null
+      },
+      {
+        "question": "Which company owns the most vending machines in the world?",
+        "options": ["Nestlé", "Coca-Cola", "PepsiCo"],
+        "correctAnswer": "B",
+        "backgroundKeyWords": "coca cola vending machine",
+        "image": null
+      },
+      {
+        "question": "Which U.S. state is officially a commonwealth?",
+        "options": ["Alabama", "Virginia", "Nevada"],
+        "correctAnswer": "B",
+        "backgroundKeyWords": "virginia usa commonwealth",
+        "image": null
+      },
+      {
+        "question": "Which ancient civilization used chocolate as money?",
+        "options": ["Romans", "Aztecs", "Egyptians"],
+        "correctAnswer": "B",
+        "backgroundKeyWords": "aztec cacao currency",
+        "image": null
+      },
+      {
+        "question": "Which color was once reserved for royalty only?",
+        "options": ["Purple", "Blue", "Gold"],
+        "correctAnswer": "A",
+        "backgroundKeyWords": "royal purple velvet",
+        "image": null
+      },
+      {
+        "question": "Which company accidentally used cyanide in its candy?",
+        "options": ["Mars", "Tylenol", "Jelly Belly"],
+        "correctAnswer": "B",
+        "backgroundKeyWords": "tylenol recall poison",
+        "image": null
+      },
+      {
+        "question": "Which website was originally called 'Jerry and David’s Guide to the Web'?",
+        "options": ["Yahoo", "Google", "MSN"],
+        "correctAnswer": "A",
+        "backgroundKeyWords": "early internet yahoo founders",
+        "image": null
+      },
+      {
+        "question": "Which animal has fingerprints almost identical to humans?",
+        "options": ["Chimpanzee", "Koala", "Bear"],
+        "correctAnswer": "B",
+        "backgroundKeyWords": "koala fingerprint closeup",
+        "image": null
+      },
+      {
+        "question": "Which liquid can be a solid, liquid, and gas at once?",
+        "options": ["Oil", "Water", "Carbon dioxide"],
+        "correctAnswer": "B",
+        "backgroundKeyWords": "triple point water science",
+        "image": null
+      }
+  ]
 
-  {
-    "question": "Which fruit has its seeds on the outside?",
-    "options": ["Strawberry", "Pineapple", "Kiwi"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "fruit colorful fresh summer",
-    "image": null
-  },
-  {
-    "question": "What’s the only mammal that can truly fly?",
-    "options": ["Flying squirrel", "Bat", "Sugar glider"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "bat night sky wings animal",
-    "image": null
-  },
-  {"question":"Which pizza chain uses a red-headed mascot named Chuck E.?","options":["Papa John’s","Domino’s","Chuck E. Cheese"],"correctAnswer":"C","backgroundKeyWords":"chuck e cheese restaurant fun","image":null},
-  {"question":"Which company makes the PlayStation?","options":["Microsoft","Sony","Nintendo"],"correctAnswer":"B","backgroundKeyWords":"playstation gaming console","image":null},
-  {"question":"What’s the main color in YouTube’s logo?","options":["Red","Green","Blue"],"correctAnswer":"A","backgroundKeyWords":"youtube play button logo","image":null},
-  {"question":"Who sang ‘Shape of You’?","options":["Ed Sheeran","Justin Bieber","Shawn Mendes"],"correctAnswer":"A","backgroundKeyWords":"ed sheeran shape of you music","image":null},
-  {"question":"Which brand is known for Ray-Ban sunglasses?","options":["Oakley","Ray-Ban","Gucci"],"correctAnswer":"B","backgroundKeyWords":"rayban sunglasses cool","image":null},
-  {"question":"Which streaming service created ‘Stranger Things’?","options":["Netflix","Hulu","HBO"],"correctAnswer":"A","backgroundKeyWords":"stranger things netflix show","image":null},
-  {"question":"Which fast food places serve a Whopper?","options":["McDonald’s","Burger King","Wendy’s"],"correctAnswer":"B","backgroundKeyWords":"whopper burger king meal","image":null},
-  {"question":"What app do we use to send emails?","options":["Gmail","Instagram","Uber"],"correctAnswer":"A","backgroundKeyWords":"gmail email app icon","image":null},
-  {"question":"What do people drive on in the UK?","options":["Left","Right","Center"],"correctAnswer":"A","backgroundKeyWords":"uk road left driving","image":null},
-  {"question":"Which brand makes the Air Jordan sneakers?","options":["Puma","Nike","Adidas"],"correctAnswer":"B","backgroundKeyWords":"air jordan nike sneakers","image":null},
-  {"question":"Which movie features a wizard named Harry?","options":["Lord of the Rings","Harry Potter","Chronicles of Narnia"],"correctAnswer":"B","backgroundKeyWords":"harry potter magic movie","image":null},
-  {"question":"Which ride service has a green pin icon?","options":["Uber","Lyft","Bolt"],"correctAnswer":"C","backgroundKeyWords":"bolt ride share app","image":null},
-  {"question":"Which drink is served in a Starbucks cup with a green logo?","options":["Coffee","Soda","Juice"],"correctAnswer":"A","backgroundKeyWords":"starbucks coffee cup","image":null},
-  {"question":"Who’s known as the ‘King of Pop’?","options":["Elvis Presley","Michael Jackson","Prince"],"correctAnswer":"B","backgroundKeyWords":"michael jackson icon music","image":null},
-  {"question":"Which social network uses a blue bird as a logo?","options":["Twitter","Facebook","Snapchat"],"correctAnswer":"A","backgroundKeyWords":"twitter bird logo social","image":null},
-  {"question":"Which food is served as sushi?","options":["Rice","Pasta","Bread"],"correctAnswer":"A","backgroundKeyWords":"sushi rice rolls japanese","image":null},
-  {"question":"Which brand uses three stripes as a logo?","options":["Adidas","Nike","Reebok"],"correctAnswer":"A","backgroundKeyWords":"adidas three stripes","image":null},
-  {"question":"What’s Pikachu?","options":["Pokemon","Digimon","Mario character"],"correctAnswer":"A","backgroundKeyWords":"pikachu pokemon cute","image":null},
-  {"question":"Which site is known for user reviews of shops and restaurants?","options":["Yelp","Amazon","Reddit"],"correctAnswer":"A","backgroundKeyWords":"yelp reviews food","image":null},
-  {"question":"Which fruit shares its name with a color?","options":["Orange","Blueberry","Apple"],"correctAnswer":"A","backgroundKeyWords":"orange fruit color","image":null},
-  {"question":"Which device wakes you up in the morning with sound?","options":["Speaker","Alarm clock","Microwave"],"correctAnswer":"B","backgroundKeyWords":"alarm clock time morning","image":null},
-  {"question":"Which enzyme is needed to digest lactose found in milk?","options":["Lactase","Amylase","Lipase"],"correctAnswer":"A","backgroundKeyWords":"lactase enzyme digestion","image":null},
-  {"question":"Which show has characters named Ross and Rachel?","options":["Friends","Seinfeld","How I Met Your Mother"],"correctAnswer":"A","backgroundKeyWords":"friends tv show sitcom","image":null},
-  {"question":"Which item do you swipe to unlock your phone?","options":["Card","Finger","Key"],"correctAnswer":"B","backgroundKeyWords":"fingerprint sensor phone","image":null},
-  {"question":"Which biscuit is dunked in tea in the UK?","options":["Oreo","Rich Tea","Pretzel"],"correctAnswer":"B","backgroundKeyWords":"rich tea biscuit dunk","image":null},
-  {"question":"Which app is used to navigate with driving directions?","options":["WhatsApp","Google Maps","TikTok"],"correctAnswer":"B","backgroundKeyWords":"google maps navigation","image":null},
-  {"question":"Which material is used to make paper?","options":["Wood","Plastic","Metal"],"correctAnswer":"A","backgroundKeyWords":"paper wood pulp","image":null},
-  {"question":"Which planet is closest to the sun?","options":["Venus","Mercury","Earth"],"correctAnswer":"B","backgroundKeyWords":"mercury planet space","image":null},
-  {"question":"Which superhero wears a suit with an ‘S’ on his chest?","options":["Batman","Superman","Iron Man"],"correctAnswer":"B","backgroundKeyWords":"superman hero comic","image":null},
-  {"question":"What do you call a baby dog?","options":["Kitten","Puppy","Calf"],"correctAnswer":"B","backgroundKeyWords":"puppy dog cute","image":null},
-  {"question":"Which site lets you watch movies for free?","options":["Netflix","YouTube","HBO"],"correctAnswer":"B","backgroundKeyWords":"youtube videos movies","image":null},
-  {"question":"Which drink is fizzy and brown?","options":["Orange Juice","Pepsi","Milk"],"correctAnswer":"B","backgroundKeyWords":"pepsi soda drink","image":null},
-  {"question":"Which song starts ‘Is this the real life…’?","options":["Bohemian Rhapsody","Imagine","Hey Jude"],"correctAnswer":"A","backgroundKeyWords":"queen bohemian rhapsody music","image":null},
-  {"question":"Which currency uses the ‘€’ symbol?","options":["Dollar","Euro","Pound"],"correctAnswer":"B","backgroundKeyWords":"euro money europe","image":null},
-  {"question":"Which day is in the weekend?","options":["Tuesday","Saturday","Thursday"],"correctAnswer":"B","backgroundKeyWords":"saturday weekend relax","image":null},
-  {"question":"Which board game uses properties like Boardwalk and Park Place?","options":["Risk","Monopoly","Clue"],"correctAnswer":"B","backgroundKeyWords":"monopoly board game","image":null},
-  {"question":"Who starred as Jack in Titanic?","options":["Brad Pitt","Leonardo DiCaprio","Tom Cruise"],"correctAnswer":"B","backgroundKeyWords":"leo titanic movie ship","image":null},
-  {"question":"Which device counts steps and monitors heart rate?","options":["Smartwatch","Calculator","Printer"],"correctAnswer":"A","backgroundKeyWords":"smartwatch fitness tracker","image":null},
-  {"question":"Which fruit is also a berry botanically?","options":["Strawberry","Banana","Blackberry"],"correctAnswer":"B","backgroundKeyWords":"banana berry science","image":null},
-  {"question":"What’s the fastest way to type on a phone?","options":["Thumbs","Voice","Stylus"],"correctAnswer":"A","backgroundKeyWords":"smartphone texting thumbs","image":null},
-  {"question":"Which toy is famous for winding a clock and walking?","options":["Yo-yo","Battery-powered robot","Wind-up toy"],"correctAnswer":"C","backgroundKeyWords":"wind up toy vintage","image":null},
-  {"question":"What’s the color of the sky on a clear day?","options":["Blue","Green","Red"],"correctAnswer":"A","backgroundKeyWords":"sky blue clouds","image":null},
-  {"question":"Which device do you plug in to charge a phone?","options":["Charger","Radio","Lamp"],"correctAnswer":"A","backgroundKeyWords":"phone charging cable","image":null},
-  {"question":"Which word means opposite of ‘hot’?","options":["Warm","Cold","Sunny"],"correctAnswer":"B","backgroundKeyWords":"cold weather temperature","image":null},
-  {"question":"Which planet has a ring around it?","options":["Mars","Saturn","Venus"],"correctAnswer":"B","backgroundKeyWords":"saturn rings planet","image":null},
-  {"question":"Which app is for sharing photos and stories?","options":["Twitter","Instagram","LinkedIn"],"correctAnswer":"B","backgroundKeyWords":"instagram stories photos","image":null},
-  {"question":"Which emoji has hearts for eyes?","options":["😍","😎","😡"],"correctAnswer":"A","backgroundKeyWords":"emoji hearts love","image":null},
-  {"question":"What covers your feet in winter?","options":["Gloves","Socks","Hat"],"correctAnswer":"B","backgroundKeyWords":"socks warm feet","image":null},
-  {"question":"Which milk alternative is plant-based?","options":["Cow milk","Soy milk","Water"],"correctAnswer":"B","backgroundKeyWords":"soy milk drink vegan","image":null},
-  {"question":"Which airline’s logo is a kangaroo?","options":["American Airlines","Air Canada","Qantas"],"correctAnswer":"C","backgroundKeyWords":"qantas kangaroo plane","image":null},
-  {"question":"Which app shows video chats with rings?","options":["Zoom","Spotify","Uber"],"correctAnswer":"A","backgroundKeyWords":"zoom video call logo","image":null},
-  {"question":"Which candy is shaped like a bear?","options":["Gummy bears","Jelly beans","Marshmallow"],"correctAnswer":"A","backgroundKeyWords":"gummy bears candy sweet","image":null},
-  {"question":"Which sport uses a racket?","options":["Tennis","Soccer","Basketball"],"correctAnswer":"A","backgroundKeyWords":"tennis racket court","image":null},
-  {"question":"Which character says ‘I am Iron Man’?","options":["Batman","Tony Stark","Thor"],"correctAnswer":"B","backgroundKeyWords":"tony stark iron man","image":null},
-  {"question":"Which city has the Eiffel Tower?","options":["London","Paris","Rome"],"correctAnswer":"B","backgroundKeyWords":"eiffel tower paris travel","image":null},
-  {"question":"What do you press to take a photo on phone?","options":["Camera button","Volume up","Home"],"correctAnswer":"A","backgroundKeyWords":"camera app phone","image":null},
-  {"question":"Which fruit is used for lemonade?","options":["Apple","Lemon","Grape"],"correctAnswer":"B","backgroundKeyWords":"lemonade drink citrus","image":null},
-  {"question":"Which game has colorful blocks you match?","options":["Tetris","Chess","Checkers"],"correctAnswer":"A","backgroundKeyWords":"tetris game blocks","image":null},
-  {"question":"Which ocean touches California?","options":["Atlantic","Pacific","Indian"],"correctAnswer":"B","backgroundKeyWords":"pacific ocean coast","image":null},
-  {"question":"Which day is usually the middle of the week?","options":["Monday","Wednesday","Friday"],"correctAnswer":"B","backgroundKeyWords":"wednesday hump day","image":null},
-  {"question":"Which platform is known for memes and discussions?","options":["Reddit","Vimeo","Slack"],"correctAnswer":"A","backgroundKeyWords":"reddit forum memes","image":null},
-  {"question":"Which toothpaste brand is very common?","options":["Colgate","Kleenex","Dove"],"correctAnswer":"A","backgroundKeyWords":"colgate toothpaste brush","image":null},
-  {"question":"Which vehicle has two wheels and pedals?","options":["Scooter","Bicycle","Segway"],"correctAnswer":"B","backgroundKeyWords":"bicycle cycling wheels","image":null},
-  {"question":"Which brand makes the Mustang car?","options":["Ford","Honda","Toyota"],"correctAnswer":"A","backgroundKeyWords":"ford mustang muscle car","image":null},
-  {"question":"Which continent is France in?","options":["Asia","Europe","Africa"],"correctAnswer":"B","backgroundKeyWords":"france europe map","image":null},
-  {"question":"What do you use to search the web?","options":["Browser","Calculator","Calendar"],"correctAnswer":"A","backgroundKeyWords":"web browser chrome","image":null},
-  {"question":"Which video game is about catching creatures?","options":["Pokemon","Zelda","Mario Kart"],"correctAnswer":"A","backgroundKeyWords":"pokemon game capture","image":null},
-  {"question":"Which social media app is for professional networking?","options":["LinkedIn","TikTok","Snapchat"],"correctAnswer":"A","backgroundKeyWords":"linkedin professional network","image":null},
-  {"question":"Which fast-food chain has a clown mascot?","options":["KFC","McDonald’s","Taco Bell"],"correctAnswer":"B","backgroundKeyWords":"ronald mcdonald clown","image":null},
-  {"question":"Which phone brand makes Galaxy?","options":["Apple","Samsung","LG"],"correctAnswer":"B","backgroundKeyWords":"samsung galaxy phone","image":null},
-  {"question":"Which Disney character is a mouse?","options":["Mickey","Donald","Goofy"],"correctAnswer":"A","backgroundKeyWords":"mickey mouse disney","image":null},
-  {"question":"Which cereal is tiger-striped?","options":["Froot Loops","Frosted Flakes","Honey Nut Cheerios"],"correctAnswer":"B","backgroundKeyWords":"frosted flakes cereal","image":null},
-  {"question":"Which app lets you send disappearing messages?","options":["Snapchat","Waze","Spotify"],"correctAnswer":"A","backgroundKeyWords":"snapchat vanish chat","image":null},
-  {"question":"Which is a bone in your arm?","options":["Femur","Humerus","Tibia"],"correctAnswer":"B","backgroundKeyWords":"humerus bone arm","image":null},
-  {"question":"Which planet do we live on?","options":["Mars","Earth","Venus"],"correctAnswer":"B","backgroundKeyWords":"earth planet globe","image":null},
-  {"question":"Which brand is known for coffeehouses?","options":["Starbucks","Subway","Chipotle"],"correctAnswer":"A","backgroundKeyWords":"starbucks cafe logo","image":null},
-  {"question":"Which letter starts the alphabet?","options":["A","B","C"],"correctAnswer":"A","backgroundKeyWords":"letter a alphabet","image":null},
-  {"question":"Which tool fixes nails?","options":["Hammer","Screwdriver","Wrench"],"correctAnswer":"A","backgroundKeyWords":"hammer tool nails","image":null},
-  {"question":"Which body part moves up and down when you speak?","options":["Hand","Mouth","Foot"],"correctAnswer":"B","backgroundKeyWords":"mouth speak talk","image":null},
-  {"question":"Which color is a traffic light for go?","options":["Green","Red","Yellow"],"correctAnswer":"A","backgroundKeyWords":"green traffic light go","image":null},
-  {
-    "question": "Which country has more lakes than the rest of the world combined?",
-    "options": ["Canada", "Russia", "Brazil"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "lake nature forest water",
-    "image": null
-  },
-  {
-    "question": "Which body part keeps growing even after you die?",
-    "options": ["Hair", "Nails", "Neither"],
-    "correctAnswer": "C",
-    "backgroundKeyWords": "mystery body death dark",
-    "image": null
-  },
-  {
-    "question": "What’s something bananas and humans share about their DNA?",
-    "options": ["About 10%", "About 30%", "About 60%"],
-    "correctAnswer": "C",
-    "backgroundKeyWords": "banana DNA science quirky",
-    "image": null
-  },
-  {
-    "question": "Which animal can sleep standing up?",
-    "options": ["Elephant", "Horse", "Giraffe"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "sleep animal barn farm",
-    "image": null
-  },
-  {
-    "question": "Which planet is the hottest in our solar system?",
-    "options": ["Mercury", "Venus", "Mars"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "planet space heat sun",
-    "image": null
-  },
-  {
-    "question": "Which animal laughs when it’s tickled?",
-    "options": ["Chimpanzee", "Parrot", "Seal"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "chimpanzee funny laugh",
-    "image": null
-  },
-  {
-    "question": "What color are flamingo chicks?",
-    "options": ["Pink", "Gray", "White"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "flamingo baby bird cute",
-    "image": null
-  },
-  {
-    "question": "Which human organ can regenerate itself?",
-    "options": ["Liver", "Lung", "Kidney"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "body organ health",
-    "image": null
-  },
-  {
-    "question": "What’s the only metal that’s liquid at room temperature?",
-    "options": ["Mercury", "Gold", "Tin"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "liquid metal science",
-    "image": null
-  },
-  {
-    "question": "Which bird is known for mimicking human speech?",
-    "options": ["Parrot", "Crow", "Swan"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "parrot talking colorful",
-    "image": null
-  },
-  {
-    "question": "Which fruit was once considered a berry but isn’t?",
-    "options": ["Banana", "Strawberry", "Blueberry"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "fruit botany fun",
-    "image": null
-  },
-  {
-    "question": "What’s the world’s largest land animal?",
-    "options": ["Hippopotamus", "Elephant", "Giraffe"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "elephant safari wildlife",
-    "image": null
-  },
-  {
-    "question": "Which planet is known as the Red Planet?",
-    "options": ["Mars", "Jupiter", "Saturn"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "mars space red planet",
-    "image": null
-  },
-  {
-    "question": "How many hearts does an octopus have?",
-    "options": ["One", "Two", "Three"],
-    "correctAnswer": "C",
-    "backgroundKeyWords": "octopus ocean creature",
-    "image": null
-  },
-  {
-    "question": "What’s the smallest country in the world?",
-    "options": ["Monaco", "Vatican City", "San Marino"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "country map tiny",
-    "image": null
-  },
-  {
-    "question": "Which animal’s fingerprints are nearly identical to humans’?",
-    "options": ["Chimpanzee", "Koala", "Orangutan"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "koala wildlife paw prints",
-    "image": null
-  },
-  {
-    "question": "What’s the fastest land animal?",
-    "options": ["Cheetah", "Lion", "Antelope"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "cheetah speed run",
-    "image": null
-  },
-  {
-    "question": "Which sea creature has three hearts?",
-    "options": ["Shark", "Octopus", "Dolphin"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "sea ocean hearts",
-    "image": null
-  },
-  {
-    "question": "Which fruit floats in water?",
-    "options": ["Apple", "Banana", "Grape"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "apple water sink float",
-    "image": null
-  },
-  {
-    "question": "What is the only letter not in any U.S. state name?",
-    "options": ["Q", "X", "Z"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "letter quiz fun",
-    "image": null
-  },
-  {
-    "question": "Which book is the best‑selling fiction ever?",
-    "options": ["Harry Potter", "The Lord of the Rings", "Don Quixote"],
-    "correctAnswer": "C",
-    "backgroundKeyWords": "book best seller classic",
-    "image": null
-  },
-  {
-    "question": "Which animal has the longest lifespan?",
-    "options": ["Tortoise", "Elephant", "Parrot"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "tortoise slow old",
-    "image": null
-  },
-  {
-    "question": "Which color is edible and called 'azure'?",
-    "options": ["Blue food coloring", "Butterfly pea flower", "Blue raspberry"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "flower drink blue edible",
-    "image": null
-  },
-  {
-    "question": "Which insect can lift 50x its body weight?",
-    "options": ["Ant", "Beetle", "Fly"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "ant strength tiny strong",
-    "image": null
-  },
-  {
-    "question": "What is the capital of Australia?",
-    "options": ["Sydney", "Melbourne", "Canberra"],
-    "correctAnswer": "C",
-    "backgroundKeyWords": "city capital map",
-    "image": null
-  },
-  {
-    "question": "Which organ do we use to taste?",
-    "options": ["Tongue", "Nose", "Ears"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "taste tongue food",
-    "image": null
-  },
-  {
-    "question": "Which planet has rings?",
-    "options": ["Mars", "Saturn", "Mercury"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "saturn space rings",
-    "image": null
-  },
-  {
-    "question": "Which food never spoils?",
-    "options": ["Honey", "Bread", "Milk"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "honey jar sweet",
-    "image": null
-  },
-  {
-    "question": "Which animal’s fur never grows white when it ages?",
-    "options": ["Lion", "Polar Bear", "Penguin"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "lion mane wild",
-    "image": null
-  },
-  {
-    "question": "Which bird flies the highest?",
-    "options": ["Eagle", "Albatross", "Goose"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "eagle sky high",
-    "image": null
-  },
-  {
-    "question": "Which shape has no corners or edges?",
-    "options": ["Circle", "Triangle", "Square"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "shape fun math playful",
-    "image": null
-  },
-  {
-    "question": "What’s the only word in English that ends with 'mt'?",
-    "options": ["Dreamt", "Attempt", "Prompt"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "word fun weird spelling",
-    "image": null
-  },
-  {
-    "question": "Which country invented ice cream?",
-    "options": ["China", "Italy", "France"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "ice cream history cold",
-    "image": null
-  },
-  {
-    "question": "Which animal is known as the 'Ship of the Desert'?",
-    "options": ["Camel", "Horse", "Donkey"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "camel desert travel",
-    "image": null
-  },
-  {
-    "question": "Which fruit has more vitamin C than oranges?",
-    "options": ["Kiwi", "Apple", "Banana"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "kiwi health green",
-    "image": null
-  },
-  {
-    "question": "Which creature can live without its head for a bit?",
-    "options": ["Cockroach", "Spider", "Earthworm"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "cockroach creepy resilient",
-    "image": null
-  },
-  {
-    "question": "What’s the world’s largest ocean?",
-    "options": ["Atlantic", "Pacific", "Indian"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "ocean waves vast",
-    "image": null
-  },
-  {
-    "question": "Which animal is the tallest in the world?",
-    "options": ["Elephant", "Giraffe", "Rhino"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "giraffe neck safari",
-    "image": null
-  },
-  {
-    "question": "Which drink was invented first?",
-    "options": ["Coffee", "Tea", "Soda"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "tea cup hot drink",
-    "image": null
-  },
-  {
-    "question": "Which fruit is also a color?",
-    "options": ["Orange", "Plum", "Pear"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "orange fruit color bright",
-    "image": null
-  },
-  {
-    "question": "Which mammal lays eggs?",
-    "options": ["Platypus", "Dolphin", "Kangaroo"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "platypus quirky animal",
-    "image": null
-  },
-  {
-    "question": "What’s something humans can’t lick?",
-    "options": ["Elbow", "Knee", "Shoulder"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "funny elbow silly",
-    "image": null
-  },
-  {
-    "question": "What is the strongest muscle in the body by weight?",
-    "options": ["Heart", "Jaw", "Gluteus Maximus"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "jaw strong muscle",
-    "image": null
-  },
-  {
-    "question": "Which animal is the biggest rodent?",
-    "options": ["Rat", "Beaver", "Capybara"],
-    "correctAnswer": "C",
-    "backgroundKeyWords": "capybara nature animal",
-    "image": null
-  },
-  {
-    "question": "What is the only continent without reptiles?",
-    "options": ["Antarctica", "Europe", "South America"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "antarctica cold ice",
-    "image": null
-  },
-  {
-    "question": "Which fruit is actually a berry?",
-    "options": ["Strawberry", "Banana", "Raspberry"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "banana berry science",
-    "image": null
-  },
-  {
-    "question": "Which animal's heart beats the slowest?",
-    "options": ["Blue Whale", "Elephant", "Human"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "whale ocean heart",
-    "image": null
-  },
-  {
-    "question": "Which color is not in a rainbow?",
-    "options": ["Indigo", "Pink", "Green"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "rainbow colors sky",
-    "image": null
-  },
-  {
-    "question": "Which food does dogs absolutely hate?",
-    "options": ["Chocolate", "Carrot", "Apple"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "dog food no no",
-    "image": null
-  },
-  {
-    "question": "What does bees make besides honey?",
-    "options": ["Silk", "Wax", "Cheese"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "bees hive yellow",
-    "image": null
-  },
-  {
-    "question": "Which animal is known for its spots and runs super fast?",
-    "options": ["Cheetah", "Leopard", "Jaguar"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "cheetah speed spotted",
-    "image": null
-  },
-  {
-    "question": "Which fruit floats because it's 25% air?",
-    "options": ["Watermelon", "Apple", "Pear"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "watermelon slice summer",
-    "image": null
-  },
-  {
-    "question": "Which planet has the most moons?",
-    "options": ["Earth", "Jupiter", "Mars"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "jupiter moons space",
-    "image": null
-  },
-  {
-    "question": "Which animal can regenerate lost limbs?",
-    "options": ["Starfish", "Octopus", "Frog"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "starfish ocean limb",
-    "image": null
-  },
-  {
-    "question": "Which metal did humans use first?",
-    "options": ["Iron", "Copper", "Gold"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "copper history metal",
-    "image": null
-  },
-  {
-    "question": "Which creature breathes underwater and on land?",
-    "options": ["Frog", "Shark", "Eagle"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "frog water land",
-    "image": null
-  },
-  {
-    "question": "What’s the most stolen food in the world?",
-    "options": ["Cheese", "Bread", "Chocolate"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "cheese theft funny",
-    "image": null
-  },
-  {
-    "question": "Which fruit is technically a berry but has a pit?",
-    "options": ["Cherry", "Banana", "Grape"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "cherry pit sweet",
-    "image": null
-  },
-  {
-    "question": "What is the tallest mountain on Earth?",
-    "options": ["K2", "Mount Everest", "Kilimanjaro"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "everest peak snow",
-    "image": null
-  },
-  {
-    "question": "Which animal can change its color to blend in?",
-    "options": ["Chameleon", "Frog", "Butterfly"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "chameleon color camo",
-    "image": null
-  },
-  {
-    "question": "Which big cat can’t roar?",
-    "options": ["Cheetah", "Lion", "Tiger"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "cheetah roar no roar",
-    "image": null
-  },
-  {
-    "question": "Which animal is known for building dams?",
-    "options": ["Beaver", "Elephant", "Otter"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "beaver dam water",
-    "image": null
-  },
-  {
-    "question": "Which body fluid is actually colorless?",
-    "options": ["Blood", "Saliva", "Urine"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "saliva funny facts",
-    "image": null
-  },
-  {
-    "question": "Which month has no letter 'R'?",
-    "options": ["May", "July", "June"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "month calendar simple",
-    "image": null
-  },
-  {
-    "question": "Which animal’s knees bend the opposite way?",
-    "options": ["Kangaroo", "Cat", "Dog"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "kangaroo jump legs",
-    "image": null
-  },
-  {
-    "question": "Which fruit ripens after harvesting?",
-    "options": ["Banana", "Apple", "Orange"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "banana ripen peel",
-    "image": null
-  },
-  {
-    "question": "What do caterpillars turn into?",
-    "options": ["Butterflies", "Beetles", "Flies"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "butterfly wings nature",
-    "image": null
-  },
-  {
-    "question": "Which animal is on the Porsche logo?",
-    "options": ["Horse", "Lion", "Eagle"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "horse logo car",
-    "image": null
-  },
-  {
-    "question": "Which fruit was named after its aroma?",
-    "options": ["Pineapple", "Strawberry", "Apricot"],
-    "correctAnswer": "C",
-    "backgroundKeyWords": "apricot smell sweet",
-    "image": null
-  },
-  {
-    "question": "Which animal is famous for its black and white stripes?",
-    "options": ["Zebra", "Tiger", "Skunk"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "zebra stripes safari",
-    "image": null
-  },
-  {
-    "question": "Which planet spins fastest?",
-    "options": ["Earth", "Jupiter", "Saturn"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "jupiter fast spin",
-    "image": null
-  },
-  {
-    "question": "Which tree is known for changing leaf color in fall?",
-    "options": ["Oak", "Maple", "Pine"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "maple leaf autumn",
-    "image": null
-  },
-  {
-    "question": "What turns milk into yogurt?",
-    "options": ["Heat", "Bacteria", "Sugar"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "yogurt dairy bacteria",
-    "image": null
-  },
-  {
-    "question": "What is the fastest bird in the world?",
-    "options": ["Peregrine Falcon", "Eagle", "Hawk"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "falcon dive speed",
-    "image": null
-  },
-  {
-    "question": "Which animal can go the longest without water?",
-    "options": ["Camel", "Shark", "Elephant"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "camel desert thirst",
-    "image": null
-  },
-  {
-    "question": "Which fruit is a cross between a raspberry and blackberry?",
-    "options": ["Loganberry", "Boysenberry", "Gooseberry"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "berry hybrid red",
-    "image": null
-  }
-]

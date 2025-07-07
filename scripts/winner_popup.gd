@@ -1,5 +1,8 @@
 extends Control
 
+# Signal emitted when the winner popup is hidden
+signal popup_hidden
+
 @onready var profile_pic1 = $Panel/VBoxContainer/HBoxContainer/FirstPlace/ProfilePic1
 @onready var username_label1 = $Panel/VBoxContainer/HBoxContainer/FirstPlace/UsernameLabel1
 @onready var points_label1 = $Panel/VBoxContainer/HBoxContainer/FirstPlace/PointsLabel1
@@ -165,4 +168,10 @@ func _setup_winner_audio():
 		print("❌ Fichier winnerIs.ogg non trouvé")
 	
 	print("🔊 Lecteur audio de victoire créé")
-	print("📊 Winner sound player volume: ", winner_sound_player.volume_db, " dB") 
+	print("📊 Winner sound player volume: ", winner_sound_player.volume_db, " dB")
+
+# Custom hide function that emits signal when popup is hidden
+func hide_popup():
+	hide()
+	print("🏆 WinnerPopup hidden - emitting popup_hidden signal")
+	popup_hidden.emit()

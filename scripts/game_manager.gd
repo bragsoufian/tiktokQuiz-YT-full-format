@@ -266,6 +266,11 @@ func _show_winner_popup(player_data: Dictionary):
 		print("❌ WinnerPopup non trouvé dans la scène Main!")
 		return
 	
+	# Connecter le signal popup_hidden pour supprimer tous les joueurs quand la popup est fermée
+	if not winner_popup.popup_hidden.is_connected(_on_winner_popup_hidden):
+		winner_popup.popup_hidden.connect(_on_winner_popup_hidden)
+		print("🔗 Signal popup_hidden connecté au WinnerPopup")
+	
 	# Cacher tous les joueurs pour éviter qu'ils apparaissent au-dessus de la popup
 	for player in players.values():
 		if is_instance_valid(player):
@@ -357,7 +362,7 @@ func _restart_game():
 	# Cacher la popup de victoire existante
 	var winner_popup = get_parent().get_node_or_null("WinnerPopup")
 	if winner_popup:
-		winner_popup.hide()
+		winner_popup.hide_popup()
 		print("🏆 WinnerPopup existant caché")
 	
 	print("✅ Jeu réinitialisé")
@@ -437,6 +442,20 @@ func _update_player(data: Dictionary):
 		print("🔍 État final du joueur - Visible: ", player.visible, " Z-index: ", player.z_index)
 	else:
 		print("❌ Niveau non trouvé: Level", level_number)
+
+func _on_winner_popup_hidden():
+	"""Appelé quand la popup de victoire est fermée - supprime tous les joueurs de l'UI"""
+	print("🏆 WinnerPopup fermé - suppression de tous les joueurs de l'UI")
+	
+	# Supprimer tous les joueurs existants
+	for player in players.values():
+		if is_instance_valid(player):
+			player.queue_free()
+			print("🗑️ Joueur supprimé: ", player.username)
+	
+	# Vider la liste des joueurs
+	players.clear()
+	print("✅ Tous les joueurs supprimés de l'UI")
 
 func _handle_player_remove(data: Dictionary):
 	if match_ended:
@@ -789,7 +808,7 @@ func hide_winner_popup():
 	"""Cacher le WinnerPopup"""
 	var winner_popup = get_winner_popup()
 	if winner_popup:
-		winner_popup.hide()
+		winner_popup.hide_popup()
 		print("🏆 WinnerPopup caché")
 	else:
 		print("❌ Impossible de cacher le WinnerPopup")
@@ -858,7 +877,7 @@ func animate_winner_popup_disappearance():
 		var tween = create_tween()
 		tween.tween_property(winner_popup, "modulate:a", 0.0, 0.5)
 		await tween.finished
-		winner_popup.hide()
+		winner_popup.hide_popup()
 		print("🏆 Animation de disparition du WinnerPopup")
 	else:
 		print("❌ Impossible d'animer la disparition du WinnerPopup")

@@ -18,7 +18,7 @@ const config = require('./config'); // Import configuration
 //user7165753005592
 //valorantesports
 
-const tiktokUsername = 'user7165753005592';
+const tiktokUsername = 'loochytv';
 const wsServer = new WebSocket.Server({ port: 8080 });
 
 // Unsplash API Configuration
@@ -51,10 +51,10 @@ const QUESTION_ACTIVATION_DELAY = 3000; // 7 secondes de délai avant d'accepter
 // Définition des seuils pour chaque niveau
 const LEVEL_THRESHOLDS = [
     1,    // Niveau 1 → 2
-    4,
-    10,
-    15,
-    21
+    2,
+//    10,
+//    15,
+//    21
 ];
 
 // Configuration
@@ -1127,8 +1127,21 @@ async function handleMatchEnd(winnerUsername, points) {
     if (restartTimeout) {
         clearTimeout(restartTimeout);
     }
-    restartTimeout = setTimeout(() => {
+    restartTimeout = setTimeout(async () => {
         log.system('🔄 Restarting game after winner announcement...');
+        
+        // Ensure all TTS is completely stopped before starting new game
+        if (azureTTS) {
+            log.system('🔇 Stopping all TTS audio before new game...');
+            try {
+                // Stop any currently playing audio
+                azureTTS.stopAllAudio();
+                log.success('✅ All TTS audio stopped');
+            } catch (err) {
+                log.error('❌ Error stopping TTS audio:', err);
+            }
+        }
+        
         resetGameState();
         // Redémarrer le test player si actif
         if (USE_TEST_PLAYER) {

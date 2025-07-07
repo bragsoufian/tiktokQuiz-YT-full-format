@@ -9,14 +9,14 @@ const GAME_MESSAGES = {
         followExtended: ""
     },
     encouragement: {
-        general: "You're all winners for participating!",
-        nextQuestion: "Next question coming up — get ready to type!",
-        sharing: "Know someone who'd love this? Go ahead and send them the stream."
+        general: "",
+        nextQuestion: "",
+        sharing: ""
     },
     game: {
-        ready: "Ready for the next question!",
-        matchStart: "Let's start a new quiz!",
-        matchEnd: "Quiz completed!"
+        ready: "",
+        matchStart: "",
+        matchEnd: ""
     }
 };
 
