@@ -2,17 +2,17 @@
   "announcements": [
     {
       "id": 1,
-      "text": "The correct answer is {letter}: {answer}",
+      "text": "The correct answer is ... {letter}: {answer}",
       "category": "direct"
     },
     {
       "id": 2,
-      "text": "It's ... {letter}: {answer}",
+      "text": "And the correct answer is ... {letter}: {answer}",
       "category": "casual"
     },
     {
       "id": 3,
-      "text": "The right answer is ... {letter}: {answer}",
+      "text": "And the right answer is ... {letter}: {answer}",
       "category": "formal"
     },
     {
@@ -22,7 +22,7 @@
     },
     {
       "id": 5,
-      "text": "The correct answer was ... {letter}: {answer}",
+      "text": "The correct answer is... {letter}: {answer}",
       "category": "past_tense"
     },
     {
@@ -37,7 +37,7 @@
     },
     {
       "id": 8,
-      "text": "Here's the answer: ... {letter}: {answer}",
+      "text": "Here's the answer : ... {letter}: {answer}",
       "category": "introduction"
     },
     {

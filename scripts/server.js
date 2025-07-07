@@ -20,7 +20,7 @@ const config = require('./config'); // Import configuration
 //user7165753005592
 //valorantesports
 
-const tiktokUsername = 'user7165753005592';
+const tiktokUsername = 'cash4killz';
 const wsServer = new WebSocket.Server({ port: 8080 });
 
 // Unsplash API Configuration
@@ -60,10 +60,10 @@ const QUESTION_ACTIVATION_DELAY = 3000; // 7 secondes de délai avant d'accepter
 // Définition des seuils pour chaque niveau
 const LEVEL_THRESHOLDS = [
     1,    // Niveau 1 → 2
-    2,
-//    10,
-//    15,
-//    21
+    4,
+    10,
+    15,
+    21
 ];
 
 // Configuration
@@ -372,13 +372,10 @@ async function askNewQuestion() {
             return;
         }
         
-        log.question(`⏰ Timer expiré pour la question: ${currentQuestion.question}. Début de la période de grâce de ${GRACE_PERIOD / 1000}s.`);
+        log.question(`⏰ Timer expiré pour la question: ${currentQuestion.question}`);
         
-        // Attendre la fin de la période de grâce avant de terminer la question
-        setTimeout(() => {
-            log.question("🏁 Période de grâce terminée. Finalisation de la question.");
-            endQuestion();
-        }, GRACE_PERIOD);
+        // End the question immediately without grace period
+        endQuestion();
 
     }, QUESTION_TIMER);
     
@@ -413,7 +410,31 @@ async function endQuestion() {
     log.question(`Envoi du message de fin de timer à Godot: ${JSON.stringify(waitMessage)}`);
     broadcastToGodot(waitMessage);
     
-    // Announce the correct answer using TTS
+    // Play encouragement phrases BEFORE announcing the correct answer
+    if (!matchEnded && encouragementManager && azureTTS) {
+        try {
+            // Préparer les données des gifts pour la phrase dynamique
+            const giftData = {
+                users: Array.from(currentQuestionGifts.users),
+                gifts: Array.from(currentQuestionGifts.gifts),
+                totalGifts: currentQuestionGifts.totalGifts
+            };
+            
+            // Get a smart encouragement phrase based on game conditions
+            const phrase = encouragementManager.getSmartPhrase(players, giftData);
+            if (phrase) {
+                log.system(`🎤 Playing smart encouragement phrase: "${phrase.text}"`);
+                
+                // Play the encouragement phrase
+                await azureTTS.speakText(phrase.text);
+                log.success('✅ Smart encouragement phrase spoken');
+            }
+        } catch (err) {
+            log.error('❌ Error playing encouragement phrase: ' + err);
+        }
+    }
+    
+    // Announce the correct answer using TTS AFTER encouragement phrase
     if (answerAnnouncementManager && azureTTS) {
         try {
             const announcementText = answerAnnouncementManager.generateAnnouncementText(
@@ -425,6 +446,15 @@ async function endQuestion() {
             log.system(`🎤 Announcing correct answer: "${announcementText}"`);
             await azureTTS.speakText(announcementText);
             log.success('✅ Answer announcement spoken');
+            
+            // Send message to Godot to show the correct answer after TTS announcement
+            broadcastToGodot({
+                type: "show_correct_answer",
+                correctAnswer: currentQuestion.correctAnswer,
+                correctOption: correctOptionText
+            });
+            log.question(`Envoi du message show_correct_answer à Godot: ${currentQuestion.correctAnswer} - ${correctOptionText}`);
+            
         } catch (err) {
             log.error('❌ Error announcing answer: ' + err);
         }
@@ -434,32 +464,8 @@ async function endQuestion() {
     
     // Programmer la prochaine question après 4 secondes de pause
     if (!matchEnded) {
-        // Play encouragement phrases before showing Ready screen
-        setTimeout(async () => {
-            if (!matchEnded && encouragementManager && azureTTS) {
-                try {
-                    // Préparer les données des gifts pour la phrase dynamique
-                    const giftData = {
-                        users: Array.from(currentQuestionGifts.users),
-                        gifts: Array.from(currentQuestionGifts.gifts),
-                        totalGifts: currentQuestionGifts.totalGifts
-                    };
-                    
-                    // Get a smart encouragement phrase based on game conditions
-                    const phrase = encouragementManager.getSmartPhrase(players, giftData);
-                    if (phrase) {
-                        log.system(`🎤 Playing smart encouragement phrase: "${phrase.text}"`);
-                        
-                        // Play the encouragement phrase
-                        await azureTTS.speakText(phrase.text);
-                        log.success('✅ Smart encouragement phrase spoken');
-                    }
-                } catch (err) {
-                    log.error('❌ Error playing encouragement phrase: ' + err);
-                }
-            }
-            
-            // Show Ready screen after encouragement phrase (or immediately if no phrase)
+        // Show Ready screen after encouragement phrase and answer announcement
+        setTimeout(() => {
             if (!matchEnded) {
                 log.question("Affichage de l'écran 'Ready'");
                 broadcastToGodot({

@@ -163,13 +163,6 @@
     "image": null
   },
   {
-    "question": "Which body part can heal itself fastest?",
-    "options": ["Tongue", "Skin", "Liver"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "human recovery healing closeup",
-    "image": null
-  },
-  {
     "question": "Which fruit contains the most water?",
     "options": ["Cucumber", "Watermelon", "Orange"],
     "correctAnswer": "A",
@@ -177,24 +170,10 @@
     "image": null
   },
   {
-    "question": "Which animal can live forever (sort of)?",
-    "options": ["Jellyfish", "Starfish", "Sea urchin"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "deep sea odd life",
-    "image": null
-  },
-  {
     "question": "Which bird can mimic over 100 sounds?",
     "options": ["Parrot", "Lyrebird", "Crow"],
     "correctAnswer": "B",
     "backgroundKeyWords": "forest bird sound mimicry",
-    "image": null
-  },
-  {
-    "question": "Which planet spins sideways?",
-    "options": ["Neptune", "Uranus", "Mars"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "solar system rotation mystery",
     "image": null
   },
   {
@@ -219,13 +198,6 @@
 
 
   {
-    "question": "Which part of your body keeps growing after death?",
-    "options": ["Nails", "Eyes", "Ears"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "body mystery biology",
-    "image": null
-  },
-  {
     "question": "Which U.S. state is closest to Africa?",
     "options": ["Florida", "Maine", "Texas"],
     "correctAnswer": "B",
@@ -239,125 +211,7 @@
     "backgroundKeyWords": "land animal large body",
     "image": null
   },
-  {
-    "question": "Which country has a city named 'Batman'?",
-    "options": ["Turkey", "Brazil", "Poland"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "funny city name sign",
-    "image": null
-  },
-  {
-    "question": "Which animal can hold its breath the longest?",
-    "options": ["Dolphin", "Whale", "Sea turtle"],
-    "correctAnswer": "C",
-    "backgroundKeyWords": "underwater creature deep dive",
-    "image": null
-  },
-  {
-    "question": "Which everyday object was originally meant for cleaning wallpaper?",
-    "options": ["Toothpaste", "Shampoo", "Play-Doh"],
-    "correctAnswer": "C",
-    "backgroundKeyWords": "household product retro",
-    "image": null
-  },
-  {
-    "question": "Which animal can breathe through its butt?",
-    "options": ["Frog", "Turtle", "Fish"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "bizarre nature survival",
-    "image": null
-  },
-  {
-    "question": "Which country eats the most chocolate per person?",
-    "options": ["Switzerland", "USA", "France"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "chocolate dessert sweet culture",
-    "image": null
-  },
-  {
-    "question": "Which bird can sleep while flying?",
-    "options": ["Seagull", "Albatross", "Eagle"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "long flight sky bird",
-    "image": null
-  },
-  {
-    "question": "Which animal is born with teeth?",
-    "options": ["Dolphin", "Shark", "Cat"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "baby animal marine birth",
-    "image": null
-  },
-  {
-    "question": "Which country has a calendar that's 7 years behind?",
-    "options": ["Nepal", "Ethiopia", "Thailand"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "calendar tradition global",
-    "image": null
-  },
-  {
-    "question": "Which animal has blue blood?",
-    "options": ["Octopus", "Whale", "Jellyfish"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "marine biology strange",
-    "image": null
-  },
-  {
-    "question": "Which direction do cows usually face while eating?",
-    "options": ["North/South", "East/West", "Random"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "farm field animal feeding",
-    "image": null
-  },
-  {
-    "question": "Which body part can heal itself fastest?",
-    "options": ["Tongue", "Skin", "Liver"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "healing human body quick",
-    "image": null
-  },
-  {
-    "question": "Which fruit contains the most water?",
-    "options": ["Cucumber", "Watermelon", "Orange"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "hydrating fruit splash",
-    "image": null
-  },
-  {
-    "question": "Which animal can live forever (sort of)?",
-    "options": ["Jellyfish", "Starfish", "Sea urchin"],
-    "correctAnswer": "A",
-    "backgroundKeyWords": "ocean life deep biology",
-    "image": null
-  },
-  {
-    "question": "Which bird can mimic over 100 sounds?",
-    "options": ["Parrot", "Lyrebird", "Crow"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "forest bird mimicry sound",
-    "image": null
-  },
-  {
-    "question": "Which planet spins sideways?",
-    "options": ["Neptune", "Uranus", "Mars"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "planet tilt space orbit",
-    "image": null
-  },
-  {
-    "question": "Which bone is the hardest in the human body?",
-    "options": ["Skull", "Jawbone", "Thigh bone"],
-    "correctAnswer": "C",
-    "backgroundKeyWords": "bone anatomy human strength",
-    "image": null
-  },
-  {
-    "question": "Which mammal lays eggs?",
-    "options": ["Bat", "Platypus", "Dolphin"],
-    "correctAnswer": "B",
-    "backgroundKeyWords": "unusual mammal egg laying",
-    "image": null
-  },
+  
 
 
 

@@ -163,6 +163,8 @@ func _handle_websocket_message(message: Dictionary):
 			_handle_timer_ended()
 		"question_ended":
 			_handle_question_ended(message)
+		"show_correct_answer":
+			_handle_show_correct_answer(message)
 		"correct_answer":
 			_handle_correct_answer(message)
 		"wrong_answer":
@@ -500,12 +502,22 @@ func _handle_new_question(message: Dictionary):
 
 func _handle_question_ended(message: Dictionary):
 	if question_ui:
-		# Set the correct answer first
+		# Set the correct answer but DON'T show it immediately
+		# The TTS backend will handle the announcement timing
 		question_ui.set_correct_answer(message.correctAnswer)
-		# Then show it
-		question_ui.show_correct_answer()
+		# Remove the immediate show_correct_answer() call
+		# question_ui.show_correct_answer()  # COMMENTED OUT - TTS backend handles timing
+		print("✅ Réponse correcte définie mais non affichée - TTS backend s'en charge")
 	else:
 		print("❌ QuestionUI non trouvé!")
+
+func _handle_show_correct_answer(message: Dictionary):
+	if question_ui:
+		# Show the correct answer animation after TTS announcement
+		question_ui.show_correct_answer()
+		print("✅ Animation de la réponse correcte déclenchée par le serveur")
+	else:
+		print("❌ QuestionUI non trouvé pour afficher la réponse correcte!")
 
 func _handle_match_started():
 	print("🎮 Début de match")
