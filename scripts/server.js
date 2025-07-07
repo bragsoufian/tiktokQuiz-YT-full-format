@@ -386,7 +386,8 @@ async function askNewQuestion() {
 async function endQuestion() {
     if (!questionActive) return;
     
-    questionActive = false;
+    // Ne pas marquer la question comme inactive immédiatement
+    // questionActive = false; // COMMENTÉ - on garde les validations actives pendant TTS
     playersAnsweredCurrentQuestion.clear(); // Nettoyer la liste des joueurs qui ont répondu
     
     const correctOptionText = currentQuestion.options[parseInt(currentQuestion.correctAnswer.charCodeAt(0) - 65)];
@@ -398,25 +399,14 @@ async function endQuestion() {
         correctAnswer: currentQuestion.correctAnswer,
         correctOption: correctOptionText
     };
-    
-    log.question(`Envoi de la fin de question à Godot: ${JSON.stringify(endQuestionMessage)}`);
     broadcastToGodot(endQuestionMessage);
+    log.question(`Envoi du message de fin de question à Godot: ${JSON.stringify(endQuestionMessage)}`);
     
-    // Envoyer le message pour mettre tous les flags en "wait"
-    const waitMessage = {
-        type: "timer_ended"
-    };
-    
-    log.question(`Envoi du message de fin de timer à Godot: ${JSON.stringify(waitMessage)}`);
-    broadcastToGodot(waitMessage);
-    
-    // Play encouragement phrases BEFORE announcing the correct answer
-    if (!matchEnded && encouragementManager && azureTTS) {
+    // Jouer une phrase d'encouragement si configurée
+    if (encouragementManager && azureTTS) {
         try {
-            // Préparer les données des gifts pour la phrase dynamique
+            // Calculer les statistiques des cadeaux pour cette question
             const giftData = {
-                users: Array.from(currentQuestionGifts.users),
-                gifts: Array.from(currentQuestionGifts.gifts),
                 totalGifts: currentQuestionGifts.totalGifts
             };
             
@@ -460,7 +450,10 @@ async function endQuestion() {
         }
     }
     
+    // MAINTENANT on arrête les validations après l'annonce TTS
+    questionActive = false;
     currentQuestion = null;
+    log.system(`⏹️ Validations des réponses arrêtées après l'annonce TTS`);
     
     // Programmer la prochaine question après 4 secondes de pause
     if (!matchEnded) {
