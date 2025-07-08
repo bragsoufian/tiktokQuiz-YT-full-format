@@ -336,7 +336,7 @@ func _show_winner_popup(player_data: Dictionary):
 	print("🏆 Match terminé! Vainqueur: ", winner)
 	
 	# Redémarrer le jeu après 10 secondes
-	await get_tree().create_timer(10.0).timeout
+	await get_tree().create_timer(15.0).timeout
 	_restart_game()
 
 func _restart_game():

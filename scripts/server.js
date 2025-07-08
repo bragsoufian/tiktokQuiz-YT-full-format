@@ -20,7 +20,7 @@ const config = require('./config'); // Import configuration
 //user7165753005592
 //valorantesports
 
-const tiktokUsername = 'cash4killz';
+const tiktokUsername = 'windpress';
 const wsServer = new WebSocket.Server({ port: 8080 });
 
 // Unsplash API Configuration
@@ -60,10 +60,10 @@ const QUESTION_ACTIVATION_DELAY = 3000; // 7 secondes de délai avant d'accepter
 // Définition des seuils pour chaque niveau
 const LEVEL_THRESHOLDS = [
     1,    // Niveau 1 → 2
-    4,
-    10,
-    15,
-    21
+    2,
+//    10,
+//    15,
+//    21
 ];
 
 // Configuration
@@ -107,7 +107,6 @@ let playersSentToGodot = new Set();
 // Variables pour le test player
 let testPlayerInterval = null;
 let commentCount = 0;
-let restartTimeout = null;
 let currentQuestionIndex = 0;
 
 // Azure TTS instance
@@ -1128,38 +1127,12 @@ async function handleMatchEnd(winnerUsername, points) {
         stopTestPlayer();
     }
     
-    // Wait for winner announcement to finish, then restart after a delay
-    log.system('⏳ Waiting for winner announcement to finish before restarting...');
+    // Wait for winner announcement to finish, then let Godot control the restart timing
+    log.system('⏳ Winner announcement finished - waiting for Godot to reconnect and restart...');
     
-    // Réinitialiser le match après un délai (pour laisser le temps à l'audio de finir)
-    if (restartTimeout) {
-        clearTimeout(restartTimeout);
-    }
-    restartTimeout = setTimeout(async () => {
-        log.system('🔄 Restarting game after winner announcement...');
-        
-        // Ensure all TTS is completely stopped before starting new game
-        if (azureTTS) {
-            log.system('🔇 Stopping all TTS audio before new game...');
-            try {
-                // Stop any currently playing audio
-                azureTTS.stopAllAudio();
-                log.success('✅ All TTS audio stopped');
-            } catch (err) {
-                log.error('❌ Error stopping TTS audio:', err);
-            }
-        }
-        
-        resetGameState();
-        // Redémarrer le test player si actif
-        if (USE_TEST_PLAYER) {
-            startTestPlayer();
-        }
-        // Envoyer un message de début de match pour fermer la popup
-        broadcastToGodot({
-            type: "match_started"
-        });
-    }, 20000); // 20 secondes après la fin de l'annonce (augmenté pour s'assurer que l'audio est terminé)
+    // Don't automatically restart - let Godot control the timing
+    // The server will reset when Godot reconnects via WebSocket
+    log.system('🔄 Server ready for Godot reconnection - no automatic restart timer');
 }
 
 // Fonction pour démarrer le test player

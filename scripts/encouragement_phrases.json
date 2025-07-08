@@ -58,12 +58,12 @@
     {
       "id": 6,
       "text": "You tapping the screen actually helps more than you think ",
-      "category": "rules"
+      "category": "sharing"
     },
     {
       "id": 6,
       "text": "Don't just watch—bless that screen with a little tap",
-      "category": "rules"
+      "category": "sharing"
     },
     {
       "id": 6,
@@ -98,16 +98,6 @@
     {
       "id": 11,
       "text": "Next question coming up — get ready to type!",
-      "category": "nextQuestion"
-    },
-    {
-      "id": 12,
-      "text": "Alright, next one’s on the way. Focus up!",
-      "category": "nextQuestion"
-    },
-    {
-      "id": 13,
-      "text": "Here we go — next question comming now.",
       "category": "nextQuestion"
     },
     {
