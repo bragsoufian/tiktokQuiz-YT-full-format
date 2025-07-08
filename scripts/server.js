@@ -20,7 +20,7 @@ const config = require('./config'); // Import configuration
 //user7165753005592
 //valorantesports
 
-const tiktokUsername = 'windpress';
+const tiktokUsername = 'user7165753005592';
 const wsServer = new WebSocket.Server({ port: 8080 });
 
 // Unsplash API Configuration
@@ -60,10 +60,10 @@ const QUESTION_ACTIVATION_DELAY = 3000; // 7 secondes de délai avant d'accepter
 // Définition des seuils pour chaque niveau
 const LEVEL_THRESHOLDS = [
     1,    // Niveau 1 → 2
-    2,
-//    10,
-//    15,
-//    21
+    4,
+    10,
+    15,
+    21
 ];
 
 // Configuration
