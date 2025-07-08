@@ -172,8 +172,8 @@ func show_question(question_data: Dictionary):
 	
 	# Configurer la barre de progression mais ne pas la démarrer
 	timer_bar.visible = true
-	timer_bar.value = 0  # Commencer à 0
-	timer_bar.max_value = 5  # Valeur par défaut, sera mise à jour dans start_timer
+	timer_bar.max_value = 7  # Durée réelle du timer (7 secondes)
+	timer_bar.value = 7  # Commencer pleine dès l'affichage de la question
 	
 	# S'assurer que le label du timer est visible mais vide
 	timer_label.visible = true
@@ -221,7 +221,7 @@ func start_timer(timer_duration: float):
 	
 	# Configurer et démarrer le timer
 	timer_bar.max_value = timer_duration
-	timer_bar.value = timer_duration
+	timer_bar.value = timer_duration  # Démarre pleine
 	timer_bar.visible = true
 	
 	question_timer.wait_time = timer_duration
@@ -300,16 +300,18 @@ func _on_question_timer_timeout():
 
 func _process(delta):
 	if is_question_active and question_timer and timer_bar and timer_label:
-		# Mettre à jour la barre de progression
-		var remaining_time = question_timer.time_left
-		timer_bar.value = remaining_time
-		
-		# Mettre à jour le label du timer
-		timer_label.text = str(int(remaining_time)) + "s"
-		
-		# Debug: afficher le temps restant toutes les secondes
-		if int(remaining_time) != int(question_timer.time_left + delta):
-			print("⏰ Temps restant: ", int(remaining_time), "s")
+		# Ne mettre à jour la barre que si le timer est actif (pas en attente)
+		if not question_timer.is_stopped():
+			# Mettre à jour la barre de progression (commence pleine et diminue)
+			var remaining_time = question_timer.time_left
+			timer_bar.value = remaining_time  # Diminue au fil du temps
+			
+			# Mettre à jour le label du timer
+			timer_label.text = str(int(remaining_time)) + "s"
+			
+			# Debug: afficher le temps restant toutes les secondes
+			if int(remaining_time) != int(question_timer.time_left + delta):
+				print("⏰ Temps restant: ", int(remaining_time), "s")
 
 func set_correct_answer(correct_answer: String):
 	current_correct_answer = correct_answer
