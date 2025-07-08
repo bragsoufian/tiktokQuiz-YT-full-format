@@ -156,6 +156,26 @@ try {
     ];
 }
 
+// Shuffle functionality for random questions without repetition
+let SHUFFLED_QUESTIONS = [];
+
+// Fisher-Yates shuffle algorithm for efficient random shuffling
+function shuffleArray(array) {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
+
+// Initialize shuffled questions for a new game
+function initializeShuffledQuestions() {
+    SHUFFLED_QUESTIONS = shuffleArray(QUESTIONS);
+    currentQuestionIndex = 0;
+    log.success(`🎲 Questions mélangées: ${SHUFFLED_QUESTIONS.length} questions prêtes pour ce match`);
+}
+
 // Charger les phrases d'introduction depuis le fichier JSON
 let QUESTION_INTROS = [];
 try {
@@ -186,6 +206,9 @@ for (let i = 1; i <= maxLevel; i++) {
 }
 log.system(`🎯 Pour gagner: Atteindre le niveau ${maxLevel}`);
 
+// 🎲 Initialize shuffled questions for the first game
+initializeShuffledQuestions();
+
 // Fonction pour réinitialiser l'état du jeu
 function resetGameState() {
     log.system('Réinitialisation de l\'état du jeu');
@@ -199,6 +222,9 @@ function resetGameState() {
     questionTransitionInProgress = false; // Réinitialiser la protection de transition
     // NE PAS remettre currentQuestionIndex à 0 pour continuer avec les questions suivantes
     // currentQuestionIndex = 0; // COMMENTÉ - pour continuer les questions
+    
+    // 🎲 SHUFFLE QUESTIONS FOR NEW GAME
+    initializeShuffledQuestions();
     
     // Reset encouragement session for new match
     if (encouragementManager) {
@@ -274,8 +300,14 @@ async function askNewQuestion() {
         return;
     }
     
-    // Sélectionner la question suivante
-    currentQuestion = QUESTIONS[currentQuestionIndex % QUESTIONS.length];
+    // Check if we need to reshuffle (all questions used)
+    if (currentQuestionIndex >= SHUFFLED_QUESTIONS.length) {
+        log.question('🔄 Toutes les questions utilisées, remélange...');
+        initializeShuffledQuestions();
+    }
+    
+    // Sélectionner la question suivante depuis le tableau mélangé
+    currentQuestion = SHUFFLED_QUESTIONS[currentQuestionIndex];
     currentQuestionIndex++;
     
     questionWaitingForActivation = true; // Commencer la période d'attente
