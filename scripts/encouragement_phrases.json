@@ -1,113 +1,38 @@
 {
-  "phrases":  [
+  "phrases": [
     {
       "id": 1,
-      "text": "Hey if you just joined, welcome! To play, just type : A, B, or C in the chat.",
-      "category": "rules"
+      "text": "Hey. Nouveau dans la chaîne ? Abonne-toi. D'ici peu tu vas penser comme un vrai devops.",
+      "category": "encouragement"
     },
     {
       "id": 2,
-      "text": "New here? It’s super simple — just type : A, B, or C in the chat to answer.",
-      "category": "rules"
+      "text": "T'as eu bon ? Lâche un like. T'as eu faux ? Encore plus de raison de t'abonner !",
+      "category": "engagement"
     },
     {
       "id": 3,
-      "text": "To win the game, all you need is 21 correct answers. That’s it!",
-      "category": "rules"
+      "text": "Chaque like rend un déploiement plus rapide. Teste, on sait jamais.",
+      "category": "humour"
     },
     {
       "id": 4,
-      "text": "First one to hit 21 points takes the win — let’s go!",
-      "category": "rules"
+      "text": "1 quiz par jour = 1 cerveau qui scale. Clique sur s'abonner.",
+      "category": "encouragement"
     },
     {
       "id": 5,
-      "text": " just type : A, B, or C in the chat. That’s how you play.",
-      "category": "rules"
+      "text": "T'as déjà dit 'ça je le savais' à haute voix ? T'es prêt pour t'abonner.",
+      "category": "engagement"
     },
     {
       "id": 6,
-      "text": "Your screen’s waiting… give it a little love",
-      "category": "rules"
-    },
-    {
-      "id": 6,
-      "text": "Let’s see if we can hit 1K likes together Tap tap Guys!",
-      "category": "rules"
-    },
-    {
-      "id": 6,
-      "text": "Everyone who taps is officially part of the squad now",
-      "category": "rules"
-    },
-    {
-      "id": 6,
-      "text": "It means a lot if you tap the screen. Thanks for the support!",
-      "category": "rules"
-    },
-    {
-      "id": 6,
-      "text": "A simple tap = massive support for us",
-      "category": "rules"
-    },
-    {
-      "id": 6,
-      "text": "Every like helps us keep creating crazy stuff like this",
-      "category": "rules"
-    },
-    {
-      "id": 6,
-      "text": "You tapping the screen actually helps more than you think ",
-      "category": "sharing"
-    },
-    {
-      "id": 6,
-      "text": "Don't just watch—bless that screen with a little tap",
-      "category": "sharing"
-    },
-    {
-      "id": 6,
-      "text": "If you liked this, just a tap can support the whole project",
-      "category": "rules"
-    },
-    {
-      "id": 6,
-      "text": "We’re growing this one tap at a time — thanks for being part of it ",
-      "category": "rules"
+      "text": "Commente ta réponse avant de regarder la bonne. Spoil pas, joue le jeu.",
+      "category": "call-to-action"
     },
     {
       "id": 7,
-      "text": "Jump in anytime — just type : A, B, or C in the chat to play. Let’s see what you got.",
-      "category": "rules"
-    },
-   {
-      "id": 8,
-      "text": "If you're enjoying the quiz, hit that share button — bring a friend in!",
-      "category": "sharing"
-    },
-    {
-      "id": 9,
-      "text": "Know someone who’d love this? Go ahead and send them the stream.",
-      "category": "sharing"
-    },
-    {
-      "id": 10,
-      "text": "More players, more fun — feel free to share the live!",
-      "category": "sharing"
-    },
-    {
-      "id": 14,
-      "text": "Don’t overthink it — just trust your gut and answer.",
-      "category": "encouragement"
-    },
-    {
-      "id": 15,
-      "text": "You got this — it’s easier than you think!",
-      "category": "encouragement"
-    },
-    {
-      "id": 16,
-      "text": "Even if you’re not sure — take a shot! One answer could change it all.",
+      "text": "Si t'apprends un truc à chaque vidéo, c'est que t'es au bon endroit. Abonne-toi.",
       "category": "encouragement"
     }
   ],
@@ -116,4 +41,4 @@
     "randomSelection": true,
     "maxPhrasesPerSession": 2
   }
-} 
+}

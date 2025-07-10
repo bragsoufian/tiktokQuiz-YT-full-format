@@ -1,9 +1,34 @@
 const sdk = require("microsoft-cognitiveservices-speech-sdk");
-const player = require('play-sound')();
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const mm = require('music-metadata');
+
+// Configure play-sound for Windows
+let player;
+let speaker;
+try {
+    if (process.platform === 'win32') {
+        // On Windows, try to use Windows Media Player or other available players
+        player = require('play-sound')({
+            players: ['wmplayer', 'powershell', 'ffplay', 'mpg123', 'afplay']
+        });
+    } else {
+        player = require('play-sound')();
+    }
+    console.log('✅ Audio player configured for platform:', process.platform);
+    
+    // Try to load speaker package for direct audio playback
+    try {
+        speaker = require('speaker');
+        console.log('✅ Speaker package loaded for direct audio playback');
+    } catch (error) {
+        console.log('⚠️ Speaker package not available, using fallback methods');
+    }
+} catch (error) {
+    console.error('❌ Failed to configure audio player:', error);
+    player = null;
+}
 
 class AzureTTS {
     constructor() {
@@ -22,7 +47,7 @@ class AzureTTS {
     initialize() {
         try {
             this.speechConfig = sdk.SpeechConfig.fromSubscription(this.subscriptionKey, this.region);
-            this.speechConfig.speechSynthesisVoiceName = "en-US-GuyNeural"; // English male voice
+            this.speechConfig.speechSynthesisVoiceName = "fr-FR-Remy:DragonHDLatestNeural"; // French Male - Adult voice (Dragon HD)
             this.speechConfig.speechSynthesisOutputFormat = sdk.SpeechSynthesisOutputFormat.Riff24Khz16BitMonoPcm;
             
             // Create both directories if they don't exist
@@ -168,26 +193,90 @@ class AzureTTS {
                 durationSec = 2;
             }
 
-            // Play the audio
-            const child = player.play(audioPath, (err) => {
-                if (err) {
-                    console.error('❌ Error playing audio:', err);
-                    reject(err);
-                } else {
-                    console.log('✅ Audio playback started');
-                    // Do not resolve here!
-                }
-            });
+            // Try multiple methods to play audio
+            const playSuccess = await this.tryPlayAudio(audioPath);
             
-            // Store the current audio process for potential stopping
-            this.currentAudioProcess = child;
-
-            // Wait for the duration of the audio, then resolve
-            setTimeout(() => {
-                console.log(`⏳ Waited ${durationSec}s for audio playback to finish.`);
-                resolve();
-            }, Math.max(500, durationSec * 1000));
+            if (playSuccess) {
+                console.log('✅ Audio playback started successfully');
+                // Wait for the duration of the audio, then resolve
+                setTimeout(() => {
+                    console.log(`⏳ Waited ${durationSec}s for audio playback to finish.`);
+                    resolve();
+                }, Math.max(500, durationSec * 1000));
+            } else {
+                reject(new Error('Failed to play audio with all available methods'));
+            }
         });
+    }
+
+    async tryPlayAudio(audioPath) {
+        // Method 1: Try PowerShell on Windows (most reliable)
+        if (process.platform === 'win32') {
+            try {
+                const { exec } = require('child_process');
+                const absolutePath = path.resolve(audioPath).replace(/\\/g, '\\\\');
+                
+                return new Promise((resolve) => {
+                    const command = `powershell -c "(New-Object System.Media.SoundPlayer '${absolutePath}').PlaySync()"`;
+                    
+                    exec(command, (error, stdout, stderr) => {
+                        if (error) {
+                            console.log('⚠️ PowerShell failed, trying play-sound...');
+                            resolve(false);
+                        } else {
+                            console.log('✅ Audio played with PowerShell');
+                            resolve(true);
+                        }
+                    });
+                });
+            } catch (error) {
+                console.log('⚠️ PowerShell error, trying play-sound...');
+            }
+        }
+
+        // Method 2: Try play-sound package
+        if (player) {
+            try {
+                return new Promise((resolve) => {
+                    player.play(audioPath, (err) => {
+                        if (err) {
+                            console.log('⚠️ play-sound failed, trying Windows Media Player...');
+                            resolve(false);
+                        } else {
+                            console.log('✅ Audio played with play-sound');
+                            resolve(true);
+                        }
+                    });
+                });
+            } catch (error) {
+                console.log('⚠️ play-sound error, trying Windows Media Player...');
+            }
+        }
+
+        // Method 3: Try Windows Media Player directly
+        if (process.platform === 'win32') {
+            try {
+                const { exec } = require('child_process');
+                const absolutePath = path.resolve(audioPath);
+                
+                return new Promise((resolve) => {
+                    exec(`start wmplayer "${absolutePath}"`, (error) => {
+                        if (error) {
+                            console.log('⚠️ Windows Media Player failed');
+                            resolve(false);
+                        } else {
+                            console.log('✅ Audio played with Windows Media Player');
+                            resolve(true);
+                        }
+                    });
+                });
+            } catch (error) {
+                console.log('⚠️ Windows Media Player error');
+            }
+        }
+
+        console.error('❌ All audio playback methods failed');
+        return false;
     }
 
     // Method specifically for quiz questions
@@ -215,8 +304,9 @@ class AzureTTS {
             // Kill the current audio process if it exists
             if (this.currentAudioProcess) {
                 try {
-                    this.currentAudioProcess.kill();
-                    console.log('🔇 Killed current audio process');
+                    // This part is no longer relevant as we don't track child_process directly
+                    // this.currentAudioProcess.kill(); 
+                    console.log('🔇 No current audio process to kill.');
                 } catch (e) {
                     console.log('🔇 Current audio process already finished');
                 }

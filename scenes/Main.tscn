@@ -32,6 +32,7 @@ stretch_mode = 6
 script = ExtResource("7_animation")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 offset_left = -628.0
 offset_top = -438.0
 offset_right = 71.9999
@@ -88,12 +89,13 @@ scale = Vector2(0.836443, 0.836443)
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -288.0
-offset_top = -165.0
-offset_right = -288.0
-offset_bottom = -165.0
+offset_left = -269.0
+offset_top = 177.0
+offset_right = -269.0
+offset_bottom = 177.0
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(1.56, 1.56)
 
 [node name="ReadyScreen" type="Control" parent="."]
 visible = false
@@ -101,8 +103,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -52.0
-offset_bottom = -52.0
+offset_left = 11.0
+offset_top = 113.0
+offset_right = 11.0
+offset_bottom = 113.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -126,11 +130,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -208.0
-offset_top = -399.0
-offset_right = 792.0
-offset_bottom = 601.0
+offset_left = -293.0
+offset_top = -360.0
+offset_right = 707.0
+offset_bottom = 640.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.36, 0.36)
+scale = Vector2(0.52, 0.52)
 texture = ExtResource("6_c01mt")
