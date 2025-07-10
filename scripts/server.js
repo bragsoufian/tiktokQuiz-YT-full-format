@@ -51,7 +51,7 @@ String.prototype.hashCode = function() {
 };
 
 // Configuration du jeu
-const QUESTION_TIMER = 7000; // 5 secondes par défaut
+const QUESTION_TIMER = 9000; // 5 secondes par défaut
 const ANSWER_DISPLAY_TIME = 3000; // 3 secondes pour voir la réponse
 const READY_PAUSE_TIME = 4000; // 4 secondes de pause "Ready"
 const GRACE_PERIOD = 4000; // 4 secondes de grâce pour les réponses tardives
@@ -348,7 +348,7 @@ async function askNewQuestion() {
     log.question(`Envoi de la question à Godot (sans timer): ${JSON.stringify(questionMessage)}`);
     broadcastToGodot(questionMessage);
 
-    // Envoyer le message pour mettre tous les flags en "go" dès le début du TTS
+    // Envoyer le message pour mettre tous les flags en "go" et démarrer le timer IMMÉDIATEMENT
     const goMessage = {
         type: "question_active"
     };
@@ -356,35 +356,7 @@ async function askNewQuestion() {
     log.question(`Envoi du message d'activation de la question à Godot: ${JSON.stringify(goMessage)}`);
     broadcastToGodot(goMessage);
 
-    // Use Azure TTS to read the question aloud and wait for it to finish
-    if (azureTTS) {
-        try {
-            log.question('🎤 Début de la lecture TTS de la question...');
-            
-            // Sélectionner une phrase d'introduction aléatoire
-            const randomIntro = QUESTION_INTROS[Math.floor(Math.random() * QUESTION_INTROS.length)];
-            const fullQuestionText = `${randomIntro} ${currentQuestion.question}`;
-            
-            log.question(`🎤 Phrase d'introduction sélectionnée: "${randomIntro}"`);
-            await azureTTS.speakQuestion(fullQuestionText, currentQuestionIndex);
-            log.info('✅ Question spoken aloud (Azure TTS).');
-        } catch (err) {
-            log.error('❌ Azure TTS error: ' + err);
-        }
-    }
-    
-    // Maintenant que la lecture TTS est terminée, activer la question et démarrer le timer
-    log.question('🎯 Lecture TTS terminée. Activation de la question et démarrage du timer...');
-    
-    if (matchEnded || !questionWaitingForActivation) {
-        log.question("Question annulée - match terminé ou question déjà annulée");
-        return;
-    }
-    
-    questionWaitingForActivation = false;
-    questionActive = true; // Maintenant la question est active et accepte les réponses
-    
-    // Envoyer le message pour démarrer le timer dans Godot
+    // Envoyer le message pour démarrer le timer dans Godot IMMÉDIATEMENT
     const startTimerMessage = {
         type: "start_timer",
         timer: QUESTION_TIMER / 1000 // Convertir en secondes
@@ -395,7 +367,7 @@ async function askNewQuestion() {
     
     log.question(`✅ Question activée. Début de la période de réponses de ${QUESTION_TIMER / 1000}s.`);
     
-    // Démarrer le timer pour la période de réponses
+    // Démarrer le timer pour la période de réponses IMMÉDIATEMENT
     questionTimer = setTimeout(() => {
         // Check if currentQuestion still exists (it might have been cleared by endQuestion)
         if (!currentQuestion) {
@@ -411,6 +383,37 @@ async function askNewQuestion() {
     }, QUESTION_TIMER);
     
     log.question(`⏱️ Timer de réponses démarré pour ${QUESTION_TIMER}ms`);
+
+    // Use Azure TTS to read the question aloud (sans attendre)
+    if (azureTTS) {
+        try {
+            log.question('🎤 Début de la lecture TTS de la question...');
+            
+            // Sélectionner une phrase d'introduction aléatoire
+            const randomIntro = QUESTION_INTROS[Math.floor(Math.random() * QUESTION_INTROS.length)];
+            const fullQuestionText = `${randomIntro} ${currentQuestion.question}`;
+            
+            log.question(`🎤 Phrase d'introduction sélectionnée: "${randomIntro}"`);
+            
+            // Lancer le TTS sans attendre (non-blocking)
+            azureTTS.speakQuestion(fullQuestionText, currentQuestionIndex).then(() => {
+                log.info('✅ Question spoken aloud (Azure TTS).');
+            }).catch(err => {
+                log.error('❌ Azure TTS error: ' + err);
+            });
+        } catch (err) {
+            log.error('❌ Azure TTS error: ' + err);
+        }
+    }
+    
+    // Activer la question immédiatement (pas besoin d'attendre le TTS)
+    if (matchEnded || !questionWaitingForActivation) {
+        log.question("Question annulée - match terminé ou question déjà annulée");
+        return;
+    }
+    
+    questionWaitingForActivation = false;
+    questionActive = true; // Maintenant la question est active et accepte les réponses
 }
 
 // Fonction pour terminer la question
@@ -433,64 +436,49 @@ async function endQuestion() {
     broadcastToGodot(endQuestionMessage);
     log.question(`Envoi du message de fin de question à Godot: ${JSON.stringify(endQuestionMessage)}`);
     
-    // Jouer une phrase d'encouragement si configurée
-    if (encouragementManager && azureTTS) {
-        try {
-            // Calculer les statistiques des cadeaux pour cette question
-            const giftData = {
-                totalGifts: currentQuestionGifts.totalGifts
-            };
-            
-            // Get a smart encouragement phrase based on game conditions
-            const phrase = encouragementManager.getSmartPhrase(players, giftData);
-            if (phrase) {
-                log.system(`🎤 Playing smart encouragement phrase: "${phrase.text}"`);
-                
-                // Play the encouragement phrase
-                await azureTTS.speakText(phrase.text);
-                log.success('✅ Smart encouragement phrase spoken');
-            }
-        } catch (err) {
-            log.error('❌ Error playing encouragement phrase: ' + err);
-        }
-    }
+
     
-    // Announce the correct answer using TTS AFTER encouragement phrase
-    if (answerAnnouncementManager && azureTTS) {
-        try {
-            const announcementText = answerAnnouncementManager.generateAnnouncementText(
-                currentQuestion.correctAnswer, 
-                correctOptionText, 
-                currentQuestionIndex
-            );
-            
-            log.system(`🎤 Announcing correct answer: "${announcementText}"`);
-            await azureTTS.speakText(announcementText);
-            log.success('✅ Answer announcement spoken');
-            
-            // Send message to Godot to show the correct answer after TTS announcement
-            broadcastToGodot({
-                type: "show_correct_answer",
-                correctAnswer: currentQuestion.correctAnswer,
-                correctOption: correctOptionText
-            });
-            log.question(`Envoi du message show_correct_answer à Godot: ${currentQuestion.correctAnswer} - ${correctOptionText}`);
-            
-        } catch (err) {
-            log.error('❌ Error announcing answer: ' + err);
-        }
-    }
+    // Send message to Godot to show the correct answer immediately
+    broadcastToGodot({
+        type: "show_correct_answer",
+        correctAnswer: currentQuestion.correctAnswer,
+        correctOption: correctOptionText
+    });
+    log.question(`Envoi du message show_correct_answer à Godot: ${currentQuestion.correctAnswer} - ${correctOptionText}`);
     
-    // MAINTENANT on arrête les validations après l'annonce TTS
+    // MAINTENANT on arrête les validations
     questionActive = false;
     currentQuestion = null;
-    log.system(`⏹️ Validations des réponses arrêtées après l'annonce TTS`);
+    log.system(`⏹️ Validations des réponses arrêtées`);
     
     // Programmer la prochaine question après 4 secondes de pause
     if (!matchEnded) {
-        // Show Ready screen after encouragement phrase and answer announcement
-        setTimeout(() => {
+        // Attendre un peu avant de jouer les encouragements, puis afficher Ready
+        setTimeout(async () => {
             if (!matchEnded) {
+                // Jouer une phrase d'encouragement si configurée JUSTE AVANT LE READY
+                if (encouragementManager && azureTTS) {
+                    try {
+                        // Calculer les statistiques des cadeaux pour cette question
+                        const giftData = {
+                            totalGifts: currentQuestionGifts.totalGifts
+                        };
+                        
+                        // Get a smart encouragement phrase based on game conditions
+                        const phrase = encouragementManager.getSmartPhrase(players, giftData);
+                        if (phrase) {
+                            log.system(`🎤 Playing smart encouragement phrase: "${phrase.text}"`);
+                            
+                            // Play the encouragement phrase
+                            await azureTTS.speakText(phrase.text);
+                            log.success('✅ Smart encouragement phrase spoken');
+                        }
+                    } catch (err) {
+                        log.error('❌ Error playing encouragement phrase: ' + err);
+                    }
+                }
+                
+                // Show Ready screen AFTER encouragement phrase
                 log.question("Affichage de l'écran 'Ready'");
                 broadcastToGodot({
                     type: "show_ready",
@@ -504,7 +492,7 @@ async function endQuestion() {
                     }
                 }, READY_PAUSE_TIME); // 4 secondes de pause "Ready"
             }
-        }, ANSWER_DISPLAY_TIME); // 3 secondes pour voir la réponse
+        }, ANSWER_DISPLAY_TIME); // 3 secondes pour voir la réponse, puis encouragements
     }
 }
 
