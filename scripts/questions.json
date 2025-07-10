@@ -913,20 +913,6 @@
       "image": null
     },
     {
-      "question": "Which anime has Titans attacking cities?",
-      "options": ["Attack on Titan", "One Piece", "Fairy Tail"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "giant walls anime battle",
-      "image": null
-    },
-    {
-      "question": "Which anime is about collecting Dragon Balls?",
-      "options": ["Bleach", "Naruto", "Dragon Ball"],
-      "correctAnswer": "C",
-      "backgroundKeyWords": "anime adventure power wish",
-      "image": null
-    },
-    {
       "question": "Which anime character eats a lot of meat?",
       "options": ["Saitama", "Goku", "Luffy"],
       "correctAnswer": "C",
@@ -948,8 +934,8 @@
       "image": null
     },
     {
-      "question": "Which anime has demons and a sword-wielding sibling?",
-      "options": ["Naruto", "Demon Slayer", "Chainsaw Man"],
+      "question": "Which anime has Ninjas ?",
+      "options": ["Naruto", "One Piece", "Hunter x Hunter"],
       "correctAnswer": "B",
       "backgroundKeyWords": "anime siblings battle blade",
       "image": null
@@ -970,6 +956,8 @@
     },
 
 
+
+
     {
       "question": "Which app popularized lip-syncing videos?",
       "options": ["Dubsmash", "Vine", "TikTok"],
@@ -985,27 +973,6 @@
       "image": null
     },
     {
-      "question": "Which social media trend involves revealing secrets to a beat?",
-      "options": ["Story time", "Get ready with me", "Put a finger down"],
-      "correctAnswer": "C",
-      "backgroundKeyWords": "trending challenge fingers fun",
-      "image": null
-    },
-    {
-      "question": "Which phrase went viral from a corn-loving kid?",
-      "options": ["It’s corn!", "Yummy!", "Let’s eat!"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "viral sound meme kid",
-      "image": null
-    },
-    {
-      "question": "Which dance trend blew up with Drake’s song?",
-      "options": ["In My Feelings", "Toosie Slide", "Hotline Bling"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "viral dance music phone",
-      "image": null
-    },
-    {
       "question": "Which food got famous on TikTok for being whipped?",
       "options": ["Coffee", "Ice cream", "Matcha"],
       "correctAnswer": "A",
@@ -1013,31 +980,10 @@
       "image": null
     },
     {
-      "question": "Which trend features a dramatic eye zoom while turning?",
-      "options": ["360 spin", "Slow-mo turn", "Silhouette challenge"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "camera motion dramatic light",
-      "image": null
-    },
-    {
       "question": "Which word got trendy to say instead of 'crazy'?",
       "options": ["Wild", "Slay", "Delulu"],
       "correctAnswer": "C",
       "backgroundKeyWords": "slang vibe internet speak",
-      "image": null
-    },
-    {
-      "question": "Which audio was used for dramatic slow-mo food drops?",
-      "options": ["Oh no...", "Run", "Lalala"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "meme audio food spill",
-      "image": null
-    },
-    {
-      "question": "Which style trend became known as 'clean girl'?",
-      "options": ["Smokey eye", "Glossy lip", "Slick bun"],
-      "correctAnswer": "C",
-      "backgroundKeyWords": "beauty minimal makeup slick",
       "image": null
     },
 
@@ -1051,38 +997,10 @@
       "image": null
     },
     {
-      "question": "Which show follows a chess prodigy named Beth?",
-      "options": ["The Crown", "The Queen's Gambit", "Bridgerton"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "chess netflix drama smart",
-      "image": null
-    },
-    {
-      "question": "Which Netflix show is set in Hawkins, Indiana?",
-      "options": ["Stranger Things", "Ozark", "The OA"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "supernatural kids 80s mystery",
-      "image": null
-    },
-    {
-      "question": "Which series features a professor planning a heist?",
-      "options": ["Money Heist", "Breaking Bad", "The Night Agent"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "heist netflix mask crime",
-      "image": null
-    },
-    {
       "question": "Which show is all about gossip in high society?",
       "options": ["Elite", "Bridgerton", "You"],
       "correctAnswer": "B",
       "backgroundKeyWords": "romance period drama ball",
-      "image": null
-    },
-    {
-      "question": "Which Netflix documentary features wild cats and crazier people?",
-      "options": ["Tiger King", "Night Stalker", "Our Planet"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "wild docu strange netflix",
       "image": null
     },
     {
@@ -1152,28 +1070,7 @@
       "image": null
     },
     {
-      "question": "Who’s known for deep voice and Among Us?",
-      "options": ["TommyInnit", "Corpse Husband", "Dream"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "voice amongus mystery gamer",
-      "image": null
-    },
-    {
-      "question": "Which YouTuber started on Vine and vlogs?",
-      "options": ["Liza Koshy", "Emma Chamberlain", "Lilly Singh"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "vlog comedy vine youtube",
-      "image": null
-    },
-    {
-      "question": "Who is known for loud intros and big pranks?",
-      "options": ["Danny Duncan", "David Dobrik", "Faze Rug"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "vlogger prank squad fun",
-      "image": null
-    },
-    {
-      "question": "Which creator has a cooking show on YouTube?",
+      "question": "Which creator is known for cooking on YouTube?",
       "options": ["Binging with Babish", "Emma Chamberlain", "MrBeast"],
       "correctAnswer": "A",
       "backgroundKeyWords": "food cooking show kitchen",
@@ -1204,62 +1101,7 @@
       "backgroundKeyWords": "kids song viral youtube",
       "image": null
     },
-    {
-      "question": "Which viral challenge involved a bucket of ice?",
-      "options": ["Cinnamon Challenge", "Ice Bucket Challenge", "Milk Crate Challenge"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "charity challenge freeze fun",
-      "image": null
-    },
-    {
-      "question": "Which animal danced to EDM in a meme?",
-      "options": ["Duck", "Frog", "Hamster"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "funny dancing animal remix",
-      "image": null
-    },
-    {
-      "question": "Which phrase went viral with a red flag emoji?",
-      "options": ["Big yikes", "Major L", "Red flag"],
-      "correctAnswer": "C",
-      "backgroundKeyWords": "emoji slang trend warning",
-      "image": null
-    },
-    {
-      "question": "Which viral sound says ‘emotional damage’?",
-      "options": ["Uncle Roger", "Steven He", "KevJumba"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "viral audio meme skit",
-      "image": null
-    },
-    {
-      "question": "Which dance blew up with the song 'Renegade'?",
-      "options": ["Savage", "Renegade", "Cuff It"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "tiktok dance trend viral",
-      "image": null
-    },
-    {
-      "question": "Which food trend used air fryers A LOT?",
-      "options": ["Cloud Bread", "Pasta Chips", "Dalgona Candy"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "food hack crunchy easy",
-      "image": null
-    },
-    {
-      "question": "Which frog said 'It’s Wednesday, my dudes'?",
-      "options": ["Kermit", "Wednesday Frog", "Pepe"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "frog meme weekday funny",
-      "image": null
-    },
-    {
-      "question": "Which viral audio starts with 'bing bong'?",
-      "options": ["New York", "Ohio", "Florida"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "slang street viral catchphrase",
-      "image": null
-    },
+
 
 
 
@@ -1326,13 +1168,6 @@
       "options": ["Steam Engine", "Printing Press", "Compass"],
       "correctAnswer": "B",
       "backgroundKeyWords": "history print books invention",
-      "image": null
-    },
-    {
-      "question": "Which U.S. president is on Mount Rushmore?",
-      "options": ["Lincoln", "Franklin", "Jackson"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "president monument sculpture",
       "image": null
     },
 
@@ -1408,7 +1243,7 @@
       "image": null
     },
     {
-      "question": "Which robot vacuums your floor?",
+      "question": "Which robot vacuums the floor?",
       "options": ["Roomba", "Siri", "Echo"],
       "correctAnswer": "A",
       "backgroundKeyWords": "robot home clean smart",
@@ -1493,13 +1328,6 @@
       "options": ["Roger Federer", "Andy Murray", "Serena Williams"],
       "correctAnswer": "C",
       "backgroundKeyWords": "tennis match energy",
-      "image": null
-    },
-    {
-      "question": "Which sport has a move called a slam dunk?",
-      "options": ["Basketball", "Football", "Volleyball"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "basketball hoop jump",
       "image": null
     },
     {
@@ -1620,7 +1448,7 @@
       "image": null
     },
     {
-      "question": "Which actor voices Shrek?",
+      "question": "Which actor voices the Donkey in Shrek?",
       "options": ["Mike Myers", "Eddie Murphy", "Chris Rock"],
       "correctAnswer": "A",
       "backgroundKeyWords": "animation comedy green ogre",
@@ -1688,7 +1516,7 @@
       "image": null
     },
     {
-      "question": "Which movie series features a magical ring?",
+      "question": "Which movie series features orcs ?",
       "options": ["Harry Potter", "Twilight", "The Lord of the Rings"],
       "correctAnswer": "C",
       "backgroundKeyWords": "fantasy epic ring",
@@ -1702,8 +1530,8 @@
       "image": null
     },
     {
-      "question": "Which movie is about a clown named Pennywise?",
-      "options": ["It", "Joker", "Saw"],
+      "question": "Which movie is about a clown?",
+      "options": ["It", "The Godfather", "The pianist"],
       "correctAnswer": "A",
       "backgroundKeyWords": "horror clown scary",
       "image": null
@@ -1713,13 +1541,6 @@
       "options": ["King Kong", "Jurassic Park", "The Meg"],
       "correctAnswer": "B",
       "backgroundKeyWords": "dinosaur theme park",
-      "image": null
-    },
-    {
-      "question": "Which movie has a yellow robot named Bumblebee?",
-      "options": ["Transformers", "Wall-E", "Big Hero 6"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "robot action car",
       "image": null
     },
 
@@ -1742,13 +1563,6 @@
       "image": null
     },
     {
-      "question": "Which game has the character Link?",
-      "options": ["Final Fantasy", "The Legend of Zelda", "Elden Ring"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "adventure sword fantasy",
-      "image": null
-    },
-    {
       "question": "Which racing game features red shells and bananas?",
       "options": ["Need for Speed", "Mario Kart", "Forza"],
       "correctAnswer": "B",
@@ -1767,13 +1581,6 @@
       "options": ["Apex Legends", "Call of Duty", "Fortnite"],
       "correctAnswer": "C",
       "backgroundKeyWords": "battle game colorful",
-      "image": null
-    },
-    {
-      "question": "Which horror game has animatronic jump scares?",
-      "options": ["Silent Hill", "Five Nights at Freddy's", "Resident Evil"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "scary animatronic dark",
       "image": null
     },
     {
@@ -1804,13 +1611,6 @@
 
 
     {
-      "question": "What is the capital of Kazakhstan?",
-      "options": ["Almaty", "Astana", "Bishkek"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "central asia modern city",
-      "image": null
-    },
-    {
       "question": "What is the capital of Nigeria?",
       "options": ["Lagos", "Kano", "Abuja"],
       "correctAnswer": "C",
@@ -1832,13 +1632,6 @@
       "image": null
     },
     {
-      "question": "What is the capital of Myanmar?",
-      "options": ["Yangon", "Mandalay", "Naypyidaw"],
-      "correctAnswer": "C",
-      "backgroundKeyWords": "asia mystery official city",
-      "image": null
-    },
-    {
       "question": "What is the capital of Morocco?",
       "options": ["Casablanca", "Marrakech", "Rabat"],
       "correctAnswer": "C",
@@ -1846,24 +1639,10 @@
       "image": null
     },
     {
-      "question": "What is the capital of Pakistan?",
-      "options": ["Karachi", "Lahore", "Islamabad"],
-      "correctAnswer": "C",
-      "backgroundKeyWords": "pakistan mountains city",
-      "image": null
-    },
-    {
       "question": "What is the capital of Sri Lanka?",
       "options": ["Colombo", "Kandy", "Sri Jayawardenepura Kotte"],
       "correctAnswer": "C",
       "backgroundKeyWords": "sri lanka island south asia",
-      "image": null
-    },
-    {
-      "question": "What is the capital of Bolivia?",
-      "options": ["La Paz", "Sucre", "Cochabamba"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "bolivia andes mountain",
       "image": null
     },
     {
@@ -1887,20 +1666,6 @@
       "image": null
     },
     {
-      "question": "Who invented the telephone?",
-      "options": ["Alexander Graham Bell", "Guglielmo Marconi", "Thomas Edison"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "communication vintage tech",
-      "image": null
-    },
-    {
-      "question": "Who invented the airplane?",
-      "options": ["Wright brothers", "Leonardo da Vinci", "Amelia Earhart"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "plane aviation sky history",
-      "image": null
-    },
-    {
       "question": "Who invented the World Wide Web?",
       "options": ["Bill Gates", "Tim Berners-Lee", "Steve Jobs"],
       "correctAnswer": "B",
@@ -1908,38 +1673,10 @@
       "image": null
     },
     {
-      "question": "Who invented the printing press?",
-      "options": ["Johannes Gutenberg", "Isaac Newton", "Galileo Galilei"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "print history book old",
-      "image": null
-    },
-    {
       "question": "Who invented the theory of relativity?",
       "options": ["Albert Einstein", "Stephen Hawking", "Niels Bohr"],
       "correctAnswer": "A",
       "backgroundKeyWords": "space time physics genius",
-      "image": null
-    },
-    {
-      "question": "Who invented the first computer?",
-      "options": ["Alan Turing", "Charles Babbage", "Ada Lovelace"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "technology old machine",
-      "image": null
-    },
-    {
-      "question": "Who invented the polio vaccine?",
-      "options": ["Jonas Salk", "Edward Jenner", "Louis Pasteur"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "health vaccine science",
-      "image": null
-    },
-    {
-      "question": "Who invented the electric battery?",
-      "options": ["Michael Faraday", "Alessandro Volta", "James Watt"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "energy invention power",
       "image": null
     },
     {
@@ -2020,27 +1757,6 @@
       "image": null
     },
     {
-      "question": "Where did churros come from?",
-      "options": ["Spain", "Mexico", "Portugal"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "fried sweet snack",
-      "image": null
-    },
-    {
-      "question": "Where was the first sandwich made?",
-      "options": ["England", "USA", "Germany"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "bread meal easy",
-      "image": null
-    },
-    {
-      "question": "Where is borscht originally from?",
-      "options": ["Russia", "Poland", "Ukraine"],
-      "correctAnswer": "C",
-      "backgroundKeyWords": "beetroot soup eastern europe",
-      "image": null
-    },
-    {
       "question": "Where did falafel come from?",
       "options": ["Egypt", "Syria", "Turkey"],
       "correctAnswer": "A",
@@ -2054,34 +1770,12 @@
       "backgroundKeyWords": "noodle soup vietnam",
       "image": null
     },
-    {
-      "question": "Where is goulash traditionally from?",
-      "options": ["Hungary", "Austria", "Slovakia"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "stew hot paprika",
-      "image": null
-    },
-    {
-      "question": "Where was kimchi first made?",
-      "options": ["Japan", "South Korea", "China"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "fermented spicy cabbage",
-      "image": null
-    },
 
 
 
 
 
 
-
-    {
-      "question": "Who was the first female Prime Minister of the UK?",
-      "options": ["Theresa May", "Margaret Thatcher", "Angela Merkel"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "uk parliament politics woman",
-      "image": null
-    },
     {
       "question": "Who said 'I have a dream'?",
       "options": ["Barack Obama", "Martin Luther King Jr.", "Malcolm X"],
@@ -2090,45 +1784,10 @@
       "image": null
     },
     {
-      "question": "Who was known as the 'Iron Chancellor'?",
-      "options": ["Otto von Bismarck", "Winston Churchill", "Joseph Stalin"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "germany old politics",
-      "image": null
-    },
-    {
-      "question": "Which U.S. president resigned due to the Watergate scandal?",
-      "options": ["Ronald Reagan", "Richard Nixon", "George H.W. Bush"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "usa president scandal history",
-      "image": null
-    },
-    {
       "question": "Who was the first president of independent India?",
       "options": ["Mahatma Gandhi", "Jawaharlal Nehru", "Rajendra Prasad"],
       "correctAnswer": "C",
       "backgroundKeyWords": "india history leader",
-      "image": null
-    },
-    {
-      "question": "Which U.S. president had the nickname 'Honest Abe'?",
-      "options": ["George Washington", "Abraham Lincoln", "Theodore Roosevelt"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "usa civil war beard",
-      "image": null
-    },
-    {
-      "question": "Who was the longest-serving British Prime Minister of the 20th century?",
-      "options": ["Margaret Thatcher", "Tony Blair", "Winston Churchill"],
-      "correctAnswer": "A",
-      "backgroundKeyWords": "uk politics woman power",
-      "image": null
-    },
-    {
-      "question": "Which leader is associated with the 'Cultural Revolution'?",
-      "options": ["Kim Jong-il", "Mao Zedong", "Ho Chi Minh"],
-      "correctAnswer": "B",
-      "backgroundKeyWords": "china history revolution",
       "image": null
     },
     {

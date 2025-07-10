@@ -13,6 +13,7 @@
 [node name="Main" type="Node2D"]
 
 [node name="WinnerPopup" parent="." instance=ExtResource("1_q8u5g")]
+visible = false
 offset_left = -311.0
 offset_top = -92.0
 offset_right = -307.0
