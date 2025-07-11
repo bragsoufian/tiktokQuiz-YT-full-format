@@ -3,6 +3,7 @@ extends Control
 var question_label: Label
 var timer_bar: ProgressBar
 var timer_label: Label
+var category_label: Label
 
 var question_timer: Timer
 var current_question_data: Dictionary = {}
@@ -23,6 +24,7 @@ func _ready():
 	question_label = get_node_or_null("Panel/QuestionLabel")
 	timer_bar = get_node_or_null("Panel/TimerBar")
 	timer_label = get_node_or_null("Panel/TimerLabel")
+	category_label = get_node_or_null("Panel/Category")
 	
 	# Vérifier que tous les nœuds nécessaires existent
 	if not question_label:
@@ -33,6 +35,9 @@ func _ready():
 		return
 	if not timer_label:
 		print("❌ ERREUR: TimerLabel non trouvé!")
+		return
+	if not category_label:
+		print("❌ ERREUR: Category non trouvé!")
 		return
 	
 	print("✅ Tous les nœuds de l'interface des questions trouvés")
@@ -132,6 +137,16 @@ func show_question(question_data: Dictionary):
 	var panel = get_node("Panel")
 	print("📏 Panel size: ", panel.size if panel else "N/A")
 	print("📏 QuestionUI size: ", size)
+	
+	# Afficher la catégorie si elle existe
+	if question_data.has("category") and question_data.category:
+		var category_text = question_data.category.to_upper()
+		category_label.text = category_text
+		category_label.visible = true
+		print("✅ Catégorie affichée: ", category_text)
+	else:
+		category_label.visible = false
+		print("⚠️ Aucune catégorie trouvée dans les données de la question")
 	
 	# Afficher la question
 	question_label.text = question_data.question

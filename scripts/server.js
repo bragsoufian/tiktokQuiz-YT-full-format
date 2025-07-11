@@ -51,7 +51,7 @@ String.prototype.hashCode = function() {
 };
 
 // Configuration du jeu
-const QUESTION_TIMER = 9000; // 5 secondes par défaut
+const QUESTION_TIMER = 7000;// 5 secondes par défaut
 const ANSWER_DISPLAY_TIME = 3000; // 3 secondes pour voir la réponse
 const READY_PAUSE_TIME = 4000; // 4 secondes de pause "Ready"
 const GRACE_PERIOD = 4000; // 4 secondes de grâce pour les réponses tardives
@@ -177,20 +177,45 @@ function initializeShuffledQuestions() {
 }
 
 // Charger les phrases d'introduction depuis le fichier JSON
-let QUESTION_INTROS = [];
+let QUESTION_INTROS = {};
 try {
     const introsPath = path.join(__dirname, 'question_intros.json');
     const introsData = fs.readFileSync(introsPath, 'utf8');
     const introsJson = JSON.parse(introsData);
-    QUESTION_INTROS = introsJson.intros || [];
-    log.success(`Chargement de ${QUESTION_INTROS.length} phrases d'introduction depuis question_intros.json`);
+    QUESTION_INTROS = introsJson.intros || {};
+    log.success(`Chargement des phrases d'introduction par catégorie depuis question_intros.json`);
 } catch (error) {
     log.error(`Erreur lors du chargement des phrases d'introduction: ${error.message}`);
     // Phrases par défaut en cas d'erreur
-    QUESTION_INTROS = [
-        "Next question : ",
-        ""
-    ];
+    QUESTION_INTROS = {
+        "default": [
+            "Question du jour : ",
+            "Question : ",
+            ""
+        ]
+    };
+}
+
+// Fonction pour sélectionner une intro appropriée selon la catégorie
+function getIntroForCategory(category) {
+    if (!category) {
+        category = "default";
+    }
+    
+    // Vérifier si la catégorie existe dans les intros
+    if (QUESTION_INTROS[category] && QUESTION_INTROS[category].length > 0) {
+        const intros = QUESTION_INTROS[category];
+        return intros[Math.floor(Math.random() * intros.length)];
+    }
+    
+    // Fallback sur la catégorie par défaut
+    if (QUESTION_INTROS["default"] && QUESTION_INTROS["default"].length > 0) {
+        const defaultIntros = QUESTION_INTROS["default"];
+        return defaultIntros[Math.floor(Math.random() * defaultIntros.length)];
+    }
+    
+    // Fallback ultime
+    return "Question : ";
 }
 
 // Afficher la configuration des niveaux au démarrage
@@ -341,7 +366,8 @@ async function askNewQuestion() {
         question: currentQuestion.question,
         options: currentQuestion.options,
         image: currentQuestion.image,
-        backgroundImage: backgroundImageUrl
+        backgroundImage: backgroundImageUrl,
+        category: currentQuestion.category || null
         // Pas de timer ici - il sera envoyé séparément après la lecture TTS
     };
     
@@ -389,11 +415,11 @@ async function askNewQuestion() {
         try {
             log.question('🎤 Début de la lecture TTS de la question...');
             
-            // Sélectionner une phrase d'introduction aléatoire
-            const randomIntro = QUESTION_INTROS[Math.floor(Math.random() * QUESTION_INTROS.length)];
+            // Sélectionner une phrase d'introduction selon la catégorie de la question
+            const randomIntro = getIntroForCategory(currentQuestion.category);
             const fullQuestionText = `${randomIntro} ${currentQuestion.question}`;
             
-            log.question(`🎤 Phrase d'introduction sélectionnée: "${randomIntro}"`);
+            log.question(`🎤 Phrase d'introduction sélectionnée pour la catégorie "${currentQuestion.category}": "${randomIntro}"`);
             
             // Lancer le TTS sans attendre (non-blocking)
             azureTTS.speakQuestion(fullQuestionText, currentQuestionIndex).then(() => {

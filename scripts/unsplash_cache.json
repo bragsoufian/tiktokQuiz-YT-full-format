@@ -1418,5 +1418,125 @@
   "question_2_terraform cloud infrastructure code planification": {
     "url": "https://images.unsplash.com/photo-1566762270258-d5e142c581bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIxNjMwNzl8&ixlib=rb-4.1.0&q=80&w=1080",
     "timestamp": 1752163080276
+  },
+  "question_1_sécurité devops vault secrets chiffrement": {
+    "url": "https://images.unsplash.com/photo-1614064744994-1ed33ac65ac4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDYxNDN8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752246145279
+  },
+  "question_2_kubernetes liveness healthcheck pod": {
+    "url": "https://images.unsplash.com/photo-1659353888323-1f5c85ea3952?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDYxNjl8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752246171503
+  },
+  "question_3_etcd kubernetes registre config store": {
+    "url": "https://images.unsplash.com/photo-1620359017593-4fd25d69c43a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDYxOTR8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752246196684
+  },
+  "question_4_devops service mesh linkerd istio": {
+    "url": "https://images.unsplash.com/photo-1674123522672-15ba43f156dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDYyMjJ8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752246224610
+  },
+  "question_2_etcd kubernetes registre config store": {
+    "url": "https://images.unsplash.com/photo-1708004228461-829bd367c2f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDYyNzZ8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752246277955
+  },
+  "question_1_etcd kubernetes registre config store": {
+    "url": "https://images.unsplash.com/photo-1672844481309-f11b7377baea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDYyOTd8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752246299080
+  },
+  "question_2_sécurité devops vault secrets chiffrement": {
+    "url": "https://images.unsplash.com/photo-1605199424106-68d5b50076a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDYzMjJ8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752246324012
+  },
+  "question_3_devops service mesh linkerd istio": {
+    "url": "https://images.unsplash.com/photo-1603397271039-4f3f1f863630?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDYzNDl8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752246351646
+  },
+  "question_4_kubernetes liveness healthcheck pod": {
+    "url": "https://images.unsplash.com/photo-1631507623095-c710d184498f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDYzNzV8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752246377589
+  },
+  "question_2_devops service mesh linkerd istio": {
+    "url": "https://images.unsplash.com/photo-1607719786322-5c75300acce8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDY4Njd8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752246869155
+  },
+  "question_3_sécurité devops vault secrets chiffrement": {
+    "url": "https://images.unsplash.com/photo-1555529902-5261145633bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDY4OTJ8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752246894323
+  },
+  "question_1_kubernetes liveness healthcheck pod": {
+    "url": "https://images.unsplash.com/photo-1706958580557-ddc88a349a16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDY5NDV8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752246947766
+  },
+  "question_1_javascript closure function scope": {
+    "url": "https://images.unsplash.com/photo-1517512006864-7edc3b933137?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDczNzJ8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752247374184
+  },
+  "question_2_java thread concurrent programming": {
+    "url": "https://images.unsplash.com/photo-1542373285-a85124c4f3e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDc0MDJ8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752247404798
+  },
+  "question_1_java thread concurrent programming": {
+    "url": "https://images.unsplash.com/photo-1566837945700-30057527ade0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDc0Mzh8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752247440433
+  },
+  "question_2_java interface programmation objet": {
+    "url": "https://images.unsplash.com/photo-1653548410459-5dffc2cef115?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDc0NjN8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752247465546
+  },
+  "question_3_javascript variable declaration programming": {
+    "url": "https://images.unsplash.com/photo-1653387137517-fbc54d488ed8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDc0OTJ8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752247494095
+  },
+  "question_1_java interface programmation objet": {
+    "url": "https://images.unsplash.com/photo-1649576870285-efa53103defa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDgxNzR8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752248176446
+  },
+  "question_1_docker container devops terminal": {
+    "url": "https://images.unsplash.com/photo-1611915812744-a7514951613d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDgyMDh8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752248210077
+  },
+  "question_1_web nginx reverse proxy architecture réseau": {
+    "url": "https://images.unsplash.com/photo-1668853907308-2c2feb8687ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDgzMzJ8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752248334080
+  },
+  "question_2_docker container devops terminal": {
+    "url": "https://images.unsplash.com/photo-1601631547221-f798dacbacc3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDgzNTV8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752248356980
+  },
+  "question_3_helm kubernetes charts devops cluster": {
+    "url": "https://images.unsplash.com/photo-1738082956257-06cde4444b1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDgzODF8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752248383536
+  },
+  "question_4_javascript this strict mode code": {
+    "url": "https://images.unsplash.com/photo-1582224369048-e4d2d7a6ba30?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDg0MDZ8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752248408224
+  },
+  "question_5_java interface programmation objet": {
+    "url": "https://images.unsplash.com/photo-1733259440164-8b038a219460?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDg0Mjl8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752248431258
+  },
+  "question_2_javascript this strict mode code": {
+    "url": "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDg0Nzl8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752248481536
+  },
+  "question_3_java interface programmation objet": {
+    "url": "https://images.unsplash.com/flagged/photo-1550949078-fbd850f36ec5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDg1MDV8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752248507798
+  },
+  "question_4_web nginx reverse proxy architecture réseau": {
+    "url": "https://images.unsplash.com/photo-1592413561248-9f4432aec49b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDg1Mjl8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752248531818
+  },
+  "question_4_helm kubernetes charts devops cluster": {
+    "url": "https://images.unsplash.com/photo-1598537859182-81211afe918c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDg2MTN8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752248615173
+  },
+  "question_5_web nginx reverse proxy architecture réseau": {
+    "url": "https://images.unsplash.com/photo-1674027444636-ce7379d51252?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDg2MzZ8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752248638117
+  },
+  "question_1_helm kubernetes charts devops cluster": {
+    "url": "https://images.unsplash.com/photo-1591381287254-b3349c60bf9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDg2NjB8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752248662168
   }
 }

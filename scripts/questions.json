@@ -1,29 +1,52 @@
 [
   {
-    "question": "Qu'est-ce que 'cattle vs pets' dans le monde DevOps ?",
-    "questionTTS": "Qu'est-ce que cattle versus pets dans le monde DevOps ?",
-    "options": ["Une métaphore pour les logs", "Une stratégie de monitoring", "Une philosophie pour gérer les serveurs"],
-    "optionsTTS": ["Une métaphore pour les logs", "Une stratégie de monitoring", "Une philosophie pour gérer les serveurs"],
-    "correctAnswer": "C",
-    "backgroundKeyWords": "serveurs cloud métaphore gestion animaux",
-    "image": null
-  },
-  {
-    "question": "Quel outil DevOps utilise le fichier docker-compose.yml ?",
-    "questionTTS": "Quel outil DevOps utilise le fichier docker compose point y-m-l ?",
-    "options": ["Do-keur", "Kubernetes", "Vagrant"],
-    "optionsTTS": ["Do-keur", "Kou-ber-netiz", "Vé-grante"],
+    "question": "Qu'est-ce qu'une interface en Java ?",
+    "questionTTS": "Qu'est-ce qu'une interface en Java ?",
+    "options": ["Un contrat de méthodes", "Une classe abstraite", "Un type primitif"],
+    "optionsTTS": ["Un contrat de méthodes", "Une classe abstraite", "Un type primitif"],
+    "category": "java",
     "correctAnswer": "A",
-    "backgroundKeyWords": "docker container orchestration yml devops",
+    "backgroundKeyWords": "java interface programmation objet",
     "image": null
   },
   {
-    "question": "Quel outil peut gérer des déploiements Kubernetes via des Helm charts ?",
-    "questionTTS": "Quel outil peut gérer des déploiements Kubernetes via des Helm charts ?",
-    "options": ["Terraform", "Helm", "FluxCD"],
-    "optionsTTS": ["Terraform", "Helm", "Fluxe-C-D"],
+    "question": "À quoi sert Helm dans Kubernetes ?",
+    "questionTTS": "À quoi sert Helm dans Kubernetes ?",
+    "options": ["Superviser les pods", "Gérer les charts", "Rediriger les requêtes"],
+    "optionsTTS": ["Superviser les pods", "Gérer les charts", "Rediriger les requêtes"],
+    "category": "devops",
     "correctAnswer": "B",
-    "backgroundKeyWords": "kubernetes helm charts devops déploiement",
+    "backgroundKeyWords": "helm kubernetes charts devops cluster",
+    "image": null
+  },
+  {
+    "question": "Que signifie 'this' en JS strict mode ?",
+    "questionTTS": "Que signifie this en mode strict JavaScript ?",
+    "options": ["window", "null", "undefined"],
+    "optionsTTS": ["window", "null", "undefined"],
+    "category": "javascript",
+    "correctAnswer": "C",
+    "backgroundKeyWords": "javascript this strict mode code",
+    "image": null
+  },
+  {
+    "question": "À quoi sert un reverse proxy ?",
+    "questionTTS": "À quoi sert un reverse proxy ?",
+    "options": ["Stocker les logs", "Cacher les serveurs", "Envoyer des mails"],
+    "optionsTTS": ["Stocker les logs", "Cacher les serveurs", "Envoyer des mails"],
+    "category": "web",
+    "correctAnswer": "B",
+    "backgroundKeyWords": "web nginx reverse proxy architecture réseau",
+    "image": null
+  },
+  {
+    "question": "Quelle commande crée un container ?",
+    "questionTTS": "Quelle commande crée un container ?",
+    "options": ["docker ps", "docker build", "docker run"],
+    "optionsTTS": ["do-keur P-S", "do-keur build", "do-keur run"],
+    "category": "devops",
+    "correctAnswer": "C",
+    "backgroundKeyWords": "docker container devops terminal",
     "image": null
   }
 ]
