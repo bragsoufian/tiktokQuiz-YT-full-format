@@ -1538,5 +1538,25 @@
   "question_1_helm kubernetes charts devops cluster": {
     "url": "https://images.unsplash.com/photo-1591381287254-b3349c60bf9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNDg2NjB8&ixlib=rb-4.1.0&q=80&w=1080",
     "timestamp": 1752248662168
+  },
+  "question_1_sql join database": {
+    "url": "https://images.unsplash.com/photo-1447703693928-9cd89c8d3ac5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNTI5NzZ8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752252978434
+  },
+  "question_1_java keyword inheritance": {
+    "url": "https://images.unsplash.com/photo-1698911890312-40888fc6be77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNTI5ODB8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752252982637
+  },
+  "question_2_ssh port network": {
+    "url": "https://images.unsplash.com/photo-1664526936959-84bdea9f37fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNTMwMDd8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752253009160
+  },
+  "question_3_javascript json parse": {
+    "url": "https://images.unsplash.com/photo-1565687981296-535f09db714e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNTMwMzF8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752253033497
+  },
+  "question_4_hashing security cryptography": {
+    "url": "https://images.unsplash.com/photo-1656568798364-a9f4b66f4977?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIyNTMwNTR8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752253056793
   }
 }

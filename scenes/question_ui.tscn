@@ -998,6 +998,7 @@ uppercase = true
 
 [node name="Category" type="Label" parent="Panel"]
 custom_minimum_size = Vector2(0, 150)
+layout_mode = 0
 offset_left = 76.0
 offset_top = -138.043
 offset_right = 623.0

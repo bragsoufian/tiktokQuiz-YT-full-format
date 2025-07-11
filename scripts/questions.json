@@ -1,52 +1,72 @@
 [
   {
-    "question": "Qu'est-ce qu'une interface en Java ?",
-    "questionTTS": "Qu'est-ce qu'une interface en Java ?",
-    "options": ["Un contrat de méthodes", "Une classe abstraite", "Un type primitif"],
-    "optionsTTS": ["Un contrat de méthodes", "Une classe abstraite", "Un type primitif"],
-    "category": "java",
+    "question": "Quel outil gère les conteneurs ?",
+    "questionTTS": "Quel outil gère les conteneurs ?",
+    "options": ["Docker", "Terraform", "Ansible"],
+    "optionsTTS": ["Do-keur", "Ter-ra-forme", "An-si-bul"],
+    "category": "devops",
     "correctAnswer": "A",
-    "backgroundKeyWords": "java interface programmation objet",
+    "backgroundKeyWords": "docker container devops",
     "image": null
   },
   {
-    "question": "À quoi sert Helm dans Kubernetes ?",
-    "questionTTS": "À quoi sert Helm dans Kubernetes ?",
-    "options": ["Superviser les pods", "Gérer les charts", "Rediriger les requêtes"],
-    "optionsTTS": ["Superviser les pods", "Gérer les charts", "Rediriger les requêtes"],
-    "category": "devops",
+    "question": "Quel mot-clé évite l'héritage ?",
+    "questionTTS": "Quel mot-clé évite l'héritage en Java ?",
+    "options": ["final", "static", "transient"],
+    "optionsTTS": ["faï-nal", "sta-tik", "tran-si-ent"],
+    "category": "java",
     "correctAnswer": "B",
-    "backgroundKeyWords": "helm kubernetes charts devops cluster",
+    "backgroundKeyWords": "java keyword inheritance",
     "image": null
   },
   {
-    "question": "Que signifie 'this' en JS strict mode ?",
-    "questionTTS": "Que signifie this en mode strict JavaScript ?",
-    "options": ["window", "null", "undefined"],
-    "optionsTTS": ["window", "null", "undefined"],
+    "question": "Méthode pour parser du JSON ?",
+    "questionTTS": "Quelle méthode pour parser du JSON en JavaScript ?",
+    "options": ["JSON.decode", "JSON.parse", "parseJSON"],
+    "optionsTTS": ["jé-son dé-code", "jé-son parse", "parse jé-son"],
     "category": "javascript",
-    "correctAnswer": "C",
-    "backgroundKeyWords": "javascript this strict mode code",
-    "image": null
-  },
-  {
-    "question": "À quoi sert un reverse proxy ?",
-    "questionTTS": "À quoi sert un reverse proxy ?",
-    "options": ["Stocker les logs", "Cacher les serveurs", "Envoyer des mails"],
-    "optionsTTS": ["Stocker les logs", "Cacher les serveurs", "Envoyer des mails"],
-    "category": "web",
     "correctAnswer": "B",
-    "backgroundKeyWords": "web nginx reverse proxy architecture réseau",
+    "backgroundKeyWords": "javascript json parse",
     "image": null
   },
   {
-    "question": "Quelle commande crée un container ?",
-    "questionTTS": "Quelle commande crée un container ?",
-    "options": ["docker ps", "docker build", "docker run"],
-    "optionsTTS": ["do-keur P-S", "do-keur build", "do-keur run"],
-    "category": "devops",
+    "question": "Comment définir une fonction ?",
+    "questionTTS": "Comment définir une fonction en Python ?",
+    "options": ["function", "lambda", "def"],
+    "optionsTTS": ["feunk-tion", "lam-da", "def"],
+    "category": "python",
     "correctAnswer": "C",
-    "backgroundKeyWords": "docker container devops terminal",
+    "backgroundKeyWords": "python function syntax",
+    "image": null
+  },
+  {
+    "question": "Type de jointure SQL par défaut ?",
+    "questionTTS": "Quel est le type de jointure SQL par défaut ?",
+    "options": ["INNER JOIN", "LEFT JOIN", "FULL JOIN"],
+    "optionsTTS": ["inner join", "left join", "full join"],
+    "category": "database",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "sql join database",
+    "image": null
+  },
+  {
+    "question": "Port par défaut du SSH ?",
+    "questionTTS": "Quel est le port par défaut du SSH ?",
+    "options": ["80", "22", "443"],
+    "optionsTTS": ["quatre-vingt", "vingt-deux", "quatre cent quarante-trois"],
+    "category": "network",
+    "correctAnswer": "B",
+    "backgroundKeyWords": "ssh port network",
+    "image": null
+  },
+  {
+    "question": "Algorithme de hachage courant ?",
+    "questionTTS": "Quel algorithme de hachage est courant ?",
+    "options": ["SHA-256", "AES", "RSA"],
+    "optionsTTS": ["cha deux cent cinquante-six", "A E S", "R S A"],
+    "category": "security",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "hashing security cryptography",
     "image": null
   }
-]
+] 
