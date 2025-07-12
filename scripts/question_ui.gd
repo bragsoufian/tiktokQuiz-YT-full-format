@@ -3,7 +3,8 @@ extends Control
 var question_label: Label
 var timer_bar: ProgressBar
 var timer_label: Label
-var category_label: Label
+var question_number_label: Label
+var level_texture_rect: TextureRect
 
 var question_timer: Timer
 var current_question_data: Dictionary = {}
@@ -24,7 +25,8 @@ func _ready():
 	question_label = get_node_or_null("Panel/QuestionLabel")
 	timer_bar = get_node_or_null("Panel/TimerBar")
 	timer_label = get_node_or_null("Panel/TimerLabel")
-	category_label = get_node_or_null("Panel/Category")
+	question_number_label = get_node_or_null("Panel/questionNumber")
+	level_texture_rect = get_node_or_null("Panel/level")
 	
 	# Vérifier que tous les nœuds nécessaires existent
 	if not question_label:
@@ -36,8 +38,11 @@ func _ready():
 	if not timer_label:
 		print("❌ ERREUR: TimerLabel non trouvé!")
 		return
-	if not category_label:
-		print("❌ ERREUR: Category non trouvé!")
+	if not question_number_label:
+		print("❌ ERREUR: questionNumber non trouvé!")
+		return
+	if not level_texture_rect:
+		print("❌ ERREUR: level TextureRect non trouvé!")
 		return
 	
 	print("✅ Tous les nœuds de l'interface des questions trouvés")
@@ -138,15 +143,24 @@ func show_question(question_data: Dictionary):
 	print("📏 Panel size: ", panel.size if panel else "N/A")
 	print("📏 QuestionUI size: ", size)
 	
-	# Afficher la catégorie si elle existe
-	if question_data.has("category") and question_data.category:
-		var category_text = question_data.category.to_upper()
-		category_label.text = category_text
-		category_label.visible = true
-		print("✅ Catégorie affichée: ", category_text)
+	# Afficher le numéro de la question
+	if question_data.has("questionNumber"):
+		var question_number = question_data.questionNumber
+		question_number_label.text = "QUESTION " + str(int(question_number))
+		question_number_label.visible = true
+		print("✅ Numéro de question affiché: QUESTION ", int(question_number))
 	else:
-		category_label.visible = false
-		print("⚠️ Aucune catégorie trouvée dans les données de la question")
+		question_number_label.visible = false
+		print("⚠️ Aucun numéro de question trouvé dans les données")
+	
+	# Afficher la texture de niveau
+	if question_data.has("niveau"):
+		var niveau = question_data.niveau
+		_set_level_texture(niveau)
+		print("✅ Niveau affiché: ", niveau)
+	else:
+		level_texture_rect.visible = false
+		print("⚠️ Aucun niveau trouvé dans les données")
 	
 	# Afficher la question
 	question_label.text = question_data.question
@@ -425,3 +439,26 @@ func load_correct_answer_sound(sound_path: String):
 			print("✅ Son assigné directement au lecteur audio.")
 	else:
 		print("❌ Fichier son non trouvé: ", sound_path)
+
+func _set_level_texture(niveau: String):
+	"""Charge et affiche la texture de niveau appropriée"""
+	var texture_path = ""
+	
+	match niveau.to_lower():
+		"easy":
+			texture_path = "res://assets/level-easy.png"
+		"medium":
+			texture_path = "res://assets/level-medium.png"
+		"hard":
+			texture_path = "res://assets/level-hard.png"
+		_:
+			texture_path = "res://assets/level-easy.png"  # Par défaut
+	
+	if ResourceLoader.exists(texture_path):
+		var texture = load(texture_path)
+		level_texture_rect.texture = texture
+		level_texture_rect.visible = true
+		print("✅ Texture de niveau chargée: ", texture_path)
+	else:
+		print("❌ Texture de niveau non trouvée: ", texture_path)
+		level_texture_rect.visible = false

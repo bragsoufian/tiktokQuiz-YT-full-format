@@ -1,72 +1,58 @@
 [
   {
     "question": "Quel outil gère les conteneurs ?",
-    "questionTTS": "Quel outil gère les conteneurs ?",
+    "questionTTS": "Quel outil gère les <lang xml:lang=\"en-US\">containers</lang> ?",
     "options": ["Docker", "Terraform", "Ansible"],
-    "optionsTTS": ["Do-keur", "Ter-ra-forme", "An-si-bul"],
-    "category": "devops",
+    "niveau": "easy",
     "correctAnswer": "A",
-    "backgroundKeyWords": "docker container devops",
-    "image": null
+    "backgroundKeyWords": "docker container devops"
   },
   {
     "question": "Quel mot-clé évite l'héritage ?",
-    "questionTTS": "Quel mot-clé évite l'héritage en Java ?",
+    "questionTTS": "Quel mot-clé évite l'héritage en <lang xml:lang=\"en-US\">Java</lang> ?",
     "options": ["final", "static", "transient"],
-    "optionsTTS": ["faï-nal", "sta-tik", "tran-si-ent"],
-    "category": "java",
-    "correctAnswer": "B",
-    "backgroundKeyWords": "java keyword inheritance",
-    "image": null
+    "niveau": "medium",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "java keyword inheritance"
   },
   {
     "question": "Méthode pour parser du JSON ?",
-    "questionTTS": "Quelle méthode pour parser du JSON en JavaScript ?",
+    "questionTTS": "Quelle méthode pour parser du <lang xml:lang=\"en-US\">JSON</lang> en <lang xml:lang=\"en-US\">JavaScript</lang> ?",
     "options": ["JSON.decode", "JSON.parse", "parseJSON"],
-    "optionsTTS": ["jé-son dé-code", "jé-son parse", "parse jé-son"],
-    "category": "javascript",
+    "niveau": "easy",
     "correctAnswer": "B",
-    "backgroundKeyWords": "javascript json parse",
-    "image": null
+    "backgroundKeyWords": "javascript json parse"
   },
   {
     "question": "Comment définir une fonction ?",
-    "questionTTS": "Comment définir une fonction en Python ?",
+    "questionTTS": "Comment définir une fonction en <lang xml:lang=\"en-US\">Python</lang> ?",
     "options": ["function", "lambda", "def"],
-    "optionsTTS": ["feunk-tion", "lam-da", "def"],
-    "category": "python",
+    "niveau": "easy",
     "correctAnswer": "C",
-    "backgroundKeyWords": "python function syntax",
-    "image": null
+    "backgroundKeyWords": "python function syntax"
   },
   {
     "question": "Type de jointure SQL par défaut ?",
-    "questionTTS": "Quel est le type de jointure SQL par défaut ?",
+    "questionTTS": "Quel est le type de jointure <lang xml:lang=\"en-US\">SQL</lang> par défaut ?",
     "options": ["INNER JOIN", "LEFT JOIN", "FULL JOIN"],
-    "optionsTTS": ["inner join", "left join", "full join"],
-    "category": "database",
+    "niveau": "medium",
     "correctAnswer": "A",
-    "backgroundKeyWords": "sql join database",
-    "image": null
+    "backgroundKeyWords": "sql join database"
   },
   {
     "question": "Port par défaut du SSH ?",
-    "questionTTS": "Quel est le port par défaut du SSH ?",
+    "questionTTS": "Quel est le port par défaut du <lang xml:lang=\"en-US\">SSH</lang> ?",
     "options": ["80", "22", "443"],
-    "optionsTTS": ["quatre-vingt", "vingt-deux", "quatre cent quarante-trois"],
-    "category": "network",
+    "niveau": "easy",
     "correctAnswer": "B",
-    "backgroundKeyWords": "ssh port network",
-    "image": null
+    "backgroundKeyWords": "ssh port network"
   },
   {
     "question": "Algorithme de hachage courant ?",
     "questionTTS": "Quel algorithme de hachage est courant ?",
     "options": ["SHA-256", "AES", "RSA"],
-    "optionsTTS": ["cha deux cent cinquante-six", "A E S", "R S A"],
-    "category": "security",
+    "niveau": "hard",
     "correctAnswer": "A",
-    "backgroundKeyWords": "hashing security cryptography",
-    "image": null
+    "backgroundKeyWords": "hashing security cryptography"
   }
 ] 

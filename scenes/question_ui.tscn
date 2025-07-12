@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cr2bv346s7nh6"]
+[gd_scene load_steps=7 format=3 uid="uid://cr2bv346s7nh6"]
 
 [ext_resource type="Script" uid="uid://bkq3gq3gfn071" path="res://scripts/question_ui.gd" id="1_question"]
 [ext_resource type="Texture2D" uid="uid://s346nm52wlya" path="res://assets/A (3).png" id="2_a3tft"]
+[ext_resource type="Texture2D" uid="uid://shroljmsymx5" path="res://assets/level-easy.png" id="2_j4p3a"]
 [ext_resource type="PackedScene" uid="uid://cm806a21b6gen" path="res://scenes/option.tscn" id="3_a3tft"]
+[ext_resource type="Texture2D" uid="uid://d0r1bw6ivlt10" path="res://assets/Design sans titre (4).png" id="4_u0f58"]
 
 [sub_resource type="FontFile" id="FontFile_a3tft"]
 subpixel_positioning = 0
@@ -949,6 +951,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = 24.0
+offset_right = -7.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_question")
@@ -961,29 +967,38 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -200.0
-offset_right = 300.0
-offset_bottom = 200.0
+offset_left = -634.0
+offset_top = -426.0
+offset_right = -34.0
+offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1, 0.920001)
+scale = Vector2(2.22869, 2.05039)
+
+[node name="level" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 445.554
+offset_top = -80.96
+offset_right = 733.554
+offset_bottom = 207.04
+scale = Vector2(0.338105, 0.338105)
+texture = ExtResource("2_j4p3a")
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
 layout_mode = 2
-offset_left = 3.0
-offset_top = -4.0
-offset_right = 599.0
-offset_bottom = 399.0
+offset_left = -1.33097
+offset_top = -6.9055
+offset_right = 594.669
+offset_bottom = 396.095
 texture = ExtResource("2_a3tft")
 
 [node name="QuestionLabel" type="Label" parent="Panel"]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
-offset_left = 96.0
-offset_top = 27.0
-offset_right = 643.0
-offset_bottom = 181.0
+offset_left = 91.669
+offset_top = 24.0945
+offset_right = 638.669
+offset_bottom = 178.094
 scale = Vector2(0.826087, 0.826087)
 theme_override_colors/font_color = Color(0.942823, 0.942823, 0.942823, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
@@ -996,13 +1011,22 @@ vertical_alignment = 1
 autowrap_mode = 3
 uppercase = true
 
-[node name="Category" type="Label" parent="Panel"]
+[node name="ques backround" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = -88.8415
+offset_top = -78.0338
+offset_right = 211.158
+offset_bottom = 209.966
+scale = Vector2(1.80755, 0.338105)
+texture = ExtResource("4_u0f58")
+
+[node name="questionNumber" type="Label" parent="Panel"]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 0
-offset_left = 76.0
-offset_top = -138.043
-offset_right = 623.0
-offset_bottom = 15.9567
+offset_left = -52.946
+offset_top = -94.616
+offset_right = 494.054
+offset_bottom = 59.3837
 scale = Vector2(0.826087, 0.826087)
 theme_override_colors/font_color = Color(0.942823, 0.942823, 0.942823, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -1018,10 +1042,10 @@ uppercase = true
 [node name="TimerBar" type="ProgressBar" parent="Panel"]
 modulate = Color(1, 0, 0, 1)
 layout_mode = 2
-offset_left = 80.0
-offset_top = 358.695
-offset_right = 252.0
-offset_bottom = 375.695
+offset_left = 75.669
+offset_top = 355.789
+offset_right = 247.669
+offset_bottom = 372.789
 rotation = -1.5708
 scale = Vector2(1, 0.782609)
 value = 100.0
@@ -1029,30 +1053,30 @@ show_percentage = false
 
 [node name="TimerLabel" type="Label" parent="Panel"]
 layout_mode = 2
-offset_left = -1274.0
-offset_top = -15.2174
-offset_right = -714.0
-offset_bottom = 7.78261
+offset_left = -1278.33
+offset_top = -18.1229
+offset_right = -718.331
+offset_bottom = 4.8771
 text = "5"
 horizontal_alignment = 1
 
 [node name="OptionA" parent="Panel" instance=ExtResource("3_a3tft")]
 layout_mode = 0
-offset_left = 183.0
-offset_top = 193.478
-offset_right = 306.0
-offset_bottom = 224.478
+offset_left = 178.669
+offset_top = 190.572
+offset_right = 301.669
+offset_bottom = 221.572
 
 [node name="OptionB" parent="Panel" instance=ExtResource("3_a3tft")]
 layout_mode = 0
-offset_left = 183.0
-offset_top = 254.347
-offset_right = 354.115
-offset_bottom = 285.347
+offset_left = 178.669
+offset_top = 251.442
+offset_right = 349.784
+offset_bottom = 282.441
 
 [node name="OptionC" parent="Panel" instance=ExtResource("3_a3tft")]
 layout_mode = 0
-offset_left = 183.0
-offset_top = 318.478
-offset_right = 354.115
-offset_bottom = 349.478
+offset_left = 178.669
+offset_top = 315.572
+offset_right = 349.784
+offset_bottom = 346.572

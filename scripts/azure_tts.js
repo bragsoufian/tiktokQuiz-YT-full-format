@@ -138,31 +138,64 @@ class AzureTTS {
                     const audioConfig = sdk.AudioConfig.fromAudioFileOutput(cachedPath);
                     const synthesizer = new sdk.SpeechSynthesizer(this.speechConfig, audioConfig);
 
-                    synthesizer.speakTextAsync(text, result => {
-                        if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
-                            console.log('✅ TTS audio generated and cached successfully');
-                            // Play the cached audio
-                            this.playAudio(cachedPath)
-                                .then(() => resolve(true))
-                                .catch(err => {
-                                    console.error('❌ Error playing audio:', err);
-                                    // Clean up the failed cache file
-                                    this.cleanupFile(cachedPath);
-                                    resolve(false);
-                                });
-                        } else {
-                            console.error('❌ TTS failed:', result.errorDetails);
+                    // Check if text contains SSML tags
+                    const isSSML = text.includes('<speak') || text.includes('<lang') || text.includes('<prosody') || text.includes('<voice');
+                    
+                    if (isSSML) {
+                        // Use SSML synthesis
+                        synthesizer.speakSsmlAsync(text, result => {
+                            if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
+                                console.log('✅ SSML TTS audio generated and cached successfully');
+                                // Play the cached audio
+                                this.playAudio(cachedPath)
+                                    .then(() => resolve(true))
+                                    .catch(err => {
+                                        console.error('❌ Error playing audio:', err);
+                                        // Clean up the failed cache file
+                                        this.cleanupFile(cachedPath);
+                                        resolve(false);
+                                    });
+                            } else {
+                                console.error('❌ SSML TTS failed:', result.errorDetails);
+                                // Clean up the failed cache file
+                                this.cleanupFile(cachedPath);
+                                reject(new Error(result.errorDetails));
+                            }
+                            synthesizer.close();
+                        }, error => {
+                            console.error('❌ SSML TTS error:', error);
                             // Clean up the failed cache file
                             this.cleanupFile(cachedPath);
-                            reject(new Error(result.errorDetails));
-                        }
-                        synthesizer.close();
-                    }, error => {
-                        console.error('❌ TTS error:', error);
-                        // Clean up the failed cache file
-                        this.cleanupFile(cachedPath);
-                        reject(error);
-                    });
+                            reject(error);
+                        });
+                    } else {
+                        // Use regular text synthesis
+                        synthesizer.speakTextAsync(text, result => {
+                            if (result.reason === sdk.ResultReason.SynthesizingAudioCompleted) {
+                                console.log('✅ TTS audio generated and cached successfully');
+                                // Play the cached audio
+                                this.playAudio(cachedPath)
+                                    .then(() => resolve(true))
+                                    .catch(err => {
+                                        console.error('❌ Error playing audio:', err);
+                                        // Clean up the failed cache file
+                                        this.cleanupFile(cachedPath);
+                                        resolve(false);
+                                    });
+                            } else {
+                                console.error('❌ TTS failed:', result.errorDetails);
+                                // Clean up the failed cache file
+                                this.cleanupFile(cachedPath);
+                                reject(new Error(result.errorDetails));
+                            }
+                            synthesizer.close();
+                        }, error => {
+                            console.error('❌ TTS error:', error);
+                            // Clean up the failed cache file
+                            this.cleanupFile(cachedPath);
+                            reject(error);
+                        });
+                    }
                 }
 
             } catch (error) {
