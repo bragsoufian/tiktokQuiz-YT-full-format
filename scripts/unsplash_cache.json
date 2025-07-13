@@ -1658,5 +1658,237 @@
   "question_5_sql join database": {
     "url": "https://images.unsplash.com/photo-1746292506315-e346cba2af48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzMzEzMzB8&ixlib=rb-4.1.0&q=80&w=1080",
     "timestamp": 1752331333413
+  },
+  "question_1_terraform workspace environnements configuration": {
+    "url": "https://images.unsplash.com/photo-1741364450822-8bcc0122e172?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzMzM4NTd8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752333860580
+  },
+  "question_2_canary deployment rollback feature flag": {
+    "url": "https://images.unsplash.com/photo-1648655516888-4c82da18c59a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzMzM4NzN8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752333876021
+  },
+  "question_3_tracing microservices zipkin jaeger opentracing": {
+    "url": "https://images.unsplash.com/photo-1727354498942-d00cfeff4849?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzMzM4ODh8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752333891432
+  },
+  "question_4_kubernetes pv aws ebs s3": {
+    "url": "https://images.unsplash.com/photo-1669553710454-ae5b9a87a6ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzMzM5MDR8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752333906848
+  },
+  "question_1_docker container run image volume": {
+    "url": "https://images.unsplash.com/photo-1646608219681-554273a22680?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzMzQwODl8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752334092141
+  },
+  "question_2_ci cd integration delivery pipeline devops": {
+    "url": "https://images.unsplash.com/photo-1428585227457-326f25f9cee2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzMzQxMDR8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752334107762
+  },
+  "question_3_terraform iac infrastructure code cloud provisioning": {
+    "url": "https://images.unsplash.com/photo-1660144409001-7e4a011dbf00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzMzQxMjB8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752334123234
+  },
+  "question_4_prometheus monitoring metrics alerting observability": {
+    "url": "https://images.unsplash.com/photo-1631358429403-25d69fb4ce24?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzMzQxMzV8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752334138625
+  },
+  "question_5_git init repository version control scm": {
+    "url": "https://images.unsplash.com/photo-1584949092454-fb69707150f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzMzQyMTF8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752334213971
+  },
+  "question_1_etcd kubernetes cluster state distributed key-value": {
+    "url": "https://images.unsplash.com/photo-1734014938182-f76684b62fac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzMzQzMjd8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752334330595
+  },
+  "question_2_docker-compose build services container orchestration": {
+    "url": "https://images.unsplash.com/photo-1680016661694-1cd3faf31c3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzMzQzNDN8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752334346073
+  },
+  "question_3_kubectl port-forward pod networking debug access": {
+    "url": "https://images.unsplash.com/photo-1635335874521-7987db781153?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzMzQzNTh8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752334361581
+  },
+  "question_4_blue green deployment spinnaker canary release automation": {
+    "url": "https://images.unsplash.com/photo-1646578254503-41240eb8db94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzMzQ0MTl8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752334422476
+  },
+  "question_5_elk elasticsearch index search log analytics": {
+    "url": "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzMzQ0MzV8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752334437996
+  },
+  "question_6_docker container run image volume": {
+    "url": "https://images.unsplash.com/photo-1696324535687-6bb987f50e96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzMzQ0NTB8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752334453197
+  },
+  "question_1_terraform infrastructure iac devops": {
+    "url": "https://images.unsplash.com/photo-1698615213534-409607969790?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTQ2MTZ8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752394619774
+  },
+  "question_2_jenkins ci cd pipeline devops": {
+    "url": "https://images.unsplash.com/photo-1635070042627-c31a95b924a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTQ2MzF8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752394635200
+  },
+  "question_3_docker container devops": {
+    "url": "https://images.unsplash.com/photo-1455487890814-f11ab4eaec4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTQ2NDZ8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752394650616
+  },
+  "question_4_git versioning vcs devops": {
+    "url": "https://images.unsplash.com/photo-1606751582092-faa77028fa19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTQ2NjJ8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752394666006
+  },
+  "question_5_ssh port sécurité réseau devops": {
+    "url": "https://images.unsplash.com/photo-1646376158564-46b2df5b1920?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTQ2Nzd8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752394681437
+  },
+  "question_6_git init repository devops": {
+    "url": "https://images.unsplash.com/photo-1732638523685-41d2d7f611e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTQ2OTN8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752394696876
+  },
+  "question_7_ansible configuration serveurs devops": {
+    "url": "https://images.unsplash.com/photo-1647779098515-687bdba939e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTQ3MDh8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752394712263
+  },
+  "question_8_terraform infrastructure iac devops": {
+    "url": "https://images.unsplash.com/photo-1626428350159-798a2562769d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTQ3MjN8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752394727484
+  },
+  "question_9_jenkins ci cd pipeline devops": {
+    "url": "https://images.unsplash.com/photo-1632004365705-c8309d457ffc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTQ3Mzl8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752394742717
+  },
+  "question_10_docker build image devops": {
+    "url": "https://images.unsplash.com/photo-1651343726950-af1756778738?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTQ3NTR8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752394758153
+  },
+  "question_11_gitlab ci pipeline yml devops": {
+    "url": "https://images.unsplash.com/photo-1551888361-71a758d64f38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTQ3Njl8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752394773572
+  },
+  "question_12_prometheus monitoring métriques devops": {
+    "url": "https://images.unsplash.com/photo-1563178396-23a1e75aa64d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTQ3ODV8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752394789006
+  },
+  "question_13_git reset commit local devops": {
+    "url": "https://images.unsplash.com/photo-1666962141758-5bdf26db5a78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTQ4MDB8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752394804584
+  },
+  "question_14_kubernetes orchestration container devops": {
+    "url": "https://images.unsplash.com/photo-1633436245198-44bc17f86b89?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTQ4MTZ8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752394819969
+  },
+  "question_15_github actions secrets sécurité devops": {
+    "url": "https://images.unsplash.com/photo-1605639377678-b7554406b84e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTQ4MzF8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752394835411
+  },
+  "question_16_kubernetes kubectl pods cli devops": {
+    "url": "https://images.unsplash.com/photo-1573676564138-72ff59b9e8bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTQ4NDd8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752394850812
+  },
+  "question_17_helm chart templating devops": {
+    "url": "https://images.unsplash.com/photo-1704787266043-0c33f9b0480d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTQ4NjJ8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752394866190
+  },
+  "question_18_elk stack logs kibana elasticsearch devops": {
+    "url": "https://images.unsplash.com/photo-1697358621732-3e267cfab21b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTQ4Nzd8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752394881616
+  },
+  "question_19_blue green deployment ci cd devops": {
+    "url": "https://images.unsplash.com/photo-1524725407856-07a1c1aeba43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTQ4OTN8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752394896998
+  },
+  "question_20_trivy container sécurité vulnérabilité devops": {
+    "url": "https://images.unsplash.com/photo-1722434246535-883182e9c87f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTQ5MDh8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752394912406
+  },
+  "question_21_kubernetes hpa scaling autoscaling devops": {
+    "url": "https://images.unsplash.com/photo-1689942007101-de5d836afcf4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTQ5MjR8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752394927887
+  },
+  "question_1_cron crontab tâche planification devops": {
+    "url": "https://images.unsplash.com/photo-1720036030758-f65a5c5f3acd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTYwOTZ8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752396100415
+  },
+  "question_2_ls commande terminal linux devops": {
+    "url": "https://images.unsplash.com/photo-1555066931-bf19f8fd1085?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTYxMTJ8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752396115884
+  },
+  "question_3_pwd shell terminal chemin devops": {
+    "url": "https://images.unsplash.com/photo-1591711584791-455de896b1e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTYxMjd8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752396131250
+  },
+  "question_4_bash script shell devops": {
+    "url": "https://images.unsplash.com/photo-1704717700477-69f9509f9af2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTYxNDN8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752396146721
+  },
+  "question_5_scp transfert ssh fichier devops": {
+    "url": "https://images.unsplash.com/photo-1676838111102-5054f1ceec1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTYxNTh8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752396162205
+  },
+  "question_6_ansible playbook configuration devops": {
+    "url": "https://images.unsplash.com/photo-1663789049943-138e53774e2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTYxNzN8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752396177614
+  },
+  "question_7_gitlab ci cd pipeline devops": {
+    "url": "https://images.unsplash.com/photo-1635070042766-3e984264accf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTYxODl8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752396193088
+  },
+  "question_8_ping réseau connectivité devops": {
+    "url": "https://images.unsplash.com/photo-1675627452478-0933ab9e5f65?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTYyMDR8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752396208571
+  },
+  "question_9_git versioning devops": {
+    "url": "https://images.unsplash.com/photo-1622808957568-dd531d540ee8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTYyMjB8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752396224014
+  },
+  "question_10_ip adresse réseau linux devops": {
+    "url": "https://images.unsplash.com/photo-1607845283603-912449544d77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTYyMzV8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752396239432
+  },
+  "question_11_systemctl service état linux devops": {
+    "url": "https://images.unsplash.com/photo-1724166573009-4634b974ebb2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTYyNTF8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752396254968
+  },
+  "question_12_nano éditeur fichier terminal devops": {
+    "url": "https://images.unsplash.com/photo-1721183186502-b82455f11c80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTYyNjZ8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752396270404
+  },
+  "question_13_prometheus monitoring supervision devops": {
+    "url": "https://images.unsplash.com/photo-1732479347798-84ef29577a6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTYyODJ8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752396285817
+  },
+  "question_14_grafana dashboard visualisation devops": {
+    "url": "https://images.unsplash.com/photo-1590034295051-004f272713a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTYyOTd8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752396301197
+  },
+  "question_15_kubernetes orchestrateur container devops": {
+    "url": "https://images.unsplash.com/photo-1644507881446-41ed9ee2c928?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTYzMTN8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752396316684
+  },
+  "question_16_docker containerisation devops": {
+    "url": "https://images.unsplash.com/photo-1621862681400-a2a7321dc1c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTYzMjh8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752396332099
+  },
+  "question_17_dockerfile format docker devops": {
+    "url": "https://images.unsplash.com/photo-1748366898156-570d5f65f903?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTYzNDN8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752396347557
+  },
+  "question_18_ansible galaxy rôles devops": {
+    "url": "https://images.unsplash.com/photo-1710676828606-8d5e67308fe7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTYzNTl8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752396363054
+  },
+  "question_19_dockerfile configuration image devops": {
+    "url": "https://images.unsplash.com/photo-1667377052103-3d282994acf3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTYzNzR8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752396378508
+  },
+  "question_20_docker stop container devops": {
+    "url": "https://images.unsplash.com/photo-1743543195200-2430a41346e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzQ0Mzl8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTYzOTB8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752396393955
+  },
+  "question_21_ssh accès distant sécurité devops": {
+    "url": "https://images.unsplash.com/photo-1624135865484-b78e41ba3adc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTIzOTY0MDV8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752396409459
+  },
+  "default_background": {
+    "url": "https://images.unsplash.com/photo-1623916799434-114e844becc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NzEyODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NTI0MDMxMDJ8&ixlib=rb-4.1.0&q=80&w=1080",
+    "timestamp": 1752403105700
   }
 }

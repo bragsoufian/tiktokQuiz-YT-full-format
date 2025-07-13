@@ -175,6 +175,8 @@ func _handle_websocket_message(message: Dictionary):
 			_handle_show_ready(message)
 		"play_new_player_sound":
 			_handle_play_new_player_sound(message)
+		"set_background":
+			_handle_set_background(message)
 		_:
 			print("❓ Message inconnu reçu: ", message_type)
 
@@ -618,14 +620,14 @@ func _setup_ready_audio():
 func _setup_background_music():
 	# Configuration de la musique de fond
 	background_music_player = AudioStreamPlayer.new()
-	background_music = preload("res://assets/sounds/Who Wants to Be a Mill.ogg")
+	background_music = preload("res://assets/sounds/Who Wants to Be a Mill.mp3")
 	background_music_player.stream = background_music
 	background_music_player.volume_db = -10  # Volume plus bas que les effets sonores
 	background_music_player.bus = "Master"
 	background_music_player.autoplay = true  # Démarrer automatiquement
 	add_child(background_music_player)
 	print("🎵 Musique de fond configurée et démarrée automatiquement")
-	print("🎵 Who Wants to Be a Mill.ogg - EN COURS DE LECTURE EN BOUCLE")
+	print("🎵 Who Wants to Be a Mill.mp3 - EN COURS DE LECTURE EN BOUCLE")
 	
 	# Debug: Vérifier l'état de la musique
 	print("🔍 DEBUG - Stream chargé: ", background_music != null)
@@ -684,6 +686,16 @@ func _handle_play_new_player_sound(message: Dictionary):
 			print("❌ Impossible de charger le son: ", sound_file)
 	else:
 		print("❌ Données de son manquantes ou lecteur non configuré")
+
+func _handle_set_background(message: Dictionary):
+	"""Gère le message set_background pour changer l'image de fond"""
+	print("🖼️ Message set_background reçu: ", message)
+	
+	if message.has("backgroundImage") and not message.backgroundImage.is_empty():
+		print("🖼️ Chargement de l'image de fond: ", message.backgroundImage)
+		load_background_image(message.backgroundImage)
+	else:
+		print("⚠️ URL d'image de fond manquante ou vide dans le message set_background")
 
 func _handle_start_timer(message: Dictionary):
 	# Mettre tous les flags des joueurs en "go" (réponse autorisée) quand le timer démarre

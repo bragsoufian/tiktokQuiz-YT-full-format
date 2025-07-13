@@ -1,0 +1,170 @@
+[
+  {
+    "question": "Quelle commande Docker supprime une image ?",
+    "questionTTS": "Quelle commande <lang xml:lang=\"en-US\">Docker</lang> supprime une image ?",
+    "options": ["docker delete", "docker image rm", "docker remove"],
+    "niveau": "medium",
+    "correctAnswer": "B",
+    "backgroundKeyWords": "docker image suppression devops"
+  },
+  {
+    "question": "Quel fichier décrit les étapes CI de GitHub ?",
+    "questionTTS": "Quel fichier décrit les étapes <lang xml:lang=\"en-US\">CI</lang> de <lang xml:lang=\"en-US\">GitHub</lang> ?",
+    "options": ["ci.yaml", ".github-ci.yml", ".github/workflows.yml"],
+    "niveau": "medium",
+    "correctAnswer": "C",
+    "backgroundKeyWords": "github ci workflow yml devops"
+  },
+  {
+    "question": "Quel outil d'orchestration est natif à Docker ?",
+    "questionTTS": "Quel outil d'orchestration est natif à <lang xml:lang=\"en-US\">Docker</lang> ?",
+    "options": ["Nomad", "Kubernetes", "Swarm"],
+    "niveau": "medium",
+    "correctAnswer": "C",
+    "backgroundKeyWords": "docker swarm orchestration devops"
+  },
+  {
+    "question": "Quel plugin Jenkins déploie sur Kubernetes ?",
+    "questionTTS": "Quel plugin <lang xml:lang=\"en-US\">Jenkins</lang> déploie sur <lang xml:lang=\"en-US\">Kubernetes</lang> ?",
+    "options": ["KubeDeployer", "Kubernetes", "JenkinsX"],
+    "niveau": "medium",
+    "correctAnswer": "B",
+    "backgroundKeyWords": "jenkins plugin kubernetes devops"
+  },
+  {
+    "question": "Quel format est requis pour un Docker Compose ?",
+    "questionTTS": "Quel format est requis pour un <lang xml:lang=\"en-US\">Docker Compose</lang> ?",
+    "options": ["YAML", "JSON", "XML"],
+    "niveau": "medium",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "docker compose yaml format devops"
+  },
+  {
+    "question": "Quel composant K8s gère les pods ?",
+    "questionTTS": "Quel composant <lang xml:lang=\"en-US\">Kubernetes</lang> gère les pods ?",
+    "options": ["PodManager", "Controller", "ReplicaSet"],
+    "niveau": "medium",
+    "correctAnswer": "C",
+    "backgroundKeyWords": "kubernetes pods replicaset devops"
+  },
+  {
+    "question": "Quel outil gère les dépendances Python ?",
+    "questionTTS": "Quel outil gère les dépendances <lang xml:lang=\"en-US\">Python</lang> ?",
+    "options": ["npm", "composer", "pip"],
+    "niveau": "medium",
+    "correctAnswer": "C",
+    "backgroundKeyWords": "pip python dépendance devops"
+  },
+  {
+    "question": "Quel outil scanne les vulnérabilités Docker ?",
+    "questionTTS": "Quel outil scanne les vulnérabilités <lang xml:lang=\"en-US\">Docker</lang> ?",
+    "options": ["Trivy", "Vault", "Harbor"],
+    "niveau": "medium",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "trivy sécurité container scan devops"
+  },
+  {
+    "question": "Quel rôle a etcd dans Kubernetes ?",
+    "questionTTS": "Quel rôle a <lang xml:lang=\"en-US\">etcd</lang> dans <lang xml:lang=\"en-US\">Kubernetes</lang> ?",
+    "options": ["Stockage clés", "Planification", "Déploiement"],
+    "niveau": "medium",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "etcd kubernetes cluster stockage devops"
+  },
+  {
+    "question": "Quelle ressource gère les ports en K8s ?",
+    "questionTTS": "Quelle ressource gère les ports en <lang xml:lang=\"en-US\">Kubernetes</lang> ?",
+    "options": ["Pod", "Deployment", "Service"],
+    "niveau": "medium",
+    "correctAnswer": "C",
+    "backgroundKeyWords": "kubernetes service port réseau devops"
+  },
+  {
+    "question": "Quel outil génère un plan d'infra ?",
+    "questionTTS": "Quel outil génère un plan d'infrastructure ?",
+    "options": ["Terraform", "CloudFormation", "Pulumi"],
+    "niveau": "medium",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "terraform plan infra iac devops"
+  },
+  {
+    "question": "Quelle commande Git supprime une branche ?",
+    "questionTTS": "Quelle commande <lang xml:lang=\"en-US\">Git</lang> supprime une branche ?",
+    "options": ["git delete", "git branch -d", "git remove-branch"],
+    "niveau": "medium",
+    "correctAnswer": "B",
+    "backgroundKeyWords": "git branche suppression devops"
+  },
+  {
+    "question": "Quel outil est un registry Docker ?",
+    "questionTTS": "Quel outil est un <lang xml:lang=\"en-US\">registry</lang> <lang xml:lang=\"en-US\">Docker</lang> ?",
+    "options": ["Trivy", "Harbor", "Ansible"],
+    "niveau": "medium",
+    "correctAnswer": "B",
+    "backgroundKeyWords": "harbor docker registry devops"
+  },
+  {
+    "question": "Quelle commande arrête tous les containers ?",
+    "questionTTS": "Quelle commande arrête tous les containers <lang xml:lang=\"en-US\">Docker</lang> ?",
+    "options": ["docker stop all", "docker kill $(...)", "docker stop $(...)"],
+    "niveau": "medium",
+    "correctAnswer": "C",
+    "backgroundKeyWords": "docker stop container all devops"
+  },
+  {
+    "question": "Quel outil utilise YAML pour CI/CD ?",
+    "questionTTS": "Quel outil utilise <lang xml:lang=\"en-US\">YAML</lang> pour la <lang xml:lang=\"en-US\">CI/CD</lang> ?",
+    "options": ["GitHub Actions", "Jira", "Slack"],
+    "niveau": "medium",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "github actions yaml pipeline devops"
+  },
+  {
+    "question": "Quelle ressource K8s expose un app ?",
+    "questionTTS": "Quelle ressource <lang xml:lang=\"en-US\">Kubernetes</lang> expose une application ?",
+    "options": ["Deployment", "Volume", "Service"],
+    "niveau": "medium",
+    "correctAnswer": "C",
+    "backgroundKeyWords": "kubernetes service exposition devops"
+  },
+  {
+    "question": "Quel outil crée des images Docker ?",
+    "questionTTS": "Quel outil crée des images <lang xml:lang=\"en-US\">Docker</lang> ?",
+    "options": ["docker build", "docker run", "docker create"],
+    "niveau": "medium",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "docker build image création devops"
+  },
+  {
+    "question": "Quel outil CI utilise les runners ?",
+    "questionTTS": "Quel outil <lang xml:lang=\"en-US\">CI</lang> utilise les runners ?",
+    "options": ["CircleCI", "GitLab CI", "Jenkins"],
+    "niveau": "medium",
+    "correctAnswer": "B",
+    "backgroundKeyWords": "gitlab ci runners pipeline devops"
+  },
+  {
+    "question": "Quel outil permet l'autoscaling ?",
+    "questionTTS": "Quel outil permet l'autoscaling ?",
+    "options": ["K8s HPA", "Docker", "Bash"],
+    "niveau": "medium",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "kubernetes hpa autoscaling devops"
+  },
+  {
+    "question": "Quel outil teste les API REST ?",
+    "questionTTS": "Quel outil teste les <lang xml:lang=\"en-US\">API REST</lang> ?",
+    "options": ["SSH", "Jenkins", "Postman"],
+    "niveau": "medium",
+    "correctAnswer": "C",
+    "backgroundKeyWords": "postman test api rest devops"
+  },
+  {
+    "question": "Quel outil détecte les erreurs infra ?",
+    "questionTTS": "Quel outil détecte les erreurs d'infrastructure ?",
+    "options": ["Sentry", "Prometheus", "Grafana"],
+    "niveau": "medium",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "sentry erreurs monitoring devops"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "welcome": {
+    "text": "Bienvenue dans ce quiz DevOps ! Testez vos connaissances sur les pratiques et outils les plus utilisés en ingénierie logicielle. Êtes-vous prêt ? C'est parti !",
+    "backgroundTheme": "technology coding"
+  },
+  "goodbye": {
+    "text": "Merci d'avoir joué à ce quiz DevOps ! Abonnez-vous pour ne pas rater les prochains quiz et continuez à vous challenger sur vos connaissances en informatique.",
+    "backgroundTheme": "success celebration"
+  },
+  "defaultBackground": {
+    "theme": "modern office workspace"
+  }
+}

@@ -977,11 +977,11 @@ scale = Vector2(2.22869, 2.05039)
 
 [node name="level" type="TextureRect" parent="Panel"]
 layout_mode = 0
-offset_left = 445.554
-offset_top = -80.96
-offset_right = 733.554
-offset_bottom = 207.04
-scale = Vector2(0.338105, 0.338105)
+offset_left = 391.261
+offset_top = -136.559
+offset_right = 679.261
+offset_bottom = 151.441
+scale = Vector2(0.702794, 0.702794)
 texture = ExtResource("2_j4p3a")
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]

@@ -1,58 +1,170 @@
 [
   {
-    "question": "Quel outil gère les conteneurs ?",
-    "questionTTS": "Quel outil gère les <lang xml:lang=\"en-US\">containers</lang> ?",
-    "options": ["Docker", "Terraform", "Ansible"],
-    "niveau": "easy",
-    "correctAnswer": "A",
-    "backgroundKeyWords": "docker container devops"
-  },
-  {
-    "question": "Quel mot-clé évite l'héritage ?",
-    "questionTTS": "Quel mot-clé évite l'héritage en <lang xml:lang=\"en-US\">Java</lang> ?",
-    "options": ["final", "static", "transient"],
-    "niveau": "medium",
-    "correctAnswer": "A",
-    "backgroundKeyWords": "java keyword inheritance"
-  },
-  {
-    "question": "Méthode pour parser du JSON ?",
-    "questionTTS": "Quelle méthode pour parser du <lang xml:lang=\"en-US\">JSON</lang> en <lang xml:lang=\"en-US\">JavaScript</lang> ?",
-    "options": ["JSON.decode", "JSON.parse", "parseJSON"],
+    "question": "Quel outil planifie des tâches cron ?",
+    "questionTTS": "Quel outil planifie des tâches <lang xml:lang=\"en-US\">cron</lang> ?",
+    "options": ["cronrun", "crontab", "cronjob"],
     "niveau": "easy",
     "correctAnswer": "B",
-    "backgroundKeyWords": "javascript json parse"
+    "backgroundKeyWords": "cron crontab tâche planification devops"
   },
   {
-    "question": "Comment définir une fonction ?",
-    "questionTTS": "Comment définir une fonction en <lang xml:lang=\"en-US\">Python</lang> ?",
-    "options": ["function", "lambda", "def"],
+    "question": "Quelle commande liste les fichiers ?",
+    "questionTTS": "Quelle commande liste les fichiers ?",
+    "options": ["cd", "pwd", "ls"],
     "niveau": "easy",
     "correctAnswer": "C",
-    "backgroundKeyWords": "python function syntax"
+    "backgroundKeyWords": "ls commande terminal linux devops"
   },
   {
-    "question": "Type de jointure SQL par défaut ?",
-    "questionTTS": "Quel est le type de jointure <lang xml:lang=\"en-US\">SQL</lang> par défaut ?",
-    "options": ["INNER JOIN", "LEFT JOIN", "FULL JOIN"],
-    "niveau": "medium",
-    "correctAnswer": "A",
-    "backgroundKeyWords": "sql join database"
-  },
-  {
-    "question": "Port par défaut du SSH ?",
-    "questionTTS": "Quel est le port par défaut du <lang xml:lang=\"en-US\">SSH</lang> ?",
-    "options": ["80", "22", "443"],
+    "question": "Que fait la commande 'pwd' ?",
+    "questionTTS": "Que fait la commande <lang xml:lang=\"en-US\">p w d</lang> ?",
+    "options": ["Efface fichier", "Chemin courant", "Copie fichier"],
     "niveau": "easy",
     "correctAnswer": "B",
-    "backgroundKeyWords": "ssh port network"
+    "backgroundKeyWords": "pwd shell terminal chemin devops"
   },
   {
-    "question": "Algorithme de hachage courant ?",
-    "questionTTS": "Quel algorithme de hachage est courant ?",
-    "options": ["SHA-256", "AES", "RSA"],
-    "niveau": "hard",
+    "question": "Quel outil permet de créer des scripts d'init ?",
+    "questionTTS": "Quel outil permet de créer des scripts d'initialisation ?",
+    "options": ["Nano", "Curl", "Bash"],
+    "niveau": "easy",
+    "correctAnswer": "C",
+    "backgroundKeyWords": "bash script shell devops"
+  },
+  {
+    "question": "Quelle commande envoie un fichier via SCP ?",
+    "questionTTS": "Quelle commande envoie un fichier via <lang xml:lang=\"en-US\">S C P</lang> ?",
+    "options": ["ftp", "wget", "scp"],
+    "niveau": "easy",
+    "correctAnswer": "C",
+    "backgroundKeyWords": "scp transfert ssh fichier devops"
+  },
+  {
+    "question": "Quel outil utilise 'playbook' ?",
+    "questionTTS": "Quel outil utilise le terme <lang xml:lang=\"en-US\">playbook</lang> ?",
+    "options": ["Docker", "Ansible", "Terraform"],
+    "niveau": "easy",
+    "correctAnswer": "B",
+    "backgroundKeyWords": "ansible playbook configuration devops"
+  },
+  {
+    "question": "Quel outil open-source pour la CI/CD ?",
+    "questionTTS": "Quel outil open-source pour la <lang xml:lang=\"en-US\">CI/CD</lang> ?",
+    "options": ["Slack", "GitLab CI", "Trello"],
+    "niveau": "easy",
+    "correctAnswer": "B",
+    "backgroundKeyWords": "gitlab ci cd pipeline devops"
+  },
+  {
+    "question": "Quelle commande vérifie la connectivité réseau ?",
+    "questionTTS": "Quelle commande vérifie la connectivité réseau ?",
+    "options": ["ping", "ssh", "scp"],
+    "niveau": "easy",
     "correctAnswer": "A",
-    "backgroundKeyWords": "hashing security cryptography"
+    "backgroundKeyWords": "ping réseau connectivité devops"
+  },
+  {
+    "question": "Quel est l'outil de versioning ?",
+    "questionTTS": "Quel est l'outil de versioning ?",
+    "options": ["Vim", "Git", "SCP"],
+    "niveau": "easy",
+    "correctAnswer": "B",
+    "backgroundKeyWords": "git versioning devops"
+  },
+  {
+    "question": "Quelle commande affiche l'adresse IP ?",
+    "questionTTS": "Quelle commande affiche l'adresse IP ?",
+    "options": ["ifconfig", "ls", "mv"],
+    "niveau": "easy",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "ip adresse réseau linux devops"
+  },
+  {
+    "question": "Quel outil vérifie l'état d'un service ?",
+    "questionTTS": "Quel outil vérifie l'état d'un service ?",
+    "options": ["curl", "systemctl", "git"],
+    "niveau": "easy",
+    "correctAnswer": "B",
+    "backgroundKeyWords": "systemctl service état linux devops"
+  },
+  {
+    "question": "Quel outil permet d’éditer un fichier ?",
+    "questionTTS": "Quel outil permet d’éditer un fichier ?",
+    "options": ["nano", "rm", "cat"],
+    "niveau": "easy",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "nano éditeur fichier terminal devops"
+  },
+  {
+    "question": "Quel outil permet de superviser ?",
+    "questionTTS": "Quel outil permet de superviser ?",
+    "options": ["Prometheus", "Git", "Bash"],
+    "niveau": "easy",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "prometheus monitoring supervision devops"
+  },
+  {
+    "question": "Quel outil affiche des dashboards ?",
+    "questionTTS": "Quel outil affiche des dashboards ?",
+    "options": ["Ansible", "Grafana", "Jenkins"],
+    "niveau": "easy",
+    "correctAnswer": "B",
+    "backgroundKeyWords": "grafana dashboard visualisation devops"
+  },
+  {
+    "question": "Quel outil est un orchestrateur ?",
+    "questionTTS": "Quel outil est un orchestrateur ?",
+    "options": ["Kubernetes", "Git", "SSH"],
+    "niveau": "easy",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "kubernetes orchestrateur container devops"
+  },
+  {
+    "question": "Quel outil permet de containeriser ?",
+    "questionTTS": "Quel outil permet de containeriser ?",
+    "options": ["Ansible", "Terraform", "Docker"],
+    "niveau": "easy",
+    "correctAnswer": "C",
+    "backgroundKeyWords": "docker containerisation devops"
+  },
+  {
+    "question": "Quel format est utilisé pour Dockerfile ?",
+    "questionTTS": "Quel format est utilisé pour <lang xml:lang=\"en-US\">Dockerfile</lang> ?",
+    "options": ["YAML", "DSL", "Markdown"],
+    "niveau": "easy",
+    "correctAnswer": "B",
+    "backgroundKeyWords": "dockerfile format docker devops"
+  },
+  {
+    "question": "Quel outil gère les rôles dans Ansible ?",
+    "questionTTS": "Quel outil gère les rôles dans <lang xml:lang=\"en-US\">Ansible</lang> ?",
+    "options": ["Galaxy", "Playbook", "Module"],
+    "niveau": "easy",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "ansible galaxy rôles devops"
+  },
+  {
+    "question": "Quel fichier est utilisé par Docker ?",
+    "questionTTS": "Quel fichier est utilisé par <lang xml:lang=\"en-US\">Docker</lang> ?",
+    "options": ["Docker.yaml", "Dockerfile", "Docker.txt"],
+    "niveau": "easy",
+    "correctAnswer": "B",
+    "backgroundKeyWords": "dockerfile configuration image devops"
+  },
+  {
+    "question": "Quelle commande arrête un conteneur Docker ?",
+    "questionTTS": "Quelle commande arrête un conteneur <lang xml:lang=\"en-US\">Docker</lang> ?",
+    "options": ["docker down", "docker kill", "docker stop"],
+    "niveau": "easy",
+    "correctAnswer": "C",
+    "backgroundKeyWords": "docker stop container devops"
+  },
+  {
+    "question": "Quel outil permet l'accès distant ?",
+    "questionTTS": "Quel outil permet l'accès distant ?",
+    "options": ["SSH", "DNS", "NFS"],
+    "niveau": "easy",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "ssh accès distant sécurité devops"
   }
-] 
+]

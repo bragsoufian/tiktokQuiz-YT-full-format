@@ -1,3 +1,13 @@
+/**
+ * 🎬 YOUTUBE QUIZ VIDEO GENERATOR
+ * 
+ * BUT: Générer automatiquement des vidéos de quiz pour YouTube
+ * WORKFLOW: Génération -> Enregistrement -> Montage -> Upload
+ * 
+ * Ce serveur génère du contenu de quiz avec TTS, images de fond,
+ * et effets sonores pour créer des vidéos prêtes au montage.
+ */
+
 const WebSocket = require('ws');
 const fs = require('fs');
 const path = require('path');
@@ -37,11 +47,11 @@ String.prototype.hashCode = function() {
     return Math.abs(hash);
 };
 
-// Configuration du jeu
-const QUESTION_TIMER = 7000; // 7 secondes par défaut
-const ANSWER_DISPLAY_TIME = 3000; // 3 secondes pour voir la réponse
-const READY_PAUSE_TIME = 4000; // 4 secondes de pause "Ready"
-const GRACE_PERIOD = 1000; // 4 secondes de grâce pour les réponses tardives
+// Configuration du générateur de vidéos YouTube
+const QUESTION_TIMER = 7000; // 7 secondes par défaut (durée de la question dans la vidéo)
+const ANSWER_DISPLAY_TIME = 3000; // 3 secondes pour voir la réponse (montage)
+const READY_PAUSE_TIME = 4000; // 4 secondes de pause "Ready" (transition)
+const GRACE_PERIOD = 1000; // 1 seconde de grâce pour les réponses tardives
 
 // État de la question
 let questionActive = false;
@@ -74,6 +84,26 @@ const log = {
     question: (msg) => console.log('\x1b[33m%s\x1b[0m', `[${new Date().toLocaleTimeString()}] ❓ ${msg}`),   // Jaune pour les questions
     unsplash: (msg) => console.log('\x1b[36m%s\x1b[0m', `[${new Date().toLocaleTimeString()}] 🖼️ ${msg}`)   // Cyan pour Unsplash
 };
+
+// Load greetings messages
+let GREETINGS = {};
+try {
+    const greetingsPath = path.join(__dirname, 'greetings.json');
+    const greetingsData = fs.readFileSync(greetingsPath, 'utf8');
+    GREETINGS = JSON.parse(greetingsData);
+    log.success(`Chargement des messages de bienvenue depuis greetings.json`);
+} catch (error) {
+    log.error(`Erreur lors du chargement des messages de bienvenue: ${error.message}`);
+    // Messages par défaut en cas d'erreur
+    GREETINGS = {
+        welcome: {
+            text: "Bonjour à tous ! Bienvenue dans notre quiz TikTok."
+        },
+        goodbye: {
+            text: "Merci à tous d'avoir participé à notre quiz !"
+        }
+    };
+}
 
 // Charger les questions depuis le fichier JSON
 let QUESTIONS = [];
@@ -118,9 +148,9 @@ function initializeShuffledQuestions() {
 // Plus de chargement des phrases d'introduction - logique simplifiée
 log.success(`Logique des catégories supprimée - questions simples numérotées`);
 
-// Fonction pour réinitialiser l'état du jeu - SIMPLIFIÉE
-function resetGameState() {
-    log.system('Réinitialisation de l\'état du jeu');
+// Fonction pour réinitialiser l'état du générateur de vidéos - SIMPLIFIÉE
+async function resetGameState() {
+    log.system('Réinitialisation de l\'état du générateur de vidéos');
     questionActive = false;
     questionWaitingForActivation = false;
     currentQuestion = null;
@@ -142,17 +172,51 @@ function resetGameState() {
     }
     
     // Démarrer le cycle de questions
-    startQuestionCycle();
+    await startQuestionCycle();
 }
 
 // Fonction pour démarrer le cycle de questions
-function startQuestionCycle() {
+async function startQuestionCycle() {
     log.question('Démarrage du cycle de questions');
     
-    // Poser la première question immédiatement
-    setTimeout(() => {
-        askNewQuestion();
-    }, 3000); // Attendre 3 secondes avant la première question
+    // Générer l'image de fond par défaut
+    let defaultBackgroundUrl = null;
+    if (GREETINGS.defaultBackground && GREETINGS.defaultBackground.theme) {
+        try {
+            log.unsplash(`Génération de l'image de fond par défaut: "${GREETINGS.defaultBackground.theme}"`);
+            defaultBackgroundUrl = await getUnsplashImage(GREETINGS.defaultBackground.theme, 'default_background');
+        } catch (err) {
+            log.error('❌ Erreur lors de la génération de l\'image de fond par défaut: ' + err);
+        }
+    }
+    
+    // Envoyer l'image de fond par défaut à Godot
+    if (defaultBackgroundUrl) {
+        const backgroundMessage = {
+            type: "set_background",
+            backgroundImage: defaultBackgroundUrl
+        };
+        broadcastToGodot(backgroundMessage);
+        log.unsplash(`Image de fond par défaut envoyée à Godot: ${defaultBackgroundUrl}`);
+    }
+    
+    // Lire le message de bienvenue et attendre qu'il soit terminé
+    if (azureTTS && GREETINGS.welcome) {
+        try {
+            log.question('🎤 Lecture du message de bienvenue...');
+            const welcomeSSML = formatGreetingWithSSML(GREETINGS.welcome.text);
+            await azureTTS.speakQuestion(welcomeSSML, 0);
+            log.info('✅ Message de bienvenue lu avec succès.');
+        } catch (err) {
+            log.error('❌ Erreur TTS pour le message de bienvenue: ' + err);
+        }
+    }
+    
+    // Attendre 3 secondes supplémentaires après la fin du message de bienvenue
+    await new Promise(resolve => setTimeout(resolve, 3000));
+    
+    // Poser la première question
+    askNewQuestion();
 }
 
 // Fonction pour arrêter le cycle de questions
@@ -186,8 +250,70 @@ async function askNewQuestion() {
     
     // Check if we need to restart from beginning (all questions used)
     if (currentQuestionIndex >= SHUFFLED_QUESTIONS.length) {
-        log.question('🔄 Toutes les questions utilisées, redémarrage depuis le début...');
-        initializeShuffledQuestions();
+        log.question('🏁 Toutes les questions utilisées, fin du quiz...');
+        
+        // Lire le message d'au revoir
+        if (azureTTS && GREETINGS.goodbye) {
+            try {
+                log.question('🎤 Lecture du message d\'au revoir...');
+                
+                // Générer l'image de fond pour le message d'au revoir
+                let goodbyeBackgroundUrl = null;
+                if (GREETINGS.goodbye.backgroundTheme) {
+                    try {
+                        log.unsplash(`Génération de l'image de fond pour l'au revoir: "${GREETINGS.goodbye.backgroundTheme}"`);
+                        goodbyeBackgroundUrl = await getUnsplashImage(GREETINGS.goodbye.backgroundTheme, 'goodbye_background');
+                    } catch (err) {
+                        log.error('❌ Erreur lors de la génération de l\'image de fond pour l\'au revoir: ' + err);
+                    }
+                }
+                
+                // Envoyer l'image de fond pour l'au revoir à Godot
+                if (goodbyeBackgroundUrl) {
+                    const backgroundMessage = {
+                        type: "set_background",
+                        backgroundImage: goodbyeBackgroundUrl
+                    };
+                    broadcastToGodot(backgroundMessage);
+                    log.unsplash(`Image de fond pour l'au revoir envoyée à Godot: ${goodbyeBackgroundUrl}`);
+                }
+                
+                const goodbyeSSML = formatGreetingWithSSML(GREETINGS.goodbye.text);
+                azureTTS.speakQuestion(goodbyeSSML, 0).then(() => {
+                    log.info('✅ Message d\'au revoir lu avec succès.');
+                    // Redémarrer le quiz après 3 secondes
+                    setTimeout(() => {
+                        log.question('🔄 Redémarrage du quiz...');
+                        initializeShuffledQuestions();
+                        askNewQuestion();
+                    }, 3000);
+                }).catch(err => {
+                    log.error('❌ Erreur TTS pour le message d\'au revoir: ' + err);
+                    // Redémarrer même en cas d'erreur
+                    setTimeout(() => {
+                        log.question('🔄 Redémarrage du quiz...');
+                        initializeShuffledQuestions();
+                        askNewQuestion();
+                    }, 3000);
+                });
+            } catch (err) {
+                log.error('❌ Erreur TTS pour le message d\'au revoir: ' + err);
+                // Redémarrer même en cas d'erreur
+                setTimeout(() => {
+                    log.question('🔄 Redémarrage du quiz...');
+                    initializeShuffledQuestions();
+                    askNewQuestion();
+                }, 3000);
+            }
+        } else {
+            // Si pas de TTS, redémarrer directement
+            setTimeout(() => {
+                log.question('🔄 Redémarrage du quiz...');
+                initializeShuffledQuestions();
+                askNewQuestion();
+            }, 3000);
+        }
+        return;
     }
     
     // Sélectionner la question suivante depuis le tableau mélangé
@@ -374,19 +500,21 @@ wsServer.on('connection', (ws) => {
     log.system('🔗 Nouvelle connexion Godot établie');
     godotConnected = true;
     
-    // Démarrer le cycle de questions seulement si c'est la première connexion
+    // Démarrer le cycle de génération de vidéos seulement si c'est la première connexion
     if (!questionActive && !questionWaitingForActivation) {
-        log.system('🚀 Démarrage du cycle de questions (Godot connecté)');
-        resetGameState();
+        log.system('🚀 Démarrage du générateur de vidéos (Godot connecté)');
+        resetGameState().catch(err => {
+            log.error('❌ Erreur lors du démarrage du générateur de vidéos: ' + err);
+        });
     }
     
     // Gestion de la déconnexion
     ws.on('close', () => {
         log.system('🔌 Connexion Godot fermée');
         godotConnected = false;
-        // Arrêter le cycle de questions
+        // Arrêter le générateur de vidéos
         stopQuestionCycle();
-        log.system('⏹️ Cycle de questions arrêté (Godot déconnecté)');
+        log.system('⏹️ Générateur de vidéos arrêté (Godot déconnecté)');
     });
     
     // Gestion des erreurs
@@ -395,7 +523,7 @@ wsServer.on('connection', (ws) => {
     });
 });
 
-log.system('Serveur WebSocket démarré sur ws://localhost:8080');
+log.system('🎬 Générateur de vidéos YouTube démarré sur ws://localhost:8080');
 
 // Initialize Azure TTS
 (async () => {
@@ -574,6 +702,20 @@ function extractKeywordsFromQuestion(question) {
     return 'abstract';
 }
 
+// Function to format greeting text with SSML
+function formatGreetingWithSSML(text) {
+    // Start with SSML wrapper
+    let ssml = `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="fr-FR">`;
+    ssml += `<voice name="fr-FR-Remy:DragonHDLatestNeural">`;
+    ssml += `<prosody rate="medium" pitch="medium" volume="medium">`;
+    ssml += text;
+    ssml += `</prosody>`;
+    ssml += `</voice>`;
+    ssml += `</speak>`;
+    
+    return ssml;
+}
+
 // Function to format question text with SSML for better pronunciation
 function formatQuestionWithSSML(questionNumber, question, options) {
     // Start with SSML wrapper
@@ -597,5 +739,5 @@ function formatQuestionWithSSML(questionNumber, question, options) {
 // 🎲 Initialize shuffled questions for the first game
 initializeShuffledQuestions();
 
-// Le cycle de questions ne démarre que quand Godot se connecte
-log.system('⏳ En attente de connexion Godot pour démarrer le cycle de questions...'); 
+// Le générateur de vidéos ne démarre que quand Godot se connecte
+log.system('⏳ En attente de connexion Godot pour démarrer le générateur de vidéos...'); 

@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dawcxst5kmvnp" path="res://scenes/player.tscn" id="3_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://cr2bv346s7nh6" path="res://scenes/question_ui.tscn" id="3_vcsgt"]
 [ext_resource type="Texture2D" uid="uid://cg1mtkkpo16j3" path="res://assets/0 (5).png" id="4_q8u5g"]
-[ext_resource type="Texture2D" uid="uid://bfs7ytnewnekx" path="res://assets/ready_goo-removebg-preview.png" id="6_c01mt"]
 [ext_resource type="Script" uid="uid://cduijmrnngd87" path="res://scripts/background_animation.gd" id="7_animation"]
+[ext_resource type="Texture2D" uid="uid://bya7f2shsunyl" path="res://assets/Ready.png" id="9_q8u5g"]
 
 [node name="Main" type="Node2D"]
 
@@ -131,11 +131,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -262.991
-offset_top = -358.323
-offset_right = 737.009
-offset_bottom = 641.677
+offset_left = -145.922
+offset_top = -274.339
+offset_right = 854.078
+offset_bottom = 725.661
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.52, 0.52)
-texture = ExtResource("6_c01mt")
+scale = Vector2(0.30186, 0.30186)
+texture = ExtResource("9_q8u5g")

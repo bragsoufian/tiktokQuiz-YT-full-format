@@ -1,0 +1,162 @@
+[
+  {
+    "question": "Quel composant K8s gère l'autoscaling horizontal ?",
+    "questionTTS": "Quel composant <lang xml:lang=\"en-US\">Kubernetes</lang> gère l'autoscaling horizontal ?",
+    "options": ["ReplicaSet", "HPA", "Ingress"],
+    "niveau": "hard",
+    "correctAnswer": "B",
+    "backgroundKeyWords": "kubernetes autoscaling hpa devops"
+  },
+  {
+    "question": "Quelle commande supprime un namespace K8s ?",
+    "questionTTS": "Quelle commande supprime un <lang xml:lang=\"en-US\">namespace</lang> <lang xml:lang=\"en-US\">Kubernetes</lang> ?",
+    "options": ["kubectl delete ns", "kubectl drop", "kubectl rm ns"],
+    "niveau": "hard",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "kubectl delete namespace k8s devops"
+  },
+  {
+    "question": "Quel outil permet le provisioning cloud multi-fournisseur ?",
+    "questionTTS": "Quel outil permet le provisioning cloud multi-fournisseur ?",
+    "options": ["Terraform", "Pulumi", "CloudFormation"],
+    "niveau": "hard",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "terraform provisioning cloud iac devops"
+  },
+  {
+    "question": "Quel outil chiffre les secrets pour GitOps ?",
+    "questionTTS": "Quel outil chiffre les secrets pour <lang xml:lang=\"en-US\">GitOps</lang> ?",
+    "options": ["Vault", "Bitwarden", "Sops"],
+    "niveau": "hard",
+    "correctAnswer": "C",
+    "backgroundKeyWords": "sops secrets chiffrement gitops devops"
+  },
+  {
+    "question": "Quel composant ArgoCD applique les manifests ?",
+    "questionTTS": "Quel composant <lang xml:lang=\"en-US\">ArgoCD</lang> applique les manifests ?",
+    "options": ["Application", "Controller", "Syncer"],
+    "niveau": "hard",
+    "correctAnswer": "B",
+    "backgroundKeyWords": "argocd controller gitops sync devops"
+  },
+  {
+    "question": "Quelle ressource K8s expose via un nom DNS ?",
+    "questionTTS": "Quelle ressource <lang xml:lang=\"en-US\">Kubernetes</lang> expose via un nom DNS ?",
+    "options": ["Service", "Ingress", "Volume"],
+    "niveau": "hard",
+    "correctAnswer": "B",
+    "backgroundKeyWords": "kubernetes ingress dns exposition devops"
+  },
+  {
+    "question": "Quel outil analyse les logs de conteneurs ?",
+    "questionTTS": "Quel outil analyse les logs de conteneurs ?",
+    "options": ["Loki", "Prometheus", "Logstash"],
+    "niveau": "hard",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "loki logs conteneur monitoring devops"
+  },
+  {
+    "question": "Quel outil gère les identités cloud ?",
+    "questionTTS": "Quel outil gère les identités cloud ?",
+    "options": ["IAM", "OIDC", "SSL"],
+    "niveau": "hard",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "iam cloud permissions identité devops"
+  },
+  {
+    "question": "Quel plugin Jenkins permet les pipelines déclaratifs ?",
+    "questionTTS": "Quel plugin <lang xml:lang=\"en-US\">Jenkins</lang> permet les pipelines déclaratifs ?",
+    "options": ["Declarative", "Groovy", "Pipeline"],
+    "niveau": "hard",
+    "correctAnswer": "C",
+    "backgroundKeyWords": "jenkins pipeline déclaratif devops"
+  },
+  {
+    "question": "Quelle ressource K8s définit un volume partagé ?",
+    "questionTTS": "Quelle ressource <lang xml:lang=\"en-US\">Kubernetes</lang> définit un volume partagé ?",
+    "options": ["PVC", "ConfigMap", "Secret"],
+    "niveau": "hard",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "kubernetes pvc volume stockage devops"
+  },
+  {
+    "question": "Quelle commande restaure un state Terraform ?",
+    "questionTTS": "Quelle commande restaure un <lang xml:lang=\"en-US\">state</lang> <lang xml:lang=\"en-US\">Terraform</lang> ?",
+    "options": ["terraform refresh", "terraform state pull", "terraform apply"],
+    "niveau": "hard",
+    "correctAnswer": "B",
+    "backgroundKeyWords": "terraform state backup restore devops"
+  },
+  {
+    "question": "Quelle solution CI supporte les pipelines as code YAML ?",
+    "questionTTS": "Quelle solution <lang xml:lang=\"en-US\">CI</lang> supporte les pipelines as code YAML ?",
+    "options": ["CircleCI", "Azure DevOps", "GitHub Actions"],
+    "niveau": "hard",
+    "correctAnswer": "C",
+    "backgroundKeyWords": "ci yaml github actions pipeline devops"
+  },
+  {
+    "question": "Quel outil de monitoring est basé sur des séries temporelles ?",
+    "questionTTS": "Quel outil de monitoring est basé sur des séries temporelles ?",
+    "options": ["Grafana", "Prometheus", "ELK"],
+    "niveau": "hard",
+    "correctAnswer": "B",
+    "backgroundKeyWords": "prometheus série temporelle métriques devops"
+  },
+  {
+    "question": "Quelle ressource K8s injecte des variables ?",
+    "questionTTS": "Quelle ressource <lang xml:lang=\"en-US\">Kubernetes</lang> injecte des variables ?",
+    "options": ["Secret", "ConfigMap", "Pod"],
+    "niveau": "hard",
+    "correctAnswer": "B",
+    "backgroundKeyWords": "kubernetes configmap variables injection devops"
+  },
+  {
+    "question": "Quel outil CI s'intègre nativement à GitHub ?",
+    "questionTTS": "Quel outil <lang xml:lang=\"en-US\">CI</lang> s'intègre nativement à <lang xml:lang=\"en-US\">GitHub</lang> ?",
+    "options": ["GitHub Actions", "Travis CI", "CircleCI"],
+    "niveau": "hard",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "github actions ci intégration devops"
+  },
+  {
+    "question": "Quel outil CI utilise .drone.yml ?",
+    "questionTTS": "Quel outil <lang xml:lang=\"en-US\">CI</lang> utilise le fichier .drone.yml ?",
+    "options": ["Drone", "Jenkins", "GitLab"],
+    "niveau": "hard",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "drone ci pipeline yml devops"
+  },
+  {
+    "question": "Quel système de fichiers distribué pour K8s ?",
+    "questionTTS": "Quel système de fichiers distribué pour <lang xml:lang=\"en-US\">Kubernetes</lang> ?",
+    "options": ["Gluster","Ceph", "NFS"],
+    "niveau": "hard",
+    "correctAnswer": "B",
+    "backgroundKeyWords": "ceph storage distributed k8s devops"
+  },
+  {
+    "question": "Quel outil permet d'orchestrer avec GitOps ?",
+    "questionTTS": "Quel outil permet d'orchestrer avec <lang xml:lang=\"en-US\">GitOps</lang> ?",
+    "options": ["ArgoCD", "Vault", "Nomad"],
+    "niveau": "hard",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "argocd gitops orchestration devops"
+  },
+  {
+    "question": "Quel outil surveille les erreurs front ?",
+    "questionTTS": "Quel outil surveille les erreurs front-end ?",
+    "options": ["Grafana", "Kibana", "Sentry"],
+    "niveau": "hard",
+    "correctAnswer": "C",
+    "backgroundKeyWords": "sentry front erreurs monitoring devops"
+  },
+  {
+    "question": "Quel composant K8s gère les montées en charge ?",
+    "questionTTS": "Quel composant <lang xml:lang=\"en-US\">Kubernetes</lang> gère les montées en charge ?",
+    "options": ["HPA", "Scheduler", "Ingress"],
+    "niveau": "hard",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "kubernetes autoscaling hpa charge devops"
+  }
+]
