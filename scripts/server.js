@@ -85,25 +85,30 @@ const log = {
     unsplash: (msg) => console.log('\x1b[36m%s\x1b[0m', `[${new Date().toLocaleTimeString()}] 🖼️ ${msg}`)   // Cyan pour Unsplash
 };
 
-// Load greetings messages
-let GREETINGS = {};
-try {
-    const greetingsPath = path.join(__dirname, 'greetings.json');
-    const greetingsData = fs.readFileSync(greetingsPath, 'utf8');
-    GREETINGS = JSON.parse(greetingsData);
-    log.success(`Chargement des messages de bienvenue depuis greetings.json`);
-} catch (error) {
-    log.error(`Erreur lors du chargement des messages de bienvenue: ${error.message}`);
-    // Messages par défaut en cas d'erreur
-    GREETINGS = {
-        welcome: {
-            text: "Bonjour à tous ! Bienvenue dans notre quiz TikTok."
-        },
-        goodbye: {
-            text: "Merci à tous d'avoir participé à notre quiz !"
-        }
-    };
+// Function to load greetings messages
+function loadGreetings() {
+    try {
+        const greetingsPath = path.join(__dirname, 'greetings.json');
+        const greetingsData = fs.readFileSync(greetingsPath, 'utf8');
+        const loadedGreetings = JSON.parse(greetingsData);
+        log.success(`Chargement des messages de bienvenue depuis greetings.json`);
+        return loadedGreetings;
+    } catch (error) {
+        log.error(`Erreur lors du chargement des messages de bienvenue: ${error.message}`);
+        // Messages par défaut en cas d'erreur
+        return {
+            welcome: {
+                text: "Bonjour à tous ! Bienvenue dans notre quiz TikTok."
+            },
+            goodbye: {
+                text: "Merci à tous d'avoir participé à notre quiz !"
+            }
+        };
+    }
 }
+
+// Load greetings messages
+let GREETINGS = loadGreetings();
 
 // Charger les questions depuis le fichier JSON
 let QUESTIONS = [];
@@ -179,12 +184,16 @@ async function resetGameState() {
 async function startQuestionCycle() {
     log.question('Démarrage du cycle de questions');
     
+    // Recharger les greetings pour avoir les dernières modifications
+    GREETINGS = loadGreetings();
+    
     // Générer l'image de fond par défaut
     let defaultBackgroundUrl = null;
     if (GREETINGS.defaultBackground && GREETINGS.defaultBackground.theme) {
         try {
             log.unsplash(`Génération de l'image de fond par défaut: "${GREETINGS.defaultBackground.theme}"`);
-            defaultBackgroundUrl = await getUnsplashImage(GREETINGS.defaultBackground.theme, 'default_background');
+            const timestamp = Date.now();
+            defaultBackgroundUrl = await getUnsplashImage(GREETINGS.defaultBackground.theme, `default_background_${timestamp}`);
         } catch (err) {
             log.error('❌ Erreur lors de la génération de l\'image de fond par défaut: ' + err);
         }
@@ -205,15 +214,13 @@ async function startQuestionCycle() {
         try {
             log.question('🎤 Lecture du message de bienvenue...');
             const welcomeSSML = formatGreetingWithSSML(GREETINGS.welcome.text);
+            // Attendre que l'audio soit terminé
             await azureTTS.speakQuestion(welcomeSSML, 0);
             log.info('✅ Message de bienvenue lu avec succès.');
         } catch (err) {
             log.error('❌ Erreur TTS pour le message de bienvenue: ' + err);
         }
     }
-    
-    // Attendre 3 secondes supplémentaires après la fin du message de bienvenue
-    await new Promise(resolve => setTimeout(resolve, 3000));
     
     // Poser la première question
     askNewQuestion();
@@ -257,12 +264,16 @@ async function askNewQuestion() {
             try {
                 log.question('🎤 Lecture du message d\'au revoir...');
                 
+                // Recharger les greetings pour avoir les dernières modifications
+                GREETINGS = loadGreetings();
+                
                 // Générer l'image de fond pour le message d'au revoir
                 let goodbyeBackgroundUrl = null;
                 if (GREETINGS.goodbye.backgroundTheme) {
                     try {
                         log.unsplash(`Génération de l'image de fond pour l'au revoir: "${GREETINGS.goodbye.backgroundTheme}"`);
-                        goodbyeBackgroundUrl = await getUnsplashImage(GREETINGS.goodbye.backgroundTheme, 'goodbye_background');
+                        const timestamp = Date.now();
+                        goodbyeBackgroundUrl = await getUnsplashImage(GREETINGS.goodbye.backgroundTheme, `goodbye_background_${timestamp}`);
                     } catch (err) {
                         log.error('❌ Erreur lors de la génération de l\'image de fond pour l\'au revoir: ' + err);
                     }
@@ -331,8 +342,9 @@ async function askNewQuestion() {
     
     // If no background image is set, generate one based on backgroundKeyWords
     if (!backgroundImageUrl && currentQuestion.backgroundKeyWords) {
-        // Use question index as cache key to ensure same question gets same image
-        const cacheKey = `question_${currentQuestionIndex}_${currentQuestion.backgroundKeyWords}`;
+        // Use timestamp to ensure different images each time
+        const timestamp = Date.now();
+        const cacheKey = `question_${currentQuestionIndex}_${timestamp}`;
         backgroundImageUrl = await getUnsplashImage(currentQuestion.backgroundKeyWords, cacheKey);
         log.unsplash(`Generated background image for keywords: "${currentQuestion.backgroundKeyWords}" (Question ${currentQuestionIndex})`);
     }
@@ -621,9 +633,9 @@ async function getUnsplashImage(query, customCacheKey = null) {
         return cachedUrl;
     }
 
-    // Add a seed based on cache key to get consistent results for the same query
-    const seed = customCacheKey ? customCacheKey.hashCode() : query.toLowerCase().trim().hashCode();
-    const baseUrl = `${UNSPLASH_API_URL}?query=${encodeURIComponent(query)}&orientation=landscape&w=800&h=600&seed=${seed}&client_id=PLACEHOLDER`;
+    // Generate a random seed for variety, but keep some consistency for the same query
+    const randomSeed = Math.floor(Math.random() * 1000000);
+    const baseUrl = `${UNSPLASH_API_URL}?query=${encodeURIComponent(query)}&orientation=landscape&w=800&h=600&seed=${randomSeed}&client_id=PLACEHOLDER`;
     
     log.unsplash(`Fetching image for query: "${query}"`);
     

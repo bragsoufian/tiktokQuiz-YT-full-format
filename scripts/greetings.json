@@ -1,13 +1,13 @@
 {
   "welcome": {
-    "text": "Bienvenue dans ce quiz DevOps ! Testez vos connaissances sur les pratiques et outils les plus utilisés en ingénierie logicielle. Êtes-vous prêt ? C'est parti !",
-    "backgroundTheme": "technology coding"
+    "text": "Bienvenue dans ce quiz DevOps de niveau expert ! Testez vos connaissances avancées sur les patterns de résilience, la gestion des secrets, l'orchestration distribuée et les architectures cloud complexes. Êtes-vous prêt pour ce défi technique ? C'est parti !",
+    "backgroundTheme": "cybersecurity network security"
   },
   "goodbye": {
-    "text": "Merci d'avoir joué à ce quiz DevOps ! Abonnez-vous pour ne pas rater les prochains quiz et continuez à vous challenger sur vos connaissances en informatique.",
-    "backgroundTheme": "success celebration"
+    "text": "Félicitations pour avoir relevé ce défi DevOps de niveau expert ! Abonnez-vous pour ne pas rater les prochains quiz sur les patterns avancés, l'observabilité distribuée et les architectures cloud-native !",
+    "backgroundTheme": "digital transformation innovation"
   },
   "defaultBackground": {
-    "theme": "modern office workspace"
+    "theme": "artificial intelligence machine learning"
   }
 }

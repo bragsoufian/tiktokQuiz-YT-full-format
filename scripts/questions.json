@@ -1,170 +1,170 @@
 [
   {
-    "question": "Quel outil planifie des tâches cron ?",
-    "questionTTS": "Quel outil planifie des tâches <lang xml:lang=\"en-US\">cron</lang> ?",
-    "options": ["cronrun", "crontab", "cronjob"],
-    "niveau": "easy",
-    "correctAnswer": "B",
-    "backgroundKeyWords": "cron crontab tâche planification devops"
+    "question": "Quel pattern Istio utilise pour la résilience des services ?",
+    "questionTTS": "Quel pattern <lang xml:lang=\"en-US\">Istio</lang> utilise pour la résilience des services ?",
+    "options": ["Circuit Breaker", "Bulkhead", "Retry"],
+    "niveau": "hard",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "istio circuit breaker resilience microservices devops"
   },
   {
-    "question": "Quelle commande liste les fichiers ?",
-    "questionTTS": "Quelle commande liste les fichiers ?",
-    "options": ["cd", "pwd", "ls"],
-    "niveau": "easy",
+    "question": "Quel algorithme Kubernetes utilise pour la planification des pods ?",
+    "questionTTS": "Quel algorithme <lang xml:lang=\"en-US\">Kubernetes</lang> utilise pour la planification des <lang xml:lang=\"en-US\">pods</lang> ?",
+    "options": ["Round Robin", "Least Recently Used", "Priority Queue"],
+    "niveau": "hard",
     "correctAnswer": "C",
-    "backgroundKeyWords": "ls commande terminal linux devops"
+    "backgroundKeyWords": "kubernetes scheduler priority queue pods devops"
   },
   {
-    "question": "Que fait la commande 'pwd' ?",
-    "questionTTS": "Que fait la commande <lang xml:lang=\"en-US\">p w d</lang> ?",
-    "options": ["Efface fichier", "Chemin courant", "Copie fichier"],
-    "niveau": "easy",
-    "correctAnswer": "B",
-    "backgroundKeyWords": "pwd shell terminal chemin devops"
-  },
-  {
-    "question": "Quel outil permet de créer des scripts d'init ?",
-    "questionTTS": "Quel outil permet de créer des scripts d'initialisation ?",
-    "options": ["Nano", "Curl", "Bash"],
-    "niveau": "easy",
-    "correctAnswer": "C",
-    "backgroundKeyWords": "bash script shell devops"
-  },
-  {
-    "question": "Quelle commande envoie un fichier via SCP ?",
-    "questionTTS": "Quelle commande envoie un fichier via <lang xml:lang=\"en-US\">S C P</lang> ?",
-    "options": ["ftp", "wget", "scp"],
-    "niveau": "easy",
-    "correctAnswer": "C",
-    "backgroundKeyWords": "scp transfert ssh fichier devops"
-  },
-  {
-    "question": "Quel outil utilise 'playbook' ?",
-    "questionTTS": "Quel outil utilise le terme <lang xml:lang=\"en-US\">playbook</lang> ?",
-    "options": ["Docker", "Ansible", "Terraform"],
-    "niveau": "easy",
-    "correctAnswer": "B",
-    "backgroundKeyWords": "ansible playbook configuration devops"
-  },
-  {
-    "question": "Quel outil open-source pour la CI/CD ?",
-    "questionTTS": "Quel outil open-source pour la <lang xml:lang=\"en-US\">CI/CD</lang> ?",
-    "options": ["Slack", "GitLab CI", "Trello"],
-    "niveau": "easy",
-    "correctAnswer": "B",
-    "backgroundKeyWords": "gitlab ci cd pipeline devops"
-  },
-  {
-    "question": "Quelle commande vérifie la connectivité réseau ?",
-    "questionTTS": "Quelle commande vérifie la connectivité réseau ?",
-    "options": ["ping", "ssh", "scp"],
-    "niveau": "easy",
+    "question": "Quel protocole utilise Envoy pour la découverte de services ?",
+    "questionTTS": "Quel protocole utilise <lang xml:lang=\"en-US\">Envoy</lang> pour la découverte de services ?",
+    "options": ["EDS", "SDS", "CDS"],
+    "niveau": "hard",
     "correctAnswer": "A",
-    "backgroundKeyWords": "ping réseau connectivité devops"
+    "backgroundKeyWords": "envoy eds service discovery proxy devops"
   },
   {
-    "question": "Quel est l'outil de versioning ?",
-    "questionTTS": "Quel est l'outil de versioning ?",
-    "options": ["Vim", "Git", "SCP"],
-    "niveau": "easy",
-    "correctAnswer": "B",
-    "backgroundKeyWords": "git versioning devops"
-  },
-  {
-    "question": "Quelle commande affiche l'adresse IP ?",
-    "questionTTS": "Quelle commande affiche l'adresse IP ?",
-    "options": ["ifconfig", "ls", "mv"],
-    "niveau": "easy",
+    "question": "Quel mécanisme Terraform utilise pour les dépendances cycliques ?",
+    "questionTTS": "Quel mécanisme <lang xml:lang=\"en-US\">Terraform</lang> utilise pour les dépendances cycliques ?",
+    "options": ["depends_on", "lifecycle", "provisioner"],
+    "niveau": "hard",
     "correctAnswer": "A",
-    "backgroundKeyWords": "ip adresse réseau linux devops"
+    "backgroundKeyWords": "terraform depends_on cyclic dependencies devops"
   },
   {
-    "question": "Quel outil vérifie l'état d'un service ?",
-    "questionTTS": "Quel outil vérifie l'état d'un service ?",
-    "options": ["curl", "systemctl", "git"],
-    "niveau": "easy",
-    "correctAnswer": "B",
-    "backgroundKeyWords": "systemctl service état linux devops"
-  },
-  {
-    "question": "Quel outil permet d’éditer un fichier ?",
-    "questionTTS": "Quel outil permet d’éditer un fichier ?",
-    "options": ["nano", "rm", "cat"],
-    "niveau": "easy",
+    "question": "Quel pattern Prometheus utilise pour l'agrégation des métriques ?",
+    "questionTTS": "Quel pattern <lang xml:lang=\"en-US\">Prometheus</lang> utilise pour l'agrégation des métriques ?",
+    "options": ["Recording Rules", "Alerting Rules", "Service Discovery"],
+    "niveau": "hard",
     "correctAnswer": "A",
-    "backgroundKeyWords": "nano éditeur fichier terminal devops"
+    "backgroundKeyWords": "prometheus recording rules metrics aggregation devops"
   },
   {
-    "question": "Quel outil permet de superviser ?",
-    "questionTTS": "Quel outil permet de superviser ?",
-    "options": ["Prometheus", "Git", "Bash"],
-    "niveau": "easy",
+    "question": "Quel mécanisme Docker utilise pour l'isolation des conteneurs ?",
+    "questionTTS": "Quel mécanisme <lang xml:lang=\"en-US\">Docker</lang> utilise pour l'isolation des conteneurs ?",
+    "options": ["Namespaces", "Cgroups", "Seccomp"],
+    "niveau": "hard",
     "correctAnswer": "A",
-    "backgroundKeyWords": "prometheus monitoring supervision devops"
+    "backgroundKeyWords": "docker namespaces isolation containers devops"
   },
   {
-    "question": "Quel outil affiche des dashboards ?",
-    "questionTTS": "Quel outil affiche des dashboards ?",
-    "options": ["Ansible", "Grafana", "Jenkins"],
-    "niveau": "easy",
-    "correctAnswer": "B",
-    "backgroundKeyWords": "grafana dashboard visualisation devops"
-  },
-  {
-    "question": "Quel outil est un orchestrateur ?",
-    "questionTTS": "Quel outil est un orchestrateur ?",
-    "options": ["Kubernetes", "Git", "SSH"],
-    "niveau": "easy",
+    "question": "Quel protocole utilise Consul pour la cohérence distribuée ?",
+    "questionTTS": "Quel protocole utilise <lang xml:lang=\"en-US\">Consul</lang> pour la cohérence distribuée ?",
+    "options": ["Raft", "Paxos", "Zab"],
+    "niveau": "hard",
     "correctAnswer": "A",
-    "backgroundKeyWords": "kubernetes orchestrateur container devops"
+    "backgroundKeyWords": "consul raft distributed consensus devops"
   },
   {
-    "question": "Quel outil permet de containeriser ?",
-    "questionTTS": "Quel outil permet de containeriser ?",
-    "options": ["Ansible", "Terraform", "Docker"],
-    "niveau": "easy",
-    "correctAnswer": "C",
-    "backgroundKeyWords": "docker containerisation devops"
-  },
-  {
-    "question": "Quel format est utilisé pour Dockerfile ?",
-    "questionTTS": "Quel format est utilisé pour <lang xml:lang=\"en-US\">Dockerfile</lang> ?",
-    "options": ["YAML", "DSL", "Markdown"],
-    "niveau": "easy",
-    "correctAnswer": "B",
-    "backgroundKeyWords": "dockerfile format docker devops"
-  },
-  {
-    "question": "Quel outil gère les rôles dans Ansible ?",
-    "questionTTS": "Quel outil gère les rôles dans <lang xml:lang=\"en-US\">Ansible</lang> ?",
-    "options": ["Galaxy", "Playbook", "Module"],
-    "niveau": "easy",
+    "question": "Quel mécanisme Vault utilise pour la rotation automatique des secrets ?",
+    "questionTTS": "Quel mécanisme <lang xml:lang=\"en-US\">Vault</lang> utilise pour la rotation automatique des secrets ?",
+    "options": ["Dynamic Secrets", "Static Secrets", "Transit Engine"],
+    "niveau": "hard",
     "correctAnswer": "A",
-    "backgroundKeyWords": "ansible galaxy rôles devops"
+    "backgroundKeyWords": "vault dynamic secrets rotation security devops"
   },
   {
-    "question": "Quel fichier est utilisé par Docker ?",
-    "questionTTS": "Quel fichier est utilisé par <lang xml:lang=\"en-US\">Docker</lang> ?",
-    "options": ["Docker.yaml", "Dockerfile", "Docker.txt"],
-    "niveau": "easy",
-    "correctAnswer": "B",
-    "backgroundKeyWords": "dockerfile configuration image devops"
-  },
-  {
-    "question": "Quelle commande arrête un conteneur Docker ?",
-    "questionTTS": "Quelle commande arrête un conteneur <lang xml:lang=\"en-US\">Docker</lang> ?",
-    "options": ["docker down", "docker kill", "docker stop"],
-    "niveau": "easy",
-    "correctAnswer": "C",
-    "backgroundKeyWords": "docker stop container devops"
-  },
-  {
-    "question": "Quel outil permet l'accès distant ?",
-    "questionTTS": "Quel outil permet l'accès distant ?",
-    "options": ["SSH", "DNS", "NFS"],
-    "niveau": "easy",
+    "question": "Quel pattern Ansible utilise pour la gestion des erreurs ?",
+    "questionTTS": "Quel pattern <lang xml:lang=\"en-US\">Ansible</lang> utilise pour la gestion des erreurs ?",
+    "options": ["block/rescue/always", "try/catch/finally", "error handling"],
+    "niveau": "hard",
     "correctAnswer": "A",
-    "backgroundKeyWords": "ssh accès distant sécurité devops"
+    "backgroundKeyWords": "ansible block rescue error handling automation devops"
+  },
+  {
+    "question": "Quel mécanisme Kubernetes utilise pour la gestion des secrets ?",
+    "questionTTS": "Quel mécanisme <lang xml:lang=\"en-US\">Kubernetes</lang> utilise pour la gestion des secrets ?",
+    "options": ["etcd encryption", "Sealed Secrets", "External Secrets"],
+    "niveau": "hard",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "kubernetes etcd encryption secrets security devops"
+  },
+  {
+    "question": "Quel protocole utilise Linkerd pour la communication entre services ?",
+    "questionTTS": "Quel protocole utilise <lang xml:lang=\"en-US\">Linkerd</lang> pour la communication entre services ?",
+    "options": ["HTTP/2", "gRPC", "TCP"],
+    "niveau": "hard",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "linkerd http2 service mesh communication devops"
+  },
+  {
+    "question": "Quel mécanisme Terraform utilise pour la gestion des états distants ?",
+    "questionTTS": "Quel mécanisme <lang xml:lang=\"en-US\">Terraform</lang> utilise pour la gestion des états distants ?",
+    "options": ["Backend Configuration", "Remote State", "State Locking"],
+    "niveau": "hard",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "terraform backend remote state infrastructure devops"
+  },
+  {
+    "question": "Quel pattern Prometheus utilise pour la haute disponibilité ?",
+    "questionTTS": "Quel pattern <lang xml:lang=\"en-US\">Prometheus</lang> utilise pour la haute disponibilité ?",
+    "options": ["Federation", "Sharding", "Clustering"],
+    "niveau": "hard",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "prometheus federation high availability monitoring devops"
+  },
+  {
+    "question": "Quel mécanisme Docker utilise pour la gestion des volumes persistants ?",
+    "questionTTS": "Quel mécanisme <lang xml:lang=\"en-US\">Docker</lang> utilise pour la gestion des volumes persistants ?",
+    "options": ["Volume Drivers", "Bind Mounts", "tmpfs"],
+    "niveau": "hard",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "docker volume drivers persistent storage devops"
+  },
+  {
+    "question": "Quel protocole utilise etcd pour la réplication des données ?",
+    "questionTTS": "Quel protocole utilise <lang xml:lang=\"en-US\">etcd</lang> pour la réplication des données ?",
+    "options": ["Raft", "Paxos", "Viewstamped Replication"],
+    "niveau": "hard",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "etcd raft replication distributed systems devops"
+  },
+  {
+    "question": "Quel mécanisme Vault utilise pour l'authentification des applications ?",
+    "questionTTS": "Quel mécanisme <lang xml:lang=\"en-US\">Vault</lang> utilise pour l'authentification des applications ?",
+    "options": ["AppRole", "Token", "JWT"],
+    "niveau": "hard",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "vault approle application authentication security devops"
+  },
+  {
+    "question": "Quel pattern Ansible utilise pour la gestion des inventaires dynamiques ?",
+    "questionTTS": "Quel pattern <lang xml:lang=\"en-US\">Ansible</lang> utilise pour la gestion des inventaires dynamiques ?",
+    "options": ["Inventory Plugins", "Dynamic Inventory Scripts", "Cloud Providers"],
+    "niveau": "hard",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "ansible inventory plugins dynamic automation devops"
+  },
+  {
+    "question": "Quel mécanisme Kubernetes utilise pour la gestion des ressources ?",
+    "questionTTS": "Quel mécanisme <lang xml:lang=\"en-US\">Kubernetes</lang> utilise pour la gestion des ressources ?",
+    "options": ["Resource Quotas", "Limit Ranges", "Resource Requests"],
+    "niveau": "hard",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "kubernetes resource quotas resource management devops"
+  },
+  {
+    "question": "Quel protocole utilise Jaeger pour la traçabilité distribuée ?",
+    "questionTTS": "Quel protocole utilise <lang xml:lang=\"en-US\">Jaeger</lang> pour la traçabilité distribuée ?",
+    "options": ["OpenTracing", "Zipkin", "Jaeger Protocol"],
+    "niveau": "hard",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "jaeger opentracing distributed tracing observability devops"
+  },
+  {
+    "question": "Quel mécanisme Terraform utilise pour la gestion des modules privés ?",
+    "questionTTS": "Quel mécanisme <lang xml:lang=\"en-US\">Terraform</lang> utilise pour la gestion des modules privés ?",
+    "options": ["Private Registry", "Git Repository", "Local Modules"],
+    "niveau": "hard",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "terraform private registry modules infrastructure devops"
+  },
+  {
+    "question": "Quel pattern Prometheus utilise pour la gestion des alertes ?",
+    "questionTTS": "Quel pattern <lang xml:lang=\"en-US\">Prometheus</lang> utilise pour la gestion des alertes ?",
+    "options": ["Alertmanager", "Alert Rules", "Notification Pipeline"],
+    "niveau": "hard",
+    "correctAnswer": "A",
+    "backgroundKeyWords": "prometheus alertmanager alerting monitoring devops"
   }
 ]

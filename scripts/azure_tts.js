@@ -215,27 +215,14 @@ class AzureTTS {
                 return;
             }
 
-            // Get the duration of the audio file
-            let durationSec = 0;
-            try {
-                const metadata = await mm.parseFile(audioPath);
-                durationSec = metadata.format.duration;
-                if (!durationSec || isNaN(durationSec)) durationSec = 0;
-            } catch (e) {
-                console.warn('⚠️ Could not read audio duration, fallback to 2s:', e.message);
-                durationSec = 2;
-            }
-
             // Try multiple methods to play audio
             const playSuccess = await this.tryPlayAudio(audioPath);
             
             if (playSuccess) {
                 console.log('✅ Audio playback started successfully');
-                // Wait for the duration of the audio, then resolve
-                setTimeout(() => {
-                    console.log(`⏳ Waited ${durationSec}s for audio playback to finish.`);
-                    resolve();
-                }, Math.max(500, durationSec * 1000));
+                // Don't wait for audio to finish - resolve immediately
+                // The audio will play in the background
+                resolve();
             } else {
                 reject(new Error('Failed to play audio with all available methods'));
             }
